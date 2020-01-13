@@ -20,7 +20,11 @@ vector <int> adj[100];
 
     void dfs(int s) {
         visited[s] = true;
+<<<<<<< HEAD
         for(int i = 0;i < adj[s].size();++i){
+=======
+        for(int i = 0;i < adj[s].size();++i)    {
+>>>>>>> 4e1dc46759781f5165e6668e36a23c0b03142970
          if(visited[adj[s][i]] == false)
              dfs(adj[s][i]);
         }

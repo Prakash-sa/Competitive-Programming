@@ -2,6 +2,94 @@
 using namespace std;
 typedef long long ll;
 
+<<<<<<< HEAD
+=======
+
+
+//     int root (int Arr[ ],int size[] ,int i)
+//     {
+//         while(Arr[ i ] != i)
+//         {
+//             Arr[ i ] = Arr[ Arr[ i ] ] ; 
+//             i = Arr[ i ]; 
+//            // size[i] = 1;
+//         }
+//     return i;
+//     }
+
+//     void weighted_union(int Arr[ ],int size[ ],int A,int B)
+//     {
+//         int root_A = root(Arr,size,A);
+//         int root_B = root(Arr,size,B);
+//         //cout<<root_A<<" "<<root_B<<endl;
+//         if(root_A<root_B)
+//         {
+        
+//         Arr[ root_A ] = Arr[root_B];
+//         if(root_A!=root_B){ size[root_B] ++;size[root_A] ++;}
+//         if(root_A!=A) size[A]++;
+//         if(root_B!=B) size[B]++;
+//         }
+//         // else if(root_A > root_B )
+//         // {
+//         // Arr[ root_B ] = Arr[root_A];size[root_B] ++;size[root_A] ++;if(root_A!=A) size[A]++;
+//         // if(root_B!=B) size[B]++;
+//         // }
+//         else
+//         {
+            
+//         Arr[ root_B ] = Arr[root_A];
+//         if(root_A!=root_B){ size[root_B] ++;size[root_A] ++;}
+//         if(root_A!=A) size[A]++;
+//         if(root_B!=B) size[B]++;
+//         //size[root_B] = size[root_A]
+//         }
+
+//     }
+
+
+//     void initialize( int Arr[ ],int size[], int N)
+//     {
+//         for(int i = 1;i<=N;i++)
+//         {
+//     Arr[ i ] = i ;
+//     size[ i ] = 1;
+//     }
+//     }
+
+//     bool find(int Arr[ ],int A,int B,int size[])
+//     {
+//         if( root(Arr,size,A)==root(Arr,size,B) )       //if A and B have the same root, it means that they are connected.
+//         return true;
+//         else
+//         return false;
+//     }
+
+// int main()
+// {
+//     // ios_base::sync_with_stdio(false);
+//     // cin.tie(NULL);
+//     int n,e,n1,n2;
+   
+//     cin>>n>>e;
+//      int a[n+1],size1[n+1];
+//     initialize(a,size1,n);
+//     while(e--){
+//         cin>>n1>>n2;
+//         weighted_union(a,size1,n1,n2);
+//        // cout<<"hi";
+        
+
+//     }
+//     for(int i=1;i<=n;i++){
+//             // cout<<" "<<a[i]<<" ";
+//              cout<<size1[i]-1<<" ";
+//         }
+//     return 0;
+// }
+
+
+>>>>>>> 4e1dc46759781f5165e6668e36a23c0b03142970
 ll par[10000001];
 ll ans[10000001];
 ll root(ll x)
