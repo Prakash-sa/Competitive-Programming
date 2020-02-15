@@ -20,9 +20,9 @@ int find(int x)
 
 	
 		} 
-
 		return parent[x]; 
 	} 
+    
 int main()
 {
     lli t;

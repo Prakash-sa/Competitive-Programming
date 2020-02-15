@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
+#define F(i,a,b) for(lli i = a; i <= b; i++)
+#define RF(i,a,b) for(lli i = a; i >= b; i--)
+#define boost ios_base::sync_with_stdio(false); cin.tie(NULL);
+
 
 
 struct LinkedList{

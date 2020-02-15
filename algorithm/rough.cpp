@@ -1,88 +1,107 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-typedef long long int lli;
-#define F(i,a,b) for(lli i = a; i <= b; i++)
-#define RF(i,a,b) for(lli i = a; i >= b; i--)
-<<<<<<< HEAD
-#define endl "\n"
-#define speed ios_base::sync_with_stdio(false);cin.tie(NULL);
-double dp[1000][1000];
+int ans;
+int mR[]={0,-1,0,1};
+int mC[]={-1,0,1,0};
+int n,m;
+char M[2009][2009];
+bool visited[2009][2009];
+int max(int a,int b){return a>b?a:b;}
 
-int main()
-{
-    speed;
-    int t;
-    cin>>t;
-    while(t--){
-        lli n,a,b;
-        cin>>n;
-        vector<pair<pair<lli,lli>,lli>>v;
-        for(lli i=0;i<n;i++){
-            cin>>a>>b;
-            v.push_back({{a,b},i});
-        }
-        sort(v.begin(),v.end());
-        int ans[n]={0};
-        ans[0]=0;
-        int cu=0;
-        int ma=v[0].first.second;
-        for(lli i=1;i<n;i++){
-            int j=v[i].second;
-            if(ma<=v[i].first.first){
-                cu=0;
-                ans[j]=cu;
-                ma=v[i].first.second;
-            }
-            else if(ma<v[i].first.second){
-                if(cu==0)cu=1;
-                else cu=0;
-                ans[j]=cu;
-                ma=v[i].first.second;
-            }
-            else {
-                if(cu==0)cu=1;
-                else cu=0;
-                ans[j]=cu;
-            }
-        }
-        for(lli i=0;i<n;i++)cout<<ans[i];
-        cout<<endl;
-=======
-#define boost ios_base::sync_with_stdio(false); cin.tie(NULL);
-typedef vector<int> vi;
-typedef vector<lli> vl;
-typedef vector< vi > vvi;
-typedef vector< vl > vvl;
-typedef pair< int,int > ii;
-typedef pair< lli,lli> pll;
-typedef map< lli,lli> mll;
-typedef map< int,int> mii;
 
-int main()
-{
-    boost;
-    lli t;
-    cin>>t;
-    while(t--){
-        lli n;
-        cin>>n;
-        lli a[10]={6,2,5,5,4,5,6,3,7,6};
-        lli cnt=0;
-        if(n==0)cnt=a[0];
-        while(n){
-            int k=n%10;
-            cnt+=a[k];
-            n=n/10;
+
+int a,b;
+int dx[]={1,0,0,-1};
+int dy[]={0,1,-1,0};
+
+
+bool isssafe(int x,int y){
+    if(x<a&&y<b&&x>=0&&y>=0)return true;
+    return false;
+}
+int bfs(int i,int j){
+    int ans=INT_MIN;
+    queue<pair<pair<int,int>,int>>q;
+    q.push({{i,j},0});
+    while ((!q.empty()))
+    {
+        
+        pair<pair<int,int>,int>p=q.front();
+        q.pop();
+        int d=p.second;
+        ans=max(d,ans);
+        for(int i=0;i<4;i++){
+            int xx=p.first.first+dx[i];
+            int yy=p.first.second+dy[i];
+            if(isssafe(xx,yy)&&M[xx][yy]!='#'&&!visited[xx][yy]){
+                visited[xx][yy]=true;
+                q.push({{xx,yy},d+1});
+            }
         }
-        if(cnt%2==0){
-            for(lli i=0;i<cnt/2;i++)cout<<"1";
-            cout<<endl;
-        }
-        else {
-            for(lli i=0;i<cnt/2-1;i++)cout<<"1";
-            cout<<"7"<<endl;
-        }
->>>>>>> 4e1dc46759781f5165e6668e36a23c0b03142970
     }
-    return 0;
+    return ans;
+}
+
+
+
+int dfs(int i,int j)
+{
+    //cout<<i<<” “<<j<<” “<<endl;
+    int tr,tc,p;
+    int m1,m2,b;
+    m1=m2=-1;
+    visited[i][j]=true;
+    for(p=0;p<4;p++)
+    {
+        tr=i+mR[p];
+        tc=j+mC[p];
+        if(tr>=0 && tr<n && tc>=0 && tc<m && visited[tr][tc]==false && M[tr][tc]=='.')
+        {
+            b=dfs(tr,tc);
+            if(b>=m1)
+            {
+                m2=m1;
+                m1=b;
+            }
+            else if(b>m2)m2=b;
+        }
+    }
+    ans=max(ans,m1+m2+2);
+    return m1+1;
+}
+int main(void)
+{
+    int t,i,j;
+    bool flag;
+    cin>>t;
+    while(t--)
+    {
+        flag=false;
+        cin>>m>>n;
+        a=n;b=m;
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                cin>>M[i][j];
+                visited[i][j]=false;
+            }
+        }
+        ans=0;
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+            if(M[i][j]=='.')
+            {
+            flag=true;
+            break;
+            }
+            }
+            if(flag)break;
+        }
+        //cout<<“Launching Point “<<i<<” “<<j<<endl;
+        dfs(i,j);
+        printf("Maximum rope length is %d.\n",ans);
+    }
 }

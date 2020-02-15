@@ -1,94 +1,117 @@
-<<<<<<< HEAD
-#include<iostream>
-#include<boost/multiprecision/cpp_int.hpp>
+#include<bits/stdc++.h>
 using namespace std;
-using boost::multiprecision::cpp_int;
-int main(){
-cpp_int a,b;
-while(cin>>a>>b)
-{
-cout<<a+b<<"\n";
-}
-}
-=======
-#include <bits/stdc++.h>
+typedef int lli;
+#define F(i,a,b) for(lli i = a; i <= b; i++)
+#define RF(i,a,b) for(lli i = a; i >= b; i--)
+#define endl "\n"
+#define speed ios_base::sync_with_stdio(false);cin.tie(NULL);
 using namespace std;
+#define len 500009
 
-//---now---//
-bool vis[1000][1000];
-int issafe(int n,int m,int i,int j){
-    if(i<n&&i>=0&&j>=0&&j<m)return true;
-    else return false;
-}
+const int inf=1e9;
 
-void findis(vector<int>A[],int x,int y,int n,int m ){
-    vis[x][y]=true;
-    int rox[]={-1,-1,-1,0,0,1,1,1};
-    int coly[]={-1,0,1,-1,1,-1,0,1};
-    for(int i=0;i<8;i++){
-        if(issafe(n,m,x+rox[i],y+coly[i]))findis(A,x+rox[i],y+coly[i],n,m);
+typedef pair<lli,lli>PII;
+
+int n,m,startp,endp;
+vector<pair<lli,lli>>adj[len];
+int dist[len],dist2[len];
+int parent[len];
+int visited[len];
+vector<pair<lli,lli>>avoid_edges;
+
+void edge_store(int e,int parent_node){
+    while(parent_node!=-1){
+        avoid_edges.push_back({parent_node,e});
+        e=parent_node;
+        parent_node=parent[e];
     }
 }
 
 
-int findIslands(vector<int> A[], int N, int M)
-{
-    
-    
-    memset(vis,false,sizeof(vis));
-    int cnt=0;
-    for(int i=0;i<N;i++){
-        for(int j=0;j<M;j++){
-            if(!vis[i][j]&&A[i][j]){
-                findis(A,i,j,N,M);
-                cnt++;
+
+void dijkastra(int x){
+    priority_queue<PII,vector<PII>,greater<PII>>q;
+    q.push({0,x});
+    dist[x]=0;
+    parent[x]=-1;
+    while(!q.empty()){
+        pair<lli,lli>p=q.top();
+        q.pop();
+        for(int i=0;i<adj[p.second].size();i++){
+            int from=p.second;
+            int to=adj[from][i].second;
+            int weight=adj[from][i].first;
+            if(to==endp){
+                if(dist[to]==dist[from]+weight){
+                    edge_store(to,from);
+                    continue;
+                }
+            }
+            if(dist[from]+weight<dist[to]){
+                dist[to]=dist[from]+weight;
+                parent[to]=from;
+                q.push({dist[to],to});
+                if(to==endp){
+                    avoid_edges.clear();
+                    edge_store(to,from);    
+                }
+                
             }
         }
-        
+
     }
-    return cnt;
-}
-int a[100000];
-void fsc(){
-    int b[6];
-    for(int i=0;i<6;i++)b[i]=i;
-    a[0]=0;
-    a[1]=1;
-    a[2]=2;
-    a[3]=3;
-    a[4]=4;
-    a[5]=5;
-    int k=1,i=6;
-    while(i<100000){
-        for(int j=0;j<6;j++){
-            a[i++]=a[k]*10+b[j];
-        }
-        k++;
-    }
+ //   for(int i=0;i<n;i++)cout<<dist[i];
 }
 
-int main() {
-    
-	int T;
-	cin>>T;
-    fsc();
-    //for(int i=0;i<20;i++)cout<<a[i]<<" ";
-	while(T--)
-	{
-		int n;
-        cin>>n;
-        int k1=355,k2=113;
-        cout<<k1/k2;
-        k1=k1%k2*10;
-        if(n>=1)cout<<".";
-        for(int i=1;i<=n;i++){
-            cout<<k1/k2;
-            k1=k1%k2*10;
+
+void dijkastra2(int x){
+    priority_queue<PII,vector<PII>,greater<PII>>q;
+    q.push({0,x});
+    dist2[x]=0;
+    while(!q.empty()){
+        pair<lli,lli>p=q.top();
+        q.pop();
+        if(visited[p.second])continue;
+        else visited[p.second]=true;
+        for(int i=0;i<adj[p.second].size();i++){
+            int from=p.second;
+            int to=adj[from][i].second;
+            int weight=adj[from][i].first;
+            if(dist2[from]+weight<dist2[to] && 
+                (find(avoid_edges.begin(),avoid_edges.end(),make_pair(from,to))==avoid_edges.end())){
+                dist2[to]=dist2[from]+weight;
+                q.push({dist2[to],to});                
+            }
         }
 
-
-	}
-	return 0;
+    }
 }
 
->>>>>>> 4e1dc46759781f5165e6668e36a23c0b03142970
+int main()
+{
+    speed;
+    while(1){
+        cin>>n>>m;
+        if(n==0&&m==0)break;
+        for(int i=0;i<=n;i++){
+            adj[i].clear();
+            parent[i]=-1;
+            dist2[i]=inf;
+            visited[i]=false;
+            dist[i]=inf;
+        }
+        cin>>startp>>endp;
+        int a,b,w;
+        for(int i=0;i<m;i++){
+            cin>>a>>b>>w;
+            adj[a].push_back({w,b});
+        }
+        dijkastra(startp);
+        dijkastra2(startp);
+        if(dist2[endp]!=inf)cout<<dist2[endp]<<endl;
+        else cout<<-1<<endl;
+
+    }
+   
+    return 0;
+}
