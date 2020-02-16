@@ -78,6 +78,7 @@ int main()
 
 
 //Almost shortest path
+//https://www.spoj.com/problems/SAMER08A/
 
 #include<bits/stdc++.h>
 using namespace std;
