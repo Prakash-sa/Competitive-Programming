@@ -9,6 +9,7 @@ using namespace std;
 typedef pair<lli,lli> PII;
 
 //EC_P - Critical Edges
+//SUBMERGE - Submerging Islands
 
 
 const int MAXN = 1e4+5;
