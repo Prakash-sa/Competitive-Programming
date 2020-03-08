@@ -2,8 +2,6 @@
 using namespace std;
 typedef long long ll;
 
-<<<<<<< HEAD
-=======
 
 
 //     int root (int Arr[ ],int size[] ,int i)
@@ -89,7 +87,6 @@ typedef long long ll;
 // }
 
 
->>>>>>> 4e1dc46759781f5165e6668e36a23c0b03142970
 ll par[10000001];
 ll ans[10000001];
 ll root(ll x)
