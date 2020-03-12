@@ -1,6 +1,20 @@
 #include<iostream>
 using namespace std;
 
+bool checkSameElementExistence(vector<int> arr1, vector<int> arr2) {
+    int flag=0;
+    for(int i=0;i<arr1.size();i++){
+        auto k=lower_bound(arr2.begin(),arr2.end(),arr1[i]);
+        if(k-arr2.begin()<arr2.size()&&arr2[k-arr2.begin()]==arr1[i]){
+            flag=1;
+            break;
+        }
+    }
+    if(flag==1)return true;
+    else return false;
+}
+
+
 int main()
 {
     int n,s;
