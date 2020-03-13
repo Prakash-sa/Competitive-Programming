@@ -76,3 +76,15 @@ int *dnf(int *a,int high){
     }
     return a;
 }
+
+//inversion is the no. of steps
+int countInversions(std::vector<int> a) {
+    int n=a.size();
+    int inv_count = 0; 
+    for (int i = 0; i < n - 1; i++) 
+        for (int j = i + 1; j < n; j++) 
+            if (a[i] > a[j]) 
+                inv_count++; 
+    return inv_count;
+
+}

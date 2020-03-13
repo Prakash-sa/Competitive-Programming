@@ -13,6 +13,25 @@ struct Node
     Node *left, *right; 
 }; 
 
+int kthLargest(Node* root, int *i, int k)
+{
+    if (root == nullptr)
+        return INT_MAX;
+    int left = kthLargest(root->right, i, k);
+    if (left != INT_MAX)
+        return left;
+    if (++*i == k)
+        return root->data;
+    return kthLargest(root->left, i, k);
+}
+
+int kthLargest(Node* root, int k)
+{
+    int i = 0;
+    return kthLargest(root, &i, k);
+}
+
+
 int kthsmallest(Tree<int>* root,int *i,int k){
     if(root==NULL)return INT_MAX;
     int left=kthsmallest(root->left,i,k);
