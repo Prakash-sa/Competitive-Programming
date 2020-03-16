@@ -73,8 +73,6 @@ lli ncr(int n,int k){
     return c[n][k];
 }
 
-
-<<<<<<< HEAD
 // fermats theorem
 ll f[1000005];
 ll power(ll a,ll b)
@@ -101,8 +99,6 @@ ll ncr(ll n,ll r)
 
 
 
-=======
->>>>>>> 4e1dc46759781f5165e6668e36a23c0b03142970
 
 //Count the number of ones in the binary representation of the given number.
 
@@ -179,7 +175,6 @@ if(curoot*curoot*curoot==num)
 	}
 
 
-<<<<<<< HEAD
 lli power(lli x,lli y){
     lli res=1;
 x=x%q;
@@ -192,8 +187,6 @@ return res;
 
 }
 
-=======
->>>>>>> 4e1dc46759781f5165e6668e36a23c0b03142970
 // count divisor
 
 int countDivisors(int n) 

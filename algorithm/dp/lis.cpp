@@ -48,7 +48,18 @@ int lis_string(char s1[],char s2[],int n1,int n2){
     }
     return dp[n1][n2];
 }
-
+int lis_array(vector<int>chart){
+	int n=chart.size();
+    int lis[500]={0};
+    for(int i=0;i<n;i++){
+        for(int j=0;j<i;j++){
+            if(chart[i]>chart[j]&&lis[i]<lis[j]+1)lis[i]=lis[j]+1;
+        }
+    }
+    int max1=0;
+    for(int i=0;i<n;i++)max1=max(max1,lis[i]);
+    return chart.size()-max1-1;
+}
 int liss(int a[],int n){
     int l[n+1]; 
     memset(l,0,sizeof(l));

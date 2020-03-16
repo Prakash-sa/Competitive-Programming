@@ -1,17 +1,23 @@
-#include<bits/stdc++.h>
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include<boost/multiprecision/cpp_int.hpp>
+#include <algorithm>
 using namespace std;
-typedef long long int lli;
-#define F(i,a,b) for(lli i = a; i <= b; i++)
-#define RF(i,a,b) for(lli i = a; i >= b; i--)
-#define endl "\n"
-#define speed ios_base::sync_with_stdio(false);cin.tie(NULL);
-using namespace std;
+#define lli long long int
+#define max1 10000
+namespace mp=boost::multiprecision;
 
+int main() {
+    lli n,t;
+    cin>>t;
+    while(t--){
+        cin>>n;
+        mp::cpp_int u=1;
+        for(int i=1;i<=n;i++)u*=i;
+            cout<<u<<endl;
 
-
-int main() 
-{ 
-    
-
-    return 0; 
-} 
+    }
+    return 0;
+}
