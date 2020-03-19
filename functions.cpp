@@ -9,6 +9,15 @@ int modularExponentiation(int x,int n,int M)
 
 }
 
+//inversion
+for(int i=n-1;i>=0;i--){
+    for(int j=max(0,q[i]-2);j<i;j++){
+        if(q[i]<q[j]){
+            cnt++;
+        }
+    }
+}
+
 // Function to precompute inverse of numbers 
 void InverseofNumber(ll p) 
 { 
