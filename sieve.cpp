@@ -27,8 +27,23 @@ void sieveis(){
 }
 
 
-int main() 
-{ 
+void sieve(int n){
+    bool pri[n+1];
+    memset(pri,true,sizeof(pri));
+    for(int p=2;p*p<=n;p++){
+        if(pri[p]==true){
+            for(int i=p*p;i<=n;i+=p)
+            pri[i]=false;
+        }
+    }
+    for(int i=2;i<=n;i++)if(pri[i]==true)cout<<i<<" ";
+
+}
+
+
+
+int main()
+{
     sieveis();
     unsigned long long t,n;
     cin>>t;
@@ -39,5 +54,5 @@ int main()
     }
 
 
-    return 0; 
-} 
+    return 0;
+}
