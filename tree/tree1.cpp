@@ -23,13 +23,13 @@ struct Node* NewNode(int x){
     new1->left=new1->right=NULL;
     return(new1);
 }
+
 int maxdepth(struct Node *root){
     if(root==NULL)return 0;
     else {
         int ldep=maxdepth(root->left);
         int rdep=maxdepth(root->right);
-         if(ldep<rdep)return ldep+1;
-         else return rdep+1;
+        return max(ldep,rdep)+1;
     }
 }
 
@@ -73,5 +73,3 @@ cout<<k2;
 
 
 }
-
-
