@@ -18,42 +18,42 @@ for(int i=n-1;i>=0;i--){
     }
 }
 
-// Function to precompute inverse of numbers 
-void InverseofNumber(ll p) 
-{ 
-    naturalNumInverse[0] = naturalNumInverse[1] = 1; 
-    for (int i = 2; i <= N; i++) 
-        naturalNumInverse[i] = naturalNumInverse[p % i] * (p - p / i) % p; 
-} 
-// Function to precompute inverse of factorials 
-void InverseofFactorial(ll p) 
-{ 
-    factorialNumInverse[0] = factorialNumInverse[1] = 1; 
-  
-    // precompute inverse of natural numbers 
-    for (int i = 2; i <= N; i++) 
-        factorialNumInverse[i] = (naturalNumInverse[i] * factorialNumInverse[i - 1]) % p; 
-} 
-  
-// Function to calculate factorial of 1 to N 
-void factorial(ll p) 
-{ 
-    fact[0] = 1; 
-    // precompute factorials 
-    for (int i = 1; i <= N; i++) { 
-        fact[i] = (fact[i - 1] * i) % p; 
-    } 
-} 
-  
-// Function to return nCr % p in O(1) time 
-ll Binomial(ll N, ll R, ll p) 
-{ 
-    // n C r = n!*inverse(r!)*inverse((n-r)!) 
-    ll ans = ((fact[N] * factorialNumInverse[R]) 
-              % p * factorialNumInverse[N - R]) 
-             % p; 
-    return ans; 
-} 
+// Function to precompute inverse of numbers
+void InverseofNumber(ll p)
+{
+    naturalNumInverse[0] = naturalNumInverse[1] = 1;
+    for (int i = 2; i <= N; i++)
+        naturalNumInverse[i] = naturalNumInverse[p % i] * (p - p / i) % p;
+}
+// Function to precompute inverse of factorials
+void InverseofFactorial(ll p)
+{
+    factorialNumInverse[0] = factorialNumInverse[1] = 1;
+
+    // precompute inverse of natural numbers
+    for (int i = 2; i <= N; i++)
+        factorialNumInverse[i] = (naturalNumInverse[i] * factorialNumInverse[i - 1]) % p;
+}
+
+// Function to calculate factorial of 1 to N
+void factorial(ll p)
+{
+    fact[0] = 1;
+    // precompute factorials
+    for (int i = 1; i <= N; i++) {
+        fact[i] = (fact[i - 1] * i) % p;
+    }
+}
+
+// Function to return nCr % p in O(1) time
+ll Binomial(ll N, ll R, ll p)
+{
+    // n C r = n!*inverse(r!)*inverse((n-r)!)
+    ll ans = ((fact[N] * factorialNumInverse[R])
+              % p * factorialNumInverse[N - R])
+             % p;
+    return ans;
+}
 
 //modulus of + and - number
 lli modulo(lli x,lli N){
@@ -123,20 +123,20 @@ int count_one (int n)
 
 //left and right rotation of string
 
-void leftrotate(string &s, int d) 
-{ 
-    reverse(s.begin(), s.begin()+d); 
-    reverse(s.begin()+d, s.end()); 
-    reverse(s.begin(), s.end()); 
-} 
-  
-// In-place rotates s towards right by d 
-void rightrotate(string &s, int d) 
-{ 
-   leftrotate(s, s.length()-d); 
-} 
+void leftrotate(string &s, int d)
+{
+    reverse(s.begin(), s.begin()+d);
+    reverse(s.begin()+d, s.end());
+    reverse(s.begin(), s.end());
+}
 
-//is a power of two 
+// In-place rotates s towards right by d
+void rightrotate(string &s, int d)
+{
+   leftrotate(s, s.length()-d);
+}
+
+//is a power of two
 
 bool isPowerOfTwo(int x)
     {
@@ -174,7 +174,7 @@ curoot=round(pow(num, 1.0/3.0));
 
 if(curoot*curoot*curoot==num)
 {
-  cout<<" The number is a perfect Cube of "<<curoot<<endl;   
+  cout<<" The number is a perfect Cube of "<<curoot<<endl;
 }
 
 //perfect square
@@ -198,22 +198,22 @@ return res;
 
 // count divisor
 
-int countDivisors(int n) 
-{ 
-    int cnt = 0; 
-    for (int i = 1; i <= sqrt(n); i++) { 
-        if (n % i == 0) { 
-            // If divisors are equal, 
-            // count only one 
-            if (n / i == i) 
-                cnt++; 
-  
-            else // Otherwise count both 
-                cnt = cnt + 2; 
-        } 
-    } 
-    return cnt; 
-} 
+int countDivisors(int n)
+{
+    int cnt = 0;
+    for (int i = 1; i <= sqrt(n); i++) {
+        if (n % i == 0) {
+            // If divisors are equal,
+            // count only one
+            if (n / i == i)
+                cnt++;
+
+            else // Otherwise count both
+                cnt = cnt + 2;
+        }
+    }
+    return cnt;
+}
 
 
 //modinverse
@@ -234,69 +234,69 @@ bool isPrime(int n) {
 }
 
 //factorial
-unsigned int factorial(unsigned int n) 
-{ 
-    if (n == 0) 
-    return 1; 
-    return n * factorial(n - 1); 
-} 
+unsigned int factorial(unsigned int n)
+{
+    if (n == 0)
+    return 1;
+    return n * factorial(n - 1);
+}
 
-void subsetSums(int arr[], int l, int r, int sum=0){ 
-    if (l > r) 
-    { 
-        cout << sum << " "; 
-        return; 
-    }   
-    subsetSums(arr, l+1, r, sum+arr[l]); 
-    subsetSums(arr, l+1, r, sum); 
-} 
+void subsetSums(int arr[], int l, int r, int sum=0){
+    if (l > r)
+    {
+        cout << sum << " ";
+        return;
+    }
+    subsetSums(arr, l+1, r, sum+arr[l]);
+    subsetSums(arr, l+1, r, sum);
+}
 
 //permute of string
-void permute(string a, int l, int r)  
-{  
-    // Base case  
-    if (l == r)  
-        cout<<a<<endl;  
+void permute(string a, int l, int r)
+{
+    // Base case
+    if (l == r)
+        cout<<a<<endl;
     else
-    {  
-        // Permutations made  
-        for (int i = l; i <= r; i++)  
-        {  
-  
-            // Swapping done  
-            swap(a[l], a[i]);  
-  
-            // Recursion called  
-            permute(a, l+1, r);  
-  
-            //backtrack  
-            swap(a[l], a[i]);  
-        }  
-    }  
-} 
+    {
+        // Permutations made
+        for (int i = l; i <= r; i++)
+        {
+
+            // Swapping done
+            swap(a[l], a[i]);
+
+            // Recursion called
+            permute(a, l+1, r);
+
+            //backtrack
+            swap(a[l], a[i]);
+        }
+    }
+}
 
 
 //permute of array
-void findPermutations(int a[], int n) 
-{ 
-  
-    // Sort the given array 
-    sort(a, a + n); 
-  
-    // Find all possible permutations 
-    cout << "Possible permutations are:\n"; 
-    do { 
-        display(a, n); 
-    } while (next_permutation(a, a + n)); 
-} 
+void findPermutations(int a[], int n)
+{
 
-// Function to return the only odd occurring element 
-int findOdd(int arr[], int n) { 
-   int res = 0, i; 
-   for (i = 0; i < n; i++) 
-     res ^= arr[i]; 
-   return res; 
-} 
+    // Sort the given array
+    sort(a, a + n);
+
+    // Find all possible permutations
+    cout << "Possible permutations are:\n";
+    do {
+        display(a, n);
+    } while (next_permutation(a, a + n));
+}
+
+// Function to return the only odd occurring element
+int findOdd(int arr[], int n) {
+   int res = 0, i;
+   for (i = 0; i < n; i++)
+     res ^= arr[i];
+   return res;
+}
 
 //factorize
 
@@ -313,7 +313,7 @@ vector<int> factorize(int n){
 
     }
     return res;
-} 
+}
 
 //sieve for minimum prime factor
 void sieve()
@@ -337,9 +337,9 @@ void sieve()
 }
 
 // A simple method to evaluate Euler Totient Function relative prime
-ll phi(ll n) 
-{ 
-    ll result = n; 
+ll phi(ll n)
+{
+    ll result = n;
     for (ll i = 2; i*i <= n; i++) {
         if(n%i==0){
                 while(n%i == 0)
@@ -354,47 +354,47 @@ ll phi(ll n)
         result=result-result/n;
         cout<<n;
     }
-    
-    return result; 
-}  
+
+    return result;
+}
 
 
 //fastscan
-void fastscan(int &number) 
-{ 
-    //variable to indicate sign of input number 
-    bool negative = false; 
-    register int c; 
-  
-    number = 0; 
-  
-    // extract current character from buffer 
-    c = getchar(); 
-    if (c=='-') 
-    { 
-        // number is negative 
-        negative = true; 
-  
-        // extract the next character from the buffer 
-        c = getchar(); 
-    } 
-  
-    // Keep on extracting characters if they are integers 
-    // i.e ASCII Value lies from '0'(48) to '9' (57) 
-    for (; (c>47 && c<58); c=getchar()) 
-        number = number *10 + c - 48; 
-  
-    // if scanned input has a negative sign, negate the 
-    // value of the input number 
-    if (negative) 
-        number *= -1; 
-} 
+void fastscan(int &number)
+{
+    //variable to indicate sign of input number
+    bool negative = false;
+    register int c;
+
+    number = 0;
+
+    // extract current character from buffer
+    c = getchar();
+    if (c=='-')
+    {
+        // number is negative
+        negative = true;
+
+        // extract the next character from the buffer
+        c = getchar();
+    }
+
+    // Keep on extracting characters if they are integers
+    // i.e ASCII Value lies from '0'(48) to '9' (57)
+    for (; (c>47 && c<58); c=getchar())
+        number = number *10 + c - 48;
+
+    // if scanned input has a negative sign, negate the
+    // value of the input number
+    if (negative)
+        number *= -1;
+}
 
 
 //---------------------------hash function------------------------------//
 vector <string> hashTable[20];
     int hashTableSize=20;
-     
+
      int Frequency[26];
 
     int hashFunc(string word)
@@ -468,41 +468,62 @@ void init()
 
 
 //-----------sorting using hashing-------------------//
-#include <bits/stdc++.h> 
-using namespace std; 
-  
-void sortUsingHash(int a[], int n) 
-{ 
-    int max = *std::max_element(a, a + n); 
-    int min = abs(*std::min_element(a, a + n)); 
-  
-    int hashpos[max + 1] = { 0 }; 
-    int hashneg[min + 1] = { 0 }; 
-  
-    for (int i = 0; i < n; i++) { 
-        if (a[i] >= 0) 
-            hashpos[a[i]] += 1; 
-        else
-            hashneg[abs(a[i])] += 1; 
-    } 
-  
-    for (int i = min; i > 0; i--) { 
-        if (hashneg[i]) { 
-  
-            for (int j = 0; j < hashneg[i]; j++) {                 
-                cout << (-1) * i << " "; 
-            } 
-        } 
-    } 
-  
-    for (int i = 0; i <= max; i++) { 
-  
-        if (hashpos[i]) { 
-  
-            for (int j = 0; j < hashpos[i]; j++) { 
-                 cout << i << " "; 
-            } 
-        } 
-    } 
-} 
+#include <bits/stdc++.h>
+using namespace std;
 
+void sortUsingHash(int a[], int n)
+{
+    int max = *std::max_element(a, a + n);
+    int min = abs(*std::min_element(a, a + n));
+
+    int hashpos[max + 1] = { 0 };
+    int hashneg[min + 1] = { 0 };
+
+    for (int i = 0; i < n; i++) {
+        if (a[i] >= 0)
+            hashpos[a[i]] += 1;
+        else
+            hashneg[abs(a[i])] += 1;
+    }
+
+    for (int i = min; i > 0; i--) {
+        if (hashneg[i]) {
+
+            for (int j = 0; j < hashneg[i]; j++) {
+                cout << (-1) * i << " ";
+            }
+        }
+    }
+
+    for (int i = 0; i <= max; i++) {
+
+        if (hashpos[i]) {
+
+            for (int j = 0; j < hashpos[i]; j++) {
+                 cout << i << " ";
+            }
+        }
+    }
+}
+
+//happy mnumbers
+int ch(int n){
+    int ans=0;
+    while(n){
+        int tmp=n%10;
+        n=n/10;
+        ans+=tmp*tmp;
+    }
+    return ans;
+}
+
+bool ishappy(int n){
+    set<int>s;
+    int t;
+    while(1){
+        n=ch(n);
+        if(n==1)return true;
+        if(s.find(n)!=s.end())return false;
+        s.insert(n);
+    }
+}
