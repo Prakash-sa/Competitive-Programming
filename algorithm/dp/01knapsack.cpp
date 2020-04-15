@@ -8,35 +8,28 @@ int main(){
   int t;
   cin>>t;
   while(t--){
-    int n,x,k;
-    cin>>n>>x;
-    set<int>s;
-    for(int i=0;i<n;i++){
-      cin>>k;
-      s.insert(k);
-    }
-    std::vector<int> v,ans;
-    int cnt=1;
-    for(auto it=s.begin();it!=s.end();it++){
-      ans.push_back(*it);
-      v.push_back(*it-cnt++);
-    }
-    if(ans[0]!=1){
-      x=x-ans[0];
-    }
-    int result;
-    for(int i=1;i<ans.size();i++){
-      if(ans[i-1]+1==ans[i])continue;
-      else {
-        if(x-ans[i]+ans[i-1]>=0){
-          x=x-ans[i]+ans[i-1];
-        }
-        else {
-          result=ans[i-1];
-          break;
+    vector<int>v(n);
+    int n;
+    int sum=0;
+    for(int i=0;i<n;i++)sum+=v[i];
+    int dp[v.size()+1][sum+1];
+    memset(dp,false,sizeof(dp));
+    for(int i=0;i<=stones.size();i++)dp[i][0]=false;
+    for(int i=0;i<stones.size();i++){
+      for(int j=0;j<=sum;j++){
+        dp[i][j]=dp[i-1][j];
+        if(stones[i-1]<=j){
+          dp[i][j]=dp[i][j]||dp[i-1][j-stones[i-1]];
         }
       }
     }
-
+    int diff=INT_MAX;
+    for(int i=sum/2;j>=0;j--){
+      if(dp[stones.size()][j]){
+        diff=sum-j-j;
+        break;
+      }
+    }
+    cout<<diff<<endl;
   }
 }
