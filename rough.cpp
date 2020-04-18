@@ -4,27 +4,22 @@ typedef  long long int lli;
 #define boost ios_base::sync_with_stdio(false); cin.tie(NULL);
 
 
-int nCrModpDP(int n, int r)
-{
-      int C[r+1];
-    memset(C, 0, sizeof(C));
-    C[0] = 1;
-    for (int i = 1; i <= n; i++)
-    {
-        for (int j = min(i, r); j > 0; j--)
-            C[j] = (C[j] + C[j-1]);
-    }
-    return C[r];
-}
-
 int main(){
   boost;
-  int t,n1,n2;
+  int t,n,q;
   cin>>t;
-  while(t--){
-    cin>>n1>>n2;
-    if(n1>=n2)
-    cout<<nCrModpDP(n1-n2,n2)<<endl;
-    else cout<<0<<endl;
+  while (t--) {
+    cin>>n>>q;
+    int a[n+1],a1,b1;
+    for(int i=1;i<=n;i++)cin>>a[i];
+    int pre[n+1];
+    int suf[n+1];
+    pre[0]=0,suf[n+1]=0;
+    for(int i=1;i<=n;i++)pre[i]=__gcd(pre[i-1],a[i]);
+    for(int i=n;i>0;i--)suf[i]=__gcd(suf[i+1],a[i]);
+    while(q--){
+      cin>>a1>>b1;
+      cout<<__gcd(pre[a1-1],suf[b1+1])<<endl;
+    }
   }
 }
