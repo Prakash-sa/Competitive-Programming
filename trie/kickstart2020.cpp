@@ -4,6 +4,8 @@ typedef  long long int lli;
 #define boost ios_base::sync_with_stdio(false); cin.tie(NULL);
 #define inf (1000*1000*1000+5)
 
+//https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc7/00000000001d3ff3
+
 typedef struct data
 {
   data* child[26];
