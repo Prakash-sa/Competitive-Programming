@@ -36,14 +36,14 @@ int findCousinSum(Node* root, int key)
 // ---------------------is cousin---------------------//
 
 
-int isSibling(struct Node *root, struct Node *a, struct Node *b)
-{
-    if (root==NULL)  return 0;
-
-    return ((root->left==a && root->right==b)||
-            (root->left==b && root->right==a)||
-            isSibling(root->left, a, b)||
-            isSibling(root->right, a, b));
+bool isSibling(TreeNode* root,int a,int b){
+    if(root==NULL)return 0;
+    if(root->left&&root->right){
+        if(root->left->val==a && root->right->val==b)return true;
+        if(root->left->val==b && root->right->val==a)return true;
+    }
+    return (isSibbling(root->left,a,b) || 
+            isSibbling(root->right,a,b));
 }
 
 int level(struct Node *root, struct Node *ptr, int lev)
