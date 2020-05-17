@@ -30,21 +30,21 @@ int main()
        }
 
 
-       lli m=max1;
-       for(lli i=0;i<=m;i++)dp[0][i]=INT_MAX-1000;
-    for(lli i=0;i<=n;i++)dp[i][0]=0;
-    for(lli i=1;i<=n;i++){
-        for(lli j=1;j<=m;j++){
-             if(j<a[i-1])dp[i][j]=dp[i-1][j];
-	         else dp[i][j]=min(dp[i-1][j],dp[i][j-a[i-1]]+1);
+        lli m=max1;
+        for(lli i=0;i<=m;i++)dp[0][i]=INT_MAX-1000;
+        for(lli i=0;i<=n;i++)dp[i][0]=0;
+        for(lli i=1;i<=n;i++){
+            for(lli j=1;j<=m;j++){
+                if(j<a[i-1])dp[i][j]=dp[i-1][j];
+                else dp[i][j]=min(dp[i-1][j],dp[i][j-a[i-1]]+1);
+            }
         }
-    }
-       lli sum=0;
+        lli sum=0;
        
 
-       for(lli i=0;i<n;i++){
+        for(lli i=0;i<n;i++){
            sum+=dp[n][d[i]];
-       }
+        }
         cout<<sum<<endl;
 
 

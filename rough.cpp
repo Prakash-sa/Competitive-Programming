@@ -11,18 +11,22 @@ int main(){
   int t;
   cin>>t;
   while(t--){
-    int n;
-    cin>>n;
-    if(n<4){
-      cout<<-1<<endl;
-      continue;
+    int n,k;
+    cin>>n>>k;
+    string s;
+    cin>>s;
+    bool start=false,set=false;
+    int cnt=0,ans=0;
+    for(int i=0;i<n;i++){
+      if(s[i]=='1'){
+        int tmp=0;
+        while (tmp<k)
+        {
+          
+        }
+      } 
     }
-    for(int i=n;i>0;i--){
-      if(i&1)cout<<i<<" ";
-    }
-    cout<<4<<" "<<2<<" ";
-    for(int i=6;i<=n;i+=2)cout<<i<<" ";
-    cout<<endl;
+    
   }
 return 0;
 }
