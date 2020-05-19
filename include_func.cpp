@@ -1,3 +1,5 @@
+//https://leetcode.com/contest/weekly-contest-189/problems/people-whose-list-of-favorite-companies-is-not-a-subset-of-another-list/
+
 class Solution {
 public:
     vector<int> peopleIndexes(vector<vector<string>>& com) {
