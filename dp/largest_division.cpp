@@ -23,8 +23,5 @@ public:
             t=pre_node[t];
         }
         return ans;
-        
-        
-        
     }
 };
