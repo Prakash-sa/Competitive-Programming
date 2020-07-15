@@ -1,16 +1,3 @@
-
- Enter Frame size: 
- Enter Frame:
- Enter Generator size: 
- Enter Generator:
- Sender Side:
- Frame: 
- Generator :
- Number of 0's to be appended: -365738185
- Message after appending 0's :
- CRC bits: 
- Transmitted Frame: 
- Receiver side : 
- Received Frame: 
- Reaminder: 
- Since Remainder Is 0 Hence Message Transmitted From Sender To Receriver Is Correct
+2 3
+3 3
+3 8

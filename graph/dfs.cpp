@@ -1,69 +1,60 @@
-
 #include <bits/stdc++.h>
 using namespace std;
-typedef long long int lli;
-#define F(i,a,b) for(lli i = a; i <= b; i++)
-#define RF(i,a,b) for(lli i = a; i >= b; i--)
-#define boost ios_base::sync_with_stdio(false); cin.tie(NULL);
-typedef vector<int> vi;
-typedef vector<lli> vl;
-typedef vector< vi > vvi;
-typedef vector< vl > vvl;
-typedef pair< int,int > ii;
-typedef pair< lli,lli> pll;
-typedef map< lli,lli> mll;
-typedef map< int,int> mii;
+#define endl "\n";
+typedef  long long int lli;
+#define boost ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+#define inf (1000*1000*1000+5)
+#define int long long
+
+const int num=1e5; 
+vector<int>adj[num];
+bool vis[num];
+int f[num],cnt=0;
+const int mod=1e9+7;
+
+void dfs(int a){
+	vis[a]=true;
+	f[cnt]++;
+	for(int i=0;i<adj[a].size();i++)
+		if(!vis[adj[a][i]])dfs(adj[a][i]);
+}
+
+void initialise(){
+	for(int i=0;i<num;i++){
+		vis[i]=0;
+		cnt=0;
+		adj[i].clear();
+		f[i]=0;
+	}
+}
 
 
-vector <int> adj[100];
-    bool visited[100];
-
-    void dfs(int s) {
-        visited[s] = true;
-<<<<<<< HEAD
-        for(int i = 0;i < adj[s].size();++i){
-=======
-        for(int i = 0;i < adj[s].size();++i)    {
->>>>>>> 4e1dc46759781f5165e6668e36a23c0b03142970
-         if(visited[adj[s][i]] == false)
-             dfs(adj[s][i]);
-        }
-    }
-
-    void initialize() {
-        for(int i = 0;i < 100;++i)
-         visited[i] = false;
-    }
-
-    int main() {
-        int nodes, edges, x, y, connectedComponents = 0;
-        cin >> nodes;                       //Number of nodes
-        cin >> edges;                       //Number of edges
-        for(int i = 0;i < edges;++i) {
-         cin >> x >> y;     
-     //Undirected Graph 
-         adj[x].push_back(y);                   //Edge from vertex x to vertex y
-         adj[y].push_back(x);                   //Edge from vertex y to vertex x
-        }
-
-        int k;
-        cin>>k;
-        initialize();                           //Initialize all nodes as not visited
-
-       
-      //  dfs(k);
-
-        int cnt=0;
-        for(int i = 1;i <= nodes;++i) {
-         if(visited[i] == false)     {
-             cnt++;
-             dfs(i);
-             //connectedComponents++;
-         }
-        }
-        cout<<cnt<<endl;
-
-        //cout << "Number of connected components: " << connectedComponents << endl;
-        return 0;
-    }
-
+int32_t main(){
+	boost;
+	int t;
+	cin>>t;
+	while(t--){
+		int n,m,a,b;
+		cin>>n>>m;
+		initialise();
+		for(int i=0;i<m;i++){
+			cin>>a>>b;
+			adj[a].push_back(b);
+			adj[b].push_back(a);
+		}
+		for(int i=1;i<=n;i++){
+			if(!vis[i]){
+				cnt++;
+				dfs(i);
+			}
+		}
+		int ans=1;
+		for(int i=1;i<=cnt;i++){
+			ans*=f[i];
+			ans=ans%mod;
+		}
+        //connected components
+		cout<<cnt<<" "<<ans<<endl;
+	}
+	return 0;
+}
