@@ -1,3 +1,4 @@
+//https://www.codechef.com/LRNDSA08/problems/DIGJUMP
 #include <bits/stdc++.h>
 using namespace std;
 #define endl "\n";
