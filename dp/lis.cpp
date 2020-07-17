@@ -36,7 +36,7 @@ int main()
 	return 0;
 }
 
-int lis_string(char s1[],char s2[],int n1,int n2){
+int lcs_string(char s1[],char s2[],int n1,int n2){
     int dp[n1+1][n2+1]={0};
     for(int i=0;i<=n1;i++)dp[i][0]=0;
     for(int i=0;i<=n2;i++)dp[0][i]=0;
