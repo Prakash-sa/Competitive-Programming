@@ -1,3 +1,4 @@
+//https://www.codechef.com/LRNDSA07/problems/KPRIME
 #include <bits/stdc++.h>
 using namespace std;
 #define endl "\n";
@@ -12,30 +13,28 @@ lli ans[6][num+1]={0};
 
 void init(){
 	for(int i=0;i<num;i++)dp[i]=0;
+	for(int i=2;i<num;i++){
+		if(!dp[i]){
+			dp[i]=1;
+			for(int j=2;j*i<num;j++)dp[j*i]+=1;
+		}
+	}
+	for(int i=1;i<=5;i++){
+		for(int j=1;j<num;j++){
+			ans[i][j]=(dp[j]==i)+ans[i][j-1];
+		}
+	}
 }
 
 int32_t main(){
 	boost;
 	int t=1;
-	//cin>>t;
+	cin>>t;
 	init();
 	while(t--){
-		lli n,p,k;
-		cin>>n>>k>>p;
-		lli a[n];
-		for(int i=0;i<n;i++)cin>>a[i];
-		lli cnt=0;
-		for(int i=1;i<n;i++){
-			if(a[i]-a[i-1]<=k)dp[i]=cnt;
-			else dp[i]=++cnt;
-		}
-		lli l,m;
-		while(p--){
-			cin>>l>>m;
-			l--,m--;
-			if(dp[l]!=dp[m])cout<<"No\n";
-			else cout<<"Yes\n";
-		}
+		lli a,b,k;
+		cin>>a>>b>>k;
+		cout<<ans[k][b]-ans[k][a-1]<<endl;
 	}
 	return 0;
 }
