@@ -52,3 +52,31 @@ int main()
 
 	return 0;
 }
+
+// only one value available
+int main()
+ {
+	int t;
+	cin>>t;
+	while(t--){
+	    int n1,n2;
+	    cin>>n1>>n2;
+	    int a[n2];
+	    for(int i=0;i<n2;i++)cin>>a[i];
+	    int dp[n2+1][n1+1]={0};
+	    for(int i=0;i<=n1;i++)dp[0][i]=INT_MAX-10;
+	    for(int i=0;i<=n2;i++)dp[i][0]=0;
+	    for(int i=1;i<=n2;i++){
+	        for(int j=1;j<=n1;j++){
+	            if(j<a[i-1])dp[i][j]=dp[i-1][j];
+	            else dp[i][j]=min(dp[i-1][j],dp[i][j-a[i-1]]+1);
+	        }
+	    }
+	    int k=dp[n2][n1];
+	    if(k!=INT_MAX-10)cout<<k<<endl;
+	    else cout<<"-1"<<endl;
+	    
+	
+	}
+	return 0;
+}
