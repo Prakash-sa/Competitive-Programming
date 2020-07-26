@@ -21,9 +21,7 @@ int main()
    int t=1;
    //cin>>t;
    while(t--){
-
-       string ans="15";
-       cout<<stoi(ans)<<endl;
+       
    }
    return 0;
 }

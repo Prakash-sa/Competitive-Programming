@@ -30,11 +30,11 @@ void nqueen(vector<int>adj[],int n,int col,vector<vector<int>>&vv)
     if(col==n){
         vector<int>h;
          for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            if(adj[j][i])h.push_back(j+1);
+            for(int j=0;j<n;j++){
+                if(adj[j][i])h.push_back(j+1);
+            }
         }
-    }
-    vv.push_back(h);
+        vv.push_back(h);
         return ;
     }
     for(int i=0;i<n;i++){
