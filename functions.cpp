@@ -108,6 +108,18 @@ ll power(ll a,ll b)
    }
    return res%mod;
 }
+
+lli power(lli x,lli y){
+    lli res=1;
+    x=x%q;
+    while(y){
+        if(y&1)res=(res*x)%q;
+        y=y>>1;
+        x=(x*x)%q;
+    }
+    return res;
+}
+
 ll ncr(ll n,ll r)
 {
     if(r>n)
@@ -198,17 +210,7 @@ if(curoot*curoot*curoot==num)
 	}
 
 
-lli power(lli x,lli y){
-    lli res=1;
-x=x%q;
-while(y){
-    if(y&1)res=(res*x)%q;
-    y=y>>1;
-    x=(x*x)%q;
-}
-return res;
 
-}
 
 // count divisor
 
