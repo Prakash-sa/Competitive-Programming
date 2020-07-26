@@ -9,6 +9,34 @@ int modularExponentiation(int x,int n,int M)
 
 }
 
+
+
+ll power(ll a,ll b)
+{
+  ll res=1;
+   while(b){
+       if(b&1)res=(res*a)%mod;
+       a=(a*a)%mod;
+       b=b/2;
+   }
+   return res%mod;
+}
+
+lli pow(int X, int N, int D) {
+    long long int res=1;
+    long long int x=X,n=N,d=D;
+    x=x%d;
+    while(n){
+        if(n&1)res=(res*x)%d;
+        n=n/2;
+        x=(x*x)%d;
+    }
+    if(x==0)return 0;
+    if(res>=0)
+    return res;
+    return (res+d)%d;
+}
+
 //inversion
 for(int i=n-1;i>=0;i--){
     for(int j=max(0,q[i]-2);j<i;j++){
@@ -98,27 +126,6 @@ int nCrModpDP(int n, int r, int p)
 
 // fermats theorem
 ll f[1000005];
-ll power(ll a,ll b)
-{
-  ll res=1;
-   while(b){
-       if(b&1)res=(res*a)%mod;
-       a=(a*a)%mod;
-       b=b/2;
-   }
-   return res%mod;
-}
-
-lli power(lli x,lli y){
-    lli res=1;
-    x=x%q;
-    while(y){
-        if(y&1)res=(res*x)%q;
-        y=y>>1;
-        x=(x*x)%q;
-    }
-    return res;
-}
 
 ll ncr(ll n,ll r)
 {
