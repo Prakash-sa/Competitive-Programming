@@ -21,7 +21,9 @@ int main()
    int t=1;
    //cin>>t;
    while(t--){
-       
+       int i=5;
+       double j=INT_MAX;
+       cout<<sizeof('a');
    }
    return 0;
 }
