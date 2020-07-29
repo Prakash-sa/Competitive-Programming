@@ -48,3 +48,31 @@ int main()
 	}
 	return 0;
 }
+
+
+ string longestPalindrome(string s) {
+        int n=s.length();
+        if(n==0)
+            return "";
+        
+        vector<vector<bool>> dp(n,vector<bool>(n,false));
+        
+        for(int i=0;i<n;i++)
+            dp[i][i]=true;
+        
+        string result="";
+        for(int i=n-1;i>=0;i--){
+            for(int j=i;j<n;j++){
+                if(s[i]==s[j] && i!=j){
+                    if(j==i+1) // for pallindromes of length 2, for e.g. "bb" in "abbc"
+                        dp[i][j]=true;
+                    else
+                        dp[i][j]=dp[i+1][j-1];
+                }
+                if(dp[i][j] && (j-i+1)>result.length())
+                    result=s.substr(i,j-i+1);
+            }
+        }
+        
+        return result;
+    }
