@@ -11,19 +11,34 @@ lli dp[num+1];
 lli ans[6][num+1]={0};
 
 void init(){
-	for(int i=0;i<num;i++)dp[i]=0;
+
 }
 
  
 int main()
 {
    boost;
-   int t=1;
-   //cin>>t;
+   int t=1,h=1;
+   cin>>t;
    while(t--){
-       int i=5;
-       double j=INT_MAX;
-       cout<<sizeof('a');
+       int n;
+       cin>>n;
+       int a[n];
+       for(int i=0;i<n;i++)cin>>a[i];
+       vector<int>s;
+       for(int i=0;i<n;i++){
+           int tmp=upper_bound(s.begin(),s.end(),a[i])-s.begin();
+            if(tmp>=s.size()){
+                s.push_back(a[i]);
+            }
+            else {
+                s[tmp]=a[i];
+            }
+       }
+       cout<<s.size()<<" ";
+       for(int i=0;i<s.size();i++)cout<<s[i]<<" ";
+       cout<<endl;
+
    }
    return 0;
 }
