@@ -30,14 +30,14 @@ void merge(lli ar[ ] , lli start, lli mid, lli end) {
  
 }
 
-   void merge_sort (lli A[ ] , lli start , lli end )
-   {
-           if( start < end ) {
-           lli mid = (start + end ) / 2 ;           // defines the current array in 2 parts .
-           merge_sort (A, start , mid ) ;                 // sort the 1st part of array .
-           merge_sort (A,mid+1 , end ) ;              // sort the 2nd part of array.
-          merge(A,start , mid , end );   
-   }                    
+void merge_sort (lli A[ ] , lli start , lli end )
+{
+    if( start < end ) {
+        lli mid = (start + end ) / 2 ;           // defines the current array in 2 parts .
+        merge_sort (A, start , mid ) ;                 // sort the 1st part of array .
+        merge_sort (A,mid+1 , end ) ;              // sort the 2nd part of array.
+        merge(A,start , mid , end );   
+    }                    
 }
 
 int main()
