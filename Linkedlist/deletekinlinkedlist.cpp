@@ -1,11 +1,4 @@
-// Singly-linked lists are already defined with this interface:
-// template<typename T>
-// struct ListNode {
-//   ListNode(const T &v) : value(v), next(nullptr) {}
-//   T value;
-//   ListNode *next;
-// };
-//
+
 ListNode<int> * removeKFromList(ListNode<int> * head, int k) {
 
     while(head && head->value==k){
