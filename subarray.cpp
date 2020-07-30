@@ -36,7 +36,6 @@ int main(){
     ch(a,0,0);
     for(int i=0;i<n;i++)cout<<frq[a[i]]<<" ";
     cout<<endl;
-
   }
 return 0;
 }
