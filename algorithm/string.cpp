@@ -1,12 +1,5 @@
-<<<<<<< HEAD
 //substring of string
 
-
-
-
-
-=======
->>>>>>> 4e1dc46759781f5165e6668e36a23c0b03142970
 //shift string by k
 
 void shiftByK(char S[], char shiftedS[], int N, int K) {

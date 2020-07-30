@@ -1,6 +1,5 @@
 
 ListNode<int> * removeKFromList(ListNode<int> * head, int k) {
-
     while(head && head->value==k){
         head=head->next;
     }

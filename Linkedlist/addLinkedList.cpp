@@ -1,4 +1,3 @@
-
 ListNode* Solution::addTwoNumbers(ListNode* A, ListNode* B) {
     if(!A) return B;
     if(!B) return A;
