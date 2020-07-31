@@ -54,14 +54,9 @@ int main()
 		test(g1);
 	}
     return 0;
-}// } Driver Code Ends
+}
 
 
-/*Complete the function below*/
-
-  
-// Method to check if all non-zero degree vertices are connected. 
-// It mainly does DFS traversal starting from 
 bool Graph::isConnected() 
 { 
     // Mark all the vertices as not visited 
