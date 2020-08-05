@@ -33,3 +33,47 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k) {
         
         
     }
+
+
+//https://practice.geeksforgeeks.org/problems/minimum-swaps-required-to-bring-all-elements-less-than-or-equal-to-k-together/0/
+#include <bits/stdc++.h>
+using namespace std;
+#define endl "\n";
+typedef  long long int lli;
+#define boost ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+#define inf (1000*1000*1000+5)
+
+const int mod=1e9+7;
+const int num=1e5+5;
+
+void init(){
+
+}
+
+ 
+int main()
+{
+   boost;
+   int t=1;
+   cin>>t;
+   while(t--){
+       int n,k;
+       cin>>n;
+       int a[n];
+       for(int i=0;i<n;i++)cin>>a[i];
+       cin>>k;
+       int cnt=0,ans=INT_MAX;
+       for(int i=0;i<n;i++){
+           if(a[i]<=k)cnt++;
+       }
+       for(int i=0;i<n-cnt+1;i++){
+           int bad=0;
+           for(int j=i;j<i+cnt;j++)if(a[j]>k)bad++;
+           //cout<<bad<<" ";
+           ans=min(ans,bad);
+       }
+       cout<<ans<<endl;
+   }
+   
+   return 0;
+}

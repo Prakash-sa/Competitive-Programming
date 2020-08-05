@@ -23,18 +23,14 @@ int main()
    while(t--){
       int n;
       cin>>n;
-      string a,b;
-      cin>>a>>b;
-      vector<int>ans;
-      for(int i=0;i<n;i++){
-         if(a[i]!=b[i]){
-            if(i>0)ans.push_back(i+1);
-            ans.push_back(1);
-            if(i>0)ans.push_back(i+1);
-         }
-      }cout<<ans.size()<<" ";
-      for(auto v:ans)cout<<v<<" ";
-      cout<<endl;
+      int a[n];
+      for(int i=0;i<n;i++)cin>>a[i];
+      int pos=n-1;
+     // cout<<n<<" ";
+      while(pos>0 && a[pos-1]>=a[pos])pos--;
+      while(pos>0 && a[pos-1]<=a[pos])pos--;
+      cout<<pos<<endl;
+      
    }
    return 0;
 }
