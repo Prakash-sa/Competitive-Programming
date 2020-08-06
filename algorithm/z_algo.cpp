@@ -16,20 +16,21 @@ int Frequency[26];
 
 
 void countFre(string S)
+{
+    for(int i = 0;i < S.length();++i)
     {
-        for(int i = 0;i < S.length();++i)
-        {
-            int index = S[i]-'a';
-            Frequency[index]++;
-        }
-        int min1=S.length();
-        for(int i = 0;i < 26;++i){
-            if(Frequency[i]>1)
-            min1=min(min1,Frequency[i]);
-        }
-        cout<<S.length()-min1;
-            
+        int index = S[i]-'a';
+        Frequency[index]++;
     }
+    int min1=S.length();
+    for(int i = 0;i < 26;++i){
+        if(Frequency[i]>1)
+        min1=min(min1,Frequency[i]);
+    }
+    cout<<S.length()-min1;
+        
+}
+
 int main()
 {
     int t;

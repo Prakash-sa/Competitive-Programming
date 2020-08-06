@@ -5,6 +5,31 @@ typedef  long long int lli;
 #define inf (1000*1000*1000+5)
 
 
+// binary search ------------------------------------------------
+
+int binarySearch(int low,int high,int key)
+{
+   while(low<=high)
+   {
+     int mid=(low+high)/2;
+     if(a[mid]<key)
+     {
+         low=mid+1;
+     }
+     else if(a[mid]>key)
+     {
+         high=mid-1;
+     }
+     else
+     {
+         return mid;
+     }
+   }
+   return -1;                //key not found
+ }
+
+ //---------------------------------------------
+
 int main(){
   boost;
   int t,cnt=1;

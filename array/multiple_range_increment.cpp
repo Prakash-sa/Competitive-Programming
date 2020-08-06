@@ -6,13 +6,15 @@ using namespace std;
 struct query { 
 	int start, end; 
 }; 
+
 void incrementByD(int arr[], struct query q_arr[],	int n, int m, int d) 
 { 
 	int sum[n]; 
 	memset(sum, 0, sizeof(sum)); 
 	for (int i = 0; i < m; i++) { 
 		sum[q_arr[i].start] += d; 
-		if ((q_arr[i].end + 1) < n) sum[q_arr[i].end + 1] -= d; 
+		if ((q_arr[i].end + 1) < n) 
+		sum[q_arr[i].end + 1] -= d; 
 	} 
 	arr[0] += sum[0]; 
 	for (int i = 1; i < n; i++) { 

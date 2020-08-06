@@ -16,18 +16,13 @@ void init(){
 void median(double arr[], int n) 
 { 
     priority_queue<double> s; 
-  
     priority_queue<double,vector<double>,greater<double> > g; 
-  
     double med = arr[0]; 
     s.push(arr[0]); 
-  
-    cout << med << endl; 
-  
+    cout << med << endl;   
     for (int i=1; i < n; i++) 
     { 
         double x = arr[i]; 
-  
         // case1(left side heap has more elements) 
         if (s.size() > g.size()) 
         { 
@@ -42,7 +37,6 @@ void median(double arr[], int n)
   
             med = (s.top() + g.top())/2.0; 
         } 
-  
         // case2(both heaps are balanced) 
         else if (s.size()==g.size()) 
         { 
@@ -57,7 +51,6 @@ void median(double arr[], int n)
                 med = (double)g.top(); 
             } 
         } 
-  
         // case3(right side heap has more elements) 
         else
         { 
@@ -72,7 +65,6 @@ void median(double arr[], int n)
   
             med = (s.top() + g.top())/2.0; 
         } 
-  
         cout << (int)med << endl; 
     } 
 } 
