@@ -11,17 +11,12 @@ typedef int lli;
 lli *parent;
 
 int find(int x) 
-	{ 
-	 
-		if (parent[x] != x) { 
-
-		
-			parent[x] = find(parent[x]); 
-
-	
-		} 
-		return parent[x]; 
-	} 
+{ 
+    if (parent[x] != x) { 
+        parent[x] = find(parent[x]); 
+    } 
+    return parent[x]; 
+} 
     
 int main()
 {
@@ -46,15 +41,15 @@ int main()
                 lli k2=find(y);
                 if(k1==k2)cout<<"Invalid query!"<<'\n';
                 else {
-                if(a[k1]<a[k2])
-                parent[k1]=k2;
-                else if(a[k1]>a[k2]) parent[k2]=k1;
+                    if(a[k1]<a[k2])
+                    parent[k1]=k2;
+                    else if(a[k1]>a[k2]) parent[k2]=k1;
                 }
            }
            else {
                 cin>>x;
                 x--;
-             printf("%d\n", find(x)+1);
+                printf("%d\n", find(x)+1);
            }
        }
     }
