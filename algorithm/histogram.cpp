@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define lli long long int
 #define F(i,a,b) for(lli i = a; i <= b; i++)
 #define RF(i,a,b) for(lli i = a; i >= b; i--)
 #define boost ios_base::sync_with_stdio(false); cin.tie(NULL);
@@ -45,14 +46,10 @@ int main()
         while(!s.empty()){
             int k=s.top();
             s.pop();
-                if(!s.empty())area=a[k]*(i-s.top()-1);
-                else area=a[k]*(i);
-
-                maxare=max(area,maxare);
-
+            if(!s.empty())area=a[k]*(i-s.top()-1);
+            else area=a[k]*(i);
+            maxare=max(area,maxare);
         }
-
-
 
         cout<<maxare<<endl;
     }

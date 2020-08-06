@@ -23,14 +23,26 @@ int main()
    while(t--){
       int n;
       cin>>n;
+      string s;
+      cin>>s;
       int a[n];
-      for(int i=0;i<n;i++)cin>>a[i];
-      int pos=n-1;
-     // cout<<n<<" ";
-      while(pos>0 && a[pos-1]>=a[pos])pos--;
-      while(pos>0 && a[pos-1]<=a[pos])pos--;
-      cout<<pos<<endl;
-      
+      a[0]=1;
+      vector<int>ss[2];
+      vector<int>sol(n);int k=0;
+      for(int i=0;i<n;i++){
+         int l=s[i]-'0';
+         if(ss[l].empty()){
+            sol[i]=k++;
+         }
+         else {
+            sol[i]=ss[l].back();
+            ss[l].pop_back();
+         }
+         ss[!l].push_back(sol[i]);
+      }
+      cout<<k<<endl;
+      for(int i=0;i<n;i++)cout<<sol[i]+1<<" ";
+      cout<<endl;
    }
    return 0;
 }

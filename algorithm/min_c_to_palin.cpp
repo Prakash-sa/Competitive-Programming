@@ -1,4 +1,4 @@
-int Solution::solve(string A) {
+int solve(string A) {
     string rev = A;
     reverse(A.begin(),A.end());
     int n = rev.size();

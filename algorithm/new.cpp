@@ -1,16 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
-<<<<<<< HEAD
 typedef long long ll;
-=======
 typedef long long int lli;
 #define pb push_back
->>>>>>> 4e1dc46759781f5165e6668e36a23c0b03142970
 #define F(i,a,b) for(lli i = a; i <= b; i++)
 #define RF(i,a,b) for(lli i = a; i >= b; i--)
 #define endl "\n"
 #define speed ios_base::sync_with_stdio(false);cin.tie(NULL);
-<<<<<<< HEAD
 const int mod =1e9+7;
 
 
@@ -42,8 +38,8 @@ int main()
         
         cout<<ans<<endl;
     }
+}
 
-=======
 
 vector<pair<int,int>>ad[100000];
 vector<pair<int,int>>T[10000];
@@ -98,6 +94,5 @@ int main()
     dijkastra(0);
     F(i,1,nr+3)cout<<ener[i]<<" ";
     
->>>>>>> 4e1dc46759781f5165e6668e36a23c0b03142970
     return 0;
 }
