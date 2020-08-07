@@ -6,12 +6,16 @@ typedef  long long int lli;
 #define inf (1000*1000*1000+5)
 const int NODE =1e4+9;
 
-const int mod=1e9+9;
-const int num=1e5+5;
-vector<vector<int>>adj(20);
-vector<bool>vis(20);
-void init(){
+const int mod=1e9+7;
+const lli num=2000000;
 
+vector<lli>a(num);
+vector<lli>g(num);
+void init(){
+   g[1]=1;
+   for(lli i=2;i<num;i++)g[i]=1+g[i+1-g[g[i-1]]];
+   for(lli i=2;i<num;i++)g[i]=(g[i]%mod*g[i]%mod)%mod;
+   for(int i=2;i<num;i++)g[i]=(g[i]%mod+g[i-1]%mod)%mod;
 }
 
 
@@ -20,29 +24,11 @@ int main()
    boost;
    int t=1,h=1;
    cin>>t;
+   init();
    while(t--){
-      int n;
-      cin>>n;
-      string s;
-      cin>>s;
-      int a[n];
-      a[0]=1;
-      vector<int>ss[2];
-      vector<int>sol(n);int k=0;
-      for(int i=0;i<n;i++){
-         int l=s[i]-'0';
-         if(ss[l].empty()){
-            sol[i]=k++;
-         }
-         else {
-            sol[i]=ss[l].back();
-            ss[l].pop_back();
-         }
-         ss[!l].push_back(sol[i]);
-      }
-      cout<<k<<endl;
-      for(int i=0;i<n;i++)cout<<sol[i]+1<<" ";
-      cout<<endl;
+      lli l,r;
+      cin>>l>>r;
+      cout<<g[r]-g[l-1]<<endl;
    }
    return 0;
 }

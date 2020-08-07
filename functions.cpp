@@ -172,33 +172,33 @@ void rightrotate(string &s, int d)
 //is a power of two
 
 bool isPowerOfTwo(int x)
-    {
-        // x will check if x == 0 and !(x & (x - 1)) will check if x is a power of 2 or not
-        return (x && !(x & (x - 1)));
-    }
+{
+    // x will check if x == 0 and !(x & (x - 1)) will check if x is a power of 2 or not
+    return (x && !(x & (x - 1)));
+}
 //possible subset
-  void possibleSubsets(char A[], int N)
+void possibleSubsets(char A[], int N)
+{
+    for(int i = 0;i < (1 << N); ++i)
     {
-        for(int i = 0;i < (1 << N); ++i)
-        {
-            for(int j = 0;j < N;++j)
-                if(i & (1 << j))
-                    cout << A[j] <<" ";
-            cout << endl;
-    }
-    }
+        for(int j = 0;j < N;++j)
+            if(i & (1 << j))
+                cout << A[j] <<" ";
+        cout << endl;
+}
+}
 
-    //largest power of two
-    long largest_power(long N)
-    {
-        N = N| (N>>1);
-        N = N| (N>>2);
-        N = N| (N>>4);
-        N = N| (N>>8);
+//largest power of two
+long largest_power(long N)
+{
+    N = N| (N>>1);
+    N = N| (N>>2);
+    N = N| (N>>4);
+    N = N| (N>>8);
 
-        return (N+1)>>1;
+    return (N+1)>>1;
 
-    }
+}
 
 
 
@@ -207,14 +207,14 @@ curoot=round(pow(num, 1.0/3.0));
 
 if(curoot*curoot*curoot==num)
 {
-  cout<<" The number is a perfect Cube of "<<curoot<<endl;
+cout<<" The number is a perfect Cube of "<<curoot<<endl;
 }
 
 //perfect square
-	if(sqrt(n)==floor(sqrt(n)))
-	{
-		cout<<"Perfect Square";
-	}
+if(sqrt(n)==floor(sqrt(n)))
+{
+    cout<<"Perfect Square";
+}
 
 
 
