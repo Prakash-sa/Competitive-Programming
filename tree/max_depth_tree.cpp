@@ -46,11 +46,7 @@ void insert(Node* root,Node* parent,Node* child,char l )
     }
 }
 
-int noleaf(Node* root){
-    if(root==NULL)return 0;
-    if(root->left==NULL&&root->right==NULL)return 1;
-    else return(noleaf(root->left)+noleaf(root->right));
-}
+
 int main(){
 int n,k,k1;
 cin>>n;

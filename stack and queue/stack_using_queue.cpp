@@ -1,7 +1,6 @@
 queue<int>q1,q2;
 void QueueStack :: push(int x)
 {
-        // Your Code
         q2.push(x);
         while(!q1.empty()){
             q2.push(q1.front());
