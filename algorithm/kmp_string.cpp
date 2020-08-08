@@ -1,5 +1,3 @@
-//substring of string
-
 //shift string by k
 
 void shiftByK(char S[], char shiftedS[], int N, int K) {

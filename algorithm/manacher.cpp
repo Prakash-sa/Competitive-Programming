@@ -22,27 +22,21 @@ string longestPalindromeSubstring(const string &s) {
     lli c = 0, r = 0;                // current center, right limit
 
     for (lli i = 1; i < Q.size() - 1; i++) {
-        // find the corresponding letter in the palidrome subString
         lli iMirror = c - (i - c);
 
         if(r > i) {
             P[i] = min(r - i, P[iMirror]);
         }
 
-        // expanding around center i
         while (Q[i + 1 + P[i]] == Q[i - 1 - P[i]]){
             P[i]++;
         }
 
-        // Update c,r in case if the palindrome centered at i expands past r,
         if (i + P[i] > r) {
             c = i;              // next center = i
             r = i + P[i];
         }
     }
-
-    // Find the longest palindrome length in p.
-
     lli maxPalindrome = 0;
     lli centerIndex = 0;
 
