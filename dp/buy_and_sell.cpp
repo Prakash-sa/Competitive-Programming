@@ -1,4 +1,4 @@
-int Solution::maxProfit(const vector<int> &A) {
+int maxProfit(const vector<int> &A) {
     int j=0,n=A.size();
     int profit=0;
     for(int i=1;i<A.size();i++){

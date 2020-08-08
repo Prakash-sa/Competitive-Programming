@@ -1,19 +1,3 @@
-//-----------------------longest common subsequence------------//
-int lcs(string s,string s2){
-    int n=s.size();
-    int m=s2.size();
-    int table[n+1][m+1];
-    for(int i=0;i<=n;i++){
-        for(int j=0;j<=m;j++){
-            if(i==0||j==0)table[i][j]=0;
-            else if(s[i-1]==s2[j-1])table[i][j]=table[i-1][j-1]+1;
-            else table[i][j]=max(table[i][j-1],table[i-1][j]);
-        }
-    }
-    if(table[n][m]==m)return true;
-    else return false;
-    return table[n][m];
-}
 //-----------------isinterleaves string-----------------------//
 int lcs(string A,string B,string C){
     int n=A.size();

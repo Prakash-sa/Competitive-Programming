@@ -11,7 +11,8 @@ const int mod =1e9+7;
 int las(int a[],int n){
     if(n<=2)return n;
     map<int,int>mp[n];
-    int ans=0;for(int i=0;i<n;i++){
+    int ans=0;
+    for(int i=0;i<n;i++){
         for(int j=0;j<i;j++){
             int diff=a[i]-a[j];
             mp[i][diff]=mp[j][diff]+1;
