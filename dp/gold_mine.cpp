@@ -14,6 +14,10 @@ void init(){
 
 }
 
+
+//https://www.geeksforgeeks.org/gold-mine-problem/
+
+
 int getMaxGold() 
 { 
     int goldTable[m][n]; 
