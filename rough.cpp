@@ -18,17 +18,31 @@ void init(){
    for(int i=2;i<num;i++)g[i]=(g[i]%mod+g[i-1]%mod)%mod;
 }
 
+bool ch(double x){
+   if((int)x==x)return true;
+   return false;
+}
 
 int main()
 {
    boost;
-   int t=1,h=1;
-   cin>>t;
+   int t=1;
+   //cin>>t;
    init();
    while(t--){
-      lli l,r;
-      cin>>l>>r;
-      cout<<g[r]-g[l-1]<<endl;
+      int n;
+      cin>>n;
+      double a[n];
+      set<double>s;
+      for(int i=0;i<n;i++){
+         cin>>a[i];
+         s.insert(a[i]);
+      }
+      int cnt=0;
+      for(int i=0;i<n;i++){
+         double 
+      }
+      cout<<cnt<<endl;
    }
    return 0;
 }
