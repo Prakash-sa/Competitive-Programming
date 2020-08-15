@@ -1,3 +1,11 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define endl "\n";
+typedef  long long int lli;
+#define boost ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+#define inf (1000*1000*1000+5)
+const int NODE =1e4+9;
+
 #define F(i,a,b) for(lli i = a; i <= b; i++)
 #define RF(i,a,b) for(lli i = a; i >= b; i--)
 #define boost ios_base::sync_with_stdio(false); cin.tie(NULL);
