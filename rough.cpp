@@ -13,28 +13,26 @@ void init(){
 
 }
 
+void next(string &s,int n,string &a,int l){
+   if(a.size()==n){
+      cout<<a<<endl;
+      return;
+   }
+   for(int i=l;i<s.size();i++){
+      a.push_back(s[i]);
+      next(s,n,a,i);
+      a.pop_back();
+   }
+}
+
+
 
 int main()
 {
    boost;
-   int t=1;
-   //cin>>t;
-   init();
-   while(t--){
-      int n,k;
-      cin>>n>>k;
-      int a[n];
-      for(int i=0;i<n;i++)cin>>a[i];
-      int dp[k+1];
-      memset(dp,false,sizeof(dp));
-      for(int i=0;i<=k;i++){
-         for(auto x:a){
-            if(i>=x && !dp[i-x])dp[i]=true;
-         }
-      }
-      if(dp[k])cout<<"First\n";
-      else cout<<"Second\n";
-      
-   }
+   string s;
+   cin>>s;
+   string a="";
+   next(s,s.size(),a,0);
    return 0;
 }
