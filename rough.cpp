@@ -13,26 +13,9 @@ void init(){
 
 }
 
-void next(string &s,int n,string &a,int l){
-   if(a.size()==n){
-      cout<<a<<endl;
-      return;
-   }
-   for(int i=l;i<s.size();i++){
-      a.push_back(s[i]);
-      next(s,n,a,i);
-      a.pop_back();
-   }
-}
-
-
-
 int main()
 {
    boost;
-   string s;
-   cin>>s;
-   string a="";
-   next(s,s.size(),a,0);
+   
    return 0;
 }
