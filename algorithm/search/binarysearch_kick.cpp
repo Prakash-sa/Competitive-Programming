@@ -1,3 +1,16 @@
+/*
+#Time Complexities
+
+    Best case complexity: O(1)
+    Average case complexity: O(log n)
+    Worst case complexity: O(log n)
+
+#Space Complexity:- The space complexity of the binary search is O(1).
+
+#Algorithmic Paradigm: Decrease and Conquer.
+
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 typedef  long long int lli;

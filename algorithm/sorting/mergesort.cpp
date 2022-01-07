@@ -1,3 +1,20 @@
+/*
+Time Complexity
+
+Best Case Complexity: O(n*log n)
+
+Worst Case Complexity: O(n*log n)
+
+Average Case Complexity: O(n*log n)
+
+
+Space Complexity
+
+The space complexity of merge sort is O(n).
+
+*/
+
+
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long int lli;
