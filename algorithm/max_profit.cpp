@@ -25,5 +25,5 @@ signed main()
         ans = max(ans,sp-bp);
     }
     
-    cout<<ans*k;
+    cout<<ans*k;max(max_wrap,max(max_wrap,max1)max1)
 }

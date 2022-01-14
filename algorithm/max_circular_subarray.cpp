@@ -22,7 +22,7 @@ int ch(int a[],int  n){
     max_wrap=max_wrap+kadane(a,n);
     int ans=max(max_wrap,max1);
     if(ans==0)return min(max_wrap,max1);
-    return max(max_wrap,max1);
+    return ans;
 }
 
 int main()

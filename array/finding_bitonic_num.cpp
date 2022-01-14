@@ -13,7 +13,7 @@ void init(){
 }
 
 int point(int a[],int n){
-    int start = 0, end =n- 1;
+    int start = 0, end =n-1;
     int mid = 0;
     while(start<=end)
     {
