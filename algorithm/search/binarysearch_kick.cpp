@@ -19,6 +19,11 @@ typedef  long long int lli;
 
 
 // binary search ------------------------------------------------
+int binary_search(vector<int>nums,int target){
+  auto it=lower_bound(nums.begin(),nums.end(),target);
+  return it-nums.begin();
+}
+
 
 int binarySearch(int low,int high,int key)
 {
