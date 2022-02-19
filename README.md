@@ -1,16 +1,18 @@
-##Binary
+Binary
+======
 
 Some helpful utility snippets:
 
-1. Test kth bit is set: num & (1 << k) != 0.
-2. Set kth bit: num |= (1 << k).
-3. Turn off kth bit: num &= ~(1 << k).
-4. Toggle the kth bit: num ^= (1 << k).
-5. To check if a number is a power of 2, (num & num - 1) == 0 or (num & (-num)) == num.
-6. Swapping two variables: num1 ^= num2; num2 ^= num1; num1 ^= num2
-7. When dealing with floating point numbers, take note of rounding mistakes. Consider using epsilon comparisons instead of equality checks. E.g. abs(x - y) <= 10e7 instead of x == y).
+- Test kth bit is set: num & (1 << k) != 0.
+- Set kth bit: num |= (1 << k).
+- Turn off kth bit: num &= ~(1 << k).
+- Toggle the kth bit: num ^= (1 << k).
+- To check if a number is a power of 2, (num & num - 1) == 0 or (num & (-num)) == num.
+- Swapping two variables: num1 ^= num2; num2 ^= num1; num1 ^= num2
+- When dealing with floating point numbers, take note of rounding mistakes. Consider using epsilon comparisons instead of equality checks. E.g. abs(x - y) <= 10e7 instead of x == y).
 
-##String
+String
+======
 
 #Non-repeating Characters
 
@@ -39,24 +41,28 @@ A palindrome is a word, phrase, number, or other sequence of characters which re
 BFS uses a queue while DFS uses a stack
 
 
-##Tree
+Tree
+====
 
 A tree is an undirected and connected acyclic graph.
 
 
-##Some common formulas:
+Some common formulas
+====================
 
-[1] Sum of 1 to N = (n+1) * n/2
-2. Sum of GP = 20 + 21 + 22 + 23 + ... 2n = 2n+1 - 1
-3. Permutations of N = N! / (N-K)!
-4. Combinations of N = N! / (K! * (N-K)!)
+- Sum of 1 to N = (n+1) * n/2
+- Sum of GP = 20 + 21 + 22 + 23 + ... 2n = 2n+1 - 1
+- Permutations of N = N! / (N-K)!
+- Combinations of N = N! / (K! * (N-K)!)
 
 
-##OOPS
-    How would you design a chess game? What classes and objects would you use? What methods would they have?
-    How would you design the data structures for a book keeping system for a library?
-    Explain how you would design a HTTP server? Give examples of classes, methods, and interfaces. What are the challenges here?
-    Discuss algorithms and data structures for a garbage collector?
-    How would you implement an HR system to keep track of employee salaries and benefits?
-    How would you implement an Elevator system?
-    How would you implement a Parking Lot system?
+OOPS
+====
+
+- How would you design a chess game? What classes and objects would you use? What methods would they have?
+- How would you design the data structures for a book keeping system for a library?
+- Explain how you would design a HTTP server? Give examples of classes, methods, and interfaces. What are the challenges here?
+- Discuss algorithms and data structures for a garbage collector?
+- How would you implement an HR system to keep track of employee salaries and benefits?
+- How would you implement an Elevator system?
+- How would you implement a Parking Lot system?
