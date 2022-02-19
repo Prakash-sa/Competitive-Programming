@@ -18,9 +18,9 @@ String
 
 Use a 26-bit bitmask to indicate which lower case latin characters are inside the string.
 
-mask = 0
-for c in set(word):
-  mask |= (1 << (ord(c) - ord('a')))
+    mask = 0
+    for c in set(word):
+      mask |= (1 << (ord(c) - ord('a')))
 
 To determine if two strings have common characters, perform & on the two bitmasks. If the result is non-zero, mask_a & mask_b > 0, then the two strings have common characters.
 
@@ -30,9 +30,9 @@ An anagram is word switch or word play. It is the result of re-arranging the let
 
 To determine if two strings are anagrams, there are a few plausible approaches:
 
-    Sorting both strings should produce the same resulting string. This takes O(nlgn) time and O(lgn) space.
-    If we map each character to a prime number and we multiply each mapped number together, anagrams should have the same multiple (prime factor decomposition). This takes O(n) time and O(1) space.
-    Frequency counting of characters will help to determine if two strings are anagrams. This also takes O(n) time and O(1) space.
+Sorting both strings should produce the same resulting string. This takes O(nlgn) time and O(lgn) space.
+If we map each character to a prime number and we multiply each mapped number together, anagrams should have the same multiple (prime factor decomposition). This takes O(n) time and O(1) space.
+Frequency counting of characters will help to determine if two strings are anagrams. This also takes O(n) time and O(1) space.
 
 #Palindrome
 A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward as forward, such as madam or racecar.
