@@ -27,3 +27,33 @@ vector<vector<int> > Solution::combinationSum(vector<int> &A, int B) {
     sort(res.begin(),res.end());
     return res;
 }
+
+
+
+//https://practice.geeksforgeeks.org/problems/combination-sum-1587115620/1#
+
+vector<vector<int>>res;
+    
+    void backtrack(vector<int>A,vector<int>&ans,int start,int sum){
+        if(sum==0){
+            res.push_back(ans);
+            return ;
+        }
+        if(sum<0)return;
+        
+        for(int i=start;i<A.size();i++){
+            if(i>start&&A[i]==A[i-1])continue;
+            ans.push_back(A[i]);
+            backtrack(A,ans,i,sum-A[i]);
+            ans.pop_back();
+        }
+    }
+    
+    vector<vector<int> > combinationSum(vector<int> &A, int B) {
+        // Your code here
+        vector<int>ans;
+        res.clear();
+        sort(A.begin(),A.end());
+        backtrack(A,ans,0,B);
+        return res;
+    }

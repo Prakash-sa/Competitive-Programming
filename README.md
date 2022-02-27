@@ -47,6 +47,23 @@ Tree
 A tree is an undirected and connected acyclic graph.
 
 
+Heap
+====
+
+- If node is at index:- i
+	left Node->2*i
+	right Node->2*i+1
+	its parent->mod(i/2)
+
+- If h is height that max no. of nodes is pow(2,h+1)-1
+
+if vector<double>numbers={0,1,2,3,...,9}
+- max_heap(numbers.begin(),numbers.end())
+- push_heap(numbers.begin(),numbers.end()) in vector numbers.push_back(4)
+- largest no. by numbers.front()
+- pop_heap(numbers.begin(),numbers.end()) and numbers.pop_back() // remove 9 at back
+
+
 Some common formulas
 ====================
 
@@ -55,6 +72,26 @@ Some common formulas
 - Permutations of N = N! / (N-K)!
 - Combinations of N = N! / (K! * (N-K)!)
 
+
+Notes
+=====
+
+- int->string use to_string(int)
+- string->int use stoi(string) or stol(large int)
+- next_permutation(v.begin(),v.end()) or prev_permutation(v.begin(),v.end())
+- pair<int,int>p and p=minmax(arr) then p.first->min and p.second->max
+- copy(v1.begin(),v1.end(),v2.begin())
+- fill(v.begin(),v.end(),1)
+- lower_bound(v.begin(),v.end(),6)
+- upper_bound(v.begin(),v.end(),10) -> point to the element location
+- reverse , reverse_copy, rotate 
+- unique-> to copy same element unique(v.begin(),v.end());
+- v.resize(n)
+- iota -> increment the value
+	iota(v.begin(),v.end(),10) -> increment the value by 10
+- accumulate -> add all the value in the vector
+	accumulate(v.begin(),v.end(),result, myoperation)
+	int myoperation(int a,int b){ return a*b; }
 
 OOPS
 ====
@@ -66,3 +103,18 @@ OOPS
 - How would you implement an HR system to keep track of employee salaries and benefits?
 - How would you implement an Elevator system?
 - How would you implement a Parking Lot system?
+
+
+
+Resources
+=========
+
+//--------codeforces everything link--------
+https://codeforces.com/blog/entry/57282
+
+//-------------dp---------------------
+https://codeforces.com/blog/entry/43256
+https://atcoder.jp/contests/dp/tasks
+
+GCPC11J - Time to live
+https://www.spoj.com/problems/NITTROAD/
