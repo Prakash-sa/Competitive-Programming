@@ -46,6 +46,22 @@ Tree
 
 A tree is an undirected and connected acyclic graph.
 
+Binary tree of n depth.
+	
+left=pow(2,n)
+edges=2(pow(2,n)-1)
+level=n+1
+
+
+
+Graph
+=====
+
+
+Dijkastra-> shortest path from one node to all nodes.
+Bellman-Ford-> Dijkastra + negative edges
+Floyd Warshall-> Shortest path bw all pairs of vertices, negative edges allowed
+
 
 Heap
 ====
@@ -95,6 +111,8 @@ Notes
 
 	accumulate(v.begin(),v.end(),result, myoperation)
 	int myoperation(int a,int b){ return a*b; }
+
+- cout(v.begin(),v.end(),10)-> count 10 in array
 
 OOPS
 ====
