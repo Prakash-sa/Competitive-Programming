@@ -88,8 +88,11 @@ Notes
 - unique-> to copy same element unique(v.begin(),v.end());
 - v.resize(n)
 - iota -> increment the value
+
 	iota(v.begin(),v.end(),10) -> increment the value by 10
+
 - accumulate -> add all the value in the vector
+
 	accumulate(v.begin(),v.end(),result, myoperation)
 	int myoperation(int a,int b){ return a*b; }
 
