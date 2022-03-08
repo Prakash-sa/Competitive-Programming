@@ -1,5 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
+
+
+//strongly connected components
+//https://practice.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1#
+
+
 void print(vector<int> a[],int V)
 {
     for(int i=0;i<V;i++)
@@ -47,6 +53,7 @@ int kosaraju(int V, vector<int> adj[])
     vector<int> grev[V];
     for(int i=0;i<V;i++)
     {
+	vis[i]=false;
         for(auto j=adj[i].begin();j!=adj[i].end();j++)
         {
             grev[*j].push_back(i);
@@ -54,9 +61,7 @@ int kosaraju(int V, vector<int> adj[])
     }
     // cout<<"grev="<<endl;
     // print(grev,V);
-    //reinitialise vis to 0
-    for(int i=0;i<V;i++)
-        vis[i]=false;
+    
     int cnt_scc=0;
     while(!st.empty())
     {
