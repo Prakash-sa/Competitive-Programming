@@ -25,43 +25,32 @@ int main()
    int t;
    int cnt=1;
     cin>>t;
-    map<char,string>mp;
-    mp['U']='U';
-    mp['R']='R';
-    mp['Y']='Y';
-    mp['B']='B';
-    mp['O']="RY";
-    mp['P']="RB";
-    mp['G']="YB";
-    mp['A']="RYB";
+    
     while(t--){
-       int n;
-        string s;
-        cin>>n>>s;
-        int res=0;
-        int last=0,i=0;
-        char tmp;
-        if(n>0){
-           tmp=s[0];
-            if(mp[tmp].size()>1){
-               tmp=mp[tmp][0];
+      string s;
+      cin>>s; 
+       int sum=0;
+       for(auto it:s){
+          sum+=it-'0';
+            sum%=9;
+       }
+       cout<<"Case #"<<cnt<<": ";
+       
+       int rem=(9-sum)%9;
+       bool f=0;
+       if(rem==0)f=1;
+       bool p=0;
+         for(auto it:s){
+            int k=it-'0';
+            if(k>rem && !p && f ){
+               cout<<rem;
+               p=1;
             }
-            res++;
-        }
-        while(last!=n-1 && i<n){
-           if(s[i]==tmp || mp[s[i]].find(tmp)!=string::npos){
-              last=i;
-           }
-           else { 
-              res++;
-            tmp=s[i];
-               if(mp[tmp].size()>1){
-                  tmp=mp[tmp][0];
-               }
-           }
-           i++;
-        }
-        cout<<"Case #"<<cnt<<": "<<res<<endl;
+            f=1;
+            cout<<it;
+         }
+         if(!p)cout<<rem;
+         cout<<endl;
         cnt++;
     }
    
