@@ -1,3 +1,5 @@
+//https://leetcode.com/problems/delete-node-in-a-bst/submissions/
+
 Node * minValueNode(struct Node* node) 
 { 
     struct Node* current = node; 
@@ -36,3 +38,30 @@ Node *deleteNode(Node *root,  int key)
     return root; 
     
 }
+
+
+//easy one
+class Solution {
+public:
+    TreeNode* deleteNode(TreeNode* root, int key) {
+        if(!root)return NULL;
+        if(root->val==key){
+            if(!root->left && !root->right) return NULL; 
+            if(!root->right){
+                TreeNode* left=root->left;
+                delete(root);
+                return left;
+            }
+            else {
+                TreeNode* rightT=root->right;
+                while(rightT->left)rightT=rightT->left;
+                swap(root->val,rightT->val);
+                root->right=deleteNode(root->right,key);
+                return root;
+            }
+        }
+        if(root->val>key)root->left=deleteNode(root->left,key);
+        else root->right=deleteNode(root->right,key);
+        return root;
+    }
+};

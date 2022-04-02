@@ -86,3 +86,18 @@ int main()
 	}
 	return 0;
 }
+
+//O(Nlog(N))
+
+
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+        vector<int>tmp;
+        for(int i=0;i<nums.size();i++){
+            if(tmp.empty()||tmp.back()<nums[i])tmp.push_back(nums[i]);
+            else *lower_bound(tmp.begin(),tmp.end(),nums[i])=nums[i];
+        }
+        return tmp.size();
+    }
+};
