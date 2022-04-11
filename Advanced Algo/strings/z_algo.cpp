@@ -81,3 +81,29 @@ int main()
 
     return 0;
 }
+
+
+
+
+//https://cp-algorithms.com/string/z-function.html
+
+//https://leetcode.com/problems/sum-of-scores-of-built-strings/
+//https://codeforces.com/problemset/problem/126/B
+
+    long long z_func(string s){
+        int n = (int) s.length();
+        vector<int> z(n);
+        for (int i = 1, l = 0, r = 0; i < n; ++i) {
+            if (i <= r)
+                z[i] = min (r - i + 1, z[i - l]);
+            while (i + z[i] < n && s[z[i]] == s[i + z[i]])
+                ++z[i];
+            if (i + z[i] - 1 > r)
+                l = i, r = i + z[i] - 1;
+        }
+        long long sum=0;
+        for(auto it:z)sum+=it;
+        return sum;
+    }
+
+

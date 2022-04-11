@@ -1,3 +1,22 @@
+Links
+==============
+
+- [Leetcode]https://leetcode.com/discuss/general-discussion/665604/Important-and-Useful-links-from-all-over-the-Leetcode
+
+- [Google Docs]https://docs.google.com/document/d/1wUCqhVHydWiDk6FJdFLSMpgigNrGcs4OFZg0Wa7JGEw/edit?usp=sharing
+
+
+# Hard
+
+https://www.geeksforgeeks.org/find-the-number-of-sub-arrays-in-the-permutation-of-first-n-natural-numbers-such-that-their-median-is-m/
+
+sub-array with k mean:- https://codeforces.com/blog/entry/91768
+
+- Fenwick tree[http://usaco.org/current/data/sol_median.html]
+
+
+
+
 Binary
 ======
 

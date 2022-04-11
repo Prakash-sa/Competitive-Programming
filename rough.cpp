@@ -13,31 +13,49 @@ void init(){
 
 }
 
+vector<int> z_func(string s){
+	int n=s.size();
+	vector<int>z(n);
+	for(int i=0,l=0,r=0;i<s.size();i++){
+		if(i<=r)z[i]=min(r-i+1,z[i-l]);
+		while(i+z[i]<n && s[z[i]]==s[i+z[i]])++z[i];
+		if(i+z[i]-1>r){
+			l=i;
+			r=i+z[i]-1;		
+		}
+	}
+	return z;
+}
+
 int main()
 {
-   boost;
-   int t;
-   int cnt=1;
-    cin>>t;
-    cout<<__gcd(2,2)<<endl;
-    
-    while(t--){
-      string s;
-      int n;
-      cin>>n>>s; 
-       int ans=0;
-       int cnt=0;
-       for(int i=0;i<n;i++){
-          if(s[i]=='0'){
-             if(i!=0 && cnt>0)ans+=cnt;
-             cnt=2;
-          }
-          else {
-             cnt--;
-          }
-       }
-       cout<<ans<<endl;
-    }
-   
-   return 0;
+	boost;
+	string s;
+	cin>>s;
+	vector<int>z=z_func(s);	
+	int l=-1,len=INT_MIN;
+	int n=s.size();
+	map<int,int>mp;
+	int flag=-1;
+	for(int i=0;i<n;i++){
+		//if(z[i]==0)continue;
+		mp[z[i]]++;
+		if(mp[z[i]]>=1)flag=1;
+		if(mp[z[i]]>=2){
+			if(z[i]>l){
+				flag=1;
+				l=z[i];
+			}		
+		}	
+	}   
+	if(l>=1 && z[n-l]==l){
+		cout<<s.substr(n-l)<<endl;
+	}
+	else if(z[n-1]!=0 &&flag>0){
+		cout<<s[n-1]<<endl;	
+	}	
+	else {
+		cout<<"Just a legend"<<endl;
+	}
+	return 0;
 }
