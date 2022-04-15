@@ -1,3 +1,12 @@
+//https://www.spoj.com/problems/ARRANGE/
+
+
+
+
+
+
+
+
 #include <bits/stdc++.h>
 using namespace std;
 #define endl "\n";
