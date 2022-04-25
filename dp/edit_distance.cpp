@@ -1,4 +1,5 @@
-//https://leetcode.com/explore/challenge/card/may-leetcoding-challenge/538/week-5-may-29th-may-31st/3346/
+//https://practice.geeksforgeeks.org/problems/edit-distance3702/1
+
 
 int minDistance(string word1, string word2) {
     int m=word1.size();
