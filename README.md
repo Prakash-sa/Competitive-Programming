@@ -16,6 +16,38 @@ sub-array with k mean:- https://codeforces.com/blog/entry/91768
 
 
 
+##Time Complexity
+
+- Recursion O(2^N)
+
+
+## STL
+
+Map
+===
+
+- Insertion O(log(n)) and find O(log(n))
+- Based on Red Black Tree(Inbuilt implementation)
+- Key as string O(s.size() * log(n))
+- 
+
+Unordered Map
+=============
+
+- Hash tables 
+- Time complexity insertion O(1) and find O(1)
+- can't use pairs as key(maps insert using comparision)
+
+Multimap
+========
+
+- can use multiple keys
+
+
+
+
+##Topics
+
 
 Binary
 ======
