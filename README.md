@@ -92,6 +92,12 @@ A palindrome is a word, phrase, number, or other sequence of characters which re
 BFS uses a queue while DFS uses a stack
 
 
+LinkedList
+==========
+
+- Quick sort is preferred for Arrays and MergeSort of LinkedList[https://www.geeksforgeeks.org/why-quick-sort-preferred-for-arrays-and-merge-sort-for-linked-lists/].
+- 
+
 Tree
 ====
 
