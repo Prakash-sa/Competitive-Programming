@@ -73,7 +73,7 @@ int min_so_far = prices[0];
   return max_profit;
 }
 
-//Method 2:
+//Method 2: // Buy and Sell a Share at most twice
 int maxProfit3(vector<int>& prices) {
     int buy1 = INT_MAX, buy2 = INT_MAX;
     int sell1 = 0, sell2 = 0;
