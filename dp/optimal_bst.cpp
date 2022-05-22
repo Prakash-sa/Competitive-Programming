@@ -1,5 +1,7 @@
 //https://www.geeksforgeeks.org/optimal-binary-search-tree-dp-24/
 
+//https://www.youtube.com/watch?v=hgA4xxlVvfQ&ab_channel=TusharRoy-CodingMadeSimple
+
 // Dynamic Programming code for Optimal Binary Search
 // Tree Problem
 #include <bits/stdc++.h>

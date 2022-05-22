@@ -50,6 +50,8 @@ int main()
 }
 
 
+//https://www.youtube.com/watch?v=EIf9zFqufbU&ab_channel=AlexanderLe
+
  string longestPalindrome(string s) {
         int n=s.length();
         if(n==0)
@@ -76,3 +78,30 @@ int main()
         
         return result;
     }
+
+
+
+
+//No. of palindromic substrings
+//https://leetcode.com/problems/palindromic-substrings/
+class Solution {
+public:
+    int countSubstrings(string s) {
+        int n=s.size();
+        vector<vector<int>>dp(n,vector<int>(n,0));
+        int ans=0;
+        for(int i=s.size()-1;i>=0;i--){
+            for(int j=i;j<n;j++){
+                if(i==j)dp[i][j]=1;
+                else if(s[i]==s[j] && j==i+1){
+                    dp[i][j]=1;
+                }
+                else if(s[i]==s[j]){
+                    dp[i][j]=dp[i+1][j-1];
+                }
+                ans+=dp[i][j];
+            }
+        }
+        return ans;
+    }
+};

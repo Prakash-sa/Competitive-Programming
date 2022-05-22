@@ -13,41 +13,44 @@ const lli num=1e5+5;
 void init(){
  
 }
- 
- 
-bool issafe(string s1,string s2){
-	if((s1[0]==s2[0] && s1[1]!=s2[1]) || (s1[0]!=s2[0] && s1[1]==s2[1]))return true;
-	return false;
+ int cnt_s;
+
+vector<vector<int>>dp;
+
+bool isPalin(string s,int i,int j){
+	if(i>=j)return true;
+	if(dp[i][j]!=-1)return dp[i][j];
+	if(s[i]==s[j])return dp[i][j]=isPalin(s,i+1,j-1);
+	return dp[i][j]=false;
 }
+
+ void backtrack(string &s,int start){
+	 if(isPalin(s,0,s.size()-1))cnt_s+=s.size();
+	 for(int i=start;i<s.size();i++){
+		 string tmp=s.substr(0,i)+s.substr(i+1);
+		 cout<<tmp<<" ";
+		 backtrack(tmp,start+1);
+	 }
+ }
+ 
  
 int main()
 {
 	boost;
 	int t;
 	cin>>t;
+	int cnt=1;
 	while(t--){
-		int n;
+		cout<<"Case #"<<cnt<<": ";
+		cnt++;
+		int n,l;
 		cin>>n;
-		vector<string>s(n);
-		for(int i=0;i<n;i++)cin>>s[i];
-		long long ans=0;
-		map<char,int>start;
-		set<string>st;
-		map<char,int>end;
-		for(int i=0;i<n;i++){
-			start[s[i][0]]++;
-		}
-		for(int i=0;i<n;i++){
-			if(start[s[i][0]]>1)st.insert(s[i]);
-		}
-		for(int i=0;i<n;i++){
-			if(st.find(s[i])==st.end())end[s[i][1]]++;
-		}
-
-		for(auto it:start)ans+=it.second;
-		
-		for(auto it:end)ans+=it.second;
-		cout<<ans;
+		string s;
+		cin>>s;
+		dp.resize(n,vector<int>(n,0));
+		cnt_s=n;
+		backtrack(s,0);
+		cout<<cnt_s;
 		cout<<endl;
 	}
 	return 0;
