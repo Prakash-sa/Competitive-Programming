@@ -1,7 +1,8 @@
 /*
 For n = 9, the output should be
 maxZeros(n) = 2.
-9 = 10012 = 1003 = 214...
+9 = 1001,
+2 = 10,
 If you'll try all other bases, you'll see that
 the maximum possible number of zeros in 
 these representations is 2, thus the answer is k = 2.*/
