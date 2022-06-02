@@ -64,3 +64,46 @@ int main()
     }
     return 0;
 }
+
+
+
+
+//https://practice.geeksforgeeks.org/problems/maximum-rectangular-area-in-a-histogram-1587115620/1
+
+
+class Solution
+{
+    public:
+    //Function to find largest rectangular area possible in a given histogram.
+    long long getMaxArea(long long arr[], int n)
+    {
+        // Your code here
+        int i=0;
+        long long ans=0;
+        stack<int>st;
+        while(i<n){
+            if(st.empty() || arr[i]>=arr[st.top()]){
+                st.push(i++);
+            }
+            else {
+                int k=st.top();
+                st.pop();
+                long long tmp=0;
+                if(!st.empty())tmp=arr[k]*(i-st.top()-1);
+                else tmp=arr[k]*(i);
+                ans=max(ans,tmp);
+            }
+        }
+        
+        while(!st.empty()){
+            int k=st.top();
+            st.pop();
+            long long tmp;
+            if(!st.empty())tmp=arr[k]*(i-st.top()-1);
+            else tmp=arr[k]*(i);
+            ans=max(ans,tmp);
+        }
+        return ans;
+    }
+};
+
