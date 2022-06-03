@@ -146,3 +146,122 @@ public:
         return res;
     }
 };
+
+
+/*
+Combination Sum 2
+
+Input: candidates = [10,1,2,7,6,1,5], target = 8
+Output: 
+[
+[1,1,6],
+[1,2,5],
+[1,7],
+[2,6]
+]
+
+
+https://leetcode.com/problems/combination-sum-ii/
+
+
+*/
+
+class Solution {
+    
+    vector<vector<int>>res;
+    
+    void backtrack(vector<int>&cand,vector<int>&ans,int x,int target){
+        if(target==0){
+            res.push_back(ans);
+            return;
+        }
+        if(target<0)return;
+        if(x==cand.size())return;
+        for(int i=x;i<cand.size();i++){
+            if( i>x && cand[i]==cand[i-1])continue; //to avoid duplicates
+            ans.push_back(cand[i]);
+            backtrack(cand,ans,i+1,target-cand[i]);
+            ans.pop_back();
+        }
+    }
+    
+    
+public:
+    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+        sort(candidates.begin(),candidates.end());
+        vector<int>ans;
+        backtrack(candidates,ans,0,target);
+        return res;
+    }
+};
+
+
+/*
+Combination Sum 3
+Find all valid combinations of k numbers that sum up to n such that the following conditions are true:
+
+    Only numbers 1 through 9 are used.
+    Each number is used at most once.
+
+Input: k = 3, n = 7
+Output: [[1,2,4]]
+Explanation:
+1 + 2 + 4 = 7
+
+https://leetcode.com/problems/combination-sum-iii/
+
+
+*/
+
+
+class Solution {
+    vector<vector<int>>ans;
+    
+    void backtrack(vector<int>&path,int k,int n){
+        if(n<0)return;
+        if(path.size()==k && n==0){
+            ans.push_back(path);
+            return;
+        }
+        
+        for(int i=path.size()==0?1:path.back()+1;i<=9;i++){
+            if(n<0)break;
+            path.push_back(i);
+            backtrack(path,k,n-i);
+            path.pop_back();
+        }
+    }
+    
+public:
+    vector<vector<int>> combinationSum3(int k, int n) {
+        ans.clear();
+        vector<int>path;
+        backtrack(path,k,n);
+        return ans;
+    }
+};
+
+
+/*
+Combination Sum 4
+
+Given an array of distinct integers nums and a target integer target, return the number of possible combinations that add up to target.
+
+
+https://leetcode.com/problems/combination-sum-iv/
+*/
+
+
+class Solution {
+    
+public:
+    int combinationSum4(vector<int>& nums, int target) {
+        int n=nums.size();
+        vector<unsigned int>dp(target+1,0);
+        dp[0]=1;
+        for(int i=1;i<=target;i++){
+            for(auto it:nums) if(i>=it)dp[i]+=dp[i-it];
+        }
+        return dp[target];
+    }
+};
