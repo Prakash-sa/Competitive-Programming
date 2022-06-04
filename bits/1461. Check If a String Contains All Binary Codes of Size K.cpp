@@ -1,5 +1,9 @@
 //https://leetcode.com/problems/check-if-a-string-contains-all-binary-codes-of-size-k/
 
+/*
+What's more, we can get the current hash from the last one. This method is called Rolling Hash. All we need to do is to remove the most significant digit and to add a new least significant digit with bitwise operations.
+
+*/
 
 class Solution {
 public:

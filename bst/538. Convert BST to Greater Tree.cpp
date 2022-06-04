@@ -2,7 +2,8 @@
 https://leetcode.com/problems/convert-bst-to-greater-tree/
 
 inorder traverse of BST will give an ascending sequence of all values.
-By slightly modifying the inorder traverse such that we firstly travel right subtree and then left subtree, we can get the descending order of the BST.
+By slightly modifying the inorder traverse such that we firstly travel right subtree 
+and then left subtree, we can get the descending order of the BST.
 
 
 */
