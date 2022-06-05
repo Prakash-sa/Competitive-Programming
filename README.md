@@ -16,7 +16,7 @@ sub-array with k mean:- https://codeforces.com/blog/entry/91768
 
 
 
-##Time Complexity
+## Time Complexity
 
 - Recursion O(2^N)
 
@@ -46,7 +46,7 @@ Multimap
 
 
 
-##Topics
+## Topics
 
 
 Catalan Number
@@ -203,6 +203,9 @@ OOPS
 
 Resources
 =========
+
+//-------System Design
+https://leetcode.com/tag/design/
 
 //--------codeforces everything link--------
 https://codeforces.com/blog/entry/57282

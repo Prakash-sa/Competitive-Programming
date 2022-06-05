@@ -37,3 +37,28 @@
     }
 
 
+//easy 
+
+string ans;
+int n;
+
+void check(int x,string &str,int k){
+    if(ans<str)ans=str;
+    if(k==0 || x==n)return;
+    check(x+1,str,k);
+
+    for(int i=x+1;i<n;i++){
+        if(str[i]>str[x]){
+            swap(str[i],str[x]);
+            check(x+1,str,k-1);
+            swap(str[i],str[x]);
+        }
+    }
+}
+
+string Solution::solve(string A, int B) {
+    ans=A;
+    n=A.size();
+    check(0,A,B);
+    return ans;
+}
