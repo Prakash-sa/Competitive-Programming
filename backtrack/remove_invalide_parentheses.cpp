@@ -1,9 +1,9 @@
-//https://leetcode.com/problems/remove-invalid-parentheses/submissions/
+//https://leetcode.com/problems/remove-invalid-parentheses/
 
 
 class Solution {
 public:
-    
+    //no. of char to remove
     int check(string s) {
         stack<char> st;
         for(auto c: s) {
@@ -37,10 +37,8 @@ public:
                 ans.push_back(k);
             } else {
                 for(int i =0; i<k.size();i++) {
-                    if(true) {
-                        string tmp = k.substr(0, i) + k.substr(i+1);
-                        if(tmp.size()>=n-w)q.push(tmp);
-                    }
+	            string tmp = k.substr(0, i) + k.substr(i+1);
+	            if(tmp.size()>=n-w)q.push(tmp);
                 }
             }
         }
