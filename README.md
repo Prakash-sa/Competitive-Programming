@@ -15,6 +15,10 @@ sub-array with k mean:- https://codeforces.com/blog/entry/91768
 - Fenwick tree[http://usaco.org/current/data/sol_median.html]
 
 
+## Substring vs Subsequence
+
+- Subarray need to be consecutive. Subsequence don't have to be consecutive.
+
 
 ## Time Complexity
 
