@@ -170,6 +170,7 @@ Some common formulas
 Notes
 =====
 
+- A priority queue is an abstract data type, while a Heap is a data structure. Therefore, a Heap is not a Priority Queue, but a way to implement a Priority Queue.
 - int->string use to_string(int)
 - string->int use stoi(string) or stol(large int)
 - next_permutation(v.begin(),v.end()) or prev_permutation(v.begin(),v.end())
