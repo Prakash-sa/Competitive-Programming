@@ -215,6 +215,7 @@ https://leetcode.com/tag/design/
 //--------codeforces everything link--------
 https://codeforces.com/blog/entry/57282
 
+https://leetcode.com/discuss/interview-question/2189149/amazon-online-assessment-questions
 //-------------dp---------------------
 https://codeforces.com/blog/entry/43256
 https://atcoder.jp/contests/dp/tasks
