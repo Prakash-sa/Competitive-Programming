@@ -1,6 +1,60 @@
+//Path sum 1
+//https://leetcode.com/problems/path-sum/
+
+// root to leaf
+
+
+class Solution {
+public:
+    bool hasPathSum(TreeNode* root, int targetSum,int current=0) {
+        if(!root)return false;
+        current+=root->val;
+        if(!root->left && !root->right){
+            if(current==targetSum)return true;
+        }
+        return hasPathSum(root->left,targetSum,current) || hasPathSum(root->right,targetSum,current);
+    }
+};
+
+
+
+//https://leetcode.com/problems/path-sum-ii/
+//Path Sum 2
+
+// root-to-leaf
+
+
+class Solution {
+private:
+    vector<vector<int>>res;
+    
+    void traversal(TreeNode* root,vector<int>&ans,int targetSum,int sum){
+        if(!root)return ;
+        sum+=root->val;
+        ans.push_back(root->val);
+        if(sum==targetSum && !root->left && !root->right){
+            res.push_back(ans);
+        }
+        traversal(root->left,ans,targetSum,sum);
+        traversal(root->right,ans,targetSum,sum);
+        ans.pop_back();
+    }
+    
+public:
+    vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
+        res.clear();
+        vector<int>ans;
+        traversal(root,ans,targetSum,0);
+        return res;
+    }
+};
+
+
+
+
 //https://practice.geeksforgeeks.org/problems/k-sum-paths/1/#
 
-
+//https://leetcode.com/problems/path-sum-iii/
 
 
 
@@ -52,3 +106,21 @@ class Solution{
     }
     
 };
+
+//Simple one
+
+class Solution {
+    
+    int traversal(TreeNode* root,long long targetSum){
+        if(!root)return 0;
+        return (root->val==targetSum) + traversal(root->left,targetSum-root->val)+traversal(root->right,targetSum-root->val);
+    }
+    
+public:
+    int pathSum(TreeNode* root, int targetSum) {
+        if(!root)return 0;
+        return traversal(root,targetSum)+pathSum(root->left,targetSum)+pathSum(root->right,targetSum);
+    }
+};
+
+

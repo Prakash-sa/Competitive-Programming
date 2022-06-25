@@ -1,5 +1,8 @@
 //https://practice.geeksforgeeks.org/problems/check-if-tree-is-isomorphic/1#
 
+//Two trees are called isomorphic if one can be obtained from another by a series of flips,
+// i.e. by swapping left and right children of several nodes. 
+// Any number of nodes at any level can have their children swapped.
 
 
 
