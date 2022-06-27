@@ -8,20 +8,33 @@ const int NODE =1e4+9;
  
 const int mod=1e9+7;
 const lli num=1e5+5;
- 
- 
-void init(){
- 
+
+void solution(int N,int M){
+	if(N>=M){
+        int Difference=M+1;
+        int answer=1;
+		for(int i=1;i<=N;i++){
+			for(int j=1;j<=M;j++){
+				cout<<answer+Difference*(j-1) <<" ";
+			}
+			cout<<endl;
+			answer++;
+			Difference++;
+		}
+    }
+
+ 	else{
+        int d=N+1,A=1,B=1;
+        for(int i=1;i<=N;i++){
+            for(int j=1;j<=M;j++){
+                cout<<A+ B*(j-1)<<" ";
+            }
+            cout<<endl;
+            A+=d;
+            B++;
+        }
+    } 
 }
-
-int ans;
-
-bool isValid(int a,int b){
-	if(a%2 && !b%2)return false;
-	if(!a%2 && b%2)return false;
-	return true;
-}
-
  
 int main()
 {
@@ -29,69 +42,9 @@ int main()
 	int t;
 	cin>>t;
 	while(t--){
-		int n;
-		cin>>n;
-		int l=-1,r=-1;
-		if(__builtin_popcount(n)==1){
-			if(n==0)cout<<1;
-			else if(n==1)cout<<3;
-			else cout<<n+1;
-			cout<<endl;
-
-			continue;
-		}
-		else {
-			for(int i=0;i<32;i++){
-				if(n&(1<<i)  && l<0)l=i;
-				else if((n&(1<<i))==0 && r<0){
-					// cout<<1;
-					r=i;
-				}
-				if(l>=0)break;
-			}
-			cout<<(1<<l)<<endl;
-		}
+		int n,m;
+		cin>>n>>m;
+		solution(n,m);
 	}
 	return 0;
 }
-
-
-// int main()
-// {
-// 	boost;
-// 	int t;
-// 	cin>>t;
-// 	while(t--){
-// 		int n;
-// 		cin>>n;
-// 		stack<lli>a;
-// 		bool cnt=false;
-// 		for(int i=0;i<n;i++){
-// 			lli k;cin>>k;
-// 			if(k%2==0)a.push(k);
-// 			else cnt=true;
-// 		}
-// 		int ans=0;
-// 		while(a.size()>1){
-// 			lli k=a.top();
-// 			a.pop();
-// 			k+=a.top();
-// 			a.pop();
-// 			ans++;
-// 			if(k%2==0){
-// 				ans++;
-// 				k=k/2;
-// 				if(k%2==0)
-// 				a.push(k);
-// 			}
-// 			else cnt=true;
-// 		}
-// 		if(a.size()==1 && cnt){
-// 			ans++;
-// 		}
-// 		cout<<ans<<endl;
-
-
-// 	}
-// 	return 0;
-// }
