@@ -1,3 +1,9 @@
+//https://practice.geeksforgeeks.org/problems/alien-dictionary/1
+
+//Topological sorting
+
+//Time Complexity: O(V+E). The outer for loop will be executed V number of times and the inner for loop will be executed E number of times.
+//Auxiliary Space: O(V). The queue needs to store all the vertices of the graph. So the space required is O(V)
 
 //by dfs
 

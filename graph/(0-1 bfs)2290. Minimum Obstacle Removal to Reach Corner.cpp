@@ -1,5 +1,13 @@
 //https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/
 
+/*
+
+For every node that you visit, push all its unvisited neighbours to the queue in the following manner.
+
+    Every unvisited neighbour with cost 1 (having an obstacle), push to the end of the queue
+    Every unvisited neighbou with cost 0 (having no obstacle), push to the beginning of the queue.
+
+*/
 
 
 class Solution {

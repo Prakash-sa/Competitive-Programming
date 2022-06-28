@@ -1,5 +1,84 @@
 //https://leetcode.com/problems/smallest-string-with-swaps/
 
+//union-find
+
+
+
+class UnionFind{
+private:
+    vector<int>root;
+    vector<int>rank;
+    
+public:
+    
+    UnionFind(int sz):root(sz),rank(sz){
+        for(int i=0;i<sz;i++){
+            root[i]=i;
+            rank[i]=1;
+        }
+    }
+    
+    int find(int x){
+        if(x==root[x])return x;
+        return root[x]=find(root[x]);
+    }
+    
+    void unionSet(int x,int y){
+        int rootx=find(x);
+        int rooty=find(y);
+        if(rootx==rooty)return;
+        if(rank[rootx]>=rank[rooty]){
+            root[rooty]=rootx;
+            rank[rootx]+=rank[rooty];
+        }
+        else {
+            root[rootx]=rooty;
+            rank[rooty]+=rank[rootx];
+        }
+    }
+    
+};
+
+
+class Solution {
+    
+public:
+    
+    string smallestStringWithSwaps(string s, vector<vector<int>>& pairs) {
+        UnionFind uf(s.size());
+        
+        for(auto it:pairs){
+            int src=it[0];
+            int dest=it[1];
+            uf.unionSet(src,dest);
+        }
+        
+        unordered_map<int,vector<int>>roottocmpt;
+        for(int i=0;i<s.size();i++){
+            int root=uf.find(i);
+            roottocmpt[root].push_back(i);
+        }
+        string ans(s.size(),' ');
+        for(auto component:roottocmpt){
+            vector<int>indixes=component.second;
+            
+            vector<char>characters;
+            for(auto it:indixes){
+                characters.push_back(s[it]);
+            }
+            sort(characters.begin(),characters.end());
+            
+            for(int i=0;i<indixes.size();i++){
+                ans[indixes[i]]=characters[i];
+            }
+        }
+        return ans;    
+    }
+};
+
+
+
+//dfs
 
 
 class Solution {
