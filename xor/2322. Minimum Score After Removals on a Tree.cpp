@@ -1,5 +1,6 @@
 //https://leetcode.com/problems/minimum-score-after-removals-on-a-tree/
 
+//https://leetcode.com/problems/minimum-score-after-removals-on-a-tree/discuss/2198665/Python-3-Explanation-with-pictures
 
 
 class Solution {

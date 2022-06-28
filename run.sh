@@ -1,3 +1,3 @@
 #!/bin/bash
-g++ rough.cpp
+g++ $1
 ./a.out < in > out
