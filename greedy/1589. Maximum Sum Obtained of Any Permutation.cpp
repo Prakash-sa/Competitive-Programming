@@ -1,6 +1,6 @@
 //https://leetcode.com/problems/maximum-sum-obtained-of-any-permutation/
 
-
+//We should put the largest number into the most queried position.
 
 
 class Solution {

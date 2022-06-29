@@ -3,55 +3,34 @@
 
 
 //merge sort
-Node* merge(Node* a, Node* b)
-{
-    if (a == NULL)
-        return b;
-
-    if (b == NULL)
-        return a;
-
+Node* merge(Node* a,Node* b){
+    if(!a)return b;
+    if(!b)return a;
     Node* result;
-
-    if (a->data < b->data) 
-    {
-        result = a;
-        result->bottom = merge(a->bottom, b);
+    if(a->data>b->data){
+        result=b;
+        result->next=merge(a,b->next);
     }
-
-    else 
-    {
-        result = b;
-        result->bottom = merge(a, b->bottom);
+    else {
+        result=a;
+        result->next=merge(a->next,b);
     }
-    result->next = NULL;
     return result;
 }
 
 
 Node *flatten(Node *root)
 {
-    
     if (root == NULL || root->next == NULL)
         return root;
-
     root->next = flatten(root->next);
     root = merge(root, root->next);
     return root;
 }
 
 
+
 //https://practice.geeksforgeeks.org/problems/merge-k-sorted-linked-lists/1#
-
-
-
-
-
-
-
-
-
-
 
 
 

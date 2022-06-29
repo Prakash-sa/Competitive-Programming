@@ -30,7 +30,6 @@ int kthLargestSum(int arr[], int n, int k)
 	// sum position-wise
 	for (int i = 1; i <= n; i++)
 	{
-
 		// loop to traverse all positions that
 		// form contiguous subarray
 		for (int j = i; j <= n; j++)

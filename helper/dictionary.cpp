@@ -8,21 +8,6 @@ typedef long long lli;
 #define max11 1000001
 unordered_set<string>dict;
 
-bool func(string &s,int i, vector<int>&dp){
-    if(i==s.length())
-    return 1;
-    if(dp[i]!=-1)
-    return dp[i];
-    for(int j=i+1;j<=s.length();++j){
-        if(dict.find(s.substr(i,j-i))!=dict.end()){
-            if(func(s,j,dp)){
-                return dp[i]=1;
-            }
-        }
-    }
-    return dp[i]=0;
-}
-
 bool findit(string &s,int i, vector<int> &dp ){
     if(i==s.length())
     return 1;

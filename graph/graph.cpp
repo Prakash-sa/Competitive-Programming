@@ -2,6 +2,9 @@
 
 bool iscyl(bool vis[],int v,bool rec[],vector<int> adj[]){
     vis[v]=true;
+    //Making recursive calls for the adjacent 
+    //vertices and return true if any back edge is 
+    //found.
     rec[v]=true;
     for(auto i=adj[v].begin();i!=adj[v].end();i++){
         if(vis[*i]==false){
@@ -9,6 +12,7 @@ bool iscyl(bool vis[],int v,bool rec[],vector<int> adj[]){
         }
         else if(rec[*i])return true;
     }
+    //Unmark the vertex from recursion stack.
     rec[v]=false;
     return false;
 }

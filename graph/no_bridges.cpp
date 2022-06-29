@@ -1,3 +1,6 @@
+//https://leetcode.com/problems/critical-connections-in-a-network/
+
+
 int cnt=0;
 vector<bool>vis;
 vector<vector<int>>adj;

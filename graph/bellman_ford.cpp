@@ -33,7 +33,8 @@ int main()
                int src=adj[j][0];
                int dest=adj[j][1];
                int w=adj[j][2];
-               if(dist[src]!=10000 && dist[dest]>dist[src]+w)dist[dest]=dist[src]+w;
+               if(dist[src]!=10000 && dist[dest]>dist[src]+w)
+               dist[dest]=dist[src]+w;
            }
        }
        int flag=0;

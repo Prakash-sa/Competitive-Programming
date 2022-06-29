@@ -7,10 +7,10 @@ struct Node{
 };
 
 void push(struct Node** next_node,int val){
-struct Node* new_node=(struct Node*)malloc(sizeof(struct Node));
-new_node->next=*next_node;
-new_node->data=val;
-*next_node=new_node;
+    struct Node* new_node=(struct Node*)malloc(sizeof(struct Node));
+    new_node->next=*next_node;
+    new_node->data=val;
+    *next_node=new_node;
 }
 
 int cout_pairs(struct Node* head1,struct Node* head2,int val){
