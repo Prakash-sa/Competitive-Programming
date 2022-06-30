@@ -2,14 +2,6 @@
 
 
 
-
-
-
-
-
-
-
-
 int countRev (string s)
 {
     // your code here

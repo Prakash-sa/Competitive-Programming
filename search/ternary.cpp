@@ -22,16 +22,14 @@ int main()
     cin>>n;
     while(n--){
         cin>>l>>r;
-        
         for(int i=0; i<200; i++) {
-      double l1 = l+(r-l)/3.0;
-      double l2 = r-(r-l)/3.0;
-      if(func(l1) < func(l2)) r=l2; 
-      else l = l1;
-      }
-
-     double x = r;
-    cout<<(lli)floor(func(x))<<endl;
+            double l1 = l+(r-l)/3.0;
+            double l2 = r-(r-l)/3.0;
+            if(func(l1) < func(l2)) r=l2; 
+            else l = l1;
+        }
+        double x = r;
+        cout<<(lli)floor(func(x))<<endl;
     }
     return 0;
 }

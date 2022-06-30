@@ -4,7 +4,9 @@
     Worst Case Complexity [Big-O]: O(n^2)
     It occurs when the pivot element picked is either the greatest or the smallest element.
 
-    This condition leads to the case in which the pivot element lies in an extreme end of the sorted array. One sub-array is always empty and another sub-array contains n - 1 elements. Thus, quicksort is called only on this sub-array.
+    This condition leads to the case in which the pivot element lies in an extreme end of the sorted array. 
+    One sub-array is always empty and another sub-array contains n - 1 elements. 
+    Thus, quicksort is called only on this sub-array.
 
     However, the quicksort algorithm has better performance for scattered pivots.
 

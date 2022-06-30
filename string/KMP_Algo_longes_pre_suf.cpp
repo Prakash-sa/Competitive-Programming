@@ -3,12 +3,6 @@
 //KMP Algo
 
 
-
-
-
-
-
-
 class Solution{
     
   public:		

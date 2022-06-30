@@ -48,9 +48,6 @@ class Trie{
       }
       tmp->is_end=true;
   }
-  
-  
-  
 };
 
 class Solution{

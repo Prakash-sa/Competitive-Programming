@@ -2,7 +2,7 @@
 
 
 
-
+//feenwick tree
 class BIT{
     public:
     int sz;

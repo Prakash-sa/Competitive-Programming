@@ -35,15 +35,15 @@ int main()
 	        }
 	        r--;
 	        if(u<=b){
-	        for(int i=r;i>=l;i--){
-	            cout<<a[b][i]<<" ";
-	        }
+				for(int i=r;i>=l;i--){
+					cout<<a[b][i]<<" ";
+				}
 	        }
 	        b--;
 	        if(l<=r){
-	        for(int i=b;i>=u;i--){
-	            cout<<a[i][l]<<" ";
-	        }
+				for(int i=b;i>=u;i--){
+					cout<<a[i][l]<<" ";
+				}
 	        }
 	        l++;
 	    }
