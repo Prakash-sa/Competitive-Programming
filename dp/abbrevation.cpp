@@ -31,10 +31,11 @@ int main() {
         dp[0][0] = true;
 
         for (int i = 0; i < s1.length(); i++){
-            for (int j = 0; j <= s2.length(); j++)if (dp[i][j]){
-                if(j < s2.length() && (upcase(s1[i]) == s2[j]))dp[i + 1][j + 1] = true;
-                if(!isUpcase(s1[i])) dp[i + 1][j] = true;
-            }
+            for (int j = 0; j <= s2.length(); j++)
+                if (dp[i][j]){
+                    if(j < s2.length() && (upcase(s1[i]) == s2[j]))dp[i + 1][j + 1] = true;
+                    if(!isUpcase(s1[i])) dp[i + 1][j] = true;
+                }
         }
 
         if (dp[s1.length()][s2.length()]) cout << "YES" << endl; else cout << "NO" << endl;

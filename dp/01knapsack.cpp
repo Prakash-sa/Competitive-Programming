@@ -38,7 +38,9 @@ int main(){
 //Leetcode
 
 /*
-Try and understand the basic knapsack problem and how it's solved in two different ways. We could either build the dp table top down or bottom up. The top down approach for knapsack with O(nW) runtime and O(nW) space is listed below:
+Try and understand the basic knapsack problem and how it's solved in two different ways.
+We could either build the dp table top down or bottom up. 
+The top down approach for knapsack with O(nW) runtime and O(nW) space is listed below:
 
 
 https://leetcode.com/problems/ones-and-zeroes/
@@ -77,7 +79,8 @@ int knapsack(int val[], int wt[], int n, int W)
 }
 
 /*
-Coming to this problem, if you could understand how above approaches work, this problem is pretty similar with two knapsacks. Though the first solution gives TLE for this problem, I'm posting the easy solution just so that you understand.
+Coming to this problem, if you could understand how above approaches work, this problem is pretty similar with two knapsacks. 
+
 
 Top down approach
 */

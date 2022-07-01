@@ -6,11 +6,9 @@ using namespace std;
 
 int dp[2000][2000];
 
-// Function definition
-int transformation(string s1, string s2,
-				int i, int j)
-{
-	
+
+int transformation(string s1, string s2,int i, int j)
+{	
 	// Base cases
 	if (i >= (s1.size()) || j >= (s2.size()))
 		return 0;
@@ -18,16 +16,13 @@ int transformation(string s1, string s2,
 	// Checking the ndesired condition
 	if (s1[i] == s2[j])
 	{
-		
 		// If yes increment the count
-		dp[i][j] = 1 + transformation(s1, s2, i + 1,
-											j + 1);
+		dp[i][j] = 1 + transformation(s1, s2, i + 1,j + 1);
 	}
 	
 	// If no
 	if (dp[i][j] != -1)
 	{
-		
 		// Return the value form the table
 		return dp[i][j];
 	}
@@ -35,14 +30,12 @@ int transformation(string s1, string s2,
 	// Else store the max transformation
 	// from the subsequence
 	else
-		dp[i][j] = max(transformation(s1, s2, i, j + i),
-					transformation(s1, s2, i + 1, j));
+		dp[i][j] = max(transformation(s1, s2, i, j + i),transformation(s1, s2, i + 1, j));
 	
 	// Return the dp [-1][-1]
 	return dp[s1.size() - 1][s2.size() - 1];
 }
 
-// Driver code
 int main()
 {
 	string s1 = "geeksforgeeks";
