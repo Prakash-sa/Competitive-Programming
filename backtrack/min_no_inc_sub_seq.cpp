@@ -36,8 +36,6 @@ class Solution {
     int n;
     
     void backtrack(int x,vector<int>&nums,vector<int>&a){
-        
-
         if(a.size()>1)
             res.insert(a);   
         for(int i=x;i<n;i++){

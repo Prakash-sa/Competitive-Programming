@@ -1,5 +1,5 @@
 //https://practice.geeksforgeeks.org/problems/count-of-sum-of-consecutives/0
-
+/*
 Input:
 2
 10
@@ -7,7 +7,7 @@ Input:
 Output:
 1
 3
-
+*/
 
 #include <bits/stdc++.h>
 using namespace std;

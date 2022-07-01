@@ -1,4 +1,6 @@
 //https://www.geeksforgeeks.org/painters-partition-problem/
+//https://practice.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1#
+
 /*
 We have to paint n boards of length {A1, A2…An}. There are k painters available 
 and each takes 1 unit time to paint 1 unit of board. 

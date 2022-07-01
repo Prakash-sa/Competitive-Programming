@@ -18,6 +18,7 @@ lli tot(lli a[1001][1001],lli n1,lli n2){
     if(sum[n1][n2]!=-1) return sum[n1][n2];
     return sum[n1][n2]=tot(a,n1-1,n2)+tot(a,n1,n2-1)-tot(a,n1-1,n2-1)+a[n1][n2];
 }
+
 int main()
 {
     lli n1,n2;

@@ -12,6 +12,18 @@ using namespace std;
 int isprime[max1];
 int prime_count[max1];
 
+
+void prime_number(){
+    n=sqrt(n);
+    int pri[n+1];
+    for(int i=0;i<=n;i++)pri[i]=i;
+    for(int i=2;i*i<=n;i++){
+        if(pri[i]==i){
+            for(int j=2;i*j<=n;j++)if(pri[i*j]==i*j)pri[j*i]=i;
+        }
+    }
+}
+
 void sieveis(){
 	isprime[0]=0;
 	isprime[1]=0;

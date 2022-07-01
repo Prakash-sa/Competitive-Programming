@@ -79,7 +79,7 @@ Some helpful utility snippets:
 String
 ======
 
-#Non-repeating Characters
+# Non-repeating Characters
 
 Use a 26-bit bitmask to indicate which lower case latin characters are inside the string.
 
@@ -89,7 +89,7 @@ Use a 26-bit bitmask to indicate which lower case latin characters are inside th
 
 To determine if two strings have common characters, perform & on the two bitmasks. If the result is non-zero, mask_a & mask_b > 0, then the two strings have common characters.
 
-#Anagram
+# Anagram
 
 An anagram is word switch or word play. It is the result of re-arranging the letters of a word or phrase to produce a new word or phrase, while using all the original letters only once. In interviews, usually we are only bothered with words without spaces in them.
 
@@ -99,7 +99,7 @@ Sorting both strings should produce the same resulting string. This takes O(nlgn
 If we map each character to a prime number and we multiply each mapped number together, anagrams should have the same multiple (prime factor decomposition). This takes O(n) time and O(1) space.
 Frequency counting of characters will help to determine if two strings are anagrams. This also takes O(n) time and O(1) space.
 
-#Palindrome
+# Palindrome
 A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward as forward, such as madam or racecar.
 
 
@@ -209,16 +209,8 @@ OOPS
 Resources
 =========
 
-//-------System Design
-https://leetcode.com/tag/design/
+# codeforces everything link
 
-//--------codeforces everything link--------
-https://codeforces.com/blog/entry/57282
+- https://codeforces.com/blog/entry/57282
+- https://leetcode.com/discuss/interview-question/2189149/amazon-online-assessment-questions
 
-https://leetcode.com/discuss/interview-question/2189149/amazon-online-assessment-questions
-//-------------dp---------------------
-https://codeforces.com/blog/entry/43256
-https://atcoder.jp/contests/dp/tasks
-
-GCPC11J - Time to live
-https://www.spoj.com/problems/NITTROAD/

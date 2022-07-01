@@ -7,7 +7,6 @@ class Solution
 {
 public:
     int minSwap(int arr[], int n, int k) {
-        // Complet the function
         int ans=0;
         int cnt=0;
         int bad=0;
