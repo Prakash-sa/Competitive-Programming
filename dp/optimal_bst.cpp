@@ -42,12 +42,10 @@ int optimalSearchTree(int keys[], int freq[], int n)
 			// Try making all keys in interval keys[i..j] as root
 			for (int r = i; r <= j; r++)
 			{
-			// c = cost when keys[r] becomes root of this subtree
-			int c = ((r > i)? cost[i][r-1]:0) +
-					((r < j)? cost[r+1][j]:0) +
-					sum(freq, i, j);
-			if (c < cost[i][j])
-				cost[i][j] = c;
+				// c = cost when keys[r] becomes root of this subtree
+				int c = ((r > i)? cost[i][r-1]:0) + ((r < j)? cost[r+1][j]:0) +	sum(freq, i, j);
+				if (c < cost[i][j])
+					cost[i][j] = c;
 			}
 		}
 	}

@@ -22,14 +22,13 @@ public:
            for(int j=i;j<n;j++){
                currlen+=(nums[j]+1);
                if(currlen>k)
-               break;
+                break;
                if(j==n-1)
                 cost=0;
                else
                 cost=(k-currlen)*(k-currlen)+dp[j+1];
                  
-                 if(cost<dp[i])
-                   dp[i]=cost;
+                dp[i]=min(dp[i],cost);
            }
        }
         return dp[0];  

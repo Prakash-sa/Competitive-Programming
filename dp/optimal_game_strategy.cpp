@@ -8,7 +8,7 @@ int optimalstrategygame(int A[],int N){
         for(int i=0,j=gap;j<n;++i,++j){
             int x=((i+2)<=j)?table[i+2][j]:0;
             int y=((i+1)<=(j-1))?table[i+1][j-1]:0;
-            int z=(i<=(j+2))?table[i][j-2]:0;
+            int z=(i<=(j-2))?table[i][j-2]:0;
             table[i][j]=max(A[i]+min(x,y),A[j]+min(y,z));
         }
     }

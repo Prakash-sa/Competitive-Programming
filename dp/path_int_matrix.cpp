@@ -40,7 +40,6 @@ int main() {
                 a[i].push_back(k);
             }
          }
-
          cout<<me(a,n)<<endl;
     }
 

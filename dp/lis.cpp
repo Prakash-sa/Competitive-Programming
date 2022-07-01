@@ -60,6 +60,8 @@ int lis_array(vector<int>chart){
     for(int i=0;i<n;i++)max1=max(max1,lis[i]);
     return chart.size()-max1-1;
 }
+
+
 int liss(int a[],int n){
     int l[n+1]; 
     memset(l,0,sizeof(l));
