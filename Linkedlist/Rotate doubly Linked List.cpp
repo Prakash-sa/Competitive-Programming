@@ -1,11 +1,6 @@
 //https://practice.geeksforgeeks.org/problems/rotate-doubly-linked-list-by-p-nodes/1/#
 
 
-
-
-
-
-
 class Solution {
 public:
     Node *update(Node *head,int k)
