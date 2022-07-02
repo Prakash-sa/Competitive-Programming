@@ -3,16 +3,6 @@
 //https://www.geeksforgeeks.org/buy-maximum-stocks-stocks-can-bought-th-day/
 
 
-
-
-
-
-
-
-
-
-
-
 // C++ program to find maximum number of stocks that
 // can be bought with given constraints.
 #include <bits/stdc++.h>
@@ -36,10 +26,8 @@ int buyMaximumProducts(int n, int k, int price[])
 	int ans = 0;
 	for (int i = 0; i < n; ++i) {
 		ans += min(v[i].second, k / v[i].first);
-		k -= v[i].first * min(v[i].second,
-							(k / v[i].first));
+		k -= v[i].first * min(v[i].second,(k / v[i].first));
 	}
-
 	return ans;
 }
 

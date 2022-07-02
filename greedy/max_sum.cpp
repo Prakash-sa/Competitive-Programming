@@ -16,9 +16,7 @@ int main()
         {
             cin>>A[i];
         }
-
         cout<<max_sum(A,N)<<endl;
-        /*keeping track of the total sum of the array*/
 
     }
 }

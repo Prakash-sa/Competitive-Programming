@@ -2,15 +2,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 // C++ program to find maximum cash flow among a set of persons
 #include<iostream>
 using namespace std;

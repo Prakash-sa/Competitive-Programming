@@ -140,3 +140,9 @@ Warshall's algorithm.
     }
 
 
+# Water Connection
+
+- Store the in and out degree.
+- Run dfs for in_degree=0 and out_degree=1
+- Store the start, end and distance during dfs.
+ 

@@ -1,6 +1,10 @@
 //https://practice.geeksforgeeks.org/problems/huffman-encoding3345/1
 
+/*
 
+Max Heap+bfs
+
+ */
 
 
 class Node{
