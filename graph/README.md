@@ -125,20 +125,21 @@ Warshall's algorithm.
 
 - Use bfs with iteration from s+1 to min(s+6,30).
 
-    int s=q.front();
-    q.pop();
-    if(s==30)break;
-    for(int i=s+1;i<=s+6&&i<=30;i++){
-        if(a[i]==-1){
-            dis[i]=min(dis[i],dis[s]+1);
-            q.push(i);
-        }
-        else {
-            dis[a[i]]=min(dis[a[i]],dis[s]+1);
-            q.push(a[i]);
-        }
+```
+int s=q.front();
+q.pop();
+if(s==30)break;
+for(int i=s+1;i<=s+6&&i<=30;i++){
+    if(a[i]==-1){
+        dis[i]=min(dis[i],dis[s]+1);
+        q.push(i);
     }
-
+    else {
+        dis[a[i]]=min(dis[a[i]],dis[s]+1);
+        q.push(a[i]);
+    }
+}
+```
 
 # Water Connection
 
