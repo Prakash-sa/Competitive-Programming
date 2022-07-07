@@ -13,10 +13,8 @@
 # Notes
 
 - BFS only works for unweighted graphs. For weighted graphs, we'll need Dijkstra's algorithm.
-- For negative edge cycles, we need Bellman-Ford's algorithm. Again this algorithm is single source
-shortest path algorithm. 
-- If we need to find out distance from each nodes to all other nodes, we'll need Floyd-
-Warshall's algorithm.
+- For negative edge cycles, we need Bellman-Ford's algorithm. Again this algorithm is single source shortest path algorithm. 
+- If we need to find out distance from each nodes to all other nodes, we'll need Floyd-Warshall's algorithm.
 
 
 # Minimum Obstacle removal to reach Corner
@@ -70,7 +68,7 @@ Warshall's algorithm.
 
 # Bipartite 
 
-- Use bfs for 0 to N-1 colors.
+- Use bfs from 0 to N-1 colors.
 
 
 
@@ -79,7 +77,7 @@ Warshall's algorithm.
 1. Undirected Graph
 
 - Use dfs
-- if the node is visited and is not parent then it is cyclic.
+- If the node is visited, and is not parent then it is cyclic.
 
 
 2. Directed Graph
@@ -98,17 +96,24 @@ Warshall's algorithm.
 
 # Hamiltonian Path
 
+- Worst case complexity of using DFS and backtracking is O(N!).
+- Time complexity of the dp algorithm is O(2^n n^2).
 
 
 
 # Is Bridge
 
 - Remove the edge and use dfs.
-- 
+or 
+- Use Articulation Point, The condition for an edge (u, v) to be a bridge is, “low[v] > disc[u]”. The value low[v] indicates earliest visited vertex reachable from subtree rooted with v. 
 
 
 
-# Kosaraju Algo
+# Kosaraju Algo(Strongly Connected Component)
+
+- Create an empty stack ‘S’ and do DFS traversal of a graph. In DFS traversal, after calling recursive DFS for adjacent vertices of a vertex, push the vertex to stack. In the above graph, if we start DFS from vertex 0, we get vertices in stack as 1, 2, 4, 3, 0. 
+- Reverse directions of all arcs to obtain the transpose graph. 
+- One by one pop a vertex from S while S is not empty. Let the popped vertex be ‘v’. Take v as source and do DFS (call DFSUtil(v)). The DFS starting from v prints strongly connected component of v. In the above example, we process vertices in order 0, 3, 4, 2, 1 (One by one popped from stack).
 
 
 
@@ -117,7 +122,6 @@ Warshall's algorithm.
 
 - Use union find method.
 - If both the x and y parent are same then return that link.
-
 
 
 

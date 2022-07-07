@@ -1,3 +1,5 @@
+//https://www.hackerearth.com/practice/algorithms/graphs/hamiltonian-path/tutorial/
+
 
 int label[1000];
 int adj[1000][1000];
@@ -5,11 +7,11 @@ int adj[1000][1000];
 bool dfs(int v,int cnt,int n){
     if(cnt==n)return true;
     for(int i=0;i<n;i++){
-            if(adj[v][i]&&(label[i]==0)){
-                label[i]=1;
-                if(dfs(i,cnt+1,n))return true;
-                label[i]=0;
-            }
+        if(adj[v][i]&&(label[i]==0)){
+            label[i]=1;
+            if(dfs(i,cnt+1,n))return true;
+            label[i]=0;
+        }
     }
     return false;
 }
