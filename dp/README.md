@@ -19,24 +19,28 @@
 1. 1-0
 - Initialize array with 0
 
-    for (int i = 1; i <= n; i++){
-        for (w = 1; w <= W; w++){
-            dp[i][w] = dp[i-1][w];  //don't include the item
-            if (wt[i-1] <= w)
-                    dp[i][w] = max(dp[i][w], val[i-1] + dp[i-1][w-wt[i-1]]);  
-        }
+```
+for (int i = 1; i <= n; i++){
+    for (w = 1; w <= W; w++){
+        dp[i][w] = dp[i-1][w];  //don't include the item
+        if (wt[i-1] <= w)
+                dp[i][w] = max(dp[i][w], val[i-1] + dp[i-1][w-wt[i-1]]);  
     }
+}
+```
 
 2. Fractional Knapsack
 
 - sort the array with comparision.
 
+```
 bool cmp(struct Item a, struct Item b) 
 { 
     double r1 = (double)a.value / a.weight; 
     double r2 = (double)b.value / b.weight; 
     return r1 > r2; 
 } 
+```
 
 - add the results till W.
 
@@ -44,20 +48,21 @@ bool cmp(struct Item a, struct Item b)
 
 - Same as sum
 
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= k; j++) {
-            // number of subsequence using i-1 terms
-            dp[i][j] = dp[i-1][j];
-   
-            // if arr[i-1] > j it will surely make product greater
-            // thus it won't contribute then
-            if (arr[i - 1] <= j)
-                // number of subsequence using 1 to i-1 terms
-                // and i-th term
-                dp[i][j] += dp[i-1][j/arr[j-1]] + 1;
-        }
-    }
+```
+for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <= k; j++) {
+        // number of subsequence using i-1 terms
+        dp[i][j] = dp[i-1][j];
 
+        // if arr[i-1] > j it will surely make product greater
+        // thus it won't contribute then
+        if (arr[i - 1] <= j)
+            // number of subsequence using 1 to i-1 terms
+            // and i-th term
+            dp[i][j] += dp[i-1][j/arr[j-1]] + 1;
+    }
+}
+```
 
 
 # Subset Sum
@@ -66,14 +71,15 @@ bool cmp(struct Item a, struct Item b)
 - Return false if sum is odd.
 - Assign the dp value based on inclusion and exclusion.
 
-    if(n<=0&&sum!=0)return 0;
-    if(sum<0)return 0;
-    if(sum==0)return 1;
-    if(dp[n-1][sum]!=-1)return dp[n-1][sum];
-    
-    int ans=ch(a,n-1,sum-a[n-1])||ch(a,n-1,sum);
-    dp[n-1][sum]=ans;
+```
+if(n<=0&&sum!=0)return 0;
+if(sum<0)return 0;
+if(sum==0)return 1;
+if(dp[n-1][sum]!=-1)return dp[n-1][sum];
 
+int ans=ch(a,n-1,sum-a[n-1])||ch(a,n-1,sum);
+dp[n-1][sum]=ans;
+```
 
 
 
@@ -93,12 +99,14 @@ simple for loop
 - assign x-axis 0 value and y-axis max value.
 - answer is dp[n2][n1].
 
-    for(int i=1;i<=n2;i++){
-        for(int j=1;j<=n1;j++){
-            if(j<a[i-1])dp[i][j]=dp[i-1][j];
-            else dp[i][j]=min(dp[i-1][j],dp[i][j-a[i-1]]+1);
-        }
+```
+for(int i=1;i<=n2;i++){
+    for(int j=1;j<=n1;j++){
+        if(j<a[i-1])dp[i][j]=dp[i-1][j];
+        else dp[i][j]=min(dp[i-1][j],dp[i][j-a[i-1]]+1);
     }
+}
+```
 
 2. Number
 
@@ -106,13 +114,14 @@ simple for loop
 - assign x-axis 1 value
 - answer is dp[n][k]
 
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=k;j++){
-            if(j<a[i-1])dp[i][j]=dp[i-1][j];
-            else dp[i][j]=dp[i-1][j]+dp[i][j-a[i-1]];
-        }
+```
+for(int i=1;i<=n;i++){
+    for(int j=1;j<=k;j++){
+        if(j<a[i-1])dp[i][j]=dp[i-1][j];
+        else dp[i][j]=dp[i-1][j]+dp[i][j-a[i-1]];
     }
-
+}
+```
 
 # Coin Game winner
 
@@ -124,16 +133,18 @@ simple for loop
 - Initialize the dp with 0
 - Go right, right_up and right_down.
 
-    for (int col=n-1; col>=0; col--) 
+```
+for (int col=n-1; col>=0; col--) 
+{ 
+    for (int row=0; row<m; row++) 
     { 
-        for (int row=0; row<m; row++) 
-        { 
-            int right = (col==n-1)? 0: goldTable[row][col+1]; 
-            int right_up = (row==0 || col==n-1)? 0:goldTable[row-1][col+1]; 
-            int right_down = (row==m-1 || col==n-1)? 0:goldTable[row+1][col+1]; 
-            goldTable[row][col] = dp[row][col] + max(right, max(right_up, right_down)); 
-        } 
-    }
+        int right = (col==n-1)? 0: goldTable[row][col+1]; 
+        int right_up = (row==0 || col==n-1)? 0:goldTable[row-1][col+1]; 
+        int right_down = (row==m-1 || col==n-1)? 0:goldTable[row+1][col+1]; 
+        goldTable[row][col] = dp[row][col] + max(right, max(right_up, right_down)); 
+    } 
+}
+```
 
 - Answer will be in goldTable[n-1][0].
 
