@@ -153,7 +153,7 @@ for (int col=n-1; col>=0; col--)
 
 - Initialize dp with 0.
 - Assign x-axis with i and y-axis with i.
-- (i-1,j-1) for , (i-1,j) for ,(j,i-1) for
+- (i-1,j-1) for replace, (i-1,j) for removing, (i,j-1) for insert
 - answer is dp[m][n].
 
 ```
