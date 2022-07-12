@@ -16,8 +16,8 @@
 
 # knapsack 
 
-1. 1-0
-- Initialize array with 0
+- 1-0
+    - Initialize array with 0
 
 ```
 for (int i = 1; i <= n; i++){
@@ -29,9 +29,9 @@ for (int i = 1; i <= n; i++){
 }
 ```
 
-2. Fractional Knapsack
+- Fractional Knapsack
 
-- sort the array with comparision.
+    - sort the array with comparision.
 
 ```
 bool cmp(struct Item a, struct Item b) 
@@ -42,11 +42,11 @@ bool cmp(struct Item a, struct Item b)
 } 
 ```
 
-- add the results till W.
+    - add the results till W.
 
-3. Product Subsequence count
+- Product Subsequence count
 
-- Same as sum
+    - Same as sum
 
 ```
 for (int i = 1; i <= n; i++) {
@@ -234,19 +234,7 @@ for(int i=0;i<=n;i++){
 
 # Jump game
 
-1. 
-
-2. 
-
-3. 
-
-4. 
-
-5. 
-
-6. 
-
-7. 
+- Refer file.
 
 
 # Plaindromic Partitioning
