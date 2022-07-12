@@ -19,49 +19,24 @@ int main()
         cout<<"Case #"<<count++<<": ";
 		int n,m;
 		cin>>n>>m;
-        string s;
-        cin>>s;
-        unordered_map<int,int>mp;
-        vector<pair<int,int>>arr[s.size()];
-        for(int i=0;i<s.size();i++){
-            int k=s[i]-'A';
-            mp[k]++;
-            for(int c=0;c<36;c++)
-            arr[i].push_back({c,mp[c]});
+        vector<int>arr(n);
+        for(int i=0;i<n;i++)cin>>arr[i];
+        sort(arr.begin(),arr.end());
+        double ans=0;
+        int i=n-1;
+        while(m>1){
+            ans+=arr[i--];
+            m--;
         }
-        int q1,q2;
-        int ans=0;
-        while(m--){
-            cin>>q1>>q2;
-            int len=q2-q1+1;
-            int tmp;
-            if(len%2==0){
-                int eve=0;
-                int odd=0;
-                for(int i=0;i<36;i++){
-                    if(q1>=2)
-                    tmp=arr[q2-1][i].second-arr[q1-2][i].second;
-                    else tmp=arr[q2-1][i].second;
-                    if(tmp%2)odd++;
-                    else eve++;
-                }
-                // cout<<"add"<<odd;
-                if(odd==0)ans++;
-            }
-            else {
-                int eve=0;
-                int odd=0;
-                for(int i=0;i<36;i++){
-                    if(q1>=2)
-                    tmp=arr[q2-1][i].second-arr[q1-2][i].second;
-                    else tmp=arr[q2-1][i].second;
-                    if(tmp%2)odd++;
-                    else eve++;
-                }
-                if(odd==1)ans++;
-            }
+        double tmp=0;
+        int ran=i+1;
+        if(ran%2==1){
+            tmp=arr[i/2];
         }
-        cout<<ans<<endl;
+        else {
+            tmp=(double)(arr[i/2]+arr[i/2+1])/2;
+        }
+        cout<<ans+tmp<<endl;
 
 	}
 	return 0;

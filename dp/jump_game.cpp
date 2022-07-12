@@ -156,8 +156,16 @@ public:
 
 //https://leetcode.com/problems/jump-game-vi/
 
-//Jump Game 6
+/*
+Jump Game 6
 
+In Decreasing Deque approach:
+
+We used a deque to store indices of nums elements, elements is in decreasing order, the front is the maximum element.
+When adding a new number nums[i], we eliminate elements which is less or equal to nums[i] in deque, which will never be chosen in the future.
+Push index of current nums[i] to back of the deque.
+If the last element in deque is out of range K then remove it.
+*/
 
 class Solution {
 public:
