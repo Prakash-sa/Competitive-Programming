@@ -16,7 +16,7 @@
 
 # knapsack 
 
-- 1-0
+1. 1-0
     - Initialize array with 0
 
 ```
@@ -29,7 +29,7 @@ for (int i = 1; i <= n; i++){
 }
 ```
 
-- Fractional Knapsack
+2. Fractional Knapsack
 
     - sort the array with comparision.
 
@@ -44,7 +44,7 @@ bool cmp(struct Item a, struct Item b)
 
     - add the results till W.
 
-- Product Subsequence count
+3. Product Subsequence count
 
     - Same as sum
 
