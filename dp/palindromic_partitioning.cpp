@@ -1,6 +1,9 @@
 //Palindrome Partitioning 1
 //https://leetcode.com/problems/palindrome-partitioning/
-
+/*
+Given a string s, partition s such that every substring of the partition is a palindrome. 
+Return all possible palindrome partitioning of s.
+*/
 
 class Solution {
     
@@ -43,6 +46,25 @@ public:
 
 //https://leetcode.com/problems/palindrome-partitioning-ii/
 
+/*
+Given a string s, partition s such that every substring of the partition is a palindrome.
+Return the minimum cuts needed for a palindrome partitioning of s.
+
+Input: s = "aab"
+Output: 1
+Explanation: The palindrome partitioning ["aa","b"] could be produced using 1 cut.
+
+Example 2:
+
+Input: s = "a"
+Output: 0
+
+Example 3:
+
+Input: s = "ab"
+Output: 1
+
+*/
 
 class Solution {
     vector<vector<int>>dp1;
@@ -86,6 +108,32 @@ public:
 //Palindrome Partitioning 3
 //https://leetcode.com/problems/palindrome-partitioning-iii/
 
+/*
+You are given a string s containing lowercase letters and an integer k. You need to :
+
+    First, change some characters of s to other lowercase English letters.
+    Then divide s into k non-empty disjoint substrings such that each substring is a palindrome.
+
+Return the minimal number of characters that you need to change to divide the string.
+
+ Example 1:
+
+Input: s = "abc", k = 2
+Output: 1
+Explanation: You can split the string into "ab" and "c", and change 1 character in "ab" to make it palindrome.
+
+Example 2:
+
+Input: s = "aabbc", k = 3
+Output: 0
+Explanation: You can split the string into "aa", "bb" and "c", all of them are palindrome.
+
+Example 3:
+
+Input: s = "leetcode", k = 8
+Output: 0
+*/
+
 class Solution {
     vector<vector<int>>cost;
     vector<vector<int>>dp;
@@ -123,7 +171,26 @@ public:
 //Palindrome Partitioning 4
 //https://leetcode.com/problems/palindrome-partitioning-iv/
 
+/*
+Given a string s, return true if it is possible to split the string s into three non-empty palindromic substrings. Otherwise, return false.​​​​​
 
+A string is said to be palindrome if it the same string when reversed.
+
+ 
+
+Example 1:
+
+Input: s = "abcbdd"
+Output: true
+Explanation: "abcbdd" = "a" + "bcb" + "dd", and all three substrings are palindromes.
+
+Example 2:
+
+Input: s = "bcbddxy"
+Output: false
+Explanation: s cannot be split into 3 palindromes.
+
+*/
 
 class Solution {
     

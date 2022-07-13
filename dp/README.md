@@ -5,7 +5,6 @@
 - Balanced Partition: https://leetcode.com/problems/partition-equal-subset-sum/
 - Optimal Strategy for a Game: https://leetcode.com/problems/predict-the-winner/
 - Maximum Value Contiguous Subsequence: https://leetcode.com/problems/maximum-subarray/
-- Edit Distance: https://leetcode.com/problems/edit-distance/
 - https://codeforces.com/blog/entry/43256
 - https://atcoder.jp/contests/dp/tasks
 
@@ -14,6 +13,7 @@
 
 1. 1-0
     - Initialize array with 0
+    - https://www.youtube.com/watch?v=nLmhmB6NzcM&ab_channel=AbdulBari
 
 ```
 for (int i = 1; i <= n; i++){
@@ -94,6 +94,7 @@ simple for loop
     - Initialize dp with 0
     - assign x-axis 0 value and y-axis max value.
     - answer is dp[n2][n1].
+    - https://www.youtube.com/watch?v=Y0ZqKpToTic&t=367s&ab_channel=TusharRoy-CodingMadeSimple
 
 ```
 for(int i=1;i<=n2;i++){
@@ -118,6 +119,14 @@ for(int i=1;i<=n;i++){
     }
 }
 ```
+
+3. Maximum Value of K Coins from Piles
+
+    - dp[i,k] means picking k elements from pile[i] to pile[n-1].
+    - We can pick 0,1,2,3... elements from the current pile[i] one by one.
+    - It asks for the maximum total value of coins we can have,so we need to return max of all the options.
+
+
 
 # Coin Game winner
 
@@ -235,13 +244,7 @@ for(int i=0;i<=n;i++){
 
 # Plaindromic Partitioning
 
-1. 
-
-2. 
-
-3. 
-
-4. 
+- Refer file
 
 
 
