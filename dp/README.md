@@ -1,10 +1,6 @@
 ## Problems 
 
-- Dice Throw Problem: https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/
-- Coin Change: https://leetcode.com/problems/coin-change/ and https://leetcode.com/problems/coin-change-2/
 - Counting Boolean Parenthesizations:
-- Subset Sum Problem:
-- Minimum Number of Jumps: https://leetcode.com/problems/jump-game-ii/
 - Two-Person Traversal of a Sequence of Cities:
 - Balanced Partition: https://leetcode.com/problems/partition-equal-subset-sum/
 - Optimal Strategy for a Game: https://leetcode.com/problems/predict-the-winner/
@@ -95,9 +91,9 @@ simple for loop
 
 1. Minimum
 
-- Initialize dp with 0
-- assign x-axis 0 value and y-axis max value.
-- answer is dp[n2][n1].
+    - Initialize dp with 0
+    - assign x-axis 0 value and y-axis max value.
+    - answer is dp[n2][n1].
 
 ```
 for(int i=1;i<=n2;i++){
@@ -110,9 +106,9 @@ for(int i=1;i<=n2;i++){
 
 2. Number
 
-- Initialize dp with 0
-- assign x-axis 1 value
-- answer is dp[n][k]
+    - Initialize dp with 0
+    - assign x-axis 1 value
+    - answer is dp[n][k]
 
 ```
 for(int i=1;i<=n;i++){
@@ -252,8 +248,8 @@ for(int i=0;i<=n;i++){
 # Kadane
 
 1. Max Sum
-- Store the local and global variable.
-- Answer will be in the global.
+    - Store the local and global variable.
+    - Answer will be in the global.
 
 ```
 int lo=a[0],go=a[0];
@@ -265,8 +261,8 @@ for(int i=1;i<n;i++){
 
 
 2. Max Product
-- Store the minimum and maximum number from the array.
-- Swap the min and max when negative number occur.
+    - Store the minimum and maximum number from the array.
+    - Swap the min and max when negative number occur.
 
 ```
 int ans=nums[0],maxm=nums[0],minm=nums[0];
@@ -310,7 +306,7 @@ int ch(int a[],int  n){
 
 4. Maximum Sub Rectangle
 
-- Use kadane after updating the res vector.
+    - Use kadane after updating the res vector.
 
 ```
 for(int i=0;i<R;i++){
@@ -326,7 +322,7 @@ for(int i=0;i<R;i++){
 
 5. Minimum sum contiguous subarray
 
-- same as max sum
+    - same as max sum
 
 ```
 int ans=INT_MAX;
@@ -343,8 +339,8 @@ for(int i=0;i<a.size();i++){
 
 1. Count Palindromic Subsequence:-
 
-- Initialize dp with 0.
-- answer is dp[0][n-1].
+    - Initialize dp with 0.
+    - answer is dp[0][n-1].
 
 ```
 for(long long int k=0;k<n;k++){
@@ -363,8 +359,8 @@ for(long long int k=0;k<n;k++){
 
 2. Longest Increasing Subsequence
 
-- Initialize dp with 0.
-- 
+    - Initialize dp with 0.
+    - 
 ```
 for(int i=0;i<n;i++){
     for(int j=0;j<i;j++){
@@ -375,7 +371,7 @@ for(int i=0;i<n;i++){
 
 3. Maximum sum increasing Subsequence
 
-- Initialize dp with the array value.
+    - Initialize dp with the array value.
 
 ```    
 for(int i=0;i<n;i++)dp[i]=arr[i];
@@ -392,8 +388,8 @@ for(int i=0;i<n;i++){
 
 4. Length of Longest Increasing Subsequence
 
-- Assign the greater element to the tmp array.
-- Size of array is the answer.
+    - Assign the greater element to the tmp array.
+    - Size of array is the answer.
 
 ```
 for(int i=0;i<nums.size();i++){
@@ -405,8 +401,8 @@ for(int i=0;i<nums.size();i++){
 
 5. Number of LIS
 
-- Initialize length, count and lis as 1.
-- 
+    - Initialize length, count and lis as 1.
+    - 
 
 ```
 for(int i = 1; i < n; i++){
@@ -432,7 +428,7 @@ for(int i = 0; i < n; i++){
 
 6. Minimum Operations to make the array k increasing
 
-- 
+    - 
 
 ```
 for(int i=0;i<k;i++){
@@ -448,9 +444,9 @@ return arr.size()-longest;
 
 7. Longest Arithmetic Subsequence
 
-- Store the differenc of the array.
-- Maximum of the dp is the answer.
-- Result will be ans+1;
+    - Store the differenc of the array.
+    - Maximum of the dp is the answer.
+    - Result will be ans+1;
 
 ```
 for(int i=0;i<n;i++){
@@ -464,11 +460,11 @@ for(int i=0;i<n;i++){
 
 8. Longest Bitonic Subsequence
 
-- Initialize the dp with 1.
-- Store the increasing subsequence from left to right.
-- Store the decreasing subsequence from right to left.
-- add the above two dp.
-- Answer will be the max of all i (dp1[i]+dp2[i])-1.
+    - Initialize the dp with 1.
+    - Store the increasing subsequence from left to right.
+    - Store the decreasing subsequence from right to left.
+    - add the above two dp.
+    - Answer will be the max of all i (dp1[i]+dp2[i])-1.
 
 ```
 for(int i=1;i<n;i++){
@@ -485,8 +481,8 @@ for(int i=n-2;i>=0;i--){
 
 9. Longest Common Subsequence of String
 
-- Initialize the dp with 0.
-- Answer will be dp[n1][n2].
+    - Initialize the dp with 0.
+    - Answer will be dp[n1][n2].
 
 ```
 for(int i=1;i<=n1;i++){
@@ -499,7 +495,7 @@ for(int i=1;i<=n1;i++){
 
 10. Longest Common Subsequence of 3 string 
 
-- Same as LCS of 2 string.
+    - Same as LCS of 2 string.
 
 ```
 for(int i=0;i<=n;i++){
@@ -515,12 +511,12 @@ for(int i=0;i<=n;i++){
 
 11. Longest Repeating Subsequence
 
-- LCS with s[i-1]==s[j-1] and i!=j condition
+    - LCS with s[i-1]==s[j-1] and i!=j condition
 
 
 12. Longest Palindrome Subsequence
 
-- LCS of string s and reverse string t.
+    - LCS of string s and reverse string t.
 
 
 13. 
@@ -534,7 +530,7 @@ for(int i=0;i<=n;i++){
 
 1. Longest Common Substring
 
-- Inititialize dp with 0.
+    - Inititialize dp with 0.
 
 ```
 for(int i=1;i<=n;i++){
@@ -557,9 +553,9 @@ for(int i=1;i<=n;i++){
 
 # Larget Divisible Subset
 
-- Initialize dp with 1.
-- Iterate through array two times.
-- Store the divisible number.
+    - Initialize dp with 1.
+    - Iterate through array two times.
+    - Store the divisible number.
 
 ```
 for(int i=0;i<n;i++){
@@ -573,7 +569,7 @@ for(int i=0;i<n;i++){
 }
 ```
 
-- 
+    - 
 
 ```
 int t=max_in;
