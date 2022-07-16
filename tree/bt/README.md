@@ -49,3 +49,15 @@ one path in the graph.
 
 
 
+# Views
+
+## Bottom View
+
+- Use map and queue for bfs
+- 
+
+## Boundary
+
+- Left Boundary
+- Leaf Boundary
+- Right Boundary

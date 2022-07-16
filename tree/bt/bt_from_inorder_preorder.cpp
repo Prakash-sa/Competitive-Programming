@@ -1,29 +1,31 @@
-TreeNode* ch(int &r,vector<int>&preorder,map<int,int>&mp,int left,int right){
-    if(left<=right){
-        TreeNode* root=new TreeNode();
-        r++;
-        if(left==right){
-            root->val=preorder[r];
-            root->left=NULL;
-            root->right=NULL;
-            return root;
-        }
-        root->val=preorder[r];
-        int pos =mp[preorder[r]];
-        root->left=ch(r,preorder,mp,left,pos-1);
-        root->right=ch(r,preorder,mp,pos+1,right);
+//https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+//https://www.youtube.com/watch?v=aZNaLrVebKQ&ab_channel=takeUforward
+
+
+class Solution {
+    map<int,int>mp;
+    
+    TreeNode* traversal(vector<int>&preorder,int &p,int left,int right){
+        if(left>right)return NULL;
+        p++;
+        TreeNode* root=new TreeNode(preorder[p]);
+        if(left==right)return root;
+        int pos=mp[preorder[p]];
+        
+        root->left=traversal(preorder,p,left,pos-1);
+        root->right=traversal(preorder,p,pos+1,right);
         return root;
     }
-    return NULL;
-}
-
-TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
-    if(preorder.size()==0&&inorder.size()==0)return NULL;
-    int root=-1;
-    map<int,int>mp;
-    for(int i=0;i<inorder.size();i++)mp[inorder[i]]=i;
-    return ch(root,preorder,mp,0,preorder.size()-1);
-}
+    
+public:
+    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+        int n=inorder.size();
+        if(n==0)return NULL;
+        for(int i=0;i<inorder.size();i++)mp[inorder[i]]=i;
+        int p=-1;
+        return traversal(preorder,p,0,n-1);
+    }
+};
 
 
 //---gfg---
