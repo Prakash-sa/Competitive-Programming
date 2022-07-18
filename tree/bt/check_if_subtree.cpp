@@ -15,6 +15,5 @@ bool isSubTree(Node* T, Node* S) {
     
     int l=areIdentical(T,S);
     if(l==1)return true;
-    return isSubTree(T->left,S)||
-    isSubTree(T->right,S);
+    return isSubTree(T->left,S)||isSubTree(T->right,S);
 }

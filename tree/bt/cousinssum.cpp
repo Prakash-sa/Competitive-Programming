@@ -13,19 +13,19 @@ int findCousinSum(Node* root, int key)
         while(size){
             root=q.front();
             q.pop();
-                if((root->left&&root->left->data==key) || (root->right&&root->right->data==key)){
-                    found=true;
+            if((root->left&&root->left->data==key) || (root->right&&root->right->data==key)){
+                found=true;
+            }
+            else {
+                if(root->left){
+                    q.push(root->left);
+                    cnt+=root->left->data;
                 }
-                else {
-                    if(root->left){
-                        q.push(root->left);
-                        cnt+=root->left->data;
-                    }
-                    if(root->right){
-                        q.push(root->right);
-                        cnt+=root->right->data;
-                    }
+                if(root->right){
+                    q.push(root->right);
+                    cnt+=root->right->data;
                 }
+            }
             size--;
         }
     }

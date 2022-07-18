@@ -58,6 +58,23 @@ one path in the graph.
 
 ## Boundary
 
-- Left Boundary
-- Leaf Boundary
-- Right Boundary
+- Left Boundary of root->left
+- Leaf Boundary of root->left and root->right
+- Right Boundary of root->right
+
+## Zigzag level
+
+- Reverse at alternative level
+
+
+# Cousins
+
+
+## Sum
+
+
+
+## is Cousins
+
+- same level and not siblings
+

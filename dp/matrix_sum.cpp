@@ -25,7 +25,7 @@ int main()
     cin>>n1>>n2;
    // lli a[n1][n2];
     memset(sum,-1,sizeof(sum));
-    F(i,0,n1-1){
+    F(i,0,n1-1){2103
         F(j,0,n2-1)cin>>a[i][j];
        
     }
