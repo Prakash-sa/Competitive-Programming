@@ -1,7 +1,11 @@
 //Path sum 1
 //https://leetcode.com/problems/path-sum/
 
-// root to leaf
+/*
+Given the root of a binary tree and an integer targetSum, 
+return true if the tree has a root-to-leaf path such that 
+adding up all the values along the path equals targetSum.
+*/
 
 
 class Solution {
@@ -21,7 +25,11 @@ public:
 //https://leetcode.com/problems/path-sum-ii/
 //Path Sum 2
 
-// root-to-leaf
+/*
+Given the root of a binary tree and an integer targetSum, 
+return all root-to-leaf paths where the sum of the node values in the path equals targetSum. 
+Each path should be returned as a list of the node values, not node references.
+*/
 
 
 class Solution {
@@ -55,6 +63,11 @@ public:
 //https://practice.geeksforgeeks.org/problems/k-sum-paths/1/#
 
 //https://leetcode.com/problems/path-sum-iii/
+
+/*
+Given the root of a binary tree and an integer targetSum, 
+return the number of paths where the sum of the values along the path equals targetSum.
+*/
 
 
 

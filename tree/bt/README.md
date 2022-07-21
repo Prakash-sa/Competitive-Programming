@@ -78,3 +78,31 @@ one path in the graph.
 
 - same level and not siblings
 
+
+# Subtree
+
+- 
+
+
+# is graph is tree
+
+- is cyclic ?
+
+
+
+# isomorphic
+
+- Two trees are called isomorphic if one can be obtained from another by a series of flips.i.e. by swapping left and right children of several nodes. Any number of nodes at any level can have their children swapped.
+
+
+
+# path sum
+
+- 
+
+
+
+# largest independent set
+
+- inclusion and exclusion
+

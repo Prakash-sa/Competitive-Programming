@@ -121,7 +121,7 @@ int main() {
 void pushit(Node* root,vector<int>&v){
     if(root==NULL)return ;
     v.push_back(root->data);
-    pushit(root->left,v);
+    pushit(root->left,v);https://xhamster18.desi/videos/big-tit-brunette-zeynep-rossa-gives-sensual-titty-fuck-and-cock-ride-s14-e5-xhfgmbj
     pushit(root->right,v);
 }
 vector<int> merge(Node *root1, Node *root2)
