@@ -1,5 +1,19 @@
 //https://practice.geeksforgeeks.org/problems/word-break-part-23249/1#   
 
+/*
+Given a string s and a dictionary of words dict of length n, add spaces in s to construct a sentence where each word is a valid dictionary word. 
+Each dictionary word can be used more than once. 
+Return all such possible sentences.
+
+Follow examples for better understanding.
+
+Example 1:
+
+Input: s = "catsanddog", n = 5 
+dict = {"cats", "cat", "and", "sand", "dog"}
+Output: (cats and dog)(cat sand dog)
+*/
+
    vector<string> ans;
    map<string,int>mp; 
   void solve(string &s,string &v,int pos)
@@ -33,9 +47,22 @@
         return ans;
     }
 
+
 //Word break 1
 
 //https://leetcode.com/problems/word-break/
+
+/*
+Given a string s and a dictionary of strings wordDict, 
+return true if s can be segmented into a space-separated sequence of one or more dictionary words.
+Note that the same word in the dictionary may be reused multiple times in the segmentation.
+ 
+
+Example 1:
+
+Input: s = "leetcode", wordDict = ["leet","code"]
+Output: true
+*/
 
 
 class Solution {
@@ -70,6 +97,17 @@ public:
 
 //https://leetcode.com/problems/word-break-ii/
 
+/*
+Given a string s and a dictionary of strings wordDict, add spaces in s to construct a sentence where each word is a valid dictionary word. 
+Return all such possible sentences in any order.
+Note that the same word in the dictionary may be reused multiple times in the segmentation.
+ 
+
+Example 1:
+
+Input: s = "catsanddog", wordDict = ["cat","cats","and","sand","dog"]
+Output: ["cats and dog","cat sand dog"]
+*/
 
 
 
@@ -101,12 +139,3 @@ public:
         return res;
     }
 };
-
-
-
-
-
-
-
-
-
