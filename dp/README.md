@@ -281,29 +281,44 @@ for(int i=1;i<nums.size();i++){
 
 3. Circular Sub array
 
-- 
+- We will calculate the total sum of the given array.
+- We will declare the variable curr_max, max_so_far, curr_min, min_so_far as the first value of the array.
+- Now we will use Kadane’s Algorithm to find the maximum subarray sum and minimum subarray sum.
+- Check for all the values in the array:- 
+    - If min_so_far is equaled to sum, i.e. all values are negative, then we return max_so_far.
+    - Else, we will calculate the maximum value of max_so_far and (sum – min_so_far) and return it.
 ```
-int kadane(int a[],int n){
-    int tmp=a[0],ans=a[0];
-    for(int i=1;i<n;i++){
-        tmp=max(a[i],tmp+a[i]);
-        ans=max(ans,tmp);
+int maxCircularSum(int a[], int n)
+{
+    // Corner Case
+    if (n == 1)
+        return a[0];
+ 
+    // Initialize sum variable which store total sum of the array.
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += a[i];
     }
-    return ans;
-}
-
-
-int ch(int a[],int  n){
-    int max1=kadane(a,n);
-    int max_wrap=0;
-    for(int i=0;i<n;i++){
-        max_wrap+=a[i];
-        a[i]=-a[i];
+ 
+    // Initialize every variable with first value of array.
+    int curr_max = a[0], max_so_far = a[0], curr_min = a[0], min_so_far = a[0];
+ 
+    // Concept of Kadane's Algorithm
+    for (int i = 1; i < n; i++) {
+        // Kadane's Algorithm to find Maximum subarray sum.
+        curr_max = max(curr_max + a[i], a[i]);
+        max_so_far = max(max_so_far, curr_max);
+ 
+        // Kadane's Algorithm to find Minimum subarray sum.
+        curr_min = min(curr_min + a[i], a[i]);
+        min_so_far = min(min_so_far, curr_min);
     }
-    max_wrap=max_wrap+kadane(a,n);
-    int ans=max(max_wrap,max1);
-    if(ans<=0)return min(max_wrap,max1);
-    return ans;
+ 
+    if (min_so_far == sum)
+        return max_so_far;
+ 
+    // returning the maximum value
+    return max(max_so_far, sum - min_so_far);
 }
 ```
 
