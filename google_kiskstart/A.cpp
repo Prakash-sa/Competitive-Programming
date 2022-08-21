@@ -17,26 +17,10 @@ int main()
 	cin>>t;
 	while(t--){
         cout<<"Case #"<<count++<<": ";
-		int n,m;
-		cin>>n>>m;
-        vector<int>arr(n);
-        for(int i=0;i<n;i++)cin>>arr[i];
-        sort(arr.begin(),arr.end());
-        double ans=0;
-        int i=n-1;
-        while(m>1){
-            ans+=arr[i--];
-            m--;
-        }
-        double tmp=0;
-        int ran=i+1;
-        if(ran%2==1){
-            tmp=arr[i/2];
-        }
-        else {
-            tmp=(double)(arr[i/2]+arr[i/2+1])/2;
-        }
-        cout<<ans+tmp<<endl;
+		int n;
+        cin>>n;
+        cout<<ceil(n/5)+(n%5!=0);
+        cout<<endl;
 
 	}
 	return 0;

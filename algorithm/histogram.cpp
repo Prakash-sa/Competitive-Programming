@@ -41,7 +41,6 @@ int main()
 
                 maxare=max(area,maxare);
             }
-
         }
         while(!s.empty()){
             int k=s.top();

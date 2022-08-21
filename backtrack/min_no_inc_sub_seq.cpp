@@ -1,5 +1,9 @@
 #include<bits/stdc++.h>
-using namespace stdc
+using namespace std;
+
+
+//https://www.geeksforgeeks.org/minimum-number-of-increasing-subsequences/
+
 
 int ch(int a[],int n){
   multiset<int>last;

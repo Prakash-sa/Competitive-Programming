@@ -4,23 +4,22 @@
 
 class Solution{
     public:
-
-     int height(Node* root){
-         if(!root)return 0;
-         return max(height(root->right),height(root->left))+1;
-     }
-     bool isBalanced(Node *root)
-     {
-         //  Your Code here
-         if(!root)return true;
-         int left=height(root->left);
-         int right=height(root->right);
-         if(abs(left-right)>1)return false;
-         bool rel=isBalanced(root->left);
-         bool rer=isBalanced(root->right);
-         if( !rel|| !rer)return false;
-         return true;
-     }
+    //Function to check whether a binary tree is balanced or not.
+    
+    int height(Node* root){
+        if(!root)return 0;
+        return max(height(root->left),height(root->right))+1;
+    }
+    
+    bool isBalanced(Node *root)
+    {
+        //  Your Code here
+        if(!root)return true;
+        int l=height(root->left);
+        int r=height(root->right);
+        if(abs(l-r)>1)return false;
+        return isBalanced(root->left) && isBalanced(root->right);
+    }
 };
 
 
