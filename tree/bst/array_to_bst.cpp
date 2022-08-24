@@ -57,12 +57,12 @@ int main(){
     cin>>t;
     while(t--){
         cin>>n;
-    int a[n],k;
-    for(int i=0;i<n;i++)cin>>a[i];
-    struct node* root=NULL;
-    root=construct(a,0,n-1);
-    preorder(root);
-    cout<<endl;
-}
+        int a[n],k;
+        for(int i=0;i<n;i++)cin>>a[i];
+        struct node* root=NULL;
+        root=construct(a,0,n-1);
+        preorder(root);
+        cout<<endl;
+    }
         
 }
