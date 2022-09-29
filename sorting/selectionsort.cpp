@@ -8,7 +8,8 @@ Time Complexities:
     Average Case Complexity: O(n^2)
     It occurs when the elements of the array are in jumbled order (neither ascending nor descending).
 
-The time complexity of the selection sort is the same in all cases. At every step, you have to find the minimum element and put it in the right place. The minimum element is not known until the end of the array is not reached.
+The time complexity of the selection sort is the same in all cases. At every step, you have to find the minimum element and put it in the right place. 
+The minimum element is not known until the end of the array is not reached.
 
 Space Complexity:
 
