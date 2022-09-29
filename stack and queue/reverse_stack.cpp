@@ -2,12 +2,6 @@
 
 
 
-
-
-
-
-
-
 class Solution{
     stack<int>ans;
     
