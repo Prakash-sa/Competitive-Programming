@@ -11,6 +11,12 @@ Input: matrix = [[1,0,1],[0,-2,3]], k = 2
 Output: 2
 Explanation: Because the sum of the blue rectangle [[0, 1], [-2, 3]] is 2, and 2 is the max number no larger than k (k = 2).
 
+
+Using Prefix Sum && Binary Search
+
+Time Complexity :- O(N * N * N * logN)
+
+Space Complexity :- O(N)
 */
 
 
@@ -24,10 +30,12 @@ class Solution {
         int res=INT_MIN;
         for(int i=0;i<arr.size();i++){
             tmp+=arr[i];
+            // find the prefix sum in set having sum == curr_sum - k
             auto it=s.lower_bound(tmp-k);
             if(it!=s.end()){
                 res=max(res,tmp-*it);
             }
+            // insert prefix sum into set
             s.insert(tmp);
         }
         return res;
