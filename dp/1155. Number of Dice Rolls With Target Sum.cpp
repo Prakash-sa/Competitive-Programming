@@ -31,6 +31,39 @@ Note that for the bottom-up solution, we can reduce our memory complexity as we 
 */
 
 
+//dfs+memoziation
+
+
+class Solution {
+    int MOD=1e9+7;
+    int ans;
+    vector<vector<int>>dp;
+
+    int traversal(int n,int k,int target){
+        if(n<0 || target<0)return 0;
+        if(dp[n][target]!=-1)return dp[n][target];
+        if(n==0 && target==0){
+            return dp[n][target]=++ans;
+        }
+        int ret=0;
+        for(int i=1;i<=min(k,target);i++){
+            ret=(ret+traversal(n-1,k,target-i))%MOD;
+        }
+        return dp[n][target]=ret;
+    }
+
+public:
+    int numRollsToTarget(int n, int k, int target) {
+        ans=0;
+        dp.resize(n+1,vector<int>(target+1,-1));
+        return traversal(n,k,target);
+        return ans;
+    }
+};
+
+
+//dp
+
 class Solution {
 public:
     int numRollsToTarget(int n, int k, int target) {
