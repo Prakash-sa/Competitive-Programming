@@ -42,14 +42,11 @@ int main()
         int a[n];
         for(int i=0;i<n;i++)cin>>a[i];
         build(a);
-      //  for(int i=0;i<n;i++)cout<<tree[i];
-        //cout<<endl;
         while(q--){
             char s;
             int y,k;
             cin>>s>>y>>k;
             y--;
-            
             if(s=='q'){
                 int res=query(y,k);
                 cout<<res<<endl;            
@@ -57,10 +54,6 @@ int main()
             else {
                 update(y,k);
             }
-    
         }
-
-    
-
     return 0;
 }
