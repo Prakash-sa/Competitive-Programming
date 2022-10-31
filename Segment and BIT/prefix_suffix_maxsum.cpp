@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*Structure that is used to 
-store value*/
+/*Structure that is used to store value*/
 struct node
 {
    int sum,prefixsum;
