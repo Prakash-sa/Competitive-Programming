@@ -1,3 +1,3 @@
 #!/bin/bash
-g++ $1
+g++ main.cpp
 ./a.out < in > out

@@ -10,9 +10,15 @@ typedef long long int lli;
 
 vector<int> dp;
 
-void ref(int start, int end)
+int sum_di(int n)
 {
-    if (dp[])
+    int sum = 0;
+    while (n)
+    {
+        sum += n % 10;
+        n = n / 10;
+    }
+    return sum;
 }
 
 int main()
@@ -20,9 +26,12 @@ int main()
     speed;
     int n;
     cin >> n;
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
-        cin >> arr[i];
+    int ans = 7 * n + 21 * sum_di(n);
+    // for (int i = 0; i < 6; i++){
+    //     ans+=sum_di(ans);
+    //     cout<<ans<<" ";
+    // }
+    cout << ans << endl;
 
     return 0;
 }

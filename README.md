@@ -1,10 +1,10 @@
-Links
-==============
+# Links
 
 - [Leetcode]https://leetcode.com/discuss/general-discussion/665604/Important-and-Useful-links-from-all-over-the-Leetcode
 
 - [Google Docs]https://docs.google.com/document/d/1wUCqhVHydWiDk6FJdFLSMpgigNrGcs4OFZg0Wa7JGEw/edit?usp=sharing
 
+- [Devops Exercise]https://github.com/bregman-arie/devops-exercises
 
 # Hard
 
@@ -14,47 +14,36 @@ sub-array with k mean:- https://codeforces.com/blog/entry/91768
 
 - Fenwick tree[http://usaco.org/current/data/sol_median.html]
 
-
 ## Substring vs Subsequence
 
 - Subarray need to be consecutive. Subsequence don't have to be consecutive.
-
 
 ## Time Complexity
 
 - Recursion O(2^N)
 
-
 ## STL
 
-Map
-===
+# Map
 
 - Insertion O(log(n)) and find O(log(n))
 - Based on Red Black Tree(Inbuilt implementation)
-- Key as string O(s.size() * log(n))
-- 
+- Key as string O(s.size() \* log(n))
+-
 
-Unordered Map
-=============
+# Unordered Map
 
-- Hash tables 
+- Hash tables
 - Time complexity insertion O(1) and find O(1)
 - can't use pairs as key(maps insert using comparision)
 
-Multimap
-========
+# Multimap
 
 - can use multiple keys
 
-
-
-
 ## Topics
 
-
-Catalan Number
-=============
+# Catalan Number
 
 Catalan numbers are a sequence of natural numbers that occurs in many interesting counting problems like following.
 
@@ -63,8 +52,7 @@ Catalan numbers are a sequence of natural numbers that occurs in many interestin
 - Count the number of full binary trees (A rooted binary tree is full if every vertex has either two children or no children) with n+1 leaves.
 - Given a number n, return the number of ways you can draw n chords in a circle with 2 x n points such that no 2 chords intersect.
 
-Binary
-======
+# Binary
 
 Some helpful utility snippets:
 
@@ -76,8 +64,7 @@ Some helpful utility snippets:
 - Swapping two variables: num1 ^= num2; num2 ^= num1; num1 ^= num2
 - When dealing with floating point numbers, take note of rounding mistakes. Consider using epsilon comparisons instead of equality checks. E.g. abs(x - y) <= 10e7 instead of x == y).
 
-String
-======
+# String
 
 # Non-repeating Characters
 
@@ -100,75 +87,60 @@ If we map each character to a prime number and we multiply each mapped number to
 Frequency counting of characters will help to determine if two strings are anagrams. This also takes O(n) time and O(1) space.
 
 # Palindrome
-A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward as forward, such as madam or racecar.
 
+A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward as forward, such as madam or racecar.
 
 BFS uses a queue while DFS uses a stack
 
-
-LinkedList
-==========
+# LinkedList
 
 - Quick sort is preferred for Arrays and MergeSort of LinkedList[https://www.geeksforgeeks.org/why-quick-sort-preferred-for-arrays-and-merge-sort-for-linked-lists/].
-- 
+-
 
-Tree
-====
+# Tree
 
 A tree is an undirected and connected acyclic graph.
 
 Binary tree of n depth.
-	
 left=pow(2,n)
 edges=2(pow(2,n)-1)
 level=n+1
 
-
-BST
-===
+# BST
 
 Inorder traverse of BST will give an ascending sequence of all values.
 By slightly modifying the inorder traverse such that we firstly travel right subtree and then left subtree, we can get the descending order of the BST.
 
-
-
-Graph
-=====
-
+# Graph
 
 Dijkastra-> shortest path from one node to all nodes.
 Bellman-Ford-> Dijkastra + negative edges
 Floyd Warshall-> Shortest path bw all pairs of vertices, negative edges allowed
 
-
-Heap
-====
+# Heap
 
 - If node is at index:- i
-	left Node->2*i
-	right Node->2*i+1
-	its parent->mod(i/2)
+  left Node->2*i
+  right Node->2*i+1
+  its parent->mod(i/2)
 
 - If h is height that max no. of nodes is pow(2,h+1)-1
 
 if vector<double>numbers={0,1,2,3,...,9}
+
 - max_heap(numbers.begin(),numbers.end())
 - push_heap(numbers.begin(),numbers.end()) in vector numbers.push_back(4)
 - largest no. by numbers.front()
 - pop_heap(numbers.begin(),numbers.end()) and numbers.pop_back() // remove 9 at back
 
+# Some common formulas
 
-Some common formulas
-====================
-
-- Sum of 1 to N = (n+1) * n/2
+- Sum of 1 to N = (n+1) \* n/2
 - Sum of GP = 20 + 21 + 22 + 23 + ... 2n = 2n+1 - 1
 - Permutations of N = N! / (N-K)!
-- Combinations of N = N! / (K! * (N-K)!)
+- Combinations of N = N! / (K! \* (N-K)!)
 
-
-Notes
-=====
+# Notes
 
 - A priority queue is an abstract data type, while a Heap is a data structure. Therefore, a Heap is not a Priority Queue, but a way to implement a Priority Queue.
 - int->string use to_string(int)
@@ -179,22 +151,21 @@ Notes
 - fill(v.begin(),v.end(),1)
 - lower_bound(v.begin(),v.end(),6)
 - upper_bound(v.begin(),v.end(),10) -> point to the element location
-- reverse , reverse_copy, rotate 
+- reverse , reverse_copy, rotate
 - unique-> to copy same element unique(v.begin(),v.end());
 - v.resize(n)
 - iota -> increment the value
 
-	iota(v.begin(),v.end(),10) -> increment the value by 10
+  iota(v.begin(),v.end(),10) -> increment the value by 10
 
 - accumulate -> add all the value in the vector
 
-	accumulate(v.begin(),v.end(),result, myoperation)
-	int myoperation(int a,int b){ return a*b; }
+  accumulate(v.begin(),v.end(),result, myoperation)
+  int myoperation(int a,int b){ return a\*b; }
 
 - cout(v.begin(),v.end(),10)-> count 10 in array
 
-OOPS
-====
+# OOPS
 
 - How would you design a chess game? What classes and objects would you use? What methods would they have?
 - How would you design the data structures for a book keeping system for a library?
@@ -204,13 +175,9 @@ OOPS
 - How would you implement an Elevator system?
 - How would you implement a Parking Lot system?
 
-
-
-Resources
-=========
+# Resources
 
 # codeforces everything link
 
 - https://codeforces.com/blog/entry/57282
 - https://leetcode.com/discuss/interview-question/2189149/amazon-online-assessment-questions
-
