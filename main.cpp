@@ -10,28 +10,31 @@ typedef long long int lli;
 
 vector<int> dp;
 
-int sum_di(int n)
-{
-    int sum = 0;
-    while (n)
-    {
-        sum += n % 10;
-        n = n / 10;
-    }
-    return sum;
-}
-
 int main()
 {
     speed;
-    int n;
-    cin >> n;
-    int ans = 7 * n + 21 * sum_di(n);
-    // for (int i = 0; i < 6; i++){
-    //     ans+=sum_di(ans);
-    //     cout<<ans<<" ";
-    // }
+    int n, k;
+    cin >> n >> k;
+    int ans=0;
+    int i=1,j=0;
+    if(k==0){
+        for(int i=1;i<=n;i++){
+            ans+=i-1;
+        }
+    }
+    else {
+        while(i<=n && j<=n){
+            int cnt=floor(j/i);
+            if(cnt<k){
+                j++;
+            }
+            else if(cnt>k)i++;
+            else {
+                ans++;
+                j++;
+            }
+        }
+    }
     cout << ans << endl;
-
     return 0;
 }
