@@ -13,28 +13,31 @@ vector<int> dp;
 int main()
 {
     speed;
-    int n, k;
-    cin >> n >> k;
-    int ans=0;
-    int i=1,j=0;
-    if(k==0){
-        for(int i=1;i<=n;i++){
-            ans+=i-1;
+    int n;
+    cin >> n;
+    while (n--)
+    {
+        int n1, k, ans = 0;
+        cin >> n1;
+        vector<int> a;
+        for (int i = 0; i < n1; i++)
+        {
+            cin >> k;
+            a.push_back(k);
         }
-    }
-    else {
-        while(i<=n && j<=n){
-            int cnt=floor(j/i);
-            if(cnt<k){
-                j++;
-            }
-            else if(cnt>k)i++;
-            else {
-                ans++;
-                j++;
+        for (int i = 0; i < n1 - 1; i++)
+        {
+            int d = 0;
+            for (int j = i + 1; j < n1; j++)
+            {
+                d += a[j - 1] - a[j];
+                if (d != a[j] - a[i])
+                {
+                    ans++;
+                }
             }
         }
+        cout << ans << endl;
     }
-    cout << ans << endl;
     return 0;
 }
