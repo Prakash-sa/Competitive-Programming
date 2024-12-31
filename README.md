@@ -1,3 +1,96 @@
+# Sliding Window
+
+- Linear data structures (arrays, lists, strings)
+- Must scan through a subarray or substring
+- When the subarray must satisfy some condition (shortest/longest/min/max)
+- Improve time complexity from O(N^2) to O(N)
+
+# Two Pointers
+
+- Linear data structures (arrays, lists, strings)
+- When you need to scan the start and end of a list
+- When you have a sorted list and need to find pairs
+- Removing duplicates or filtering
+
+# Slow and Fast Pointer
+
+- Linear data structures (arrays, lists, strings)
+- Detect cycle in linked list
+- Find middle of linked list
+- Perform in one pass with O(1) space
+
+# Linked List Reversal
+
+- Reverse a linked list in 1 pass and O(1) space
+- Reverse a specific portion of a linked list
+- Reverse nodes in groups of k
+
+# Binary Search
+
+- Input is sorted and you need to find a number
+- Finding the position of insertion in a sorted list
+- Handling duplicates in sorted arrays
+- Searching in rotated sorted arrays
+
+# Top K elements
+
+- Find the top k smallest or largest elements
+- Find the kth smallest or largest element
+- Find the k most frequent elements
+
+# Binary Tree Traversal
+
+- Preorder: Serialize or deserialize a tree
+- Inorder: Retrieve elements in sorted order (BSTs)
+- Postorder: Process children before parent (bottom-up)
+- BFS: Level by level scanning
+
+# Graph and Matrix
+
+- Search graphs or matrices
+- DFS: Explore all possible paths (e.g., maze)
+- BFS: Find the shortest path
+- Topological Sort: Order tasks based on dependencies
+
+# Backtracking
+
+- Combinatorial problems (combinations, permutations, subsets)
+- Constraint satisfaction (Sudoku, N-Queens)
+- Prune paths using constraints to reduce search space
+
+# DP
+
+- Overlapping subproblems and optimal substructure
+- Optimization problems (min/max distance, profit, etc.)
+- Sequence problems (longest increasing subsequence)
+- Combinatorial problems (number of ways to do something)
+- Reduce time complexity from exponential to polynomial
+
+# Bit Manupulation
+
+- Count number of 0 or 1 bits in a number
+- Add numbers without using addition or substraction
+- Find a missing number in a list
+
+# Overlapping Intervals
+
+- Merge or consolidate ranges
+- Schedule or find conflicts (e.g. meeting rooms)
+- Find gaps or missing intervals
+
+# Monotonic Stack
+
+- Find Next Greater or Smaller Element
+- Find left/right boundary points in histograms or rectangles
+- Maintain elements in order to optimize operations
+
+# Prefix Sum
+
+- Cumulative sums are needed from index 0 to any element
+- Querying subarray sums frequently across multiple ranges
+- Partial sums can be reused efficiently
+
+
 # Links
 
 - [Leetcode]https://leetcode.com/discuss/general-discussion/665604/Important-and-Useful-links-from-all-over-the-Leetcode
