@@ -1,3 +1,11 @@
+# Time Complexity
+
+- n<20: 2^n,n!(brute force, backtracking)
+- n<3000 : n^2(dynamicprogramming)
+- 3000<n<10^6: O(n),O(nlogn)(2 pointers, greedy, heap, sorting)
+- n>10^6 : O(logn),O(1) (binary search, math)
+
+
 # Sliding Window
 
 - Linear data structures (arrays, lists, strings)
@@ -187,7 +195,7 @@ BFS uses a queue while DFS uses a stack
 
 # LinkedList
 
-- Quick sort is preferred for Arrays and MergeSort of LinkedList[https://www.geeksforgeeks.org/why-quick-sort-preferred-for-arrays-and-merge-sort-for-linked-lists/].
+- Quick sort is preferred for Arrays and MergeSort of [LinkedList](https://www.geeksforgeeks.org/why-quick-sort-preferred-for-arrays-and-merge-sort-for-linked-lists/).
 -
 
 # Tree
@@ -206,9 +214,9 @@ By slightly modifying the inorder traverse such that we firstly travel right sub
 
 # Graph
 
-Dijkastra-> shortest path from one node to all nodes.
-Bellman-Ford-> Dijkastra + negative edges
-Floyd Warshall-> Shortest path bw all pairs of vertices, negative edges allowed
+- Dijkastra-> shortest path from one node to all nodes.
+- Bellman-Ford-> Dijkastra + negative edges
+- Floyd Warshall-> Shortest path bw all pairs of vertices, negative edges allowed
 
 # Heap
 
