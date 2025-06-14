@@ -14,6 +14,24 @@ Output: [[7,4,1],[8,5,2],[9,6,3]]
 */
 
 
+ void rotate(vector<vector<int>>& matrix) {
+        int n=matrix.size(),m=matrix[0].size();
+        // transpose
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<m;j++){
+                swap(matrix[i][j],matrix[j][i]);
+            }
+        }
+
+        // swap number
+
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m/2;j++){
+                swap(matrix[i][j],matrix[i][m-j-1]);
+            }
+        }
+        
+    }
 
 class Solution {
 public:

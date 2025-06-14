@@ -1,3 +1,42 @@
+//https://www.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1
+
+class Solution {
+    
+    static bool cmp(pair<int,int>&a,pair<int,int>&b){
+        double r1=(double)a.first/a.second;
+        double r2=(double)b.first/b.second;
+        return r1>r2;
+    }
+    
+    
+  public:
+    double fractionalKnapsack(vector<int>& val, vector<int>& wt, int capacity) {
+        // code here
+        vector<pair<int,int>>tmp;
+        for(int i=0;i<val.size();i++){
+            tmp.push_back({val[i],wt[i]});
+        }
+        
+        sort(tmp.begin(),tmp.end(),cmp);
+        
+        double ans=0.0;
+        int curCap=0;
+        for(int i=0;i<tmp.size();i++){
+            if(curCap+tmp[i].second<=capacity){
+                curCap+=tmp[i].second;
+                ans+=tmp[i].first;
+            }
+            else {
+                int remain=capacity-curCap;
+                ans+=(double)tmp[i].first*((double)remain/tmp[i].second);
+                return ans;
+            }
+        }
+        return ans;
+    }
+};
+
+
 #include <bits/stdc++.h>
 using namespace std;
 #define endl "\n";

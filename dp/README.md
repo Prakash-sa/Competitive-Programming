@@ -28,6 +28,7 @@ for (int i = 1; i <= n; i++){
 2. Fractional Knapsack
 
     - sort the array with comparision.
+    - https://www.youtube.com/watch?v=oTTzNMHM05I&ab_channel=AbdulBari
 
 ```
 bool cmp(struct Item a, struct Item b) 

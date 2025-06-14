@@ -1,7 +1,7 @@
 # Time Complexity
 
 - n<20: 2^n,n!(brute force, backtracking)
-- n<3000 : n^2(dynamicprogramming)
+- n<3000 : n^2(dynamic programming)
 - 3000<n<10^6: O(n),O(nlogn)(2 pointers, greedy, heap, sorting)
 - n>10^6 : O(logn),O(1) (binary search, math)
 

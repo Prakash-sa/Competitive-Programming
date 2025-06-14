@@ -1,4 +1,41 @@
-//https://practice.geeksforgeeks.org/problems/job-sequencing-problem/0/
+//https://www.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1
+
+
+
+class Solution {
+    static bool cmp(pair<int,int>&a,pair<int,int>&b){
+        return a.second>b.second;
+    }
+  public:
+    vector<int> jobSequencing(vector<int> &deadline, vector<int> &profit) {
+        // code here
+        int n=deadline.size();
+        int maxDeadline=INT_MIN;
+        vector<pair<int,int>>a;
+        
+        for(int i=0;i<n;i++){
+            maxDeadline=max(deadline[i],maxDeadline);
+            a.push_back({deadline[i],profit[i]});   
+        }
+        sort(a.begin(),a.end(),cmp);
+        vector<int>hash(maxDeadline+1,-1);
+        int cnt=0;
+        int pr=0;
+        for(int i=0;i<a.size();i++){
+            int d=a[i].first;
+            for(int j=d;j>0;j--){
+                if(hash[j]==-1){
+                    hash[j]=1;
+                    cnt++;
+                    pr+=a[i].second;
+                    break;
+                }
+            }
+        }
+        return {cnt,pr};
+    }
+};
+
 
 #include <bits/stdc++.h>
 using namespace std;
