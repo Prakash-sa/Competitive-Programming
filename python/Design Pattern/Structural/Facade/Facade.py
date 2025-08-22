@@ -4,6 +4,8 @@
 # So a Facade, is simply a wrapper class that can be used to abstract lower-level details that we don't want 
 # to worry about.
 
+# use for the APIs Design
+
 class Array:
     def __init__(self):
         self.capacity=3

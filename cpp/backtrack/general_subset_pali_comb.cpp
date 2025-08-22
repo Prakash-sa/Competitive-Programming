@@ -22,6 +22,10 @@ public:
     }
 };
 
+// Time complexity: O(N×2^N) to generate all subsets and then copy them into the output list.
+// Space complexity: O(N)
+
+
 // Subset 2
 // https://leetcode.com/problems/subsets-ii/description/
 
@@ -47,6 +51,8 @@ public:
         return res;
     }
 };
+// Time: O(N * 2^N)
+// Space: O(N * 2^N)
 
 // Permutations
 // https://leetcode.com/problems/permutations/description/
@@ -73,6 +79,8 @@ public:
         return res;
     }
 };
+// Time: O(N*N!)
+// Space: O(N!)
 
 // https://leetcode.com/problems/permutations-ii/description/
 // return unique permutations
@@ -102,6 +110,8 @@ public:
         return res;
     }
 };
+// Time Complexity: O(N⋅N!) 
+// Space Complexity: O(N)
 
 // https://leetcode.com/problems/palindrome-partitioning/description/
 
@@ -153,3 +163,68 @@ public:
         return res;
     }
 };
+// Time Complexity :- O(N*2^N)
+// Space Complexity :- O(N)
+
+
+// https://leetcode.com/problems/combination-sum/description/
+
+
+class Solution {
+    vector<vector<int>>res;
+
+    void backtrack(vector<int>&can,int x,int target,vector<int>&a){
+        if(target==0){
+            res.push_back(a);
+            return;
+        }
+        if(target<0 || x>=can.size())return;
+        for(int i=x;i<can.size();i++){
+            a.push_back(can[i]);
+            backtrack(can,i,target-can[i],a);
+            a.pop_back();
+        }
+    }
+
+public:
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        vector<int>a;
+        backtrack(candidates,0,target,a);
+        return res;
+    }
+};
+
+// Time Complexity :- O(2^N)
+// Space Complexity :- O(N)
+
+// https://leetcode.com/problems/combination-sum-ii/
+
+class Solution {
+    vector<vector<int>>res;
+
+    void backtrack(vector<int>&candidates,int index,int target,vector<int>&tmp){
+        if(target==0){
+            res.push_back(tmp);
+            return;
+        }
+        if(target<0 || index>=candidates.size())return;
+        for(int i=index;i<candidates.size();i++){
+            if(i>index && candidates[i]==candidates[i-1])continue;
+            tmp.push_back(candidates[i]);
+            backtrack(candidates,i+1,target-candidates[i],tmp);
+            tmp.pop_back();
+        }
+
+    }
+
+public:
+    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+        vector<int>tmp;
+        sort(candidates.begin(),candidates.end());
+        backtrack(candidates,0,target,tmp);
+        return res;
+    }
+};
+
+// Time complexity: O(2^N)
+// Space Complexity: O(N)
