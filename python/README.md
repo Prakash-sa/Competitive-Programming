@@ -200,4 +200,34 @@ for x in arr:
 
 - Strings are immutable; slicing is O(k).
 
+curr is the same list object you’re mutating during backtracking; curr[:] is a shallow copy (a new list with the same elements at that moment).
+
+Why it matters here:
+
+You do append and later pop on curr.
+
+If you did self.output.append(curr), every entry in self.output would refer to the same list object, so after the recursion finishes (and curr ends up []), all saved subsets would look empty (or reflect the final state).
+
+Using self.output.append(curr[:]) stores a snapshot of the current subset that won’t change when you later mutate curr.
+
+```python
+curr = [1]
+out = []
+out.append(curr)      # same object reference
+curr.append(2)
+print(out)  # [[1, 2]]  <-- changed because curr changed
+
+out = []
+curr = [1]
+out.append(curr[:])   # copy
+curr.append(2)
+print(out)  # [[1]]    <-- snapshot preserved
+```
+
+Notes:
+
+curr[:], list(curr), and curr.copy() are equivalent here.
+
+It’s a shallow copy: fine for lists of ints; for nested/mutable elements you’d need copy.deepcopy.
+
 Be careful with recursion depth/timeouts.
