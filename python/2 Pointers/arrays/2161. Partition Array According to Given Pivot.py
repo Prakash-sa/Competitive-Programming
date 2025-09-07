@@ -36,27 +36,23 @@ Constraints:
 pivot equals to an element of nums.
 '''
 
-
 class Solution:
-    def reverse(self,nums:list,start:int,end:int)->None:
-        while start<end:
-            nums[start],nums[end]=nums[end],nums[start]
-            start+=1
-            end-=1
-
-    def rotate(self, nums: List[int], k: int) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        n=len(nums)
-        k%=n
-        self.reverse(nums,0,n-1)
-        self.reverse(nums,0,k-1)
-        self.reverse(nums,k,n-1)
+    def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
+        left=[]
+        right=[]
+        cnt=[]
+        for i in nums:
+            if i<pivot:
+                left.append(i)
+            if i>pivot:
+                right.append(i)
+            if i==pivot :
+                cnt.append(i)
+        return left+cnt+right
         
 
 
-# Complexity Analysis
-# Time complexity: O(n). n elements are reversed a total of three times.
-# Space complexity: O(1). No extra space is used.
-
+# Let N be the size of nums.
+# Time Complexity: O(N)
+# We perform a simultaneous forward and backwards iteration of nums, taking a total of O(N) time.
+# Space Complexity: O(N)
