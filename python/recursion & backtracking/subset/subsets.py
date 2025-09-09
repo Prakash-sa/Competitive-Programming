@@ -78,3 +78,42 @@ for i in range(2**n, 2 ** (n + 1)):
     # generate bitmask, from 0..00 to 1..11
     bitmask = bin(i)[3:]
 
+
+##########################################
+
+# https://leetcode.com/problems/subsets-ii/description/
+
+'''
+Given an integer array nums that may contain duplicates, return all possible subsets (the power set).
+The solution set must not contain duplicate subsets. Return the solution in any order.
+
+Example 1:
+Input: nums = [1,2,2]
+Output: [[],[1],[1,2],[1,2,2],[2],[2,2]]
+
+Example 2:
+Input: nums = [0]
+Output: [[],[0]]
+ 
+Constraints:
+
+1 <= nums.length <= 10
+-10 <= nums[i] <= 10
+'''
+class Solution:
+    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()
+        self.output=[]
+        self.n=len(nums)
+        self.backtrack(0,[],nums)
+        return self.output
+    
+    def backtrack(self,index,curr,nums):
+        self.output.append(curr[:])
+
+        for i in range(index,self.n):
+            if i!=index and nums[i]==nums[i-1]:
+                continue
+            curr.append(nums[i])
+            self.backtrack(i+1,curr,nums)
+            curr.pop()
