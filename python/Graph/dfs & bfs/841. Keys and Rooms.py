@@ -44,4 +44,3 @@ class Solution:
                     seen[nei]=True
                     stack.append(nei)
         return all(seen)
-        
