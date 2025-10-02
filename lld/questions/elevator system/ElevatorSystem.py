@@ -5,7 +5,7 @@ class ElevatorSystem:
         self.building = None
 
     @staticmethod
-    def get_instance(floors, cars): return None
+    def get_instance(floors, cars,panels,display): return None
     def get_cars(self): return None
     def get_building(self): return None
     def call_elevator(self, floor_num, direction): pass
