@@ -27,6 +27,8 @@ n == grid[i].length
 1 <= n <= 100
 grid[i][j] is 0 or 1
 '''
+from collections import List,deque
+from heapq import heappush,heappop
 
 class Solution:
     def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
@@ -110,7 +112,7 @@ class Solution:
         # (total distance estimate, distance so far, (cell row, cell col))
         priority_queue = [(1 + best_case_estimate(0, 0), 1, (0, 0))]
         while priority_queue:
-            estimate, distance, cell = heapq.heappop(priority_queue)
+            estimate, distance, cell = heappop(priority_queue)
             if cell in visited:
                 continue
             if cell == (max_row, max_col):
@@ -123,7 +125,7 @@ class Solution:
                     continue
                 estimate = best_case_estimate(*neighbour) + distance + 1
                 entry = (estimate, distance + 1, neighbour)
-                heapq.heappush(priority_queue, entry)
+                heappush(priority_queue, entry)
         
         # There was no path.
         return -1

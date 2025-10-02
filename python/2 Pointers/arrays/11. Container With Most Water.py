@@ -22,6 +22,8 @@ n == height.length
 0 <= height[i] <= 104
 '''
 
+from collections import List
+
 class Solution:
     def maxArea(self, height: List[int]) -> int:
         left=0

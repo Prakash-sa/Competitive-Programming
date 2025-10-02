@@ -27,7 +27,7 @@ xi != yi
 '''
 
 from heapq import heappush,heappop
-from collections import defaultdict
+from collections import defaultdict,List
 
 
 class Solution:
