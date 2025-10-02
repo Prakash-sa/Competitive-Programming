@@ -1,16 +1,9 @@
 import time
 from ParkingLot import ParkingLot
-from Handicapped import Handicapped
-from Compact import Compact
-from Large import Large
-from MotorcycleSpot import MotorcycleSpot
+from ParkingSpot import Handicapped, Compact, Large, MotorcycleSpot
 from DisplayBoard import DisplayBoard
-from Entrance import Entrance
-from Exit import Exit
-from Car import Car
-from Van import Van
-from Motorcycle import Motorcycle
-from Truck import Truck
+from Entrance import Entrance, Exit
+from Vehicle import Car, Van, Motorcycle, Truck
 
 def main():
     print("\n====================== PARKING LOT SYSTEM DEMO ======================\n")

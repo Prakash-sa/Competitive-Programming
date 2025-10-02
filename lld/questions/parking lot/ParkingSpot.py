@@ -2,7 +2,7 @@ class ParkingSpot:
     def __init__(self):
         self.id = None
         self.is_free = None
-        self.vehicle = None  # type: Vehicle
+        self.vehicle = None 
 
     def assign_vehicle(self, vehicle):
         pass

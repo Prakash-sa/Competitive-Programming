@@ -3,7 +3,7 @@ class Account:
         self.user_name = None
         self.password = None
         self.person = None
-        self.status = None  # type: AccountStatus
+        self.status = None 
 
     def reset_password(self):
         pass

@@ -1,3 +1,7 @@
+from Door import Door
+from Display import Display
+from collections import deque
+
 class ElevatorCar:
     def __init__(self, id, num_floors):
         self.id = id

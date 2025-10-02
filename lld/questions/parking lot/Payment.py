@@ -1,7 +1,7 @@
 class Payment:
     def __init__(self):
         self.amount = None
-        self.status = None  # type: PaymentStatus
+        self.status = None
         self.timestamp = None
 
     def initiate_transaction(self):

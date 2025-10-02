@@ -4,9 +4,9 @@ class ParkingTicket:
         self.entry_time = None
         self.exit_time = None
         self.amount = None
-        self.status = None  # type: TicketStatus
+        self.status = None 
 
         self.vehicle = None
-        self.payment = None  # type: Payment
+        self.payment = None 
         self.entrance = None
         self.exit_ins = None
