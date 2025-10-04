@@ -54,6 +54,29 @@ class Node:
         self.val = val
         self.neighbors = neighbors if neighbors is not None else []
 
+
+## dfs
+
+class Solution:
+
+    def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
+        adj_list={}
+
+        def dfs(node):
+            if not node:
+                return node
+            if node in adj_list:
+                return adj_list[node]
+            clone_node=Node(node.val,[])
+            adj_list[node]=clone_node
+            for nei in node.neighbors:
+                clone_node.neighbors.append(dfs(nei))
+            return clone_node
+            
+        return dfs(node)
+
+
+## bfs
 class Solution:
 
     def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
