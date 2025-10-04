@@ -1,4 +1,5 @@
 Quick-start template
+
 ```python
 #!/usr/bin/env python3
 import sys
@@ -47,18 +48,24 @@ C++ → Python “equivalents”
 - i/o (cin/cout) → sys.stdin.readline / sys.stdout.write
 
 # Fast I/O patterns
+
 ## many ints on a line
+
 - a,b,c = map(int, input().split())
 
 ## big array
+
 - n = int(input())
 - arr = list(map(int, input().split()))
 
 ## write
+
 - sys.stdout.write(str(ans) + "\n")
 
 # Common snippets
+
 BFS / DFS (avoid deep recursion)
+
 ```python
 # BFS on unweighted graph
 - g = [[] for _ in range(n)]
@@ -170,7 +177,9 @@ for r,x in enumerate(arr):
 - Don’t import big libs (numpy) — most judges disallow or it’s slow to start.
 
 # Idioms you’ll use a lot
+
 # sort by two keys, then descending second
+
 - arr.sort(key=lambda x: (x[0], -x[1]))
 
 ```python
@@ -226,8 +235,10 @@ print(out)  # [[1]]    <-- snapshot preserved
 
 Notes:
 
-curr[:], list(curr), and curr.copy() are equivalent here.
+- curr[:], list(curr), and curr.copy() are equivalent here.
 
-It’s a shallow copy: fine for lists of ints; for nested/mutable elements you’d need copy.deepcopy.
+- It’s a shallow copy: fine for lists of ints; for nested/mutable elements you’d need copy.deepcopy.
+
+- .isnumeric() is to check whether the char is numeric or not
 
 Be careful with recursion depth/timeouts.
