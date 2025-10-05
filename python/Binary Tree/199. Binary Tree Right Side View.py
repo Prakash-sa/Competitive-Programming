@@ -55,6 +55,30 @@ class Solution:
         return ans
 
 
+def rightmostNode(self, root: TreeNode) -> List[int]:
+        if not root:
+            return []
+
+        nodes = []
+        queue = deque([root])
+
+        while queue:
+            level_size = len(queue)
+            for i in range(level_size):
+                node = queue.popleft()
+
+                # current node is the rightmost node
+                if i == level_size - 1:
+                    nodes.append(node.val)
+
+                # add nodes as normal to the queue
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+
+        return nodes
+
 # Complexity Analysis
 # Time complexity: O(N) since one has to visit each node.
 # Space complexity: O(D) to keep the queues, where D is a tree diameter. 
