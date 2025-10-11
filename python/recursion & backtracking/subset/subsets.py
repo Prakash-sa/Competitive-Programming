@@ -56,7 +56,7 @@ class Solution:
             curr.pop()
 
 # Time Complexity: O(N*2^N)
-# Space Complexity: O(N*2^N)
+# Space Complexity: O(N)
 
 # Lexiographic Subsets
 
