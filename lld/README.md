@@ -31,6 +31,25 @@ Contributing
 
 - If you find typos, missing examples, or want to add a short implementation, please open a pull request with a focused change.
 
-License & notes
 
-- These notes are intended as a personal study/resource — adapt or expand them as needed.
+### SOLID Principle
+
+S – Single Responsibility Principle (SRP)
+➜ One class = one reason to change
+Example: separate file saving logic from data processing logic.
+
+O – Open/Closed Principle (OCP)
+➜ Classes open for extension, closed for modification
+Example: strategy pattern for payment methods.
+
+L – Liskov Substitution Principle (LSP)
+➜ Subtypes must be usable as base type without breaking logic.
+Example: Shape hierarchy with Rectangle and Square.
+
+I – Interface Segregation (ISP)
+➜ Prefer many small interfaces to one big one.
+Example: separate “Printable” and “Savable” interfaces.
+
+D – Dependency Inversion (DIP)
+➜ Depend on abstractions, not concrete classes.
+Example: inject dependencies via constructor or DI container.

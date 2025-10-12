@@ -1,104 +1,24 @@
-# 1
+import sys
 
-# dictionary={
-#     'a':[0,1,2],
-#     'b':[1,2,3],
-#     'c':[0,3]
-# }
-# search=1
+def main():
+    data = sys.stdin.read().strip().split()
+    if not data:
+        return
+    n = int(data[0])
+    a = list(map(int, data[1:1+n]))
 
-# answer=[]
+    # dp[i] = minimum cost to reach stone i
+    dp = [0] * n
+    if n >= 2:
+        dp[1] = abs(a[1] - a[0])
 
-# for key,values in dictionary.items():
-#     my_set=set(values)
-#     if search in my_set:
-#         answer.append(key)
+    for i in range(2, n):
+        cost1 = dp[i-1] + abs(a[i] - a[i-1])
+        cost2 = dp[i-2] + abs(a[i] - a[i-2])
+        dp[i] = min(cost1, cost2)
 
-# for ans in answer:
-#     print(ans)
-
-
-# 2
-
-
-import re
-# import itertools
-
-# list1 = [1, 2, 3]
-
-# perm = []
-# perm = list(itertools.permutations(list1, len(list1)))
-# print(perm)
-
-answer=[]
-def perm(a, k=0):
-   if k == len(a):
-      answer.append(a)
-   else:
-      for i in range(k, len(a)):
-         a[k], a[i] = a[i] ,a[k]
-         perm(a, k+1)
-         a[k], a[i] = a[i], a[k]
+    print(dp[n-1])
 
 
-inp=[1,2,3]
-
-
-# # answer=permutation(inp)
-# # for i in inp:
-# #     print(i)
-
-
-# ## 3
-
-# print("\n\n")
-perm(inp)
-print(answer)
-
-
-# 4
-
-inpstring = "MyPasswordFieldClass"
-answer=""
-first = True
-
-for c in inpstring:
-    if c.isupper() == True:
-        if first == True:
-            answer+= c.lower()
-            first = False
-        else:
-            answer+= '.'+c.lower()
-    else :
-        answer+=c
-
-print(answer)
-
-# 5
-
-
-s = ["Hi", "Hello World", "hey you"]
-# buffer = "tags = { 'Hi', \"Hello World\", \"hey you\", \"Hi\' }"
-# my_list = re.findall(r"['\"](.*?)['\"]", buffer)
-matches = []
-non_matches = []
-for c in s:
-    tmp = c.lower()
-    if re.search('hello', tmp):
-        matches.append(c)
-    elif re.search('hey', tmp):
-        matches.append(c)
-    elif re.search('hi', tmp):
-        matches.append(c)
-    else:
-        non_matches.append(c)
-
-print("\n")
-print("Matches ")
-for ma in matches:
-    print(ma)
-
-print("\ndoes not match")
-
-for dm in non_matches:
-    print(dm)
+if __name__ == '__main__':
+    main()
