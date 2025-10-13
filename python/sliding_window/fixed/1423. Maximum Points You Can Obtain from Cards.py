@@ -1,26 +1,6 @@
 # https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/description/
 
 '''
-
-Editorial
-Editorial
-Solutions
-Solutions
-Submissions
-Submissions
-
-
-Code
-Testcase
-Test Result
-Test Result
-1423. Maximum Points You Can Obtain from Cards
-Solved
-Medium
-Topics
-conpanies icon
-Companies
-Hint
 There are several cards arranged in a row, and each card has an associated number of points. The points are given in the integer array cardPoints.
 
 In one step, you can take one card from the beginning or from the end of the row. You have to take exactly k cards.
@@ -72,4 +52,8 @@ class Solution:
     
     
 
-        
+# Let n be the number of cards we need to select.
+
+# Time complexity: O(n). In the problem, we are iterating over the array of cards twice. So the time complexity will be O(2⋅n) = O(n).
+
+# Space complexity: O(1) since no extra space is required.
