@@ -1,0 +1,1 @@
+All about segment trees: https://codeforces.com/blog/entry/99074

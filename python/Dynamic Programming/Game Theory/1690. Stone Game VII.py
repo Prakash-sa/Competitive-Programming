@@ -28,3 +28,27 @@ n == stones.length
 1 <= stones[i] <= 1000
 '''
 
+class Solution:
+    def stoneGameVII(self, stones: List[int]) -> int:
+        n=len(stones)
+
+        prefix_sum=[0]*(n+1)
+        for i in range(n):
+            prefix_sum[i+1]=prefix_sum[i]+stones[i]
+        
+        def get_sum(l,r):
+            if l>r:
+                return 0
+            return prefix_sum[r+1]-prefix_sum[l]
+
+        dp=[0]*n
+        for i in range(n-2,-1,-1):
+            for j in range(i+1,n):
+                take_left=get_sum(i+1,j)-dp[j]
+
+                take_right=get_sum(i,j-1)-dp[j-1]
+
+                dp[j]=max(take_left,take_right)
+
+        return dp[n-1]
+
