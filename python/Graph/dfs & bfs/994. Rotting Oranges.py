@@ -31,6 +31,40 @@ grid[i][j] is 0, 1, or 2.
 '''
 
 from collections import deque, List
+from collections import deque
+
+class Solution:
+    def orangesRotting(self, grid: List[List[int]]) -> int:
+        queue=deque()
+
+        fresh_oranges=0
+
+        n,m=len(grid),len(grid[0])
+
+        for i in range(n):
+            for j in range(m):
+                if grid[i][j]==2:
+                    queue.append((i,j))
+                elif grid[i][j]==1:
+                    fresh_oranges+=1
+
+        minutes_elapsed=0
+
+        directions=[(-1,0),(1,0),(0,1),(0,-1)]
+
+        while queue and fresh_oranges>0:
+            for i in range(len(queue)):
+                r,c=queue.popleft()
+                for d in directions:
+                    nr,nc=r+d[0],c+d[1]
+                    if 0<=nr<n and 0<=nc<m and grid[nr][nc]==1:
+                        grid[nr][nc]=2
+                        fresh_oranges-=1
+                        queue.append((nr,nc))
+            minutes_elapsed+=1
+        return minutes_elapsed if fresh_oranges==0 else -1
+
+
 
 class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:

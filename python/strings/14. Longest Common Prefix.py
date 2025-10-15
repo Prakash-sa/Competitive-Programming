@@ -41,6 +41,7 @@ class Solution:
                     return ""
         return prefix
         
+## Trie Solution
 
 class TrieNode:
     def __init__(self):

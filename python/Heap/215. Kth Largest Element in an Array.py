@@ -19,17 +19,18 @@ Constraints:
 -104 <= nums[i] <= 104
 '''
 
-from heapq import heapify,heapreplace
+from heapq import heappush,heappop
 from collections import List
 
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
-        heap=nums[:k]
-        heapify(heap)
-        for x in nums[k:]:
-            if x>heap[0]:
-                heapreplace(heap,x)
-        return heap[0]
+        h=[]
+        for num in nums:
+            if len(h)<k or h[0]<num:
+                heappush(h,num)
+                if len(h)>k:
+                    heappop(h)
+        return h[0]
     
 # Comeplexity:
 # Time: O(NlogK)
