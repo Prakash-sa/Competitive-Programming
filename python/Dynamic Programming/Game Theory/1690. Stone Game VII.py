@@ -52,3 +52,8 @@ class Solution:
 
         return dp[n-1]
 
+
+# Complexity Analysis
+# Let n be the length of array stones.
+# Time Complexity : O(n^2), as we iterate over a 2D array of size n⋅n.
+# Space Complexity: O(n^2), as we use an array dp of size n⋅n and prefixSum of size n. This gives us space complexity as O(n^2)+O(n)=O(n^2).
