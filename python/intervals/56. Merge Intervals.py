@@ -31,13 +31,13 @@ class Solution:
         intervals.sort(key=lambda x:x[0])
 
         n=len(intervals)
-        res=[]
+        res=[intervals[0]]
 
-        for interval in intervals:
-            if not res or res[-1][1]<interval[0]:
-                res.append(interval)
+        for i in range(1,n):
+            if res[-1][1]<intervals[i][0]:
+                res.append(intervals[i])
             else:
-                res[-1][1]=max(res[-1][1],interval[1])
+                res[-1][1]=max(res[-1][1],intervals[i][1])
         return res
         
 # Complexity Analysis

@@ -29,6 +29,23 @@ It is very easy to come up with a solution with a runtime of O(n log n). Can you
 Can you do it without using any built-in function (i.e., like __builtin_popcount in C++)?
 '''
 
+# Approach 3: DP + Least Significant Bit
+
+'''
+Following the same principle of the previous approach, we can also have a transition function by playing with the least significant bit.
+Let look at the relation between x and x
+ =x/2
+x=(1001011101)2
+=(605)10
+x 
+ =(100101110)2
+ =(302) 0
+We can see that x   is differ than x by one bit, because x 
+  can be considered as the result of removing the least significant bit of x.
+Thus, we have the following transition function of pop count P(x):
+P(x)=P(x/2)+(xmod2)
+'''
+
 class Solution:
     def countBits(self, n: int) -> List[int]:
         res=[0]*(n+1)
