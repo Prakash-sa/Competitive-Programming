@@ -59,3 +59,11 @@ class Solution:
         return answer
         
 
+# Complexity Analysis
+# Given N as the length of temperatures,
+# Time complexity: O(N)
+# Similar to the first approach, the nested while loop makes this algorithm look worse than O(N). However, same as in the first approach, the total number of iterations in the while loop does not exceed N, which gives this algorithm a time complexity of O(2⋅N)=O(N).
+# The reason the iterations in the while loop does not exceed N is because the "jumps" prevent an index from being visited twice. If we had the example temperatures = [45, 43, 45, 43, 45, 31, 32, 33, 50], after 5 iterations we would have answer = [..., 4, 1, 1, 1, 0]. The day at index 2 will use answer[4] to jump to the final day (which is the next warmer day), and then answer[4] will not be used again. This is because at the first day, answer[2] will be used to jump all the way to the end. The final solution is answer = [8,1,6,1,4,1,1,1,0]. The 6 was found with the help of the 4 and the 8 was found with the help of the 6.
+
+# Space complexity: O(1)
+# As stated above, while answer does use O(N) space, the space used for the output does not count towards the space complexity. Thus, only constant extra space is used.

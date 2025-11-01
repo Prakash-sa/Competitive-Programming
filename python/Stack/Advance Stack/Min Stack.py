@@ -65,8 +65,7 @@ class MinStack:
             self.min_stack.pop()
 
         self.stack.pop()
-        
-
+    
 
     def top(self) -> int:
         return self.stack[-1]
