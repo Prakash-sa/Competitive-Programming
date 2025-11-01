@@ -43,6 +43,7 @@ foo prints before reaching the barrier. bar prints after reaching the barrier.
 '''
 
 from threading import Barrier
+from typing import Callable
 
 class FooBar:
     def __init__(self, n):
