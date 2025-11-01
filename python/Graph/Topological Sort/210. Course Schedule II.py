@@ -27,6 +27,9 @@ prerequisites[i].length == 2
 ai != bi
 All the pairs [ai, bi] are distinct.
 '''
+
+from collections import List,defaultdict,deque
+
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
         indegree=[0]*numCourses
@@ -49,8 +52,6 @@ class Solution:
                     queue.append(neighbor)
         
         return ans if len(ans)==numCourses else []
-
-
 
 # Complexity Analysis
 # Time Complexity: O(V+E) where V represents the number of vertices and E represents the number of edges. We pop each node exactly once from the zero in-degree queue and that gives us V. Also, for each vertex, we iterate over its adjacency list and in totality, we iterate over all the edges in the graph which gives us E. Hence, O(V+E)

@@ -1,7 +1,5 @@
 # Graph
 
-- Bellman Ford won't work if the cycle is negative weight cycle
-
 ## Problems 
 
 - Hard
@@ -13,10 +11,11 @@
 
 4. https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/
 
-``
+
 # Notes
 
 - BFS only works for unweighted graphs. For weighted graphs, we'll need Dijkstra's algorithm.
+- Bellman Ford won't work if the cycle is negative weight cycle.
 - For negative edge cycles, we need Bellman-Ford's algorithm. Again this algorithm is single source shortest path algorithm. 
 - If we need to find out distance from each nodes to all other nodes, we'll need Floyd-Warshall's algorithm.
 
@@ -29,8 +28,11 @@
 
 # Topological Sorting
 
+- [Kahns Algo](https://www.youtube.com/watch?v=73sneFXuTEg&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=14)
+- [Prims](https://www.youtube.com/watch?v=mJcZjjKzeqk&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=25)
 - DFS + Stack
 - Kahns Algorithm with indegree
+- Directed Acyclic Graph
 
 1. Course Schedule
 
@@ -55,7 +57,10 @@
 
 # Critical Connections in a Network
 
+- [Articulation Point](https://www.youtube.com/watch?v=j1QDfU21iZk&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=30)
+- [Tarjan's Algo](https://www.youtube.com/watch?v=qrAub5z8FeA&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=29)
 - Use articulation point
+
 
 
 
@@ -72,6 +77,7 @@
 
 # Bipartite 
 
+- [Video](https://www.youtube.com/watch?v=-vu34sct1g8&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=10)
 - Use bfs from 0 to N-1 colors.
 
 
@@ -111,15 +117,20 @@
 or 
 - Use Articulation Point, The condition for an edge (u, v) to be a bridge is, “low[v] > disc[u]”. The value low[v] indicates earliest visited vertex reachable from subtree rooted with v. 
 
+# Bridges in Graph
+
+- [Tarjan's Algo](https://www.youtube.com/watch?v=qrAub5z8FeA&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=29)
+- 
+
 
 
 # Kosaraju Algo(Strongly Connected Component)
 
+- [Video](https://www.youtube.com/watch?v=R6uoSjZ2imo&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=28)
+- Only for Directed Graph
 - Create an empty stack ‘S’ and do DFS traversal of a graph. In DFS traversal, after calling recursive DFS for adjacent vertices of a vertex, push the vertex to stack. In the above graph, if we start DFS from vertex 0, we get vertices in stack as 1, 2, 4, 3, 0. 
 - Reverse directions of all arcs to obtain the transpose graph. 
 - One by one pop a vertex from S while S is not empty. Let the popped vertex be ‘v’. Take v as source and do DFS (call DFSUtil(v)). The DFS starting from v prints strongly connected component of v. In the above example, we process vertices in order 0, 3, 4, 2, 1 (One by one popped from stack).
-
-
 
 
 # Redundant Connection
@@ -154,4 +165,15 @@ for(int i=s+1;i<=s+6&&i<=30;i++){
 - Store the in and out degree.
 - Run dfs for in_degree=0 and out_degree=1
 - Store the start, end and distance during dfs.
- 
+
+
+# DSU
+
+- [Video](https://www.youtube.com/watch?v=aBxjDBC4M1U)
+- 
+
+
+# Kurskal Algo
+
+- [Video](https://www.youtube.com/watch?v=DMnDM_sxVig)
+- Sort all the edges with weight and apply DSU with rank
