@@ -31,6 +31,8 @@ Constraints:
 target is an integer from nums.
 At most 104 calls will be made to pick.
 '''
+from collections import List
+import random
 
 class Solution:
 

@@ -53,7 +53,9 @@ Constraints:
 1 <= w[i] <= 105
 pickIndex will be called at most 104 times.
 '''
-
+from collections import List
+import random
+from bisect import bisect_left
 
 class Solution:
 

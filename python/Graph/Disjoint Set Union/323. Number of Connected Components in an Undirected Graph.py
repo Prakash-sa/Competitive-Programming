@@ -20,6 +20,8 @@ ai != bi
 There are no repeated edges.
 '''
 
+from collections import List,defaultdict
+
 ## DFS
 
 class Solution:

@@ -19,6 +19,8 @@ Constraints:
 The product of any subarray of nums is guaranteed to fit in a 32-bit integer.
 '''
 
+from collections import List
+
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
         max_prod,min_prod=nums[0],nums[0]

@@ -27,6 +27,8 @@ order.length == 26
 All characters in words[i] and order are English lowercase letters.
 '''
 
+from collections import List, defaultdict
+
 class Solution:
     def isAlienSorted(self, words: List[str], order: str) -> bool:
         d=defaultdict(int)

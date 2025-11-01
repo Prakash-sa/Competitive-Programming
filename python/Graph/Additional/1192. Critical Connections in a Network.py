@@ -23,6 +23,8 @@ ai != bi
 There are no repeated connections.
 '''
 
+from collections import List,defaultdict
+
 class Solution:
 
     def criticalConnections(self, n: int, connections: List[List[int]]) -> List[List[int]]:

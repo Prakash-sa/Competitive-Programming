@@ -30,3 +30,43 @@ Constraints:
 At most 104 calls will be made to add, remove, and contains.
 '''
 
+class MyHashSet:
+
+    def __init__(self):
+        self.size=2069
+        self.buckets=[[] for _ in range(self.size)]
+        
+    def _hash(self,key):
+        return key%self.size
+
+    def add(self, key: int) -> None:
+        h=self._hash(key)
+        if key not in self.buckets[h]:
+            self.buckets[h].append(key)
+
+    def remove(self, key: int) -> None:
+        h=self._hash(key)
+        if key in self.buckets[h]:
+            self.buckets[h].remove(key)
+
+    def contains(self, key: int) -> bool:
+        h=self._hash(key)
+        if key in self.buckets[h]:
+            return True
+        return False
+
+
+# Your MyHashSet object will be instantiated and called as such:
+# obj = MyHashSet()
+# obj.add(key)
+# obj.remove(key)
+# param_3 = obj.contains(key)
+
+
+# Complexity Analysis
+
+# Time Complexity: O(N/K) where N is the number of all possible values and K is the number of predefined buckets, which is 769.
+# Assuming that the values are evenly distributed, thus we could consider that the average size of bucket is K N.
+# Since for each operation, in the worst case, we would need to scan the entire bucket, hence the time complexity is O(KN).
+
+# Space Complexity: O(K+M) where K is the number of predefined buckets, and M is the number of unique values that have been inserted into the HashSet.

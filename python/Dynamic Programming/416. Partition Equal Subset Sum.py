@@ -18,6 +18,8 @@ Constraints:
 1 <= nums[i] <= 100
 '''
 
+from collections import List
+
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
         n=len(nums)

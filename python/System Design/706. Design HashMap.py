@@ -73,7 +73,7 @@ class MyHashMap:
 
 Complexity Analysis
 
-Time Complexity: O(K/N) where N is the number of all possible keys and K is the number of predefined buckets in the hashmap, which is 2069 in our case.
+Time Complexity: O(N/K) where N is the number of all possible keys and K is the number of predefined buckets in the hashmap, which is 2069 in our case.
 In the ideal case, the keys are evenly distributed in all buckets. As a result, on average, we could consider the size of the bucket is KN.
 Since in the worst case we need to iterate through a bucket to find the desire value, the time complexity of each method is O(KN).
 
