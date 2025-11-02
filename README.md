@@ -278,7 +278,4 @@ if vector<double>numbers={0,1,2,3,...,9}
 
 # Resources
 
-# codeforces everything link
-
-- https://codeforces.com/blog/entry/57282
-- https://leetcode.com/discuss/interview-question/2189149/amazon-online-assessment-questions
+- [Codeforces](https://codeforces.com/blog/entry/57282)
