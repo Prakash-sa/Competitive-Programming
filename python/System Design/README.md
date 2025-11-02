@@ -1,20 +1,107 @@
-# Designs
+# System Design Patterns (Python)
 
+Folder summary for the design-style data structure problems solved in Python. Each entry links the implementation to the key pattern, complexity, and interview-ready talking points.
 
-## HashMap
+## Problem Reference Map
 
-- hash function design: the purpose of hash function is to map a key value to an address in the storage space, similarly to the system that we assign a postcode to each mail address.
-As one can image, for a good hash function, it should map different keys evenly across the storage space, so that we don't end up with the case that the majority of the keys are concentrated in a few spaces.
+- `146. LRU Cache.py`
+  - Pattern: `OrderedDict` to keep usage order, evict from front.
+  - Ops: `get`/`put` are both O(1) amortized thanks to hash + linked list under the hood.
+  - Tip: Always move a key to the end after a hit to mark it as most recently used.
+  - Watch: [LRU Cache Explained (NeetCode)](https://www.youtube.com/watch?v=7ABFKPK2hD4)
 
-- collision handling: essentially the hash function reduces the vast key space into a limited address space. As a result, there could be the case where two different keys are mapped to the same address, which is what we call 'collision'. Since the collision is inevitable, it is important that we have a strategy to handle the collision.
+- `225. Implement Stack using Queues.py`
+  - Pattern: Single `deque` rotated after every push.
+  - Ops: `push` is O(n), `pop`/`top` are O(1).
+  - Tip: Mention the trade-off - keeping push heavy lets pop stay instant, which is nice when pops dominate.
+  - Watch: [Stack Using Queues (take U forward)](https://www.youtube.com/watch?v=jDZQKzEtbYQ)
 
-## HashSet
+- `232. Implement Queue using Stacks.py`
+  - Pattern: Two stacks (`in_stack`, `out_stack`) with lazy transfer.
+  - Ops: Amortized O(1) for all; worst-case pop triggers a full transfer.
+  - Tip: Stress the amortized argument and the idea of decoupling read/write paths - common follow-up in interviews.
+  - Watch: [Queue Using Stacks (NeetCode)](https://www.youtube.com/watch?v=Wg8IiY1LbII)
 
-- Separate Chaining: for values with the same hash key, we keep them in a bucket, and each bucket is independent of each other.
+- `3508. Implement Router.py`
+  - Pattern: Sliding FIFO buffer with `deque`, duplicate tracking via `set`, per-destination timestamps in `defaultdict(deque)`.
+  - Ops: `addPacket`/`forwardPacket` O(1); `getCount` uses binary search on timestamps for O(log k).
+  - Tip: Talk about keeping metadata (timestamp queues) sorted to unlock range queries without extra sweeps.
+  - Watch: [Sliding Window & Queue Patterns (Tech Dummies)](https://www.youtube.com/watch?v=MK-NZ4hN7rs)
 
-- Open Addressing: whenever there is a collision, we keep on probing on the main space with certain strategy until a free slot is found.
+- `355. Design Twitter.py`
+  - Pattern: Heap or deque of per-user tweets + follow graph; merge the latest 10 using a max heap.
+  - Ops: `postTweet` O(1); `getNewsFeed` O((F + T) log F) depending on followers `F` and tweets `T`.
+  - Tip: Highlight pruning: only push the most recent tweet from each followee, then expand lazily.
+  - Watch: [Design Twitter (NeetCode)](https://www.youtube.com/watch?v=pNicIB1Q2cU)
 
-- 2-Choice Hashing: we use two hash functions rather than one, and we pick the generated address with fewer collision.
+- `705. Design HashSet.py`
+  - Pattern: Fixed bucket array with separate chaining (lists).
+  - Ops: Average O(1), worst-case O(n) per bucket; load factor controlled by prime bucket size (`2069`).
+  - Tip: Remind that resizing is optional at interview scale but worth mentioning for production-readiness.
+  - Watch: [Design HashSet (LeetCode official)](https://www.youtube.com/watch?v=Li0tagTiV0M)
 
-Essentially, the primary storage underneath a HashSet is a continuous memory as Array. Each element in this array corresponds to a bucket that stores the actual values. Given a value, first we generate a key for the value via the hash function. The generated key serves as the index to locate the bucket. Once the bucket is located, we then perform the desired operations on the bucket, such as add, remove and contains.
+- `706. Design HashMap.py`
+  - Pattern: Same bucketing as the hash set, but store `(key, value)` pairs.
+  - Ops: Average O(1) for `put`/`get`/`remove`.
+  - Tip: Bring up collision handling strategies (chaining vs open addressing) and why chaining keeps deletions easy.
+  - Watch: [Design HashMap (NeetCode)](https://www.youtube.com/watch?v=KEs5UyBJ39g)
 
+- `981. Time Based Key-Value Store.py`
+  - Pattern: Dictionary of sorted `[(timestamp, value)]` lists; binary search to resolve historical reads.
+  - Ops: `set` O(1) append (timestamps strictly increasing); `get` O(log m) via `bisect`.
+  - Tip: Interview trick - store timestamps alongside values to avoid parallel arrays and keep bisecting simple.
+  - Watch: [Time Based Key-Value Store (NeetCode)](https://www.youtube.com/watch?v=fu2cD_6E8Hw)
+
+## HashMap concepts
+
+- Hash function design maps a key to an address inside the storage space (similar to postcodes). A good hash spreads keys evenly so no bucket is overloaded.
+- Collision handling is essential: the hash squeezes a large key space into limited addresses, so distinct keys can collide. Always plan a collision strategy.
+
+## HashSet internals
+
+- Separate chaining: keep collided values inside a bucket (often a list); each bucket works independently.
+- Open addressing: on collision, probe the main array with a deterministic strategy until a free slot appears.
+- Two-choice hashing: compute two hashes and pick the bucket with fewer elements to balance the load.
+
+In practice a HashSet sits on top of a contiguous array. Each entry points to a bucket that stores the actual values. Workflow: hash the value, locate the bucket, and then run the requested operation (`add`, `remove`, `contains`) on that bucket.
+
+## Python KPIs & Cheatsheet
+
+- **Stacks**
+  - Lightweight: `list.append`, `list.pop()` -> both O(1).
+  - Queue-to-stack trick: rotate `deque` after each push to keep the newest element at the front.
+  - Max stack: maintain `(value, running_max)` pairs for O(1) max queries.
+
+- **Queues / Deques**
+  - Use `collections.deque` for O(1) `append`, `appendleft`, `popleft`.
+  - Queue via two stacks gives amortized O(1) even without `deque`.
+  - Sliding window tip: store indices to drop expired elements quickly.
+
+- **Priority Queues (Heaps)**
+  - `heapq` is min-heap; negate keys for max-heap behaviour.
+  - Keep `(priority, payload)` tuples - Python compares tuples lexicographically.
+  - For time-decay caches, push `( -timestamp, tweet_id, user_id )` so the latest rises first.
+
+- **Hash Maps / Hash Sets**
+  - Python `dict`/`set` already O(1) average; when building custom versions, pick a prime bucket count and use chaining.
+  - For duplicate detection with range eviction (like the router), pair a `set` for existence with an ordered container for eviction.
+
+- **Ordered Structures**
+  - `OrderedDict` keeps insertion order; `move_to_end(key, last=True/False)` is O(1).
+  - Great drop-in replacement for manual doubly linked lists in LRU/LFU caches.
+
+- **Binary Search Helpers**
+  - `bisect_left`/`bisect_right` from `bisect` module - ideal for time-travel data (TimeMap, Router timestamp queues).
+  - Trick: use `bisect_right - bisect_left` to count elements inside `[lo, hi]` in O(log n).
+
+## Interview Talking Points
+
+- Emphasise **amortised analysis** for queue-with-stacks and heap-based feeds.
+- When discussing caches, compare options: `OrderedDict`, custom DLL + dict, and `heapq` for LFU variants.
+- Always state **space trade-offs** (e.g. timestamps replicated across maps for faster lookup).
+- For concurrency-ish designs (router), call out how FIFO eviction interacts with dedupe state.
+- Prepare quick examples to show the data structure invariant after each operation - helps convey mastery.
+
+## Additional resources
+- [NeetCode Design Playlist](https://www.youtube.com/playlist?list=PLot-Xpze53ldBT_7QA8NVot219jFNr_GI)
+- [System Design Primer (Gaurav Sen)](https://www.youtube.com/playlist?list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX)
