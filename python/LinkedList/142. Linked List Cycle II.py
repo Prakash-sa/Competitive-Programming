@@ -33,10 +33,12 @@ Follow up: Can you solve it using O(1) (i.e. constant) memory?
 '''
 
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+from typing import Optional
 
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
@@ -58,3 +60,14 @@ class Solution:
             hare=hare.next
         return hare
 
+
+# Complexity Analysis
+# Let n be the total number of nodes in the linked list.
+
+# Time complexity: O(n).
+# The algorithm consists of two phases. In the first phase, we use two pointers (the "hare" and the "tortoise") to traverse the list. The slow pointer (tortoise) will go through the list only once until it meets the hare. Therefore, this phase runs in O(n) time.
+# In the second phase, we again have two pointers traversing the list at the same speed until they meet. The maximum distance to be covered in this phase will not be greater than the length of the list (recall that the hare just needs to get back to the entrance of the cycle). So, this phase also runs in O(n) time.
+# As a result, the total time complexity of the algorithm is O(n)+O(n), which simplifies to O(n).
+
+# Space complexity: O(1).
+# The space complexity is constant, O(1), because we are only using a fixed amount of space to store the slow and fast pointers. No additional space is used that scales with the input size. So the space complexity of the algorithm is O(1), which means it uses constant space.

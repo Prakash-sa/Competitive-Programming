@@ -20,6 +20,8 @@ Constraints:
 30 <= temperatures[i] <= 100
 '''
 
+from collections import List
+
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
         answer=[0]*len(temperatures)
@@ -38,6 +40,8 @@ class Solution:
 
 
 # Space optimized
+
+
 
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
