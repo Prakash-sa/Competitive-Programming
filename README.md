@@ -98,23 +98,6 @@
 - Querying subarray sums frequently across multiple ranges
 - Partial sums can be reused efficiently
 
-
-# Links
-
-- [Leetcode]https://leetcode.com/discuss/general-discussion/665604/Important-and-Useful-links-from-all-over-the-Leetcode
-
-- [Google Docs]https://docs.google.com/document/d/1wUCqhVHydWiDk6FJdFLSMpgigNrGcs4OFZg0Wa7JGEw/edit?usp=sharing
-
-- [Devops Exercise]https://github.com/bregman-arie/devops-exercises
-
-# Hard
-
-https://www.geeksforgeeks.org/find-the-number-of-sub-arrays-in-the-permutation-of-first-n-natural-numbers-such-that-their-median-is-m/
-
-sub-array with k mean:- https://codeforces.com/blog/entry/91768
-
-- Fenwick tree[http://usaco.org/current/data/sol_median.html]
-
 ## Substring vs Subsequence
 
 - Subarray need to be consecutive. Subsequence don't have to be consecutive.
@@ -227,13 +210,6 @@ By slightly modifying the inorder traverse such that we firstly travel right sub
 
 - If h is height that max no. of nodes is pow(2,h+1)-1
 
-if vector<double>numbers={0,1,2,3,...,9}
-
-- max_heap(numbers.begin(),numbers.end())
-- push_heap(numbers.begin(),numbers.end()) in vector numbers.push_back(4)
-- largest no. by numbers.front()
-- pop_heap(numbers.begin(),numbers.end()) and numbers.pop_back() // remove 9 at back
-
 # Some common formulas
 
 - Sum of 1 to N = (n+1) \* n/2
@@ -241,41 +217,45 @@ if vector<double>numbers={0,1,2,3,...,9}
 - Permutations of N = N! / (N-K)!
 - Combinations of N = N! / (K! \* (N-K)!)
 
-# Notes
+# Table for Patterns
 
-- A priority queue is an abstract data type, while a Heap is a data structure. Therefore, a Heap is not a Priority Queue, but a way to implement a Priority Queue.
-- int->string use to_string(int)
-- string->int use stoi(string) or stol(large int)
-- next_permutation(v.begin(),v.end()) or prev_permutation(v.begin(),v.end())
-- pair<int,int>p and p=minmax(arr) then p.first->min and p.second->max
-- copy(v1.begin(),v1.end(),v2.begin())
-- fill(v.begin(),v.end(),1)
-- lower_bound(v.begin(),v.end(),6)
-- upper_bound(v.begin(),v.end(),10) -> point to the element location
-- reverse , reverse_copy, rotate
-- unique-> to copy same element unique(v.begin(),v.end());
-- v.resize(n)
-- iota -> increment the value
+## 📋 Table of Patterns
 
-  iota(v.begin(),v.end(),10) -> increment the value by 10
+| 🧩 Pattern | 💡 Real-Life Analogy | 🧠 Solves |
+|-------------|----------------------|-----------|
+| **Sliding Window** | “Peeking through a moving window” | Longest Substring, Max Sum Subarray, Anagrams |
+| **Two Pointers** | “Two fingers walking toward each other” | 2Sum, Reverse Vowels, Sorted Square, Palindrome Check |
+| **Fast & Slow Pointers** | “Tom & Jerry: one fast, one slow 🐭🐱” | Linked List Cycle, Happy Number |
+| **Binary Search** | “Guess the number in 7 tries or less” | Rotated Array, First/Last Position, Koko Eating Bananas |
+| **DFS / BFS** | “DFS: Go deep. BFS: Go wide.” | Graph Traversals, Flood Fill, Word Ladder, Shortest Path |
+| **Backtracking** | “Trying all outfits before choosing one 👗” | Sudoku, N-Queens, Word Search, Permutations |
+| **Dynamic Programming (DP)** | “Why re-solve what you’ve already solved?” | Knapsack, House Robber, LIS, Edit Distance |
+| **Greedy** | “Always pick what seems best right now” | Activity Selection, Jump Game, Gas Station |
+| **Union-Find (DSU)** | “Friend circles detection 👯‍♀️” | Number of Provinces, Kruskal’s MST, Connected Components |
+| **Topological Sort** | “Finish A before B 📦” | Course Schedule, Task Scheduling |
+| **Prefix Sum / Difference Array** | “Running totals like bank statements 💸” | Range Sum, Subarray Sum Equal K, Rainwater Trapping |
+| **Monotonic Stack / Queue** | “Stacking plates or tallest first 📏” | Next Greater Element, Daily Temperatures, Largest Rectangle |
+| **Bit Manipulation** | “Flip switches to solve puzzles 💡” | Single Number, Count Bits, Subsets, XOR Problems |
+| **Trie (Prefix Tree)** | “Autocomplete dictionary 📚” | Word Search, StartsWith, Replace Words |
+| **Heap / Priority Queue** | “Serve most urgent first ⏳” | Kth Largest, Top K Elements, Merge K Lists |
+| **Graph (Adjacency List/Matrix)** | “Follow paths on a map 🗺️” | Shortest Path, Cycles, Connected Components |
+| **Recursion** | “Function calling itself – like Russian dolls 🪆” | Tree Problems, Factorial, Subsets, Merge Sort |
+| **Segment Tree / Fenwick Tree** | “Smart range queries 📊” | Range Sum/Min/Max, Updates on Array |
+| **Matrix Traversal** | “Walk in all directions 🧭” | Spiral Order, Island Count, Diagonal Traversals |
+| **HashMap** | “Lookup table memory 📒” | 2Sum, Group Anagrams, Frequency Counts |
 
-- accumulate -> add all the value in the vector
-
-  accumulate(v.begin(),v.end(),result, myoperation)
-  int myoperation(int a,int b){ return a\*b; }
-
-- cout(v.begin(),v.end(),10)-> count 10 in array
-
-# OOPS
-
-- How would you design a chess game? What classes and objects would you use? What methods would they have?
-- How would you design the data structures for a book keeping system for a library?
-- Explain how you would design a HTTP server? Give examples of classes, methods, and interfaces. What are the challenges here?
-- Discuss algorithms and data structures for a garbage collector?
-- How would you implement an HR system to keep track of employee salaries and benefits?
-- How would you implement an Elevator system?
-- How would you implement a Parking Lot system?
+---
 
 # Resources
 
 - [Codeforces](https://codeforces.com/blog/entry/57282)
+
+# Links
+
+- [Leetcode](https://leetcode.com/discuss/general-discussion/665604/Important-and-Useful-links-from-all-over-the-Leetcode)
+
+- [Google Docs](https://docs.google.com/document/d/1wUCqhVHydWiDk6FJdFLSMpgigNrGcs4OFZg0Wa7JGEw/edit?usp=sharing)
+
+- [Devops Exercise](https://github.com/bregman-arie/devops-exercises)
+
+
