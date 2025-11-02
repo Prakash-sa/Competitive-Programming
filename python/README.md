@@ -36,6 +36,43 @@ if __name__ == "__main__":
 - `lower_bound`/`upper_bound` -> `bisect_left`/`bisect_right`
 - `cin / cout` -> `sys.stdin.readline` / `sys.stdout.write`
 
+## Python KPIs & Cheatsheet
+
+- **Stacks**
+  - Lightweight: `list.append`, `list.pop()` -> both O(1).
+  - Queue-to-stack trick: rotate `deque` after each push to keep the newest element at the front.
+  - Max stack: maintain `(value, running_max)` pairs for O(1) max queries.
+
+- **Queues / Deques**
+  - Use `collections.deque` for O(1) `append`, `appendleft`, `popleft`.
+  - Queue via two stacks gives amortized O(1) even without `deque`.
+  - Sliding window tip: store indices to drop expired elements quickly.
+
+- **Priority Queues (Heaps)**
+  - `heapq` is min-heap; negate keys for max-heap behaviour.
+  - Keep `(priority, payload)` tuples - Python compares tuples lexicographically.
+  - For time-decay caches, push `( -timestamp, tweet_id, user_id )` so the latest rises first.
+
+- **Hash Maps / Hash Sets**
+  - Python `dict`/`set` already O(1) average; when building custom versions, pick a prime bucket count and use chaining.
+  - For duplicate detection with range eviction (like the router), pair a `set` for existence with an ordered container for eviction.
+
+- **Ordered Structures**
+  - `OrderedDict` keeps insertion order; `move_to_end(key, last=True/False)` is O(1).
+  - Great drop-in replacement for manual doubly linked lists in LRU/LFU caches.
+
+- **Binary Search Helpers**
+  - `bisect_left`/`bisect_right` from `bisect` module - ideal for time-travel data (TimeMap, Router timestamp queues).
+  - Trick: use `bisect_right - bisect_left` to count elements inside `[lo, hi]` in O(log n).
+
+## Interview Talking Points
+
+- Emphasise **amortised analysis** for queue-with-stacks and heap-based feeds.
+- When discussing caches, compare options: `OrderedDict`, custom DLL + dict, and `heapq` for LFU variants.
+- Always state **space trade-offs** (e.g. timestamps replicated across maps for faster lookup).
+- For concurrency-ish designs (router), call out how FIFO eviction interacts with dedupe state.
+- Prepare quick examples to show the data structure invariant after each operation - helps convey mastery.
+
 ## Data Structure KPIs & Tricks
 
 | Structure | Implementation & Ops | Interview nuggets |
