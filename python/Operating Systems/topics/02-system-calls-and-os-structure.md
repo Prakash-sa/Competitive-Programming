@@ -40,3 +40,34 @@ wait(NULL);
 
 ## Practice Idea
 Use `strace ls` to capture real syscalls, then map them back to the categories above.
+
+## Placement Deep Dive
+- Emphasize syscall overhead (mode switch, context save) and optimization techniques (batching, vectored I/O, `io_uring`).
+- Compare syscalls on Linux vs Windows (NT kernel uses `Nt*` APIs) to show cross-platform awareness.
+- Outline how user libraries (glibc) provide wrappers and how `strace` hooks into ptrace to log calls.
+
+## Python Demo — Fork/Exec/Wait
+```python
+"""Demonstrate process control syscalls exposed via Python's os module."""
+import os
+import sys
+
+def child_process():
+    print(f"[child] pid={os.getpid()} from parent={os.getppid()}")
+    os._exit(0)
+
+def main():
+    pid = os.fork()
+    if pid == 0:
+        child_process()
+    else:
+        print(f"[parent] spawned child {pid}")
+        finished_pid, status = os.wait()
+        print(f"[parent] child {finished_pid} exited with status {status}")
+        os.execvp("echo", ["echo", "exec replaces current process image"])
+
+if __name__ == "__main__":
+    main()
+```
+
+Walk interviewers through how `fork` duplicates address space (copy-on-write), `wait` collects exit codes, and `execvp` overlays the parent.

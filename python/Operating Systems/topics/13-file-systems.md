@@ -27,3 +27,22 @@ Page cache/buffer cache store recently accessed blocks; write-back vs write-thro
 ## Interview Prompts
 - How does UNIX resolve `/usr/bin/python` using inode + directory entries?
 - Explain pros/cons of journaling vs log-structured file systems.
+
+## Placement Essentials
+- Explain inode structure (direct, single, double, triple indirect pointers) and how ext4/Btrfs differ.
+- Discuss journaling (metadata-only vs full-data journaling) and compare to copy-on-write file systems.
+- Mention directory caching (dentry cache) and path resolution algorithms.
+
+## Python Demo — Directory Walk & Metadata
+```python
+"""Use os.scandir to inspect directory entries like a mini VFS."""
+import os
+from pathlib import Path
+
+root = Path('.')
+for entry in os.scandir(root):
+    info = entry.stat()
+    print(f"{entry.name:30} size={info.st_size:6} bytes, inode={info.st_ino}")
+```
+
+Map the Python APIs to OS abstractions: `stat` returns metadata stored in inodes, `scandir` uses directory entries, and permissions map to protection bits.

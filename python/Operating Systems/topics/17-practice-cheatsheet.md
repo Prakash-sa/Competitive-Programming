@@ -34,3 +34,25 @@
 - Tanenbaum — *Modern Operating Systems*.
 - MIT 6.S081 / xv6 labs for kernel practice.
 - Linux `man` pages (`man 2 intro`, `man 2 syscalls`, `man 7 signal`).
+
+## Placement Essentials
+- Track your readiness with measurable drills (e.g., "finish Banker's algorithm in 3 minutes").
+- Document behavioral stories tying OS knowledge to projects (debugging high CPU, optimizing context switches, diagnosing deadlocks).
+- Build cross-topic connections (e.g., combining OS scheduling with DS heaps).
+
+## Python Demo — Quick Interview Drill Helper
+```python
+"""Generate random scheduling problems for practice."""
+import random
+
+processes = [
+    {"pid": f"P{i}", "burst": random.randint(1, 10)}
+    for i in range(1, 5)
+]
+processes.sort(key=lambda p: p["burst"])
+print("Use these bursts to compare SJF vs RR:")
+for proc in processes:
+    print(proc)
+```
+
+Use auto-generated data to rehearse manual calculations, reinforcing your ability to work under interview pressure.

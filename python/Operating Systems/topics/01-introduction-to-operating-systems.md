@@ -41,3 +41,31 @@ An operating system (OS) is the system software that sits between applications a
 ## Quick Self-Check
 - Can you draw the user–kernel boundary and label where shells, drivers, and memory managers live?
 - Can you classify any OS (e.g., Android, VxWorks) by type and kernel architecture?
+
+## Placement-Focused Notes
+- Tie every OS function to a real debugging story (e.g., "I analyzed context-switch stats with `top` to explain CPU thrashing").
+- Mention how cloud providers (AWS Nitro, GCP gVisor) virtualize hardware differently yet rely on the same OS abstractions.
+- Be ready to contrast resource isolation provided by OS vs hypervisor vs containers.
+
+## Python Demo — Inspecting the Host OS
+```python
+"""Show OS metadata that an interviewee can cite when discussing kernels and CPU utilization."""
+import os
+import platform
+from pprint import pprint
+
+def os_snapshot():
+    return {
+        "kernel_release": platform.release(),
+        "kernel_version": platform.version(),
+        "platform": platform.platform(),
+        "architecture": platform.machine(),
+        "logical_cpus": os.cpu_count(),
+        "load_average": os.getloadavg() if hasattr(os, "getloadavg") else (None, None, None),
+    }
+
+if __name__ == "__main__":
+    pprint(os_snapshot())
+```
+
+Discuss how `logical_cpus` relates to the scheduler's run queue, and how `load_average` reflects runnable processes versus available CPUs.

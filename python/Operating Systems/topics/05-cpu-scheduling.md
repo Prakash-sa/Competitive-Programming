@@ -32,3 +32,52 @@ Given bursts [5, 2, 8] compute waiting/turnaround for FCFS, SJF, RR (q=2). Draw 
 ## Interview Prompts
 - Explain how to select round-robin quantum for a web server.
 - Contrast MLFQ vs fixed priority scheduling.
+
+## Placement Essentials
+- Prepare to compare algorithms using real metrics and discuss starvation prevention (aging, feedback levels).
+- Mention Linux's Completely Fair Scheduler (CFS) as a modern example (red-black tree ordered by vruntime).
+- Explain how time slices are chosen (based on interactive vs batch workloads).
+
+## Python Demo — Mini Scheduler Simulator
+```python
+"""Simulate FCFS vs Round Robin to compute waiting and turnaround times."""
+from collections import deque
+
+processes = [
+    {"pid": "P1", "burst": 5},
+    {"pid": "P2", "burst": 2},
+    {"pid": "P3", "burst": 8},
+]
+
+def fcfs(processes):
+    time = 0
+    waiting = {}
+    for proc in processes:
+        waiting[proc["pid"]] = time
+        time += proc["burst"]
+    return waiting
+
+
+def round_robin(processes, quantum=2):
+    queue = deque((proc["pid"], proc["burst"]) for proc in processes)
+    time = 0
+    waiting = {proc["pid"]: 0 for proc in processes}
+    last_run = {proc["pid"]: 0 for proc in processes}
+    remaining = {proc["pid"]: proc["burst"] for proc in processes}
+    while queue:
+        pid, _ = queue.popleft()
+        waited = time - last_run[pid]
+        waiting[pid] += waited
+        slice_time = min(quantum, remaining[pid])
+        remaining[pid] -= slice_time
+        time += slice_time
+        last_run[pid] = time
+        if remaining[pid] > 0:
+            queue.append((pid, remaining[pid]))
+    return waiting
+
+print("FCFS waiting times", fcfs(processes))
+print("RR waiting times", round_robin(processes, quantum=2))
+```
+
+Explain how to compute turnaround = waiting + burst and discuss fairness differences between FCFS and Round Robin.

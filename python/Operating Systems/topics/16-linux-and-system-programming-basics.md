@@ -29,3 +29,34 @@
 ## Interview Prompts
 - Explain difference between `fork` and `exec` and why they're separate calls.
 - Describe how you'd implement a thread-safe logging system using POSIX APIs.
+
+## Placement Essentials
+- Connect Linux commands to OS concepts: `ps` (process table), `top` (scheduler metrics), `nice` (priority adjustments).
+- Explain how `fork + exec + wait` map to shell pipelines and job control.
+- Discuss ELF binaries, environment variables, signals (`SIGCHLD`, `SIGTERM`), and file descriptor duplication (`dup2`).
+
+## Python Demo — Mini Shell Fragment
+```python
+"""Implement a tiny shell that supports `cd` and external commands."""
+import os
+import shlex
+import subprocess
+
+while True:
+    try:
+        cmd = input("mini-sh> ")
+    except EOFError:
+        break
+    parts = shlex.split(cmd)
+    if not parts:
+        continue
+    if parts[0] == "cd":
+        os.chdir(parts[1] if len(parts) > 1 else os.path.expanduser("~"))
+        continue
+    if parts[0] == "exit":
+        break
+    proc = subprocess.Popen(parts)
+    proc.wait()
+```
+
+Explain how `subprocess.Popen` uses `fork`/`exec`, and how the shell changes directories via `chdir` in the parent (cannot delegate to child).

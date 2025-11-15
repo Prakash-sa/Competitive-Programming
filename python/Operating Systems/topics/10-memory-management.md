@@ -27,3 +27,54 @@ Base and limit registers enforce per-process address bounds; relocation performe
 ## Study Prompts
 - Illustrate external fragmentation after sequence of allocate/free operations.
 - Distinguish segmentation fault vs page fault.
+
+## Placement Essentials
+- Be comfortable explaining base/limit registers, relocation, and how MMUs enforce protection.
+- Compare internal vs external fragmentation with numeric examples and show how compaction works.
+- Discuss buddy allocators (power-of-two blocks) and slab allocators (object caches) used in Linux.
+
+## Python Demo — Simulated Allocator
+```python
+"""Simulate first-fit and best-fit allocation across a memory pool."""
+from dataclasses import dataclass
+
+@dataclass
+class Block:
+    start: int
+    size: int
+    free: bool = True
+
+pool = [Block(start=0, size=100)]
+
+
+def allocate(size, strategy="first"):
+    candidates = [b for b in pool if b.free and b.size >= size]
+    if strategy == "best":
+        candidates.sort(key=lambda b: b.size)
+    if not candidates:
+        raise MemoryError("Out of memory")
+    block = candidates[0]
+    remainder = block.size - size
+    block.size = size
+    block.free = False
+    if remainder:
+        pool.insert(pool.index(block)+1, Block(start=block.start+size, size=remainder))
+    return block
+
+
+def free(block):
+    block.free = True
+    # naive coalescing
+    for i in range(len(pool)-1):
+        if pool[i].free and pool[i+1].free:
+            pool[i].size += pool[i+1].size
+            del pool[i+1]
+            break
+
+allocated = allocate(10)
+allocated_best = allocate(15, strategy="best")
+free(allocated)
+print(pool)
+```
+
+Use the output to explain how fragmentation emerges and why coalescing/free-list strategies matter for allocators.

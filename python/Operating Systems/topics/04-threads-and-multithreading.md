@@ -38,3 +38,37 @@ int main() {
 ## Interview Prompts
 - Differentiate mutex vs semaphore in the context of multithreading.
 - Explain how a blocking I/O syscall affects user-level threading libraries.
+
+## Placement Essentials
+- Expect to explain user vs kernel threads, blocking syscalls, and how thread pools amortize creation overhead.
+- Discuss how OSes store per-thread metadata (TCB, TLS, stack) and how scheduling differs between threads and processes.
+- Call out issues like false sharing, cache locality, and GIL (in CPython) when writing multi-threaded code.
+
+## Python Demo — Thread Synchronization
+```python
+"""Show how Python threads share memory and coordinate with Locks."""
+import threading
+import time
+
+counter = 0
+lock = threading.Lock()
+
+
+def increment_worker(iterations: int):
+    global counter
+    for _ in range(iterations):
+        with lock:  # ensures mutual exclusion
+            counter += 1
+            # simulate work
+            time.sleep(0.0001)
+
+threads = [threading.Thread(target=increment_worker, args=(50,)) for _ in range(4)]
+for t in threads:
+    t.start()
+for t in threads:
+    t.join()
+
+print(f"Final counter = {counter}")
+```
+
+Use this snippet to talk through race conditions, Python's GIL, and why you still need locks to guard non-atomic operations even in high-level languages.
