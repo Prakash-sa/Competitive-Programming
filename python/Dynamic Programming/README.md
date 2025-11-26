@@ -51,3 +51,11 @@ Dynamic programming thrives when a problem has **overlapping subproblems** and *
 - Mention time/space trade-offs (memoised recursion vs bottom-up).
 - For tree DP, outline traversal order (post-order to gather children, pre-order to reroot).
 - When constraints are large, note optimisations like sliding-count DP (`Jump Game VII`) or prefix sums to turn O(n^2) into O(n).
+
+```text
+❌ Why nonlocal ans breaks memoization
+@lru_cache caches the return value of dfs(x, y, s) based on its inputs.
+But your dfs doesn’t return anything (None)—it only modifies the global ans.
+So when a state (x, y, s) is revisited, lru_cache returns the cached result (which is None) without executing the function body again.
+That means you stop counting paths after the first visit to any state!
+```

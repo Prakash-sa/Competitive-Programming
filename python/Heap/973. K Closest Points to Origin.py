@@ -46,10 +46,8 @@ class Solution:
 # Here N refers to the length of the given array points.
 
 # Time complexity: O(N⋅logk)
-
 # Adding to/removing from the heap (or priority queue) only takes O(logk) time when the size of the heap is capped at k elements.
 
 # Space complexity: O(k)
-
 # The heap (or priority queue) will contain at most k elements.
 

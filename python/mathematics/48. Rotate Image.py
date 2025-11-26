@@ -32,7 +32,6 @@ class Solution:
         for i in range(n):
             matrix[i]=matrix[i][::-1]
         
-        
+
 # Both approaches have identical O(n²) time and O(1) space complexity.
 # The transpose + reverse method is actually preferred by many because:
-

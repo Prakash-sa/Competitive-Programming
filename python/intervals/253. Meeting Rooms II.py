@@ -33,9 +33,7 @@ class Solution:
 # Complexity Analysis
 
 # Time Complexity: O(NlogN).
-
 # There are two major portions that take up time here. One is sorting of the array that takes O(NlogN) considering that the array consists of N elements.
 # Then we have the min-heap. In the worst case, all N meetings will collide with each other. In any case we have N add operations on the heap. In the worst case we will have N extract-min operations as well. Overall complexity being (NlogN) since extract-min operation on a heap takes O(logN).
+
 # Space Complexity: O(N) because we construct the min-heap and that can contain N elements in the worst case as described above in the time complexity section. Hence, the space complexity is O(N).
-
-

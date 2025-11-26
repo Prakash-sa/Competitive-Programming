@@ -32,7 +32,6 @@ class Solution:
 # The time complexity is dominated by the sorting step. Once the array has been sorted, only O(n) time is required to go through the array and determine if there is any overlap.
 
 # Space complexity: O(logn) or O(n)
-
 # Note that some extra space is used when we sort an array in place. The space complexity of the sorting algorithm depends on the programming language.
 
 # In Python, the sort method sorts a list using the Tim Sort algorithm which is a combination of Merge Sort and Insertion Sort and has O(n) additional space. Additionally, Tim Sort is designed to be a stable algorithm.

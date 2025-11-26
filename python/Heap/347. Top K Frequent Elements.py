@@ -37,3 +37,24 @@ class Solution:
 
 # Time complexity : O(N+Nlogk) if k<N and O(1) in the particular case of N=k. That ensures time complexity to be better than O(NlogN).
 # Space complexity : O(N+k) to store the hash map with not more N elements and a heap with k elements.
+
+
+from collections import Counter
+
+def topKFrequent(nums, k):
+    freq = Counter(nums)
+    buckets = [[] for _ in range(len(nums) + 1)]
+
+    for num, count in freq.items():
+        buckets[count].append(num)
+
+    result = []
+    for i in range(len(buckets) - 1, -1, -1):
+        for num in buckets[i]:
+            result.append(num)
+            if len(result) == k:
+                return result
+
+# Bucket Sort
+# O(n)
+# Most optimal, when values are bounded by n

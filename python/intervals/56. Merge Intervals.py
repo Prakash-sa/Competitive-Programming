@@ -24,6 +24,7 @@ Constraints:
 intervals[i].length == 2
 0 <= starti <= endi <= 104
 '''
+
 from collections import List
 
 class Solution:
@@ -39,7 +40,7 @@ class Solution:
             else:
                 res[-1][1]=max(res[-1][1],intervals[i][1])
         return res
-        
+
 # Complexity Analysis
 # Time complexity : O(nlogn)
 # Other than the sort invocation, we do a simple linear scan of the list, so the runtime is dominated by the O(nlogn) complexity of sorting.

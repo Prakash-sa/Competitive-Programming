@@ -43,4 +43,5 @@ class Solution:
             res.append(count)
             slist.add(num)
         return res[::-1]
-    
+
+
