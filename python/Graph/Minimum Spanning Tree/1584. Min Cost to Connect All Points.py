@@ -49,3 +49,15 @@ class Solution:
 # Time complexity: O(N^2*log(N)).
 # Space complexity: O(N^2).
 
+'''
+
+Although the min-heap method is often used to implement Prim's algorithm (as it's fairly easy to understand), due to its use of a heap to store the edges, its time complexity is suboptimal.
+Thus, we will present a more efficient way of implementing Prim's algorithm, which eliminates the use of min-heap to find the next lowest-weighted edge.
+
+In this approach, we use one minDist array, where minDist[i] stores the weight of the smallest weighted edge to reach the i 
+th
+  node from any node in the current tree.
+We will iterate over the minDist array and greedily pick the node that is not in the MST and has the smallest edge weight. We will add this node to the MST, and for all of its neighbors, we will try to update the value in minDist.
+We will repeat this process until all nodes are part of the MST.
+
+'''

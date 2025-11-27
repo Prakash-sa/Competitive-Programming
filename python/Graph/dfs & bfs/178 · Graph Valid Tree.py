@@ -47,3 +47,41 @@ class Solution:
             elif not visited[neighbor] and self.hasCycle(adj_list,neighbor,visited,node):
                 return True
         return False
+
+
+'''
+For the graph to be a valid tree, it must have exactly n - 1 edges. 
+Any less, and it can't possibly be fully connected. Any more, and it has to contain cycles. 
+Additionally, if the graph is fully connected and contains exactly n - 1 edges, it can't possibly contain a cycle, 
+and therefore must be a tree!
+
+Going by this definition, our algorithm needs to do the following:
+
+Check whether or not there are n - 1 edges. If there's not, then return false.
+Check whether or not the graph is fully connected. Return true if it is, false if otherwise.
+
+'''
+
+class Solution:
+    def validTree(self, n: int, edges: List[List[int]]) -> bool:
+        if len(edges)!=n-1:
+            return False
+        adj_list=[[] for _ in range(n)]
+        for u,v in edges:
+            adj_list[u].append(v)
+            adj_list[v].append(u)
+
+        seen=set()
+
+        def dfs(node):
+            if node in seen:
+                return
+            seen.add(node)
+            for nei in adj_list[node]:
+                dfs(nei)
+        dfs(0)
+        return len(seen)==n
+
+# TC: O(n)
+# SC: O(n)
+
