@@ -60,3 +60,7 @@ class Solution:
 
 # TC: O(N^2*A^N+D)
 # SC: O(A^N+D)
+
+# Complexity Analysis
+# Time complexity: O(4(d+10^4))
+# Space complexity: O(4(d+10^4))
