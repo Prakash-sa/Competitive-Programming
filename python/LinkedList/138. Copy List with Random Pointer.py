@@ -27,4 +27,82 @@ Node.random is null or is pointing to some node in the linked list.
 '''
 
 
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
+        self.val = int(x)
+        self.next = next
+        self.random = random
+"""
 
+class Solution:
+    def __init__(self):
+        self.visitedHash={}
+
+    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        if head is None:
+            return None
+
+        if head in self.visitedHash:
+            return self.visitedHash[head]
+        
+        node=Node(head.val,None,None)
+
+        self.visitedHash[head]=node
+        node.next=self.copyRandomList(head.next)
+        node.random=self.copyRandomList(head.random)
+        return node
+
+
+
+# TC: O(N) and SC: O(N)
+
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
+        self.val = int(x)
+        self.next = next
+        self.random = random
+"""
+
+class Solution:
+    def __init__(self):
+        self.visitedHash={}
+
+    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        if head is None:
+            return None
+
+        # clone each node and interleave
+        cur=head
+
+        while cur:
+            clone=Node(cur.val,cur.next,None)
+            cur.next=clone
+            cur=clone.next
+        
+        # assign random pointers for clones
+        cur=head
+        while cur:
+            clone=cur.next
+            clone.random=cur.random.next if cur.random else None
+            cur=clone.next
+        
+        # detach cloned list and restore original list
+        dummy=Node(0)
+        copy_tail=dummy
+        cur=head
+
+        while cur:
+            clone=cur.next
+            nxt=clone.next
+
+            copy_tail.next=clone
+            copy_tail=clone
+            cur.next=nxt
+            cur=nxt
+        return dummy.next
+    
+# TC: O(N) SC: O(1)

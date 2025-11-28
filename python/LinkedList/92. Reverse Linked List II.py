@@ -19,5 +19,31 @@ The number of nodes in the list is n.
 Follow up: Could you do it in one pass?
 '''
 
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+        if not head or left==right:
+            return head
+        
+        dummy=ListNode(0,head)
+        prev=dummy
 
+        for _ in range(left-1):
+            prev=prev.next
 
+        curr=prev.next
+
+        for _ in range(right-left):
+            tmp=curr.next
+            curr.next=tmp.next
+            tmp.next=prev.next
+            prev.next=tmp
+
+        return dummy.next
+
+# Approach uses dummy head and front insertion to reverse the sublist in place.
+# Time O(n). Space O(1).
