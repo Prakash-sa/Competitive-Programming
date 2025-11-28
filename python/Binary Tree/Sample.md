@@ -1,706 +1,441 @@
-0. Base template for trees in Python
-
-You’ll paste this into almost every tree problem:
-
-import sys
-sys.setrecursionlimit(1_000_000)
-input = sys.stdin.readline
-
-n = int(input())
-g = [[] for _ in range(n + 1)]
-for _ in range(n - 1):
-    u, v = map(int, input().split())
-    g[u].append(v)
-    g[v].append(u)
-
-
-Optionally choose root (often 1):
-
-root = 1
-
-1. Basic DFS / BFS, parent & depth arrays
-When to use
-
-Need depth, parent, subtree relationships.
-
-Many later patterns require parent[], depth[].
-
-Boiler DFS
-n = int(input())
-g = [[] for _ in range(n + 1)]
-for _ in range(n - 1):
-    u, v = map(int, input().split())
-    g[u].append(v)
-    g[v].append(u)
-
-root = 1
-parent = [0] * (n + 1)
-depth = [0] * (n + 1)
-
-def dfs(u, p):
-    parent[u] = p
-    for v in g[u]:
-        if v == p:
-            continue
-        depth[v] = depth[u] + 1
-        dfs(v, u)
-
-dfs(root, 0)
-
-Boiler BFS (sometimes safer than recursion)
-from collections import deque
-
-def bfs(root):
-    parent = [0] * (n + 1)
-    depth = [-1] * (n + 1)
-    dq = deque([root])
-    depth[root] = 0
-    parent[root] = 0
-
-    while dq:
-        u = dq.popleft()
-        for v in g[u]:
-            if depth[v] != -1:
-                continue
-            depth[v] = depth[u] + 1
-            parent[v] = u
-            dq.append(v)
-
-    return parent, depth
-
-parent, depth = bfs(1)
-
-2. Subtree DP (sizes, sums, counts)
-When to use
-
-“For each node, compute something over its subtree.”
-
-Common tasks: subtree size, subtree sum, #special nodes in subtree, etc.
-
-Many CF problems reduce to: post-order DFS DP.
-
-Generic pattern
-
-We compute dp[u] using children’s dp[v].
-
-Example 1: Subtree size.
-
-sz = [0] * (n + 1)
-
-def dfs(u, p):
-    sz[u] = 1
-    for v in g[u]:
-        if v == p:
-            continue
-        dfs(v, u)
-        sz[u] += sz[v]
-
-dfs(1, 0)
-
-
-Example 2: Subtree sum (values on nodes):
-
-val = [0] + list(map(int, input().split()))  # 1..n
-subsum = [0] * (n + 1)
-
-def dfs(u, p):
-    subsum[u] = val[u]
-    for v in g[u]:
-        if v == p:
-            continue
-        dfs(v, u)
-        subsum[u] += subsum[v]
-
-dfs(1, 0)
-
-
-Pattern:
-
-Initialize dp[u] with node’s own contribution.
-
-For v in children: combine child DP into parent DP.
-
-3. Tree Diameter & Center
-When to use
-
-Find longest path in tree (diameter).
-
-Often in problems about distances, tree center, radius, etc.
-
-Diameter by 2 BFS/DFS
-
-BFS from any node → farthest node a.
-
-BFS from a → farthest node b.
-
-Distance dist[a][b] = diameter.
-
-from collections import deque
-
-def bfs_far(start):
-    dist = [-1] * (n + 1)
-    dist[start] = 0
-    dq = deque([start])
-    best_node = start
-
-    while dq:
-        u = dq.popleft()
-        for v in g[u]:
-            if dist[v] != -1:
-                continue
-            dist[v] = dist[u] + 1
-            dq.append(v)
-            if dist[v] > dist[best_node]:
-                best_node = v
-    return best_node, dist
-
-# usage:
-a, _ = bfs_far(1)
-b, dista = bfs_far(a)
-# dista[b] is diameter length
-
-Tree center
-
-Path from a to b is diameter path.
-
-Center(s) are middle node(s) on that path.
-(Useful for minimizing max distance, etc.)
-
-Recover path:
-
-def bfs_par(start):
-    dist = [-1] * (n + 1)
-    par = [-1] * (n + 1)
-    dist[start] = 0
-    dq = deque([start])
-    while dq:
-        u = dq.popleft()
-        for v in g[u]:
-            if dist[v] != -1:
-                continue
-            dist[v] = dist[u] + 1
-            par[v] = u
-            dq.append(v)
-    return par, dist
-
-par, _ = bfs_par(a)
-path = []
-cur = b
-while cur != -1:
-    path.append(cur)
-    cur = par[cur]
-path = path[::-1]
-# center(s)
-if len(path) % 2 == 1:
-    centers = [path[len(path)//2]]
-else:
-    centers = [path[len(path)//2 - 1], path[len(path)//2]]
-
-4. LCA (Lowest Common Ancestor) + Binary Lifting
-When to use
-
-Distances between two nodes.
-
-Path queries (build formulas using LCA).
-
-Many CF tree problems need LCA.
-
-Preprocessing
-LOG = 20  # enough for n up to ~10^6; for 2e5, 18 is enough
-up = [[0] * (n + 1) for _ in range(LOG)]
-depth = [0] * (n + 1)
-
-def dfs(u, p):
-    up[0][u] = p
-    for k in range(1, LOG):
-        up[k][u] = up[k - 1][up[k - 1][u]]
-    for v in g[u]:
-        if v == p:
-            continue
-        depth[v] = depth[u] + 1
-        dfs(v, u)
-
-root = 1
-dfs(root, 0)
-
-Lift function (k-th ancestor)
-def kth_ancestor(u, k):
-    for i in range(LOG):
-        if k & (1 << i):
-            u = up[i][u]
-            if u == 0:
-                break
-    return u
-
-LCA query
-def lca(a, b):
-    if depth[a] < depth[b]:
-        a, b = b, a
-    # lift a up to same depth as b
-    diff = depth[a] - depth[b]
-    for i in range(LOG):
-        if diff & (1 << i):
-            a = up[i][a]
-
-    if a == b:
-        return a
-
-    # lift both up until parents are same
-    for i in reversed(range(LOG)):
-        if up[i][a] != up[i][b]:
-            a = up[i][a]
-            b = up[i][b]
-    return up[0][a]
-
-Distance between nodes
-def dist(a, b):
-    c = lca(a, b)
-    return depth[a] + depth[b] - 2 * depth[c]
-
-5. Euler Tour + Subtree Queries
-When to use
-
-“For each query, add/set something in subtree of v.”
-
-“Query sum over subtree.” (or count, min, etc.)
-
-Map subtree to continuous segment [tin[v], tout[v]].
-
-Euler in/out times
-tin = [0] * (n + 1)
-tout = [0] * (n + 1)
-euler = []  # store nodes in entry order
-timer = 0
-
-def dfs(u, p):
-    global timer
-    tin[u] = timer
-    euler.append(u)
-    timer += 1
-    for v in g[u]:
-        if v == p:
-            continue
-        dfs(v, u)
-    tout[u] = timer - 1
-
-dfs(1, 0)
-
-
-Now subtree of u is euler[tin[u] .. tout[u]].
-
-Fenwick / BIT for sums on subtrees
-class Fenwick:
-    def __init__(self, n):
-        self.n = n
-        self.bit = [0] * (n + 1)
-    def add(self, i, delta):
-        i += 1  # shift for 1-based
-        while i <= self.n:
-            self.bit[i] += delta
-            i += i & -i
-    def sum(self, i):
-        i += 1
-        s = 0
-        while i > 0:
-            s += self.bit[i]
-            i -= i & -i
-        return s
-    def range_sum(self, l, r):
-        return self.sum(r) - self.sum(l - 1)
-
-# example usage:
-val = [0] + list(map(int, input().split()))
-fw = Fenwick(n)
-for u in range(1, n + 1):
-    fw.add(tin[u], val[u])
-
-# query subtree sum of u:
-# fw.range_sum(tin[u], tout[u])
-
-
-Pattern: any static structure on tree subtree → Euler tour + BIT/segment tree.
-
-6. Path Queries (HLD-style, segment tree on paths)
-
-For CF in Python, full HLD can be heavy but still usable for n up to 2e5 if carefully written.
-
-When to use
-
-Query set/sum/max on path u–v.
-
-With updates on nodes/edges.
-
-Typically combine with LCA or HLD.
-
-Heavy-Light Decomposition (outline)
-
-We’ll:
-
-Compute parent, depth, subtree size, heavy child.
-
-Decompose into chains, each chain has a head.
-
-Each node gets a position pos[u] in base array.
-
-Use segment tree/Fenwick on base array.
-
-n = int(input())
-g = [[] for _ in range(n + 1)]
-for _ in range(n - 1):
-    u, v = map(int, input().split())
-    g[u].append(v)
-    g[v].append(u)
-
-parent = [0] * (n + 1)
-depth = [0] * (n + 1)
-sz = [0] * (n + 1)
-heavy = [-1] * (n + 1)
-
-def dfs(u, p):
-    parent[u] = p
-    sz[u] = 1
-    max_sub = 0
-    for v in g[u]:
-        if v == p:
-            continue
-        depth[v] = depth[u] + 1
-        dfs(v, u)
-        sz[u] += sz[v]
-        if sz[v] > max_sub:
-            max_sub = sz[v]
-            heavy[u] = v
-
-dfs(1, 0)
-
-head = [0] * (n + 1)
-pos = [0] * (n + 1)
-cur_pos = 0
-
-def decompose(u, h):
-    global cur_pos
-    head[u] = h
-    pos[u] = cur_pos
-    cur_pos += 1
-    if heavy[u] != -1:
-        decompose(heavy[u], h)
-        for v in g[u]:
-            if v != parent[u] and v != heavy[u]:
-                decompose(v, v)
-
-decompose(1, 1)
-
-
-Now pos[u] is index in base array.
-
-Segment Tree (sum example, compact)
-class SegTree:
-    def __init__(self, n):
-        self.n = 1
-        while self.n < n:
-            self.n *= 2
-        self.seg = [0] * (2 * self.n)
-    def build(self, arr):
-        for i, v in enumerate(arr):
-            self.seg[self.n + i] = v
-        for i in range(self.n - 1, 0, -1):
-            self.seg[i] = self.seg[2 * i] + self.seg[2 * i + 1]
-    def update(self, i, v):
-        i += self.n
-        self.seg[i] = v
-        i //= 2
-        while i:
-            self.seg[i] = self.seg[2 * i] + self.seg[2 * i + 1]
-            i //= 2
-    def query(self, l, r):  # inclusive
-        l += self.n
-        r += self.n
-        res = 0
-        while l <= r:
-            if l & 1:
-                res += self.seg[l]
-                l += 1
-            if not (r & 1):
-                res += self.seg[r]
-                r -= 1
-            l //= 2
-            r //= 2
-        return res
-
-
-Build base array:
-
-val = [0] + list(map(int, input().split()))
-base = [0] * n
-for u in range(1, n + 1):
-    base[pos[u]] = val[u]
-
-st = SegTree(n)
-st.build(base)
-
-Path sum query u–v with HLD
-def query_path(u, v):
-    res = 0
-    while head[u] != head[v]:
-        if depth[head[u]] < depth[head[v]]:
-            u, v = v, u
-        # u's head is deeper
-        h = head[u]
-        res += st.query(pos[h], pos[u])
-        u = parent[h]
-    # now on same head
-    if depth[u] > depth[v]:
-        u, v = v, u
-    res += st.query(pos[u], pos[v])
+# 🌳 Binary Tree Fundamentals
+
+## 🔍 Tree Traversal Basics
+
+```python
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def inorder(root):
+    """Left → Node → Right (sorted for BST)"""
+    if not root:
+        return []
+    return inorder(root.left) + [root.val] + inorder(root.right)
+
+def preorder(root):
+    """Node → Left → Right"""
+    if not root:
+        return []
+    return [root.val] + preorder(root.left) + preorder(root.right)
+
+def postorder(root):
+    """Left → Right → Node"""
+    if not root:
+        return []
+    return postorder(root.left) + postorder(root.right) + [root.val]
+
+def levelorder(root):
+    """BFS: level by level"""
+    if not root:
+        return []
+    from collections import deque
+    q = deque([root])
+    res = []
+    while q:
+        res.append([node.val for node in q])
+        q = deque(child for node in q for child in [node.left, node.right] if child)
     return res
+```
+
+---
+
+## 1️⃣ Tree DFS (Post-order Pattern)
+
+### 1.1 Node Information (size, height, depth)
+
+```python
+def tree_dfs_info(root):
+    """Returns (subtree_size, height) for each node"""
+    info = {}
+    
+    def dfs(u):
+        if not u:
+            return 0, -1  # size, height
+        left_size, left_h = dfs(u.left)
+        right_size, right_h = dfs(u.right)
+        size = left_size + right_size + 1
+        height = max(left_h, right_h) + 1
+        info[u] = (size, height)
+        return size, height
+    
+    dfs(root)
+    return info
+```
+
+### 1.2 Path Problems (Root to Node/Leaf)
+
+```python
+def root_to_leaf_paths(root):
+    """All paths from root to leaves"""
+    paths = []
+    
+    def dfs(u, path):
+        if not u:
+            return
+        path.append(u.val)
+        if not u.left and not u.right:
+            paths.append(path[:])
+        else:
+            dfs(u.left, path)
+            dfs(u.right, path)
+        path.pop()
+    
+    dfs(root, [])
+    return paths
+
+def path_sum(root, target):
+    """Root to node paths summing to target"""
+    paths = []
+    
+    def dfs(u, path, s):
+        if not u:
+            return
+        path.append(u.val)
+        s += u.val
+        if s == target:
+            paths.append(path[:])
+        dfs(u.left, path, s)
+        dfs(u.right, path, s)
+        path.pop()
+    
+    dfs(root, [], 0)
+    return paths
+```
+
+### 1.3 Subtree Queries (Max/Min in subtree)
+
+```python
+def max_path_sum_down(root):
+    """Max path sum from node downward"""
+    
+    def dfs(u):
+        if not u:
+            return 0
+        left = dfs(u.left)
+        right = dfs(u.right)
+        return u.val + max(0, left, right)
+    
+    return dfs(root)
+
+def max_path_sum_any(root):
+    """Max path sum (any two nodes)"""
+    ans = [float('-inf')]
+    
+    def dfs(u):
+        if not u:
+            return 0
+        left = max(0, dfs(u.left))
+        right = max(0, dfs(u.right))
+        ans[0] = max(ans[0], left + right + u.val)
+        return max(left, right) + u.val
+    
+    dfs(root)
+    return ans[0]
+```
+
+---
+
+## 2️⃣ Tree Diameter & Center
+
+### 2.1 Tree Diameter (Longest Path)
+
+```python
+def tree_diameter(root):
+    """Longest path between any two nodes"""
+    height, diameter = [0], [0]
+    
+    def dfs(u):
+        if not u:
+            return 0
+        left_h = dfs(u.left)
+        right_h = dfs(u.right)
+        diameter[0] = max(diameter[0], left_h + right_h)
+        return 1 + max(left_h, right_h)
+    
+    dfs(root)
+    return diameter[0]
+
+def diameter_path(root):
+    """Get nodes on diameter path"""
+    info = {'diameter': 0, 'path': []}
+    
+    def dfs(u):
+        if not u:
+            return 0, []
+        left_h, left_p = dfs(u.left)
+        right_h, right_p = dfs(u.right)
+        new_d = left_h + right_h
+        if new_d > info['diameter']:
+            info['diameter'] = new_d
+            info['path'] = left_p + [u.val] + right_p[::-1]
+        h = 1 + max(left_h, right_h)
+        return h, left_p + [u.val]
+    
+    dfs(root)
+    return info['path']
+```
+
+### 2.2 Tree Center
+
+```python
+def tree_center(root):
+    """Node(s) minimizing max distance to leaves"""
+    height = {}
+    
+    def dfs(u):
+        if not u:
+            return -1
+        h = 1 + max(dfs(u.left), dfs(u.right))
+        height[u] = h
+        return h
+    
+    dfs(root)
+    # Center has minimum "eccentricity" (max distance to any leaf)
+    # Usually 1 or 2 nodes
+    centers = []
+    for node, h in height.items():
+        child_heights = [height.get(child, -1) for child in [node.left, node.right] if child]
+        if child_heights:
+            ecc = 1 + max(child_heights)
+        else:
+            ecc = 0
+        if ecc == (height[root] + 1) // 2:
+            centers.append(node.val)
+    return centers
+```
+
+---
+
+## 3️⃣ LCA (Lowest Common Ancestor)
+
+### 3.1 Binary Lifting LCA
+
+```python
+def build_lca_binary_lifting(root):
+    """Preprocess: O(n log n), Query: O(log n)"""
+    LOG = 20
+    parent = {}
+    depth = {}
+    
+    def dfs(u, p, d):
+        parent[u] = [p] + [None] * (LOG - 1)
+        depth[u] = d
+        for child in [u.left, u.right]:
+            if child:
+                dfs(child, u, d + 1)
+    
+    dfs(root, None, 0)
+    
+    # Build binary lifting table
+    for u in parent:
+        for i in range(1, LOG):
+            if parent[u][i-1]:
+                parent[u][i] = parent[parent[u][i-1]][i-1]
+    
+    def lca(u, v):
+        if depth[u] < depth[v]:
+            u, v = v, u
+        # Bring u to same level as v
+        for i in range(LOG):
+            if (depth[u] - depth[v]) & (1 << i):
+                u = parent[u][i]
+        if u == v:
+            return u
+        # Binary search upwards
+        for i in range(LOG - 1, -1, -1):
+            if parent[u][i] != parent[v][i]:
+                u = parent[u][i]
+                v = parent[v][i]
+        return parent[u][0]
+    
+    return lca
+```
+
+### 3.2 DFS-based LCA (Simple)
+
+```python
+def lca_simple(root, p, q):
+    """O(n) per query"""
+    def dfs(u):
+        if not u or u == p or u == q:
+            return u
+        left = dfs(u.left)
+        right = dfs(u.right)
+        if left and right:
+            return u
+        return left or right
+    
+    return dfs(root)
+```
+
+---
+
+## 4️⃣ Euler Tour & Path Queries
+
+### 4.1 Euler Tour + Segment Tree
+
+```python
+def euler_tour(root):
+    """Flatten tree to array, track in/out times"""
+    tin = {}
+    tout = {}
+    timer = [0]
+    arr = []
+    
+    def dfs(u):
+        tin[u] = timer[0]
+        arr.append(u.val)
+        timer[0] += 1
+        if u.left:
+            dfs(u.left)
+        if u.right:
+            dfs(u.right)
+        tout[u] = timer[0] - 1
+    
+    dfs(root)
+    # Now use segment tree on arr for subtree queries
+    return arr, tin, tout
+```
+
+### 4.2 Path Queries (Root to Node)
+
+```python
+def path_to_node(root, target, path=[]):
+    """Path from root to target node"""
+    if not root:
+        return None
+    if root.val == target:
+        return path + [root.val]
+    left = path_to_node(root.left, target, path + [root.val])
+    if left:
+        return left
+    return path_to_node(root.right, target, path + [root.val])
+```
+
+---
+
+## 5️⃣ Tree Decompositions
+
+### 5.1 Heavy-Light Decomposition (Sketch)
+
+```python
+def hld_decompose(root):
+    """Heavy-light decomposition for path queries in O(log² n)"""
+    size = {}
+    parent = {}
+    chain_head = {}
+    pos_in_chain = {}
+    chains = []
+    chain_id = [0]
+    
+    def dfs1(u, p):
+        size[u] = 1
+        parent[u] = p
+        heavy_child = None
+        for child in [u.left, u.right]:
+            if child:
+                dfs1(child, u)
+                size[u] += size[child]
+                if not heavy_child or size[child] > size[heavy_child]:
+                    heavy_child = child
+        return heavy_child
+    
+    def dfs2(u, head):
+        chain_head[u] = head
+        pos_in_chain[u] = len(chains[-1])
+        chains[-1].append(u)
+        for child in [u.left, u.right]:
+            if child:
+                if child == dfs1(u, None):
+                    dfs2(child, head)
+                else:
+                    chains.append([])
+                    chain_id[0] += 1
+                    dfs2(child, child)
+    
+    dfs1(root, None)
+    chains.append([])
+    dfs2(root, root)
+    return chain_head, pos_in_chain, chains
+```
+
+### 5.2 Centroid Decomposition (Sketch)
+
+```python
+def centroid_decomposition(root):
+    """Find tree centroid: node minimizing max subtree size"""
+    size = {}
+    
+    def calc_size(u, p):
+        size[u] = 1
+        for child in [u.left, u.right]:
+            if child:
+                size[u] += calc_size(child, u)
+        return size[u]
+    
+    def find_centroid(u, p, tree_size):
+        for child in [u.left, u.right]:
+            if child and size[child] > tree_size // 2:
+                return find_centroid(child, u, tree_size)
+        return u
+    
+    tree_size = calc_size(root, None)
+    centroid = find_centroid(root, None, tree_size)
+    return centroid
+```
+
+---
+
+## 6️⃣ Rerooting
+
+### 6.1 Rerooting DP Pattern
+
+```python
+def rerooting_dp(root):
+    """Example: depth sum from each node as root"""
+    dp_down = {}  # dp[u] = cost with u as root going down
+    dp_up = {}    # dp[u] = cost from parent going up
+    
+    def dfs1(u, p):
+        dp_down[u] = 0
+        for child in [u.left, u.right]:
+            if child:
+                dfs1(child, u)
+                dp_down[u] += dp_down[child] + 1  # +1 for edge
+    
+    def dfs2(u, p):
+        for child in [u.left, u.right]:
+            if child:
+                # Reroot: move root from u to child
+                dp_up[child] = dp_up.get(u, 0) + (dp_down[u] - dp_down[child] - 1) + 1
+                dfs2(child, u)
+    
+    dfs1(root, None)
+    dp_up[root] = 0
+    dfs2(root, None)
+    
+    # Now dp_up[u] + dp_down[u] = total cost if u is root
+    return dp_down, dp_up
+```
+
+---
+
+## 📊 Quick Reference
+
+| Concept | Implementation | Complexity |
+|---------|---|---|
+| Traversal | DFS/BFS | O(n) |
+| Subtree size | Post-order DFS | O(n) |
+| Tree diameter | 2× DFS | O(n) |
+| LCA (binary lifting) | Preprocess + query | O(n log n) + O(log n) |
+| LCA (simple) | DFS per query | O(n) |
+| Euler tour | DFS with timer | O(n) |
+| HLD | Decompose tree | O(n log n) preprocess |
+| Centroid | Find center recursively | O(n log n) |
+| Rerooting | 2 DFS passes | O(n) |
+| Max path sum | Single DFS | O(n) |
+| Path to node | DFS search | O(n) |
 
-# point update: change val[u] to x:
-def update_node(u, x):
-    st.update(pos[u], x)
-
-
-You can adapt SegTree for min/max, bitwise, etc.
-
-7. Rerooting DP (DP on all roots)
-When to use
-
-“For every node i, compute some value considering tree rooted at i.”
-
-Example: sum of distances from each node to all others, or number of nodes at even distance, etc.
-
-Template idea
-
-First DFS (post-order) to compute DP when rooted at 1.
-
-Second DFS (pre-order) to “reroot” DP from parent to child.
-
-Example: sum of distances from each node to all others.
-
-We maintain:
-
-sz[u] – subtree size.
-
-dp[u] – sum of distances from u to nodes in its subtree.
-
-ans[u] – final sum of distances from u to all nodes.
-
-First DFS
-sz = [0] * (n + 1)
-dp = [0] * (n + 1)
-
-def dfs1(u, p):
-    sz[u] = 1
-    dp[u] = 0
-    for v in g[u]:
-        if v == p:
-            continue
-        dfs1(v, u)
-        sz[u] += sz[v]
-        dp[u] += dp[v] + sz[v]
-
-dfs1(1, 0)
-
-
-Here dp[u] = sum of distances from u to nodes in its subtree.
-
-Second DFS – reroot
-ans = [0] * (n + 1)
-
-def dfs2(u, p):
-    ans[u] = dp[u]
-    for v in g[u]:
-        if v == p:
-            continue
-
-        # save original
-        pu, pv = dp[u], dp[v]
-        su, sv = sz[u], sz[v]
-
-        # move root from u to v:
-        # remove v-subtree from u
-        dp[u] -= dp[v] + sz[v]
-        sz[u] -= sz[v]
-        # add u-part to v
-        dp[v] += dp[u] + sz[u]
-        sz[v] += sz[u]
-
-        dfs2(v, u)
-
-        # restore
-        dp[u], dp[v] = pu, pv
-        sz[u], sz[v] = su, sv
-
-dfs2(1, 0)
-
-
-Key pattern:
-Pass DP from parent to child by temporarily adjusting DP/size, recurse, then restore.
-
-8. DSU on Tree (small-to-large / Sack)
-When to use
-
-For every node’s subtree, answer queries like:
-
-Number of distinct colors in subtree.
-
-Most frequent color in subtree.
-
-Constraints: n up to 2e5, q ~ n.
-
-Idea: DFS; maintain a multiset/map of values. Always merge smaller child’s map into bigger one to keep complexity O(n log n).
-
-Example: Count distinct colors in each subtree.
-
-import sys
-sys.setrecursionlimit(1_000_000)
-input = sys.stdin.readline
-
-n = int(input())
-color = [0] + list(map(int, input().split()))
-g = [[] for _ in range(n + 1)]
-for _ in range(n - 1):
-    u, v = map(int, input().split())
-    g[u].append(v)
-    g[v].append(u)
-
-ans = [0] * (n + 1)
-
-def dfs(u, p):
-    big = {}  # map color -> count
-    big[color[u]] = 1
-
-    for v in g[u]:
-        if v == p:
-            continue
-        child_map = dfs(v, u)
-        # merge smaller into bigger
-        if len(child_map) > len(big):
-            big, child_map = child_map, big
-        for col, cnt in child_map.items():
-            big[col] = big.get(col, 0) + cnt
-
-    ans[u] = len(big)
-    return big
-
-dfs(1, 0)
-# ans[u] now has distinct colors in subtree of u
-
-
-For more complex queries, replace map type and merge logic accordingly.
-
-9. Centroid Decomposition
-When to use
-
-Distance-based queries with many operations:
-
-Count pairs of nodes at distance ≤ k.
-
-Sum/min of distance-based cost.
-
-O(n log n) decomposition; each node belongs to O(log n) levels.
-
-Skeleton:
-
-n = int(input())
-g = [[] for _ in range(n + 1)]
-for _ in range(n - 1):
-    u, v = map(int, input().split())
-    g[u].append(v)
-    g[v].append(u)
-
-used = [False] * (n + 1)
-sz = [0] * (n + 1)
-
-def calc_sz(u, p):
-    sz[u] = 1
-    for v in g[u]:
-        if v == p or used[v]:
-            continue
-        calc_sz(v, u)
-        sz[u] += sz[v]
-
-def find_centroid(u, p, total):
-    for v in g[u]:
-        if v == p or used[v]:
-            continue
-        if sz[v] * 2 > total:
-            return find_centroid(v, u, total)
-    return u
-
-def collect_dist(u, p, d, res):
-    res.append(d)
-    for v in g[u]:
-        if v == p or used[v]:
-            continue
-        collect_dist(v, u, d + 1, res)
-
-def decompose(u):
-    calc_sz(u, -1)
-    c = find_centroid(u, -1, sz[u])
-    used[c] = True
-
-    # process centroid-level logic here
-    # example: count pairs with distance <= K
-    #  - maintain global freq of distances
-    #  - for each child, collect distances & use freq to count cross pairs
-
-    for v in g[c]:
-        if not used[v]:
-            decompose(v)
-
-decompose(1)
-
-
-Then fill in the processing logic based on your specific problem.
-
-10. Common Tree Tricks / Patterns
-
-These don’t need long code, but you should know them conceptually.
-
-10.1 Binary search on answer + DFS
-
-Typical when answer is some minimal X satisfying condition:
-
-E.g., “Is it possible to select ≤ k paths such that each path length ≤ X?”.
-
-Use check(X) that runs DFS on tree and returns True/False.
-
-Wrap in binary search.
-
-def check(x):
-    # run dfs with constraint x
-    ok = True
-    # ...
-    return ok
-
-lo, hi = 0, 10**18
-while lo < hi:
-    mid = (lo + hi) // 2
-    if check(mid):
-        hi = mid
-    else:
-        lo = mid + 1
-ans = lo
-
-10.2 Color / parity / bitmask DP on tree
-
-Very common:
-
-Each node has some character / color.
-
-DP state is a bitmask (e.g., which letters appear odd times along path).
-
-Example: count paths with palindromic string (at most one bit set in mask).
-
-dp[u] = bitmask from root to u.
-
-For queries, we check dp[u] XOR dp[v] XOR (1 << c) etc.
-
-Use LCA + XOR properties.
-
-10.3 Tree + Two-pointers over Euler tour
-
-For “path queries” with offline queries, you can do Mo’s algorithm on trees:
-
-Use Euler tour with “enter/exit occurrences” → Mo on array.
-
-More advanced, but pattern is: convert path query to segment in Euler order (sometimes with 2 segments + LCA).
