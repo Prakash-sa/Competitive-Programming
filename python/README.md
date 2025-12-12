@@ -248,3 +248,19 @@ Notes:
 
 - `str.isnumeric()` helps when parsing tokens character by character.
 - Watch recursion depth and timeouts; convert to iterative if the DFS depth could hit ~1e5.
+
+
+## Auxiliary Space vs. Space Complexity
+
+| Aspect | Auxiliary Space | Space Complexity |
+|--------|---|---|
+| **Definition** | Extra memory used during execution (excluding input). | Total memory footprint including input. |
+| **Interview context** | Focuses on solution efficiency—what your code adds. | Formal complexity measure. |
+| **Example: Heapsort** | O(1) | O(n) |
+
+**Why it matters:**  
+Three canonical sorts all have O(n) space complexity (they consume the input array), but auxiliary space differs:
+- **Insertion Sort / Heap Sort:** O(1) auxiliary → in-place.
+- **Merge Sort:** O(n) auxiliary → needs a temporary array.
+
+In interviews, "space complexity" often colloquially means *auxiliary space*, since that's what reveals the efficiency of your algorithm relative to peers solving the same problem. 

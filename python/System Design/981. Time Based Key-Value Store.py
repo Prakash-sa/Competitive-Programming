@@ -37,3 +37,48 @@ All the timestamps timestamp of set are strictly increasing.
 At most 2 * 105 calls will be made to set and get.
 '''
 
+class TimeMap:
+
+    def __init__(self):
+        self.mp=defaultdict(list)
+
+    def set(self, key: str, value: str, timestamp: int) -> None:
+        self.mp[key].append((timestamp,value))
+
+    def get(self, key: str, timestamp: int) -> str:
+        if key not in self.mp or self.mp[key][0][0]>timestamp:
+            return ""
+        arr=self.mp[key]
+        l,r=0,len(arr)
+        while l<r:
+            mid=(l+r)//2
+            if arr[mid][0]<=timestamp:
+                l=mid+1
+            else:
+                r=mid
+        return arr[l-1][1]
+
+
+# Your TimeMap object will be instantiated and called as such:
+# obj = TimeMap()
+# obj.set(key,value,timestamp)
+# param_2 = obj.get(key,timestamp)
+
+'''
+Complexity Analysis
+If M is the number of set function calls, N is the number of get function calls, and L is average length of key and value strings.
+
+Time complexity:
+In the set() function, in each call, we push a (timestamp, value) pair in the key bucket, which takes O(L) time to hash the string.
+Thus, for M calls overall it will take, O(M⋅L) time.
+In the get() function, we use binary search on the key's bucket which can have at most M elements and to hash the string it takes O(L) time, thus overall it will take O(L⋅logM) time for binary search.
+And, for N calls overall it will take, O(N⋅L⋅logM) time.
+
+Space complexity:
+
+In the set() function, in each call we store one value string of length L, which takes O(L) space.
+Thus, for M calls we may store M unique values, so overall it may take O(M⋅L) space.
+In the get() function, we are not using any additional space.
+
+Thus, for all N calls it is a constant space operation.
+'''

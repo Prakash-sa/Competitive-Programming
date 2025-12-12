@@ -38,4 +38,50 @@ lefti != righti
 '''
 
 
+class Solution:
+    def buildMatrix(self, k: int, rowConditions: List[List[int]], colConditions: List[List[int]]) -> List[List[int]]:
+        def topo(edges):
+            g=defaultdict(list)
+            indegree=[0]*(k+1)
+            seen=set()
+            for u,v in edges:
+                if u==v:
+                    return None
+                if (u,v) in seen:
+                    continue
+                g[u].append(v)
+                seen.add((u,v))
+                indegree[v]+=1
+            q=deque()
+            for i in range(1,k+1):
+                if indegree[i]==0:
+                    q.append(i)
+            order=[]
+            while q:
+                u=q.popleft()
+                order.append(u)
+                for w in g[u]:
+                    indegree[w]-=1
+                    if indegree[w]==0:
+                        q.append(w)
+            if len(order)==k:
+                return order
+            return None
+        
+        row_order=topo(rowConditions)
+        col_order=topo(colConditions)
+        if row_order==None or col_order==None:
+            return []
 
+        row_pos={v:i for i,v in enumerate(row_order)}
+        col_pos={v:i for i,v in enumerate(col_order)}
+
+        ans=[[0]*(k) for _ in range(k)]
+
+        for i in range(1,k+1):
+            ans[row_pos[i]][col_pos[i]]=i
+        return ans
+    
+
+# Time complexity: O(max(k⋅k,n))
+# Space complexity: O(max(k⋅k,n))
