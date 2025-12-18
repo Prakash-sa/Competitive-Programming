@@ -65,3 +65,11 @@ class Solution:
 
         return 0
 
+# Complexity Analysis
+# Time Complexity: O(M 2 ×N), where M is the length of each word and N is the total number of words in the input word list.
+
+# Space Complexity: O(M 2 ×N).
+# Each word in the word list would have M intermediate combinations. To create the all_combo_dict dictionary we save an intermediate word as the key and its corresponding original words as the value. Note, for each of M intermediate words we save the original word of length M. This simply means, for every word we would need a space of M 2 to save all the transformations corresponding to it. Thus, all_combo_dict would need a total space of O(M2×N).
+# Visited dictionary would need a space of O(M×N) as each word is of length M.
+# Queue for BFS in worst case would need a space for all O(N) words and this would also result in a space complexity of O(M×N).
+# Combining the above steps, the overall space complexity is O(M 2 ×N) + O(M∗N) + O(M∗N) = O(M 2 ×N) space.
