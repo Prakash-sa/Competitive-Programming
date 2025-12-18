@@ -6,6 +6,10 @@
 - `n < 3000`: quadratic `O(n^2)` dynamic-programming solutions are usually safe.
 - `3000 < n < 10^6`: aim for `O(n)` or `O(n log n)` via two pointers, greedy, heaps, divide and conquer, or sorting tricks.
 - `n > 10^6`: target `O(log n)` or `O(1)` using binary search, arithmetic formulas, or bit hacks; even linear scans become expensive.
+The answer to this question is directly related to the number of operations that are allowed to perform within a second. Most of the sites these days allow 10⁸ or 10⁷ operations per second. After figuring out the number of operations that can be performed, search for the right complexity by looking at the constraints given in the problem.
+
+![alt text](image.png)
+
 
 ## Sliding Window
 
