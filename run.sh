@@ -1,7 +1,4 @@
 #!/bin/bash
-# g++ main.cpp
-# ./a.out < in > out
-
 # Run a Python program taking input from file `in` and writing stdout to `out`.
 # Usage: ./run.sh [script.py] [in-file] [out-file]
 # Defaults: script.py=main.py, in-file=in, out-file=out
