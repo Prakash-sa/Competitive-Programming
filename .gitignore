@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# C/C++ build artifacts
+*.o
+*.obj
+*.exe
+*.out
+*.class
+*.a
+*.so
+*.dylib
+a.out
+
+# Editor settings
+.idea/
+.vscode/
+
+# Logs
+*.log
