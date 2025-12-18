@@ -54,3 +54,15 @@ class Solution:
 # P + N = total  
 # => 2P = total + target  
 # => P = (total + target) / 2
+
+
+# Why the Conditions?
+# (total + target) % 2 != 0:
+
+# If target + total is odd, then (target + total) / 2 isn't an integer
+# We can't have a subset sum to a non-integer value → return 0
+# total < abs(target):
+
+# The maximum possible sum we can achieve is total (all positive)
+# The minimum possible sum is -total (all negative)
+# If |target| > total, it's impossible to reach → return 0

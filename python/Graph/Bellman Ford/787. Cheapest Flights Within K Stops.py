@@ -60,3 +60,10 @@ class Solution:
 # Space complexity: O(N)
 # We are using dist and temp arrays, which each require O(N) space.
 
+'''
+The Bellman-Ford algorithm is a single-source shortest path algorithm that works on weighted directed graphs. Bellman-Ford leverages dynamic programming by breaking the problem into subproblems and solving them iteratively. The core idea is based on the principle of optimality: the shortest path from source to destination with at most i edges can be constructed from the shortest path with at most i-1 edges.
+cost_dest[v] represents the minimum cost to reach vertex v from src using up to i edges in iteration i.
+At each iteration i, it computes the cheapest cost using at most i edges based on the previous iteration’s results (i-1 edges).
+Instead of n-1 iterations (as in standard Bellman-Ford), it uses k+1 iterations because the problem restricts the number of stops.
+'''
+
