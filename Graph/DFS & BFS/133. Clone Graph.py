@@ -83,18 +83,18 @@ class Solution:
         if not node:
             return node
 
-        visited={}
+        graph={}
         queue=deque([node])
-        visited[node]=Node(node.val,[])
+        graph[node]=Node(node.val,[])
         while queue:
             q=queue.popleft()
             for neighbor in q.neighbors:
-                if neighbor not in visited:
-                    visited[neighbor]=Node(neighbor.val,[])
+                if neighbor not in graph:
+                    graph[neighbor]=Node(neighbor.val,[])
                     queue.append(neighbor)
-                visited[q].neighbors.append(visited[neighbor])
-        return visited[node]
-        
+                graph[q].neighbors.append(graph[neighbor])
+        return graph[node]
+
 # Complexity Analysis
 # Time Complexity: O(N+M) 
 # where N is a number of nodes (vertices) and M is a number of edges.

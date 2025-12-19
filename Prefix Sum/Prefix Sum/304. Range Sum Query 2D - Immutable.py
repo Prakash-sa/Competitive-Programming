@@ -63,11 +63,8 @@ class NumMatrix:
         return total-above-left+overlap
         
 
-
 # Time complexity: O(1) time per query, O(mn) time pre-computation.
 # The pre-computation in the constructor takes O(mn) time. Each sumRegion query takes O(1) time.
 
 # Space complexity: O(mn).
 # The algorithm uses O(mn) space to store the cumulative region sum.
-
-

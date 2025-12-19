@@ -10,6 +10,8 @@ The answer to this question is directly related to the number of operations that
 
 ![alt text](image.png)
 
+![alt text](image-1.png)
+
 ## Sliding Window
 
 - Use on linear data structures (arrays, strings, linked lists).

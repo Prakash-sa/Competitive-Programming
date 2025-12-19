@@ -45,14 +45,13 @@ strs[i] contains any possible characters out of 256 valid ASCII characters.
  
 Follow up: Could you write a generalized algorithm to work on any possible set of characters?
 '''
-
 class Codec:
     def encode(self, strs: List[str]) -> str:
         """Encodes a list of strings to a single string.
         """
         encode_string=[]
         for s in strs:
-            encode_string.append(str(len(s))+':'+s)
+            encode_string.append(str(len(s))+'/:'+s)
         return "".join(encode_string)
         
 
@@ -61,11 +60,9 @@ class Codec:
         """ 
         res,i=[],0
         while i<len(s):
-            j=i
-            while s[j]!=':':
-                j+=1
+            j=s.find('/:',i)
             length=int(s[i:j])
-            j+=1
+            j+=2
             res.append(s[j:j+length])
             i=j+length
         return res
@@ -73,6 +70,8 @@ class Codec:
 # Your Codec object will be instantiated and called as such:
 # codec = Codec()
 # codec.decode(codec.encode(strs))
+
+# Chunked Transfer Encoding
 
 # Complexity Analysis
 # Let n denote the total number of characters across all strings in the input list and k denote the number of strings.
