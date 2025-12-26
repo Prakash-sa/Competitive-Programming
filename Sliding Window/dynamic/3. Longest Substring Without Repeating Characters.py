@@ -37,6 +37,8 @@ class Solution:
         for i,ch in enumerate(s):
             if ch in seen and seen[ch]>=start:
                 start=seen[ch]+1
+            # if ch in seen:
+            #     start=max(start,seen[ch]+1)
             seen[ch]=i
             best=max(best,i-start+1)
 

@@ -13,30 +13,28 @@ Output: ["()"]
 Constraints:
 1 <= n <= 8
 '''
-
 class Solution:
+    ans=[]
+
+    def backtrack(self,op,cl,arr):
+        if op==0 and cl==0:
+            self.ans.append("".join(arr[:]))
+            return
+        
+        if op>0:
+            arr.append("(")
+            self.backtrack(op-1,cl,arr)
+            arr.pop()
+        
+        if cl>0 and op<cl:
+            arr.append(")")
+            self.backtrack(op,cl-1,arr)
+            arr.pop()
+
     def generateParenthesis(self, n: int) -> List[str]:
-        ans=[]
-
-
-
-        def backtrack(open,close,arr):
-            if open==0 and close==0:
-                ans.append("".join(arr[:]))
-            
-            if open>0:
-                arr.append("(")
-                backtrack(open-1,close,arr)
-                arr.pop()
-            
-            if close>0:
-                if open<close:
-                    arr.append(")")
-                    backtrack(open,close-1,arr)
-                    arr.pop()
-
-        backtrack(n,n,[])
-        return ans
+        self.ans=[]
+        self.backtrack(n,n,[])
+        return self.ans
 
         
 # Complexity Analysis
