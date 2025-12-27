@@ -33,23 +33,21 @@ The number of nodes in the tree is in the range [0, 5000].
 #         self.right = right
 
 class Solution:
+    def helper(self,root: Optional[TreeNode])->int:
+        if not root:
+            return 0
+        lh=self.helper(root.left)
+        if lh==-1:
+            return -1
+        rh=self.helper(root.right)
+        if rh==-1:
+            return -1
+        if abs(lh-rh)>1:
+            return -1 
+        return max(lh,rh)+1
+
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
-        
-        def dfs(root: Optional[TreeNode])->int:
-            if not root:
-                return 0
-            lh=dfs(root.left)
-            if lh==-1:
-                return -1
-            rh=dfs(root.right)
-            if rh==-1:
-                return -1
-            if abs(lh-rh)>1:
-                return -1 
-            return max(lh,rh)+1
-
-        return dfs(root)!=-1
-
+        return self.helper(root)!=-1
 
 # Metric	Complexity	Reason
 # Time	O(n)	Each node visited once

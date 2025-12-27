@@ -31,18 +31,36 @@ class TreeNode:
         self.right = right
 
 class Solution:
-    def isValidBST(self, root: Optional[TreeNode]) -> bool:
 
-        def validate(root,low=-math.inf, high=math.inf):
-            if not root:
-                return True
-            
-            if root.val<=low or root.val>=high:
-                return False
-            return validate(root.left,low,root.val) and validate(root.right,root.val,high) 
-        return validate(root)
+    def validate(self,root,low=-math.inf, high=math.inf):
+        if not root:
+            return True        
+        if root.val<=low or root.val>=high:
+            return False
+        return self.validate(root.left,low,root.val) and self.validate(root.right,root.val,high) 
+
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        return self.validate(root)
+
 
 # Complexity Analysis:
 # Time complexity: O(N) since we visit each node exactly once.
 # Space complexity: O(N) since we keep up to the entire tree.
-        
+
+class Solution:
+
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        stack=[]
+        prev=-math.inf
+
+        while stack or root:
+            while root:
+                stack.append(root)
+                root=root.left
+            root=stack.pop()
+            if root.val<=prev:
+                return False
+            prev=root.val
+            root=root.right
+        return True
+
