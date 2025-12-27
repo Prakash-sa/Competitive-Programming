@@ -25,22 +25,21 @@ fromi != toi
 '''
 
 class Solution:
+    def helper(self,airport,graph):
+        while graph[airport]:
+            next_airport=heappop(graph[airport])
+            self.helper(next_airport,graph)
+        self.ans.append(airport)
+
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
-        ans=[]
+        self.ans=[]
         graph=defaultdict(list)
         for ticket in tickets:
             heappush(graph[ticket[0]],ticket[1])
-        
-        def dfs(airport):
-            while graph[airport]:
-                next_airport=heappop(graph[airport])
-                dfs(next_airport)
-            ans.append(airport)
-        
-        dfs("JFK")
-        return ans[::-1]
 
+        self.helper("JFK",graph)
+        return self.ans[::-1]
 
 # Aspect	Complexity
-# Time	O(E log E)
+# Time	O(E*log E)
 # Space	O(E)

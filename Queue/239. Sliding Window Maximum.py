@@ -33,6 +33,7 @@ class Solution:
             return []
         if k==1:
             return nums
+
         res=[]
         dq=deque()
 
