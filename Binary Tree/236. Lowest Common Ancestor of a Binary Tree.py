@@ -42,18 +42,18 @@ p and q will exist in the tree.
 #         self.right = None
 
 class Solution:
-    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        def dfs(node):
-            if not node:
-                return None
-            if node is p or node is q:
-                return node
-            left=dfs(node.left)
-            right=dfs(node.right)
-            if left and right:
-                return node
-            return left if left else right
-        return dfs(root)
+    def recursive(self,node,p,q):
+        if not node:
+            return None
+        if node is p or node is q:
+            return node
+        left=self.recursive(node.left,p,q)
+        right=self.recursive(node.right,p,q)
+        if left and right:
+            return node
+        return left if left else right
 
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        return self.recursive(root,p,q)
 
 # Both are O(n) time; recursive uses O(h) stack, iterative uses O(n) parent map plus O(h) stack.
