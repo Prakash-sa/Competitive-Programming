@@ -33,12 +33,12 @@ from functools import lru_cache
 class Solution:
     def isMatch(self, s: str, p: str) -> bool:
         
-        @lru_cache(None)
+        @lru_cache()
         def dp(i, j):
             if j==len(p) and i==len(s):
                 return True
 
-            first_match=i<len(s) and (p[j] == s[i] or p[j]=='.')
+            first_match=i<len(s) and j<len(p) and (p[j] == s[i] or p[j]=='.')
 
             if j+1<len(p) and p[j+1]=='*':
                 return dp(i,j+2) or (first_match and dp(i+1,j))
@@ -48,3 +48,8 @@ class Solution:
             return False
 
         return dp(0,0)
+    
+# Complexity Analysis
+
+# Time Complexity: Let T,P be the lengths of the text and the pattern respectively. The work for every call to dp(i, j) for i=0,...,T; j=0,...,P is done once, and it is O(1) work. Hence, the time complexity is O(TP).
+# Space Complexity: The only memory we use is the O(TP) boolean entries in our cache. Hence, the space complexity is O(TP).
