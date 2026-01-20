@@ -1,5 +1,13 @@
 # Competitive Programming Reference Guide
 
+## GitHub Pages UI
+
+This repo includes a static site under `docs/` with a collapsible folder navigator and file viewer.
+
+- Set your repo owner and name in `docs/config.json` (or rely on auto-detection if using `https://<owner>.github.io/<repo>/`).
+- In GitHub Pages settings, choose `GitHub Actions` as the source.
+- If the tree changes, regenerate `docs/tree.json` with `python3 docs/build_tree.py`.
+
 ## Time Complexity
 
 - `n < 20`: consider exhaustive strategies such as `2^n` brute force or `n!` backtracking. Keep pruning aggressively.

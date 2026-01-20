@@ -1,0 +1,320 @@
+const state = {
+  tree: null,
+  repoOwner: null,
+  repoName: null,
+  branch: "main",
+  currentPath: "README.md",
+  activeItem: null,
+};
+
+const treeRoot = document.getElementById("treeRoot");
+const codeBlock = document.getElementById("codeBlock");
+const contentTitle = document.getElementById("contentTitle");
+const contentFooter = document.getElementById("contentFooter");
+const copyLink = document.getElementById("copyLink");
+const openOnGitHub = document.getElementById("openOnGitHub");
+const repoLink = document.getElementById("repoLink");
+const searchInput = document.getElementById("searchInput");
+const collapseAll = document.getElementById("collapseAll");
+const sidebarToggle = document.getElementById("sidebarToggle");
+const sidebar = document.getElementById("sidebar");
+
+function detectRepoFromLocation() {
+  const hostParts = window.location.hostname.split(".");
+  if (hostParts.length >= 3 && hostParts[1] === "github" && hostParts[2] === "io") {
+    const owner = hostParts[0];
+    const repo = window.location.pathname.split("/").filter(Boolean)[0];
+    if (owner && repo) {
+      return { owner, repo };
+    }
+  }
+  return null;
+}
+
+function encodePath(path) {
+  return path
+    .split("/")
+    .map((segment) => encodeURIComponent(segment))
+    .join("/");
+}
+
+function rawUrlForPath(path) {
+  const encoded = encodePath(path);
+  return `https://raw.githubusercontent.com/${state.repoOwner}/${state.repoName}/${state.branch}/${encoded}`;
+}
+
+function githubUrlForPath(path) {
+  const encoded = encodePath(path);
+  return `https://github.com/${state.repoOwner}/${state.repoName}/blob/${state.branch}/${encoded}`;
+}
+
+function fileExtension(path) {
+  const parts = path.split(".");
+  if (parts.length < 2) return "";
+  return parts.pop().toLowerCase();
+}
+
+function languageForPath(path) {
+  const ext = fileExtension(path);
+  const map = {
+    py: "python",
+    cpp: "cpp",
+    c: "c",
+    java: "java",
+    js: "javascript",
+    ts: "typescript",
+    md: "markdown",
+    txt: "plaintext",
+    sh: "bash",
+    json: "json",
+    yml: "yaml",
+    yaml: "yaml",
+  };
+  return map[ext] || "";
+}
+
+function setActiveItem(element) {
+  if (state.activeItem) {
+    state.activeItem.classList.remove("active");
+  }
+  state.activeItem = element;
+  if (state.activeItem) {
+    state.activeItem.classList.add("active");
+  }
+}
+
+function updateContentHeader(path) {
+  contentTitle.textContent = path;
+  openOnGitHub.href = githubUrlForPath(path);
+}
+
+function updateFooter(meta) {
+  const segments = [
+    meta?.type ? `Type: ${meta.type}` : null,
+    meta?.size ? `Size: ${meta.size} bytes` : null,
+    meta?.updated ? `Updated: ${meta.updated}` : null,
+  ].filter(Boolean);
+
+  contentFooter.textContent = segments.join(" | ");
+}
+
+async function loadFile(path, meta = {}) {
+  state.currentPath = path;
+  updateContentHeader(path);
+  updateFooter(meta);
+
+  const languageClass = languageForPath(path);
+  codeBlock.className = languageClass ? `language-${languageClass}` : "";
+
+  try {
+    const response = await fetch(rawUrlForPath(path));
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ${path}`);
+    }
+    const text = await response.text();
+    codeBlock.textContent = text;
+    if (window.hljs) {
+      window.hljs.highlightElement(codeBlock);
+    }
+  } catch (error) {
+    codeBlock.textContent = `Unable to load ${path}. ${error.message}`;
+  }
+}
+
+function createTreeNode(node, depth = 0) {
+  if (node.type === "dir") {
+    const wrapper = document.createElement("div");
+    wrapper.className = "tree-group";
+
+    const header = document.createElement("div");
+    header.className = "tree-item";
+
+    const caret = document.createElement("span");
+    caret.className = "caret";
+
+    const label = document.createElement("span");
+    label.className = "tree-label";
+    label.textContent = node.name;
+
+    const meta = document.createElement("span");
+    meta.className = "tree-meta";
+    meta.textContent = `${node.children.length} items`;
+
+    header.appendChild(caret);
+    header.appendChild(label);
+    header.appendChild(meta);
+
+    const children = document.createElement("div");
+    children.className = "tree-children";
+
+    node.children.forEach((child) => {
+      children.appendChild(createTreeNode(child, depth + 1));
+    });
+
+    header.addEventListener("click", () => {
+      const isExpanded = children.classList.toggle("expanded");
+      caret.classList.toggle("expanded", isExpanded);
+    });
+
+    wrapper.appendChild(header);
+    wrapper.appendChild(children);
+
+    return wrapper;
+  }
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "tree-leaf";
+
+  const item = document.createElement("div");
+  item.className = "tree-item";
+
+  const spacer = document.createElement("span");
+  spacer.style.width = "10px";
+
+  const label = document.createElement("span");
+  label.className = "tree-label";
+  label.textContent = node.name;
+
+  const meta = document.createElement("span");
+  meta.className = "tree-meta";
+  meta.textContent = node.ext ? node.ext.toUpperCase() : "file";
+
+  item.appendChild(spacer);
+  item.appendChild(label);
+  item.appendChild(meta);
+
+  item.addEventListener("click", () => {
+    setActiveItem(item);
+    loadFile(node.path, { type: "file", size: node.size });
+  });
+
+  wrapper.appendChild(item);
+  return wrapper;
+}
+
+function renderTree(tree) {
+  treeRoot.innerHTML = "";
+  tree.children.forEach((child) => treeRoot.appendChild(createTreeNode(child)));
+}
+
+function collapseEverything() {
+  document.querySelectorAll(".tree-children").forEach((el) => {
+    el.classList.remove("expanded");
+  });
+  document.querySelectorAll(".caret").forEach((el) => {
+    el.classList.remove("expanded");
+  });
+}
+
+function filterTree(query) {
+  const text = query.trim().toLowerCase();
+  const groups = Array.from(treeRoot.children);
+
+  if (!text) {
+    treeRoot.querySelectorAll(".tree-group, .tree-leaf").forEach((el) => {
+      el.classList.remove("hidden");
+    });
+    collapseEverything();
+    return;
+  }
+
+  const filterGroup = (group) => {
+    const header = group.querySelector(":scope > .tree-item");
+    const label = header?.querySelector(".tree-label");
+    const children = group.querySelector(":scope > .tree-children");
+    const isMatch = label && label.textContent.toLowerCase().includes(text);
+
+    let childMatch = false;
+    if (children) {
+      const childNodes = Array.from(children.children);
+      childNodes.forEach((child) => {
+        if (child.classList.contains("tree-group")) {
+          childMatch = filterGroup(child) || childMatch;
+        } else {
+          const leafLabel = child.querySelector(".tree-label");
+          const leafMatch = leafLabel && leafLabel.textContent.toLowerCase().includes(text);
+          child.classList.toggle("hidden", !leafMatch);
+          childMatch = childMatch || leafMatch;
+        }
+      });
+    }
+
+    const visible = isMatch || childMatch;
+    group.classList.toggle("hidden", !visible);
+    if (children) {
+      children.classList.toggle("expanded", childMatch);
+      const caret = header?.querySelector(".caret");
+      if (caret) {
+        caret.classList.toggle("expanded", childMatch);
+      }
+    }
+    return visible;
+  };
+
+  groups.forEach((group) => {
+    if (group.classList.contains("tree-group")) {
+      filterGroup(group);
+    }
+  });
+}
+
+async function loadConfig() {
+  try {
+    const response = await fetch("config.json");
+    if (!response.ok) return {};
+    return await response.json();
+  } catch (error) {
+    return {};
+  }
+}
+
+async function init() {
+  const config = await loadConfig();
+  const detected = detectRepoFromLocation();
+
+  state.repoOwner = config.repoOwner || detected?.owner || "your-github-username";
+  state.repoName = config.repoName || detected?.repo || "your-repo-name";
+  state.branch = config.branch || "main";
+
+  repoLink.href = `https://github.com/${state.repoOwner}/${state.repoName}`;
+
+  const treeResponse = await fetch("tree.json");
+  if (!treeResponse.ok) {
+    codeBlock.textContent = "tree.json not found. Run the tree generator.";
+    return;
+  }
+
+  state.tree = await treeResponse.json();
+  renderTree(state.tree);
+
+  searchInput.addEventListener("input", (event) => {
+    filterTree(event.target.value);
+  });
+
+  collapseAll.addEventListener("click", () => {
+    collapseEverything();
+  });
+
+  sidebarToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("hidden");
+  });
+
+  copyLink.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(rawUrlForPath(state.currentPath));
+      copyLink.textContent = "Copied";
+      setTimeout(() => {
+        copyLink.textContent = "Copy raw link";
+      }, 1500);
+    } catch (error) {
+      copyLink.textContent = "Copy failed";
+      setTimeout(() => {
+        copyLink.textContent = "Copy raw link";
+      }, 1500);
+    }
+  });
+
+  loadFile(state.currentPath, { type: "file" });
+}
+
+init();

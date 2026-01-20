@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Competitive Programming Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background"></div>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">CP</span>
+        <div>
+          <div class="brand-title">Competitive Programming Library</div>
+          <div class="brand-subtitle">Curated solutions with a living index</div>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button class="ghost" id="sidebarToggle" type="button">Toggle Index</button>
+        <a class="cta" id="repoLink" href="#" target="_blank" rel="noreferrer">View on GitHub</a>
+      </div>
+    </header>
+
+    <div class="app">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div>
+            <div class="sidebar-title">Navigator</div>
+            <div class="sidebar-subtitle">Folders stay collapsed until you expand them.</div>
+          </div>
+          <button class="ghost" id="collapseAll" type="button">Collapse all</button>
+        </div>
+        <div class="search">
+          <input id="searchInput" type="search" placeholder="Search folders or files" />
+        </div>
+        <div class="tree" id="treeRoot"></div>
+      </aside>
+
+      <main class="content">
+        <div class="content-header">
+          <div class="content-title" id="contentTitle">README.md</div>
+          <div class="content-actions">
+            <button class="ghost" id="copyLink" type="button">Copy raw link</button>
+            <a class="ghost" id="openOnGitHub" href="#" target="_blank" rel="noreferrer">Open on GitHub</a>
+          </div>
+        </div>
+        <div class="content-body">
+          <pre><code id="codeBlock" class="language-markdown"></code></pre>
+        </div>
+        <div class="content-footer" id="contentFooter"></div>
+      </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,3379 @@
+{
+  "name": "root",
+  "type": "dir",
+  "path": "",
+  "children": [
+    {
+      "name": "2 Pointers",
+      "type": "dir",
+      "path": "2 Pointers",
+      "children": [
+        {
+          "name": "arrays",
+          "type": "dir",
+          "path": "2 Pointers/arrays",
+          "children": [
+            {
+              "name": "1. Two Sum.py",
+              "type": "file",
+              "path": "2 Pointers/arrays/1. Two Sum.py",
+              "size": 959,
+              "ext": "py"
+            },
+            {
+              "name": "11. Container With Most Water.py",
+              "type": "file",
+              "path": "2 Pointers/arrays/11. Container With Most Water.py",
+              "size": 1247,
+              "ext": "py"
+            },
+            {
+              "name": "1423. Maximum Points You Can Obtain from Cards.py",
+              "type": "file",
+              "path": "2 Pointers/arrays/1423. Maximum Points You Can Obtain from Cards.py",
+              "size": 1907,
+              "ext": "py"
+            },
+            {
+              "name": "15. 3Sum.py",
+              "type": "file",
+              "path": "2 Pointers/arrays/15. 3Sum.py",
+              "size": 2002,
+              "ext": "py"
+            },
+            {
+              "name": "167. Two Sum II - Input Array Is Sorted.py",
+              "type": "file",
+              "path": "2 Pointers/arrays/167. Two Sum II - Input Array Is Sorted.py",
+              "size": 2289,
+              "ext": "py"
+            },
+            {
+              "name": "18. 4Sum.py",
+              "type": "file",
+              "path": "2 Pointers/arrays/18. 4Sum.py",
+              "size": 1665,
+              "ext": "py"
+            },
+            {
+              "name": "189. Rotate Array.py",
+              "type": "file",
+              "path": "2 Pointers/arrays/189. Rotate Array.py",
+              "size": 2692,
+              "ext": "py"
+            },
+            {
+              "name": "2161. Partition Array According to Given Pivot.py",
+              "type": "file",
+              "path": "2 Pointers/arrays/2161. Partition Array According to Given Pivot.py",
+              "size": 2212,
+              "ext": "py"
+            },
+            {
+              "name": "2300. Successful Pairs of Spells and Potions.py",
+              "type": "file",
+              "path": "2 Pointers/arrays/2300. Successful Pairs of Spells and Potions.py",
+              "size": 1854,
+              "ext": "py"
+            },
+            {
+              "name": "26. Remove Duplicates from Sorted Array.py",
+              "type": "file",
+              "path": "2 Pointers/arrays/26. Remove Duplicates from Sorted Array.py",
+              "size": 2276,
+              "ext": "py"
+            },
+            {
+              "name": "31. Next Permutation.py",
+              "type": "file",
+              "path": "2 Pointers/arrays/31. Next Permutation.py",
+              "size": 2139,
+              "ext": "py"
+            },
+            {
+              "name": "42. Trapping Rain Water.py",
+              "type": "file",
+              "path": "2 Pointers/arrays/42. Trapping Rain Water.py",
+              "size": 1096,
+              "ext": "py"
+            },
+            {
+              "name": "611. Valid Triangle Number.py",
+              "type": "file",
+              "path": "2 Pointers/arrays/611. Valid Triangle Number.py",
+              "size": 966,
+              "ext": "py"
+            },
+            {
+              "name": "75. Sort Colors.py",
+              "type": "file",
+              "path": "2 Pointers/arrays/75. Sort Colors.py",
+              "size": 1322,
+              "ext": "py"
+            },
+            {
+              "name": "88. Merge Sorted Array.py",
+              "type": "file",
+              "path": "2 Pointers/arrays/88. Merge Sorted Array.py",
+              "size": 2085,
+              "ext": "py"
+            },
+            {
+              "name": "881. Boats to Save People.py",
+              "type": "file",
+              "path": "2 Pointers/arrays/881. Boats to Save People.py",
+              "size": 1297,
+              "ext": "py"
+            },
+            {
+              "name": "922. Sort Array By Parity II.py",
+              "type": "file",
+              "path": "2 Pointers/arrays/922. Sort Array By Parity II.py",
+              "size": 1071,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "strings",
+          "type": "dir",
+          "path": "2 Pointers/strings",
+          "children": [
+            {
+              "name": "151. Reverse Words in a String.py",
+              "type": "file",
+              "path": "2 Pointers/strings/151. Reverse Words in a String.py",
+              "size": 1995,
+              "ext": "py"
+            },
+            {
+              "name": "408. Valid Word Abbreviation.py",
+              "type": "file",
+              "path": "2 Pointers/strings/408. Valid Word Abbreviation.py",
+              "size": 1970,
+              "ext": "py"
+            },
+            {
+              "name": "5. Longest Palindromic Substring.py",
+              "type": "file",
+              "path": "2 Pointers/strings/5. Longest Palindromic Substring.py",
+              "size": 3239,
+              "ext": "py"
+            },
+            {
+              "name": "942. DI String Match.py",
+              "type": "file",
+              "path": "2 Pointers/strings/942. DI String Match.py",
+              "size": 940,
+              "ext": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Array",
+      "type": "dir",
+      "path": "Array",
+      "children": [
+        {
+          "name": "128. Longest Consecutive Sequence.py",
+          "type": "file",
+          "path": "Array/128. Longest Consecutive Sequence.py",
+          "size": 990,
+          "ext": "py"
+        },
+        {
+          "name": "169. Majority Element.py",
+          "type": "file",
+          "path": "Array/169. Majority Element.py",
+          "size": 1315,
+          "ext": "py"
+        },
+        {
+          "name": "229. Majority Element II.py",
+          "type": "file",
+          "path": "Array/229. Majority Element II.py",
+          "size": 1629,
+          "ext": "py"
+        },
+        {
+          "name": "238. Product of Array Except Self.py",
+          "type": "file",
+          "path": "Array/238. Product of Array Except Self.py",
+          "size": 1376,
+          "ext": "py"
+        },
+        {
+          "name": "304. Range Sum Query 2D - Immutable.py",
+          "type": "file",
+          "path": "Array/304. Range Sum Query 2D - Immutable.py",
+          "size": 2460,
+          "ext": "py"
+        },
+        {
+          "name": "41. First Missing Positive.py",
+          "type": "file",
+          "path": "Array/41. First Missing Positive.py",
+          "size": 1693,
+          "ext": "py"
+        }
+      ]
+    },
+    {
+      "name": "Binary Search",
+      "type": "dir",
+      "path": "Binary Search",
+      "children": [
+        {
+          "name": "101. Symmetric Tree.py",
+          "type": "file",
+          "path": "Binary Search/101. Symmetric Tree.py",
+          "size": 1980,
+          "ext": "py"
+        },
+        {
+          "name": "1095. Find in Mountain Array.py",
+          "type": "file",
+          "path": "Binary Search/1095. Find in Mountain Array.py",
+          "size": 2638,
+          "ext": "py"
+        },
+        {
+          "name": "1326. Minimum Number of Taps to Open to Water a Garden.py",
+          "type": "file",
+          "path": "Binary Search/1326. Minimum Number of Taps to Open to Water a Garden.py",
+          "size": 2301,
+          "ext": "py"
+        },
+        {
+          "name": "153. Find Minimum in Rotated Sorted Array.py",
+          "type": "file",
+          "path": "Binary Search/153. Find Minimum in Rotated Sorted Array.py",
+          "size": 1526,
+          "ext": "py"
+        },
+        {
+          "name": "162. Find Peak Element.py",
+          "type": "file",
+          "path": "Binary Search/162. Find Peak Element.py",
+          "size": 1530,
+          "ext": "py"
+        },
+        {
+          "name": "315. Count of Smaller Numbers After Self.py",
+          "type": "file",
+          "path": "Binary Search/315. Count of Smaller Numbers After Self.py",
+          "size": 980,
+          "ext": "py"
+        },
+        {
+          "name": "33. Search in Rotated Sorted Array.py",
+          "type": "file",
+          "path": "Binary Search/33. Search in Rotated Sorted Array.py",
+          "size": 1889,
+          "ext": "py"
+        },
+        {
+          "name": "35. Search Insert Position.py",
+          "type": "file",
+          "path": "Binary Search/35. Search Insert Position.py",
+          "size": 1219,
+          "ext": "py"
+        },
+        {
+          "name": "374. Guess Number Higher or Lower.py",
+          "type": "file",
+          "path": "Binary Search/374. Guess Number Higher or Lower.py",
+          "size": 1692,
+          "ext": "py"
+        },
+        {
+          "name": "398. Random Pick Index.py",
+          "type": "file",
+          "path": "Binary Search/398. Random Pick Index.py",
+          "size": 1769,
+          "ext": "py"
+        },
+        {
+          "name": "4. Median of Two Sorted Arrays.py",
+          "type": "file",
+          "path": "Binary Search/4. Median of Two Sorted Arrays.py",
+          "size": 1807,
+          "ext": "py"
+        },
+        {
+          "name": "410. Split Array Largest Sum.py",
+          "type": "file",
+          "path": "Binary Search/410. Split Array Largest Sum.py",
+          "size": 1973,
+          "ext": "py"
+        },
+        {
+          "name": "528. Random Pick with Weight.py",
+          "type": "file",
+          "path": "Binary Search/528. Random Pick with Weight.py",
+          "size": 2184,
+          "ext": "py"
+        },
+        {
+          "name": "611. Valid Triangle Number.py",
+          "type": "file",
+          "path": "Binary Search/611. Valid Triangle Number.py",
+          "size": 992,
+          "ext": "py"
+        },
+        {
+          "name": "69. Sqrt(x).py",
+          "type": "file",
+          "path": "Binary Search/69. Sqrt(x).py",
+          "size": 1034,
+          "ext": "py"
+        },
+        {
+          "name": "74. Search a 2D Matrix.py",
+          "type": "file",
+          "path": "Binary Search/74. Search a 2D Matrix.py",
+          "size": 1304,
+          "ext": "py"
+        },
+        {
+          "name": "792. Number of Matching Subsequences.py",
+          "type": "file",
+          "path": "Binary Search/792. Number of Matching Subsequences.py",
+          "size": 1577,
+          "ext": "py"
+        },
+        {
+          "name": "81. Search in Rotated Sorted Array II.py",
+          "type": "file",
+          "path": "Binary Search/81. Search in Rotated Sorted Array II.py",
+          "size": 3153,
+          "ext": "py"
+        },
+        {
+          "name": "875. Koko Eating Bananas.py",
+          "type": "file",
+          "path": "Binary Search/875. Koko Eating Bananas.py",
+          "size": 1741,
+          "ext": "py"
+        },
+        {
+          "name": "Upper Bound & Lower Bound",
+          "type": "dir",
+          "path": "Binary Search/Upper Bound & Lower Bound",
+          "children": [
+            {
+              "name": "2528. Maximize the Minimum Powered City.py",
+              "type": "file",
+              "path": "Binary Search/Upper Bound & Lower Bound/2528. Maximize the Minimum Powered City.py",
+              "size": 2979,
+              "ext": "py"
+            },
+            {
+              "name": "34. Find First and Last Position of Element in Sorted Array.py",
+              "type": "file",
+              "path": "Binary Search/Upper Bound & Lower Bound/34. Find First and Last Position of Element in Sorted Array.py",
+              "size": 1660,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "ternary_binary_1.png",
+          "type": "file",
+          "path": "Binary Search/ternary_binary_1.png",
+          "size": 197265,
+          "ext": "png"
+        },
+        {
+          "name": "ternary_binary_2.png",
+          "type": "file",
+          "path": "Binary Search/ternary_binary_2.png",
+          "size": 225782,
+          "ext": "png"
+        }
+      ]
+    },
+    {
+      "name": "Binary Search Tree",
+      "type": "dir",
+      "path": "Binary Search Tree",
+      "children": [
+        {
+          "name": "230. Kth Smallest Element in a BST.py",
+          "type": "file",
+          "path": "Binary Search Tree/230. Kth Smallest Element in a BST.py",
+          "size": 2557,
+          "ext": "py"
+        },
+        {
+          "name": "235. Lowest Common Ancestor of a Binary Search Tree.py",
+          "type": "file",
+          "path": "Binary Search Tree/235. Lowest Common Ancestor of a Binary Search Tree.py",
+          "size": 2681,
+          "ext": "py"
+        },
+        {
+          "name": "450. Delete Node in a BST.py",
+          "type": "file",
+          "path": "Binary Search Tree/450. Delete Node in a BST.py",
+          "size": 3669,
+          "ext": "py"
+        },
+        {
+          "name": "701. Insert into a Binary Search Tree.py",
+          "type": "file",
+          "path": "Binary Search Tree/701. Insert into a Binary Search Tree.py",
+          "size": 1940,
+          "ext": "py"
+        },
+        {
+          "name": "98. Validate Binary Search Tree.py",
+          "type": "file",
+          "path": "Binary Search Tree/98. Validate Binary Search Tree.py",
+          "size": 1874,
+          "ext": "py"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "Binary Search Tree/README.md",
+          "size": 29,
+          "ext": "md"
+        },
+        {
+          "name": "image.png",
+          "type": "file",
+          "path": "Binary Search Tree/image.png",
+          "size": 118143,
+          "ext": "png"
+        }
+      ]
+    },
+    {
+      "name": "Binary Tree",
+      "type": "dir",
+      "path": "Binary Tree",
+      "children": [
+        {
+          "name": "100. Same Tree.py",
+          "type": "file",
+          "path": "Binary Tree/100. Same Tree.py",
+          "size": 2499,
+          "ext": "py"
+        },
+        {
+          "name": "102. Binary Tree Level Order Traversal.py",
+          "type": "file",
+          "path": "Binary Tree/102. Binary Tree Level Order Traversal.py",
+          "size": 1399,
+          "ext": "py"
+        },
+        {
+          "name": "103. Binary Tree Zigzag Level Order Traversal.py",
+          "type": "file",
+          "path": "Binary Tree/103. Binary Tree Zigzag Level Order Traversal.py",
+          "size": 2385,
+          "ext": "py"
+        },
+        {
+          "name": "104. Maximum Depth of Binary Tree.py",
+          "type": "file",
+          "path": "Binary Tree/104. Maximum Depth of Binary Tree.py",
+          "size": 1655,
+          "ext": "py"
+        },
+        {
+          "name": "105. Construct Binary Tree from Preorder and Inorder Traversal.py",
+          "type": "file",
+          "path": "Binary Tree/105. Construct Binary Tree from Preorder and Inorder Traversal.py",
+          "size": 2976,
+          "ext": "py"
+        },
+        {
+          "name": "105. preorder_inorder.png",
+          "type": "file",
+          "path": "Binary Tree/105. preorder_inorder.png",
+          "size": 200294,
+          "ext": "png"
+        },
+        {
+          "name": "110. Balanced Binary Tree.py",
+          "type": "file",
+          "path": "Binary Tree/110. Balanced Binary Tree.py",
+          "size": 1426,
+          "ext": "py"
+        },
+        {
+          "name": "112. Path Sum.py",
+          "type": "file",
+          "path": "Binary Tree/112. Path Sum.py",
+          "size": 1423,
+          "ext": "py"
+        },
+        {
+          "name": "124. Binary Tree Maximum Path Sum.py",
+          "type": "file",
+          "path": "Binary Tree/124. Binary Tree Maximum Path Sum.py",
+          "size": 2088,
+          "ext": "py"
+        },
+        {
+          "name": "1325. Delete Leaves With a Given Value.py",
+          "type": "file",
+          "path": "Binary Tree/1325. Delete Leaves With a Given Value.py",
+          "size": 2415,
+          "ext": "py"
+        },
+        {
+          "name": "144. Binary Tree Preorder Traversal.py",
+          "type": "file",
+          "path": "Binary Tree/144. Binary Tree Preorder Traversal.py",
+          "size": 2252,
+          "ext": "py"
+        },
+        {
+          "name": "1448. Count Good Nodes in Binary Tree.py",
+          "type": "file",
+          "path": "Binary Tree/1448. Count Good Nodes in Binary Tree.py",
+          "size": 1840,
+          "ext": "py"
+        },
+        {
+          "name": "145. Binary Tree Postorder Traversal.py",
+          "type": "file",
+          "path": "Binary Tree/145. Binary Tree Postorder Traversal.py",
+          "size": 2385,
+          "ext": "py"
+        },
+        {
+          "name": "1650. Lowest Common Ancestor of a Binary Tree III.py",
+          "type": "file",
+          "path": "Binary Tree/1650. Lowest Common Ancestor of a Binary Tree III.py",
+          "size": 1975,
+          "ext": "py"
+        },
+        {
+          "name": "199. Binary Tree Right Side View.py",
+          "type": "file",
+          "path": "Binary Tree/199. Binary Tree Right Side View.py",
+          "size": 2138,
+          "ext": "py"
+        },
+        {
+          "name": "226. Invert Binary Tree.py",
+          "type": "file",
+          "path": "Binary Tree/226. Invert Binary Tree.py",
+          "size": 2172,
+          "ext": "py"
+        },
+        {
+          "name": "236. Lowest Common Ancestor of a Binary Tree.py",
+          "type": "file",
+          "path": "Binary Tree/236. Lowest Common Ancestor of a Binary Tree.py",
+          "size": 1702,
+          "ext": "py"
+        },
+        {
+          "name": "297. Serialize and Deserialize Binary Tree.py",
+          "type": "file",
+          "path": "Binary Tree/297. Serialize and Deserialize Binary Tree.py",
+          "size": 3880,
+          "ext": "py"
+        },
+        {
+          "name": "427. Construct Quad Tree.py",
+          "type": "file",
+          "path": "Binary Tree/427. Construct Quad Tree.py",
+          "size": 4299,
+          "ext": "py"
+        },
+        {
+          "name": "543. Diameter of Binary Tree.py",
+          "type": "file",
+          "path": "Binary Tree/543. Diameter of Binary Tree.py",
+          "size": 1773,
+          "ext": "py"
+        },
+        {
+          "name": "563. Binary Tree Tilt.py",
+          "type": "file",
+          "path": "Binary Tree/563. Binary Tree Tilt.py",
+          "size": 2457,
+          "ext": "py"
+        },
+        {
+          "name": "572. Subtree of Another Tree.py",
+          "type": "file",
+          "path": "Binary Tree/572. Subtree of Another Tree.py",
+          "size": 1541,
+          "ext": "py"
+        },
+        {
+          "name": "652. Find Duplicate Subtrees.py",
+          "type": "file",
+          "path": "Binary Tree/652. Find Duplicate Subtrees.py",
+          "size": 1799,
+          "ext": "py"
+        },
+        {
+          "name": "662. Maximum Width of Binary Tree.py",
+          "type": "file",
+          "path": "Binary Tree/662. Maximum Width of Binary Tree.py",
+          "size": 2695,
+          "ext": "py"
+        },
+        {
+          "name": "687. Longest Univalue Path.py",
+          "type": "file",
+          "path": "Binary Tree/687. Longest Univalue Path.py",
+          "size": 1649,
+          "ext": "py"
+        },
+        {
+          "name": "94. Binary Tree Inorder Traversal.py",
+          "type": "file",
+          "path": "Binary Tree/94. Binary Tree Inorder Traversal.py",
+          "size": 2226,
+          "ext": "py"
+        },
+        {
+          "name": "Sample.md",
+          "type": "file",
+          "path": "Binary Tree/Sample.md",
+          "size": 10456,
+          "ext": "md"
+        },
+        {
+          "name": "TREE_ENHANCED.md",
+          "type": "file",
+          "path": "Binary Tree/TREE_ENHANCED.md",
+          "size": 15640,
+          "ext": "md"
+        },
+        {
+          "name": "Top View of Binary Tree.py",
+          "type": "file",
+          "path": "Binary Tree/Top View of Binary Tree.py",
+          "size": 2179,
+          "ext": "py"
+        }
+      ]
+    },
+    {
+      "name": "Bit Manipulation",
+      "type": "dir",
+      "path": "Bit Manipulation",
+      "children": [
+        {
+          "name": "190. Reverse Bits.py",
+          "type": "file",
+          "path": "Bit Manipulation/190. Reverse Bits.py",
+          "size": 1643,
+          "ext": "py"
+        },
+        {
+          "name": "191. Number of 1 Bits.py",
+          "type": "file",
+          "path": "Bit Manipulation/191. Number of 1 Bits.py",
+          "size": 1076,
+          "ext": "py"
+        },
+        {
+          "name": "201. Bitwise AND of Numbers Range.py",
+          "type": "file",
+          "path": "Bit Manipulation/201. Bitwise AND of Numbers Range.py",
+          "size": 1039,
+          "ext": "py"
+        },
+        {
+          "name": "268. Missing Number.py",
+          "type": "file",
+          "path": "Bit Manipulation/268. Missing Number.py",
+          "size": 1816,
+          "ext": "py"
+        },
+        {
+          "name": "338. Counting Bits.py",
+          "type": "file",
+          "path": "Bit Manipulation/338. Counting Bits.py",
+          "size": 1417,
+          "ext": "py"
+        },
+        {
+          "name": "371. Sum of Two Integers.py",
+          "type": "file",
+          "path": "Bit Manipulation/371. Sum of Two Integers.py",
+          "size": 924,
+          "ext": "py"
+        },
+        {
+          "name": "67. Add Binary.py",
+          "type": "file",
+          "path": "Bit Manipulation/67. Add Binary.py",
+          "size": 1119,
+          "ext": "py"
+        },
+        {
+          "name": "7. Reverse Integer.py",
+          "type": "file",
+          "path": "Bit Manipulation/7. Reverse Integer.py",
+          "size": 919,
+          "ext": "py"
+        },
+        {
+          "name": "Single Number.py",
+          "type": "file",
+          "path": "Bit Manipulation/Single Number.py",
+          "size": 3075,
+          "ext": "py"
+        }
+      ]
+    },
+    {
+      "name": "Dynamic Programming",
+      "type": "dir",
+      "path": "Dynamic Programming",
+      "children": [
+        {
+          "name": "1-0 Knapsack",
+          "type": "dir",
+          "path": "Dynamic Programming/1-0 Knapsack",
+          "children": [
+            {
+              "name": "1049. Last Stone Weight II.py",
+              "type": "file",
+              "path": "Dynamic Programming/1-0 Knapsack/1049. Last Stone Weight II.py",
+              "size": 1628,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Advanced",
+          "type": "dir",
+          "path": "Dynamic Programming/Advanced",
+          "children": [
+            {
+              "name": "3539. Find Sum of Array Product of Magical Sequences.py",
+              "type": "file",
+              "path": "Dynamic Programming/Advanced/3539. Find Sum of Array Product of Magical Sequences.py",
+              "size": 2923,
+              "ext": "py"
+            },
+            {
+              "name": "902. Numbers At Most N Given Digit Set.py",
+              "type": "file",
+              "path": "Dynamic Programming/Advanced/902. Numbers At Most N Given Digit Set.py",
+              "size": 2421,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "BitMasking",
+          "type": "dir",
+          "path": "Dynamic Programming/BitMasking",
+          "children": []
+        },
+        {
+          "name": "Count Distinct Ways",
+          "type": "dir",
+          "path": "Dynamic Programming/Count Distinct Ways",
+          "children": [
+            {
+              "name": "70. Climbing Stairs.py",
+              "type": "file",
+              "path": "Dynamic Programming/Count Distinct Ways/70. Climbing Stairs.py",
+              "size": 899,
+              "ext": "py"
+            },
+            {
+              "name": "746. Min Cost Climbing Stairs.py",
+              "type": "file",
+              "path": "Dynamic Programming/Count Distinct Ways/746. Min Cost Climbing Stairs.py",
+              "size": 1500,
+              "ext": "py"
+            },
+            {
+              "name": "91. Decode Ways.py",
+              "type": "file",
+              "path": "Dynamic Programming/Count Distinct Ways/91. Decode Ways.py",
+              "size": 2113,
+              "ext": "py"
+            },
+            {
+              "name": "Q2. Climbing Stairs II.py",
+              "type": "file",
+              "path": "Dynamic Programming/Count Distinct Ways/Q2. Climbing Stairs II.py",
+              "size": 1717,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "DP_ENHANCED.md",
+          "type": "file",
+          "path": "Dynamic Programming/DP_ENHANCED.md",
+          "size": 10733,
+          "ext": "md"
+        },
+        {
+          "name": "Digit",
+          "type": "dir",
+          "path": "Dynamic Programming/Digit",
+          "children": []
+        },
+        {
+          "name": "Game Theory",
+          "type": "dir",
+          "path": "Dynamic Programming/Game Theory",
+          "children": [
+            {
+              "name": "1140. Stone Game II.py",
+              "type": "file",
+              "path": "Dynamic Programming/Game Theory/1140. Stone Game II.py",
+              "size": 2242,
+              "ext": "py"
+            },
+            {
+              "name": "1406. Stone Game III.py",
+              "type": "file",
+              "path": "Dynamic Programming/Game Theory/1406. Stone Game III.py",
+              "size": 3081,
+              "ext": "py"
+            },
+            {
+              "name": "1690. Stone Game VII.py",
+              "type": "file",
+              "path": "Dynamic Programming/Game Theory/1690. Stone Game VII.py",
+              "size": 2313,
+              "ext": "py"
+            },
+            {
+              "name": "877. Stone Game.py",
+              "type": "file",
+              "path": "Dynamic Programming/Game Theory/877. Stone Game.py",
+              "size": 1841,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Graph",
+          "type": "dir",
+          "path": "Dynamic Programming/Graph",
+          "children": [
+            {
+              "name": "1871. Jump Game VII.py",
+              "type": "file",
+              "path": "Dynamic Programming/Graph/1871. Jump Game VII.py",
+              "size": 1206,
+              "ext": "py"
+            },
+            {
+              "name": "329. Longest Increasing Path in a Matrix.py",
+              "type": "file",
+              "path": "Dynamic Programming/Graph/329. Longest Increasing Path in a Matrix.py",
+              "size": 1829,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Grid",
+          "type": "dir",
+          "path": "Dynamic Programming/Grid",
+          "children": [
+            {
+              "name": "120. Triangle.py",
+              "type": "file",
+              "path": "Dynamic Programming/Grid/120. Triangle.py",
+              "size": 1518,
+              "ext": "py"
+            },
+            {
+              "name": "221. Maximal Square.py",
+              "type": "file",
+              "path": "Dynamic Programming/Grid/221. Maximal Square.py",
+              "size": 1154,
+              "ext": "py"
+            },
+            {
+              "name": "329. Longest Increasing Path in a Matrix.py",
+              "type": "file",
+              "path": "Dynamic Programming/Grid/329. Longest Increasing Path in a Matrix.py",
+              "size": 1827,
+              "ext": "py"
+            },
+            {
+              "name": "62. Unique Paths.py",
+              "type": "file",
+              "path": "Dynamic Programming/Grid/62. Unique Paths.py",
+              "size": 1502,
+              "ext": "py"
+            },
+            {
+              "name": "63. Unique Paths II.py",
+              "type": "file",
+              "path": "Dynamic Programming/Grid/63. Unique Paths II.py",
+              "size": 2254,
+              "ext": "py"
+            },
+            {
+              "name": "64. Minimum Path Sum.py",
+              "type": "file",
+              "path": "Dynamic Programming/Grid/64. Minimum Path Sum.py",
+              "size": 1239,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Kadane",
+          "type": "dir",
+          "path": "Dynamic Programming/Kadane",
+          "children": [
+            {
+              "name": "152. Maximum Product Subarray.py",
+              "type": "file",
+              "path": "Dynamic Programming/Kadane/152. Maximum Product Subarray.py",
+              "size": 1432,
+              "ext": "py"
+            },
+            {
+              "name": "53. Maximum Subarray.py",
+              "type": "file",
+              "path": "Dynamic Programming/Kadane/53. Maximum Subarray.py",
+              "size": 1292,
+              "ext": "py"
+            },
+            {
+              "name": "918. Maximum Sum Circular Subarray.py",
+              "type": "file",
+              "path": "Dynamic Programming/Kadane/918. Maximum Sum Circular Subarray.py",
+              "size": 2082,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Knapsack",
+          "type": "dir",
+          "path": "Dynamic Programming/Knapsack",
+          "children": [
+            {
+              "name": "1049. Last Stone Weight II.py",
+              "type": "file",
+              "path": "Dynamic Programming/Knapsack/1049. Last Stone Weight II.py",
+              "size": 1997,
+              "ext": "py"
+            },
+            {
+              "name": "322. Coin Change.py",
+              "type": "file",
+              "path": "Dynamic Programming/Knapsack/322. Coin Change.py",
+              "size": 1461,
+              "ext": "py"
+            },
+            {
+              "name": "518. Coin Change II.py",
+              "type": "file",
+              "path": "Dynamic Programming/Knapsack/518. Coin Change II.py",
+              "size": 1490,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Linear DP",
+          "type": "dir",
+          "path": "Dynamic Programming/Linear DP",
+          "children": [
+            {
+              "name": "198. House Robber.py",
+              "type": "file",
+              "path": "Dynamic Programming/Linear DP/198. House Robber.py",
+              "size": 1897,
+              "ext": "py"
+            },
+            {
+              "name": "213. House Robber II.py",
+              "type": "file",
+              "path": "Dynamic Programming/Linear DP/213. House Robber II.py",
+              "size": 1948,
+              "ext": "py"
+            },
+            {
+              "name": "300. Longest Increasing Subsequence.py",
+              "type": "file",
+              "path": "Dynamic Programming/Linear DP/300. Longest Increasing Subsequence.py",
+              "size": 1802,
+              "ext": "py"
+            },
+            {
+              "name": "343. Integer Break.py",
+              "type": "file",
+              "path": "Dynamic Programming/Linear DP/343. Integer Break.py",
+              "size": 1086,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Matrix Chain Multiplication",
+          "type": "dir",
+          "path": "Dynamic Programming/Matrix Chain Multiplication",
+          "children": []
+        },
+        {
+          "name": "Palindromic Subsequence",
+          "type": "dir",
+          "path": "Dynamic Programming/Palindromic Subsequence",
+          "children": [
+            {
+              "name": "647. Palindromic Substrings.py",
+              "type": "file",
+              "path": "Dynamic Programming/Palindromic Subsequence/647. Palindromic Substrings.py",
+              "size": 2428,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Probability",
+          "type": "dir",
+          "path": "Dynamic Programming/Probability",
+          "children": []
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "Dynamic Programming/README.md",
+          "size": 3777,
+          "ext": "md"
+        },
+        {
+          "name": "Sample.md",
+          "type": "file",
+          "path": "Dynamic Programming/Sample.md",
+          "size": 7299,
+          "ext": "md"
+        },
+        {
+          "name": "State Machine",
+          "type": "dir",
+          "path": "Dynamic Programming/State Machine",
+          "children": [
+            {
+              "name": "122. Best Time to Buy and Sell Stock II.py",
+              "type": "file",
+              "path": "Dynamic Programming/State Machine/122. Best Time to Buy and Sell Stock II.py",
+              "size": 1455,
+              "ext": "py"
+            },
+            {
+              "name": "123. Best Time to Buy and Sell Stock III.py",
+              "type": "file",
+              "path": "Dynamic Programming/State Machine/123. Best Time to Buy and Sell Stock III.py",
+              "size": 1687,
+              "ext": "py"
+            },
+            {
+              "name": "309. Best Time to Buy and Sell Stock with Cooldown.py",
+              "type": "file",
+              "path": "Dynamic Programming/State Machine/309. Best Time to Buy and Sell Stock with Cooldown.py",
+              "size": 1425,
+              "ext": "py"
+            },
+            {
+              "name": "312. Burst Balloons.py",
+              "type": "file",
+              "path": "Dynamic Programming/State Machine/312. Burst Balloons.py",
+              "size": 1832,
+              "ext": "py"
+            },
+            {
+              "name": "3573. Best Time to Buy and Sell Stock V.py",
+              "type": "file",
+              "path": "Dynamic Programming/State Machine/3573. Best Time to Buy and Sell Stock V.py",
+              "size": 2634,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "String Partition",
+          "type": "dir",
+          "path": "Dynamic Programming/String Partition",
+          "children": [
+            {
+              "name": "10. Regular Expression Matching.py",
+              "type": "file",
+              "path": "Dynamic Programming/String Partition/10. Regular Expression Matching.py",
+              "size": 1956,
+              "ext": "py"
+            },
+            {
+              "name": "1035. Uncrossed Lines.py",
+              "type": "file",
+              "path": "Dynamic Programming/String Partition/1035. Uncrossed Lines.py",
+              "size": 1615,
+              "ext": "py"
+            },
+            {
+              "name": "1143. Longest Common Subsequence (alt).py",
+              "type": "file",
+              "path": "Dynamic Programming/String Partition/1143. Longest Common Subsequence (alt).py",
+              "size": 1977,
+              "ext": "py"
+            },
+            {
+              "name": "1143. Longest Common Subsequence.py",
+              "type": "file",
+              "path": "Dynamic Programming/String Partition/1143. Longest Common Subsequence.py",
+              "size": 1749,
+              "ext": "py"
+            },
+            {
+              "name": "115. Distinct Subsequences.py",
+              "type": "file",
+              "path": "Dynamic Programming/String Partition/115. Distinct Subsequences.py",
+              "size": 1082,
+              "ext": "py"
+            },
+            {
+              "name": "139. Word Break.py",
+              "type": "file",
+              "path": "Dynamic Programming/String Partition/139. Word Break.py",
+              "size": 2070,
+              "ext": "py"
+            },
+            {
+              "name": "72. Edit Distance (alt).py",
+              "type": "file",
+              "path": "Dynamic Programming/String Partition/72. Edit Distance (alt).py",
+              "size": 1821,
+              "ext": "py"
+            },
+            {
+              "name": "72. Edit Distance.py",
+              "type": "file",
+              "path": "Dynamic Programming/String Partition/72. Edit Distance.py",
+              "size": 1839,
+              "ext": "py"
+            },
+            {
+              "name": "97. Interleaving String.py",
+              "type": "file",
+              "path": "Dynamic Programming/String Partition/97. Interleaving String.py",
+              "size": 3085,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Subset Sum",
+          "type": "dir",
+          "path": "Dynamic Programming/Subset Sum",
+          "children": [
+            {
+              "name": "416. Partition Equal Subset Sum.py",
+              "type": "file",
+              "path": "Dynamic Programming/Subset Sum/416. Partition Equal Subset Sum.py",
+              "size": 1230,
+              "ext": "py"
+            },
+            {
+              "name": "494. Target Sum.py",
+              "type": "file",
+              "path": "Dynamic Programming/Subset Sum/494. Target Sum.py",
+              "size": 1967,
+              "ext": "py"
+            },
+            {
+              "name": "698. Partition to K Equal Sum Subsets.py",
+              "type": "file",
+              "path": "Dynamic Programming/Subset Sum/698. Partition to K Equal Sum Subsets.py",
+              "size": 1542,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Tree",
+          "type": "dir",
+          "path": "Dynamic Programming/Tree",
+          "children": [
+            {
+              "name": "124. Binary Tree Maximum Path Sum.py",
+              "type": "file",
+              "path": "Dynamic Programming/Tree/124. Binary Tree Maximum Path Sum.py",
+              "size": 2055,
+              "ext": "py"
+            },
+            {
+              "name": "337. House Robber III.py",
+              "type": "file",
+              "path": "Dynamic Programming/Tree/337. House Robber III.py",
+              "size": 1908,
+              "ext": "py"
+            },
+            {
+              "name": "834. Sum of Distances in Tree.py",
+              "type": "file",
+              "path": "Dynamic Programming/Tree/834. Sum of Distances in Tree.py",
+              "size": 966,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Trie",
+          "type": "dir",
+          "path": "Dynamic Programming/Trie",
+          "children": [
+            {
+              "name": "2707. Extra Characters in a String.py",
+              "type": "file",
+              "path": "Dynamic Programming/Trie/2707. Extra Characters in a String.py",
+              "size": 3812,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Unbounded Knapsack",
+          "type": "dir",
+          "path": "Dynamic Programming/Unbounded Knapsack",
+          "children": [
+            {
+              "name": "279. Perfect Squares.py",
+              "type": "file",
+              "path": "Dynamic Programming/Unbounded Knapsack/279. Perfect Squares.py",
+              "size": 1146,
+              "ext": "py"
+            },
+            {
+              "name": "377. Combination Sum IV.py",
+              "type": "file",
+              "path": "Dynamic Programming/Unbounded Knapsack/377. Combination Sum IV.py",
+              "size": 1997,
+              "ext": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ENHANCED_GUIDES.md",
+      "type": "file",
+      "path": "ENHANCED_GUIDES.md",
+      "size": 2253,
+      "ext": "md"
+    },
+    {
+      "name": "Graph",
+      "type": "dir",
+      "path": "Graph",
+      "children": [
+        {
+          "name": "Additional",
+          "type": "dir",
+          "path": "Graph/Additional",
+          "children": [
+            {
+              "name": "1192. Critical Connections in a Network.py",
+              "type": "file",
+              "path": "Graph/Additional/1192. Critical Connections in a Network.py",
+              "size": 2378,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Bellman Ford",
+          "type": "dir",
+          "path": "Graph/Bellman Ford",
+          "children": [
+            {
+              "name": "787. Cheapest Flights Within K Stops.py",
+              "type": "file",
+              "path": "Graph/Bellman Ford/787. Cheapest Flights Within K Stops.py",
+              "size": 3335,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Cycle Detection",
+          "type": "dir",
+          "path": "Graph/Cycle Detection",
+          "children": []
+        },
+        {
+          "name": "DFS & BFS",
+          "type": "dir",
+          "path": "Graph/DFS & BFS",
+          "children": [
+            {
+              "name": "104. Maximum Depth of Binary Tree.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/104. Maximum Depth of Binary Tree.py",
+              "size": 1880,
+              "ext": "py"
+            },
+            {
+              "name": "112. Path Sum.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/112. Path Sum.py",
+              "size": 1736,
+              "ext": "py"
+            },
+            {
+              "name": "113. Path Sum II.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/113. Path Sum II.py",
+              "size": 1846,
+              "ext": "py"
+            },
+            {
+              "name": "127. Word Ladder.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/127. Word Ladder.py",
+              "size": 3179,
+              "ext": "py"
+            },
+            {
+              "name": "130. Surrounded Regions.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/130. Surrounded Regions.py",
+              "size": 2258,
+              "ext": "py"
+            },
+            {
+              "name": "133. Clone Graph.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/133. Clone Graph.py",
+              "size": 3562,
+              "ext": "py"
+            },
+            {
+              "name": "1466. Reorder Routes to Make All Paths Lead to the City Zero.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/1466. Reorder Routes to Make All Paths Lead to the City Zero.py",
+              "size": 2056,
+              "ext": "py"
+            },
+            {
+              "name": "1625. Lexicographically Smallest String After Applying Operations.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/1625. Lexicographically Smallest String After Applying Operations.py",
+              "size": 2713,
+              "ext": "py"
+            },
+            {
+              "name": "1765. Map of Highest Peak.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/1765. Map of Highest Peak.py",
+              "size": 2401,
+              "ext": "py"
+            },
+            {
+              "name": "178 \u00b7 Graph Valid Tree.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/178 \u00b7 Graph Valid Tree.py",
+              "size": 2693,
+              "ext": "py"
+            },
+            {
+              "name": "200. Number of Islands.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/200. Number of Islands.py",
+              "size": 1736,
+              "ext": "py"
+            },
+            {
+              "name": "286. Walls and Gates.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/286. Walls and Gates.py",
+              "size": 2190,
+              "ext": "py"
+            },
+            {
+              "name": "2998. Minimum Number of Operations to Make X and Y Equal.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/2998. Minimum Number of Operations to Make X and Y Equal.py",
+              "size": 2561,
+              "ext": "py"
+            },
+            {
+              "name": "332. Reconstruct Itinerary.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/332. Reconstruct Itinerary.py",
+              "size": 1790,
+              "ext": "py"
+            },
+            {
+              "name": "417. Pacific Atlantic Water Flow.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/417. Pacific Atlantic Water Flow.py",
+              "size": 3380,
+              "ext": "py"
+            },
+            {
+              "name": "542. 01 Matrix.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/542. 01 Matrix.py",
+              "size": 1988,
+              "ext": "py"
+            },
+            {
+              "name": "543. Diameter of Binary Tree.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/543. Diameter of Binary Tree.py",
+              "size": 1761,
+              "ext": "py"
+            },
+            {
+              "name": "547. Number of Provinces.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/547. Number of Provinces.py",
+              "size": 1586,
+              "ext": "py"
+            },
+            {
+              "name": "752. Open the Lock.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/752. Open the Lock.py",
+              "size": 2648,
+              "ext": "py"
+            },
+            {
+              "name": "778. Swim in Rising Water.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/778. Swim in Rising Water.py",
+              "size": 2386,
+              "ext": "py"
+            },
+            {
+              "name": "841. Keys and Rooms.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/841. Keys and Rooms.py",
+              "size": 1584,
+              "ext": "py"
+            },
+            {
+              "name": "994. Rotting Oranges.py",
+              "type": "file",
+              "path": "Graph/DFS & BFS/994. Rotting Oranges.py",
+              "size": 3955,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Dijkastra Algo",
+          "type": "dir",
+          "path": "Graph/Dijkastra Algo",
+          "children": [
+            {
+              "name": "1091. Shortest Path in Binary Matrix.py",
+              "type": "file",
+              "path": "Graph/Dijkastra Algo/1091. Shortest Path in Binary Matrix.py",
+              "size": 5047,
+              "ext": "py"
+            },
+            {
+              "name": "1135. Connecting Cities With Minimum Cost.py",
+              "type": "file",
+              "path": "Graph/Dijkastra Algo/1135. Connecting Cities With Minimum Cost.py",
+              "size": 3558,
+              "ext": "py"
+            },
+            {
+              "name": "1631. Path With Minimum Effort.py",
+              "type": "file",
+              "path": "Graph/Dijkastra Algo/1631. Path With Minimum Effort.py",
+              "size": 4931,
+              "ext": "py"
+            },
+            {
+              "name": "743. Network Delay Time.py",
+              "type": "file",
+              "path": "Graph/Dijkastra Algo/743. Network Delay Time.py",
+              "size": 2950,
+              "ext": "py"
+            },
+            {
+              "name": "778. Swim in Rising Water.py",
+              "type": "file",
+              "path": "Graph/Dijkastra Algo/778. Swim in Rising Water.py",
+              "size": 2400,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Disjoint Set Union",
+          "type": "dir",
+          "path": "Graph/Disjoint Set Union",
+          "children": [
+            {
+              "name": "1202. Smallest String With Swaps.py",
+              "type": "file",
+              "path": "Graph/Disjoint Set Union/1202. Smallest String With Swaps.py",
+              "size": 1069,
+              "ext": "py"
+            },
+            {
+              "name": "2709. Greatest Common Divisor Traversal.py",
+              "type": "file",
+              "path": "Graph/Disjoint Set Union/2709. Greatest Common Divisor Traversal.py",
+              "size": 3385,
+              "ext": "py"
+            },
+            {
+              "name": "323. Number of Connected Components in an Undirected Graph.py",
+              "type": "file",
+              "path": "Graph/Disjoint Set Union/323. Number of Connected Components in an Undirected Graph.py",
+              "size": 3109,
+              "ext": "py"
+            },
+            {
+              "name": "3607. Power Grid Maintenance.py",
+              "type": "file",
+              "path": "Graph/Disjoint Set Union/3607. Power Grid Maintenance.py",
+              "size": 4261,
+              "ext": "py"
+            },
+            {
+              "name": "684. Redundant Connection.py",
+              "type": "file",
+              "path": "Graph/Disjoint Set Union/684. Redundant Connection.py",
+              "size": 2495,
+              "ext": "py"
+            },
+            {
+              "name": "721. Accounts Merge.py",
+              "type": "file",
+              "path": "Graph/Disjoint Set Union/721. Accounts Merge.py",
+              "size": 4706,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Flood Fill",
+          "type": "dir",
+          "path": "Graph/Flood Fill",
+          "children": [
+            {
+              "name": "733. Flood Fill.py",
+              "type": "file",
+              "path": "Graph/Flood Fill/733. Flood Fill.py",
+              "size": 2709,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Floyd Warshall",
+          "type": "dir",
+          "path": "Graph/Floyd Warshall",
+          "children": []
+        },
+        {
+          "name": "GRAPH_ENHANCED.md",
+          "type": "file",
+          "path": "Graph/GRAPH_ENHANCED.md",
+          "size": 14707,
+          "ext": "md"
+        },
+        {
+          "name": "Minimum Spanning Tree",
+          "type": "dir",
+          "path": "Graph/Minimum Spanning Tree",
+          "children": [
+            {
+              "name": "1489. Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree.py",
+              "type": "file",
+              "path": "Graph/Minimum Spanning Tree/1489. Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree.py",
+              "size": 3922,
+              "ext": "py"
+            },
+            {
+              "name": "1584. Min Cost to Connect All Points.py",
+              "type": "file",
+              "path": "Graph/Minimum Spanning Tree/1584. Min Cost to Connect All Points.py",
+              "size": 2537,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Multi Source BFS",
+          "type": "dir",
+          "path": "Graph/Multi Source BFS",
+          "children": []
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "Graph/README.md",
+          "size": 9340,
+          "ext": "md"
+        },
+        {
+          "name": "Sample.md",
+          "type": "file",
+          "path": "Graph/Sample.md",
+          "size": 8456,
+          "ext": "md"
+        },
+        {
+          "name": "Topological Sort",
+          "type": "dir",
+          "path": "Graph/Topological Sort",
+          "children": [
+            {
+              "name": "1462. Course Schedule IV.py",
+              "type": "file",
+              "path": "Graph/Topological Sort/1462. Course Schedule IV.py",
+              "size": 2732,
+              "ext": "py"
+            },
+            {
+              "name": "207. Course Schedule.py",
+              "type": "file",
+              "path": "Graph/Topological Sort/207. Course Schedule.py",
+              "size": 2369,
+              "ext": "py"
+            },
+            {
+              "name": "210. Course Schedule II.py",
+              "type": "file",
+              "path": "Graph/Topological Sort/210. Course Schedule II.py",
+              "size": 3139,
+              "ext": "py"
+            },
+            {
+              "name": "2392. Build a Matrix With Conditions.py",
+              "type": "file",
+              "path": "Graph/Topological Sort/2392. Build a Matrix With Conditions.py",
+              "size": 3547,
+              "ext": "py"
+            },
+            {
+              "name": "269. Alien Dictionary.py",
+              "type": "file",
+              "path": "Graph/Topological Sort/269. Alien Dictionary.py",
+              "size": 2568,
+              "ext": "py"
+            },
+            {
+              "name": "310. Minimum Height Trees.py",
+              "type": "file",
+              "path": "Graph/Topological Sort/310. Minimum Height Trees.py",
+              "size": 3360,
+              "ext": "py"
+            },
+            {
+              "name": "997. Find the Town Judge.py",
+              "type": "file",
+              "path": "Graph/Topological Sort/997. Find the Town Judge.py",
+              "size": 2919,
+              "ext": "py"
+            },
+            {
+              "name": "khan's algo.py",
+              "type": "file",
+              "path": "Graph/Topological Sort/khan's algo.py",
+              "size": 977,
+              "ext": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Greedy",
+      "type": "dir",
+      "path": "Greedy",
+      "children": [
+        {
+          "name": "121. Best Time to Buy and Sell Stock.py",
+          "type": "file",
+          "path": "Greedy/121. Best Time to Buy and Sell Stock.py",
+          "size": 1278,
+          "ext": "py"
+        },
+        {
+          "name": "1326. Minimum Number of Taps to Open to Water a Garden.py",
+          "type": "file",
+          "path": "Greedy/1326. Minimum Number of Taps to Open to Water a Garden.py",
+          "size": 2302,
+          "ext": "py"
+        },
+        {
+          "name": "134. Gas Station.py",
+          "type": "file",
+          "path": "Greedy/134. Gas Station.py",
+          "size": 2248,
+          "ext": "py"
+        },
+        {
+          "name": "135. Candy.py",
+          "type": "file",
+          "path": "Greedy/135. Candy.py",
+          "size": 1337,
+          "ext": "py"
+        },
+        {
+          "name": "1899. Merge Triplets to Form Target Triplet.py",
+          "type": "file",
+          "path": "Greedy/1899. Merge Triplets to Form Target Triplet.py",
+          "size": 2466,
+          "ext": "py"
+        },
+        {
+          "name": "2439. Minimize Maximum of Array.py",
+          "type": "file",
+          "path": "Greedy/2439. Minimize Maximum of Array.py",
+          "size": 1308,
+          "ext": "py"
+        },
+        {
+          "name": "3397. Maximum Number of Distinct Elements After Operations.py",
+          "type": "file",
+          "path": "Greedy/3397. Maximum Number of Distinct Elements After Operations.py",
+          "size": 1441,
+          "ext": "py"
+        },
+        {
+          "name": "435. Non-overlapping Intervals.py",
+          "type": "file",
+          "path": "Greedy/435. Non-overlapping Intervals.py",
+          "size": 1344,
+          "ext": "py"
+        },
+        {
+          "name": "455. Assign Cookies.py",
+          "type": "file",
+          "path": "Greedy/455. Assign Cookies.py",
+          "size": 2481,
+          "ext": "py"
+        },
+        {
+          "name": "53. Maximum Subarray.py",
+          "type": "file",
+          "path": "Greedy/53. Maximum Subarray.py",
+          "size": 1225,
+          "ext": "py"
+        },
+        {
+          "name": "649. Dota2 Senate.py",
+          "type": "file",
+          "path": "Greedy/649. Dota2 Senate.py",
+          "size": 3517,
+          "ext": "py"
+        },
+        {
+          "name": "678. Valid Parenthesis String.py",
+          "type": "file",
+          "path": "Greedy/678. Valid Parenthesis String.py",
+          "size": 1546,
+          "ext": "py"
+        },
+        {
+          "name": "763. Partition Labels.py",
+          "type": "file",
+          "path": "Greedy/763. Partition Labels.py",
+          "size": 1852,
+          "ext": "py"
+        },
+        {
+          "name": "846. Hand of Straights.py",
+          "type": "file",
+          "path": "Greedy/846. Hand of Straights.py",
+          "size": 1759,
+          "ext": "py"
+        },
+        {
+          "name": "918. Maximum Sum Circular Subarray.py",
+          "type": "file",
+          "path": "Greedy/918. Maximum Sum Circular Subarray.py",
+          "size": 2079,
+          "ext": "py"
+        },
+        {
+          "name": "GREEDY_ENHANCED.md",
+          "type": "file",
+          "path": "Greedy/GREEDY_ENHANCED.md",
+          "size": 14012,
+          "ext": "md"
+        },
+        {
+          "name": "Jump Game.py",
+          "type": "file",
+          "path": "Greedy/Jump Game.py",
+          "size": 4413,
+          "ext": "py"
+        },
+        {
+          "name": "Sample.md",
+          "type": "file",
+          "path": "Greedy/Sample.md",
+          "size": 7128,
+          "ext": "md"
+        }
+      ]
+    },
+    {
+      "name": "Hashing",
+      "type": "dir",
+      "path": "Hashing",
+      "children": []
+    },
+    {
+      "name": "Heap",
+      "type": "dir",
+      "path": "Heap",
+      "children": [
+        {
+          "name": "1046. Last Stone Weight.py",
+          "type": "file",
+          "path": "Heap/1046. Last Stone Weight.py",
+          "size": 2469,
+          "ext": "py"
+        },
+        {
+          "name": "1405. Longest Happy String.py",
+          "type": "file",
+          "path": "Heap/1405. Longest Happy String.py",
+          "size": 2616,
+          "ext": "py"
+        },
+        {
+          "name": "1851. Minimum Interval to Include Each Query.py",
+          "type": "file",
+          "path": "Heap/1851. Minimum Interval to Include Each Query.py",
+          "size": 2401,
+          "ext": "py"
+        },
+        {
+          "name": "215. Kth Largest Element in an Array.py",
+          "type": "file",
+          "path": "Heap/215. Kth Largest Element in an Array.py",
+          "size": 872,
+          "ext": "py"
+        },
+        {
+          "name": "2402. Meeting Rooms III.py",
+          "type": "file",
+          "path": "Heap/2402. Meeting Rooms III.py",
+          "size": 4505,
+          "ext": "py"
+        },
+        {
+          "name": "295. Find Median from Data Stream.py",
+          "type": "file",
+          "path": "Heap/295. Find Median from Data Stream.py",
+          "size": 2304,
+          "ext": "py"
+        },
+        {
+          "name": "347. Top K Frequent Elements.py",
+          "type": "file",
+          "path": "Heap/347. Top K Frequent Elements.py",
+          "size": 1722,
+          "ext": "py"
+        },
+        {
+          "name": "502. IPO.py",
+          "type": "file",
+          "path": "Heap/502. IPO.py",
+          "size": 2467,
+          "ext": "py"
+        },
+        {
+          "name": "621. Task Scheduler.py",
+          "type": "file",
+          "path": "Heap/621. Task Scheduler.py",
+          "size": 3127,
+          "ext": "py"
+        },
+        {
+          "name": "703. Kth Largest Element in a Stream.py",
+          "type": "file",
+          "path": "Heap/703. Kth Largest Element in a Stream.py",
+          "size": 2917,
+          "ext": "py"
+        },
+        {
+          "name": "767. Reorganize String.py",
+          "type": "file",
+          "path": "Heap/767. Reorganize String.py",
+          "size": 1901,
+          "ext": "py"
+        },
+        {
+          "name": "973. K Closest Points to Origin.py",
+          "type": "file",
+          "path": "Heap/973. K Closest Points to Origin.py",
+          "size": 1715,
+          "ext": "py"
+        }
+      ]
+    },
+    {
+      "name": "Intervals",
+      "type": "dir",
+      "path": "Intervals",
+      "children": [
+        {
+          "name": "252. Meeting Rooms.py",
+          "type": "file",
+          "path": "Intervals/252. Meeting Rooms.py",
+          "size": 1485,
+          "ext": "py"
+        },
+        {
+          "name": "253. Meeting Rooms II.py",
+          "type": "file",
+          "path": "Intervals/253. Meeting Rooms II.py",
+          "size": 1517,
+          "ext": "py"
+        },
+        {
+          "name": "435. Non-overlapping Intervals.py",
+          "type": "file",
+          "path": "Intervals/435. Non-overlapping Intervals.py",
+          "size": 2124,
+          "ext": "py"
+        },
+        {
+          "name": "56. Merge Intervals.py",
+          "type": "file",
+          "path": "Intervals/56. Merge Intervals.py",
+          "size": 1662,
+          "ext": "py"
+        },
+        {
+          "name": "57. Insert Interval.py",
+          "type": "file",
+          "path": "Intervals/57. Insert Interval.py",
+          "size": 2309,
+          "ext": "py"
+        },
+        {
+          "name": "sweep line",
+          "type": "dir",
+          "path": "Intervals/sweep line",
+          "children": [
+            {
+              "name": "1094. Car Pooling.py",
+              "type": "file",
+              "path": "Intervals/sweep line/1094. Car Pooling.py",
+              "size": 1612,
+              "ext": "py"
+            },
+            {
+              "name": "1109. Corporate Flight Bookings.py",
+              "type": "file",
+              "path": "Intervals/sweep line/1109. Corporate Flight Bookings.py",
+              "size": 1606,
+              "ext": "py"
+            },
+            {
+              "name": "1589. Maximum Sum Obtained of Any Permutation.py",
+              "type": "file",
+              "path": "Intervals/sweep line/1589. Maximum Sum Obtained of Any Permutation.py",
+              "size": 1992,
+              "ext": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LinkedList",
+      "type": "dir",
+      "path": "LinkedList",
+      "children": [
+        {
+          "name": "138. Copy List with Random Pointer.py",
+          "type": "file",
+          "path": "LinkedList/138. Copy List with Random Pointer.py",
+          "size": 3494,
+          "ext": "py"
+        },
+        {
+          "name": "141. Linked List Cycle.py",
+          "type": "file",
+          "path": "LinkedList/141. Linked List Cycle.py",
+          "size": 1623,
+          "ext": "py"
+        },
+        {
+          "name": "142. Linked List Cycle II.py",
+          "type": "file",
+          "path": "LinkedList/142. Linked List Cycle II.py",
+          "size": 2949,
+          "ext": "py"
+        },
+        {
+          "name": "143. Reorder List.py",
+          "type": "file",
+          "path": "LinkedList/143. Reorder List.py",
+          "size": 1355,
+          "ext": "py"
+        },
+        {
+          "name": "19. Remove Nth Node From End of List.py",
+          "type": "file",
+          "path": "LinkedList/19. Remove Nth Node From End of List.py",
+          "size": 1003,
+          "ext": "py"
+        },
+        {
+          "name": "2. Add Two Numbers.py",
+          "type": "file",
+          "path": "LinkedList/2. Add Two Numbers.py",
+          "size": 1950,
+          "ext": "py"
+        },
+        {
+          "name": "206. Reverse Linked List.py",
+          "type": "file",
+          "path": "LinkedList/206. Reverse Linked List.py",
+          "size": 1643,
+          "ext": "py"
+        },
+        {
+          "name": "21. Merge Two Sorted Lists.py",
+          "type": "file",
+          "path": "LinkedList/21. Merge Two Sorted Lists.py",
+          "size": 1312,
+          "ext": "py"
+        },
+        {
+          "name": "23. Merge k Sorted Lists.py",
+          "type": "file",
+          "path": "LinkedList/23. Merge k Sorted Lists.py",
+          "size": 1569,
+          "ext": "py"
+        },
+        {
+          "name": "234. Palindrome Linked List.py",
+          "type": "file",
+          "path": "LinkedList/234. Palindrome Linked List.py",
+          "size": 1142,
+          "ext": "py"
+        },
+        {
+          "name": "24. Swap Nodes in Pairs.py",
+          "type": "file",
+          "path": "LinkedList/24. Swap Nodes in Pairs.py",
+          "size": 1093,
+          "ext": "py"
+        },
+        {
+          "name": "25. Reverse Nodes in k-Group.py",
+          "type": "file",
+          "path": "LinkedList/25. Reverse Nodes in k-Group.py",
+          "size": 2019,
+          "ext": "py"
+        },
+        {
+          "name": "2807. Insert Greatest Common Divisors in Linked List.py",
+          "type": "file",
+          "path": "LinkedList/2807. Insert Greatest Common Divisors in Linked List.py",
+          "size": 2577,
+          "ext": "py"
+        },
+        {
+          "name": "287. Find the Duplicate Number.py",
+          "type": "file",
+          "path": "LinkedList/287. Find the Duplicate Number.py",
+          "size": 1391,
+          "ext": "py"
+        },
+        {
+          "name": "92. Reverse Linked List II.py",
+          "type": "file",
+          "path": "LinkedList/92. Reverse Linked List II.py",
+          "size": 1319,
+          "ext": "py"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "LinkedList/README.md",
+          "size": 1599,
+          "ext": "md"
+        }
+      ]
+    },
+    {
+      "name": "Mathematics",
+      "type": "dir",
+      "path": "Mathematics",
+      "children": [
+        {
+          "name": "1071. Greatest Common Divisor of Strings.py",
+          "type": "file",
+          "path": "Mathematics/1071. Greatest Common Divisor of Strings.py",
+          "size": 2336,
+          "ext": "py"
+        },
+        {
+          "name": "1175. Prime Arrangements.py",
+          "type": "file",
+          "path": "Mathematics/1175. Prime Arrangements.py",
+          "size": 1233,
+          "ext": "py"
+        },
+        {
+          "name": "1266. Minimum Time Visiting All Points.py",
+          "type": "file",
+          "path": "Mathematics/1266. Minimum Time Visiting All Points.py",
+          "size": 1809,
+          "ext": "py"
+        },
+        {
+          "name": "13. Roman to Integer.py",
+          "type": "file",
+          "path": "Mathematics/13. Roman to Integer.py",
+          "size": 2034,
+          "ext": "py"
+        },
+        {
+          "name": "166. Fraction to Recurring Decimal.py",
+          "type": "file",
+          "path": "Mathematics/166. Fraction to Recurring Decimal.py",
+          "size": 1708,
+          "ext": "py"
+        },
+        {
+          "name": "168. Excel Sheet Column Title.py",
+          "type": "file",
+          "path": "Mathematics/168. Excel Sheet Column Title.py",
+          "size": 1312,
+          "ext": "py"
+        },
+        {
+          "name": "2013. Detect Squares.py",
+          "type": "file",
+          "path": "Mathematics/2013. Detect Squares.py",
+          "size": 3078,
+          "ext": "py"
+        },
+        {
+          "name": "202. Happy Number.py",
+          "type": "file",
+          "path": "Mathematics/202. Happy Number.py",
+          "size": 3655,
+          "ext": "py"
+        },
+        {
+          "name": "43. Multiply Strings.py",
+          "type": "file",
+          "path": "Mathematics/43. Multiply Strings.py",
+          "size": 1293,
+          "ext": "py"
+        },
+        {
+          "name": "48. Rotate Image.py",
+          "type": "file",
+          "path": "Mathematics/48. Rotate Image.py",
+          "size": 1196,
+          "ext": "py"
+        },
+        {
+          "name": "50. Pow(x, n).py",
+          "type": "file",
+          "path": "Mathematics/50. Pow(x, n).py",
+          "size": 981,
+          "ext": "py"
+        },
+        {
+          "name": "54. Spiral Matrix.py",
+          "type": "file",
+          "path": "Mathematics/54. Spiral Matrix.py",
+          "size": 968,
+          "ext": "py"
+        },
+        {
+          "name": "66. Plus One.py",
+          "type": "file",
+          "path": "Mathematics/66. Plus One.py",
+          "size": 1448,
+          "ext": "py"
+        },
+        {
+          "name": "73. Set Matrix Zeroes.py",
+          "type": "file",
+          "path": "Mathematics/73. Set Matrix Zeroes.py",
+          "size": 1408,
+          "ext": "py"
+        },
+        {
+          "name": "812. Largest Triangle Area.py",
+          "type": "file",
+          "path": "Mathematics/812. Largest Triangle Area.py",
+          "size": 1572,
+          "ext": "py"
+        },
+        {
+          "name": "867. Transpose Matrix.py",
+          "type": "file",
+          "path": "Mathematics/867. Transpose Matrix.py",
+          "size": 1009,
+          "ext": "py"
+        }
+      ]
+    },
+    {
+      "name": "Matrix",
+      "type": "dir",
+      "path": "Matrix",
+      "children": [
+        {
+          "name": "36. Valid Sudoku.py",
+          "type": "file",
+          "path": "Matrix/36. Valid Sudoku.py",
+          "size": 2312,
+          "ext": "py"
+        },
+        {
+          "name": "463. Island Perimeter.py",
+          "type": "file",
+          "path": "Matrix/463. Island Perimeter.py",
+          "size": 1860,
+          "ext": "py"
+        },
+        {
+          "name": "48. Rotate Image.py",
+          "type": "file",
+          "path": "Matrix/48. Rotate Image.py",
+          "size": 1254,
+          "ext": "py"
+        },
+        {
+          "name": "54. Spiral Matrix.py",
+          "type": "file",
+          "path": "Matrix/54. Spiral Matrix.py",
+          "size": 1233,
+          "ext": "py"
+        },
+        {
+          "name": "73. Set Matrix Zeroes.py",
+          "type": "file",
+          "path": "Matrix/73. Set Matrix Zeroes.py",
+          "size": 1356,
+          "ext": "py"
+        }
+      ]
+    },
+    {
+      "name": "Operating Systems",
+      "type": "dir",
+      "path": "Operating Systems",
+      "children": [
+        {
+          "name": "1719515917185.pdf",
+          "type": "file",
+          "path": "Operating Systems/1719515917185.pdf",
+          "size": 14873660,
+          "ext": "pdf"
+        },
+        {
+          "name": "Concurrency",
+          "type": "dir",
+          "path": "Operating Systems/Concurrency",
+          "children": [
+            {
+              "name": "1114. Print in Order.py",
+              "type": "file",
+              "path": "Operating Systems/Concurrency/1114. Print in Order.py",
+              "size": 2099,
+              "ext": "py"
+            },
+            {
+              "name": "1115. Print FooBar Alternately.py",
+              "type": "file",
+              "path": "Operating Systems/Concurrency/1115. Print FooBar Alternately.py",
+              "size": 4797,
+              "ext": "py"
+            },
+            {
+              "name": "Dining Philosophers.py",
+              "type": "file",
+              "path": "Operating Systems/Concurrency/Dining Philosophers.py",
+              "size": 0,
+              "ext": "py"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "Operating Systems/Concurrency/README.md",
+              "size": 2225,
+              "ext": "md"
+            }
+          ]
+        },
+        {
+          "name": "topics",
+          "type": "dir",
+          "path": "Operating Systems/topics",
+          "children": [
+            {
+              "name": "01-introduction-to-operating-systems.md",
+              "type": "file",
+              "path": "Operating Systems/topics/01-introduction-to-operating-systems.md",
+              "size": 3673,
+              "ext": "md"
+            },
+            {
+              "name": "02-system-calls-and-os-structure.md",
+              "type": "file",
+              "path": "Operating Systems/topics/02-system-calls-and-os-structure.md",
+              "size": 2848,
+              "ext": "md"
+            },
+            {
+              "name": "03-processes.md",
+              "type": "file",
+              "path": "Operating Systems/topics/03-processes.md",
+              "size": 2616,
+              "ext": "md"
+            },
+            {
+              "name": "04-threads-and-multithreading.md",
+              "type": "file",
+              "path": "Operating Systems/topics/04-threads-and-multithreading.md",
+              "size": 2657,
+              "ext": "md"
+            },
+            {
+              "name": "05-cpu-scheduling.md",
+              "type": "file",
+              "path": "Operating Systems/topics/05-cpu-scheduling.md",
+              "size": 2941,
+              "ext": "md"
+            },
+            {
+              "name": "06-inter-process-communication.md",
+              "type": "file",
+              "path": "Operating Systems/topics/06-inter-process-communication.md",
+              "size": 2338,
+              "ext": "md"
+            },
+            {
+              "name": "07-process-synchronization.md",
+              "type": "file",
+              "path": "Operating Systems/topics/07-process-synchronization.md",
+              "size": 2622,
+              "ext": "md"
+            },
+            {
+              "name": "08-semaphores-and-classical-problems.md",
+              "type": "file",
+              "path": "Operating Systems/topics/08-semaphores-and-classical-problems.md",
+              "size": 2623,
+              "ext": "md"
+            },
+            {
+              "name": "09-deadlocks.md",
+              "type": "file",
+              "path": "Operating Systems/topics/09-deadlocks.md",
+              "size": 2747,
+              "ext": "md"
+            },
+            {
+              "name": "10-memory-management.md",
+              "type": "file",
+              "path": "Operating Systems/topics/10-memory-management.md",
+              "size": 2872,
+              "ext": "md"
+            },
+            {
+              "name": "11-paging-segmentation-tlb.md",
+              "type": "file",
+              "path": "Operating Systems/topics/11-paging-segmentation-tlb.md",
+              "size": 2831,
+              "ext": "md"
+            },
+            {
+              "name": "12-virtual-memory-and-page-replacement.md",
+              "type": "file",
+              "path": "Operating Systems/topics/12-virtual-memory-and-page-replacement.md",
+              "size": 2938,
+              "ext": "md"
+            },
+            {
+              "name": "13-file-systems.md",
+              "type": "file",
+              "path": "Operating Systems/topics/13-file-systems.md",
+              "size": 2321,
+              "ext": "md"
+            },
+            {
+              "name": "14-disk-scheduling-algorithms.md",
+              "type": "file",
+              "path": "Operating Systems/topics/14-disk-scheduling-algorithms.md",
+              "size": 2909,
+              "ext": "md"
+            },
+            {
+              "name": "15-io-systems.md",
+              "type": "file",
+              "path": "Operating Systems/topics/15-io-systems.md",
+              "size": 2116,
+              "ext": "md"
+            },
+            {
+              "name": "16-linux-and-system-programming-basics.md",
+              "type": "file",
+              "path": "Operating Systems/topics/16-linux-and-system-programming-basics.md",
+              "size": 2289,
+              "ext": "md"
+            },
+            {
+              "name": "17-practice-cheatsheet.md",
+              "type": "file",
+              "path": "Operating Systems/topics/17-practice-cheatsheet.md",
+              "size": 2654,
+              "ext": "md"
+            },
+            {
+              "name": "OPERATING-SYSTEMS.pdf",
+              "type": "file",
+              "path": "Operating Systems/topics/OPERATING-SYSTEMS.pdf",
+              "size": 4838889,
+              "ext": "pdf"
+            },
+            {
+              "name": "OS.pdf",
+              "type": "file",
+              "path": "Operating Systems/topics/OS.pdf",
+              "size": 52222617,
+              "ext": "pdf"
+            },
+            {
+              "name": "OS_Full_Notes.pdf",
+              "type": "file",
+              "path": "Operating Systems/topics/OS_Full_Notes.pdf",
+              "size": 2426295,
+              "ext": "pdf"
+            },
+            {
+              "name": "Operating Systems for Placements 2022.md",
+              "type": "file",
+              "path": "Operating Systems/topics/Operating Systems for Placements 2022.md",
+              "size": 6236,
+              "ext": "md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Prefix Sum",
+      "type": "dir",
+      "path": "Prefix Sum",
+      "children": [
+        {
+          "name": "Line Sweep",
+          "type": "dir",
+          "path": "Prefix Sum/Line Sweep",
+          "children": []
+        },
+        {
+          "name": "Prefix Sum",
+          "type": "dir",
+          "path": "Prefix Sum/Prefix Sum",
+          "children": [
+            {
+              "name": "1352. Product of the Last K Numbers.py",
+              "type": "file",
+              "path": "Prefix Sum/Prefix Sum/1352. Product of the Last K Numbers.py",
+              "size": 2387,
+              "ext": "py"
+            },
+            {
+              "name": "238. Product of Array Except Self.py",
+              "type": "file",
+              "path": "Prefix Sum/Prefix Sum/238. Product of Array Except Self.py",
+              "size": 1505,
+              "ext": "py"
+            },
+            {
+              "name": "303. Range Sum Query - Immutable.py",
+              "type": "file",
+              "path": "Prefix Sum/Prefix Sum/303. Range Sum Query - Immutable.py",
+              "size": 1456,
+              "ext": "py"
+            },
+            {
+              "name": "304. Range Sum Query 2D - Immutable.py",
+              "type": "file",
+              "path": "Prefix Sum/Prefix Sum/304. Range Sum Query 2D - Immutable.py",
+              "size": 2476,
+              "ext": "py"
+            },
+            {
+              "name": "3346. Maximum Frequency of an Element After Performing Operations I.py",
+              "type": "file",
+              "path": "Prefix Sum/Prefix Sum/3346. Maximum Frequency of an Element After Performing Operations I.py",
+              "size": 1642,
+              "ext": "py"
+            },
+            {
+              "name": "3381. Maximum Subarray Sum With Length Divisible by K.py",
+              "type": "file",
+              "path": "Prefix Sum/Prefix Sum/3381. Maximum Subarray Sum With Length Divisible by K.py",
+              "size": 1322,
+              "ext": "py"
+            },
+            {
+              "name": "560. Subarray Sum Equals K.py",
+              "type": "file",
+              "path": "Prefix Sum/Prefix Sum/560. Subarray Sum Equals K.py",
+              "size": 969,
+              "ext": "py"
+            },
+            {
+              "name": "974. Subarray Sums Divisible by K.py",
+              "type": "file",
+              "path": "Prefix Sum/Prefix Sum/974. Subarray Sums Divisible by K.py",
+              "size": 1085,
+              "ext": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "QUICK_REFERENCE.md",
+      "type": "file",
+      "path": "QUICK_REFERENCE.md",
+      "size": 7723,
+      "ext": "md"
+    },
+    {
+      "name": "Queue",
+      "type": "dir",
+      "path": "Queue",
+      "children": [
+        {
+          "name": "239. Sliding Window Maximum.py",
+          "type": "file",
+          "path": "Queue/239. Sliding Window Maximum.py",
+          "size": 2226,
+          "ext": "py"
+        }
+      ]
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "size": 23180,
+      "ext": "md"
+    },
+    {
+      "name": "Recursion & Backtracking",
+      "type": "dir",
+      "path": "Recursion & Backtracking",
+      "children": [
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "Recursion & Backtracking/README.md",
+          "size": 1501,
+          "ext": "md"
+        },
+        {
+          "name": "combinations",
+          "type": "dir",
+          "path": "Recursion & Backtracking/combinations",
+          "children": [
+            {
+              "name": "17. Letter Combinations of a Phone Number.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/combinations/17. Letter Combinations of a Phone Number.py",
+              "size": 1552,
+              "ext": "py"
+            },
+            {
+              "name": "39. Combination Sum.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/combinations/39. Combination Sum.py",
+              "size": 1763,
+              "ext": "py"
+            },
+            {
+              "name": "40. Combination Sum II.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/combinations/40. Combination Sum II.py",
+              "size": 1374,
+              "ext": "py"
+            },
+            {
+              "name": "77. Combinations.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/combinations/77. Combinations.py",
+              "size": 1122,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "palindrome",
+          "type": "dir",
+          "path": "Recursion & Backtracking/palindrome",
+          "children": [
+            {
+              "name": "131. Palindrome Partitioning.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/palindrome/131. Palindrome Partitioning.py",
+              "size": 1225,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "path on grid",
+          "type": "dir",
+          "path": "Recursion & Backtracking/path on grid",
+          "children": [
+            {
+              "name": "79. Word Search.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/path on grid/79. Word Search.py",
+              "size": 2298,
+              "ext": "py"
+            },
+            {
+              "name": "Rat in a Maze Problem.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/path on grid/Rat in a Maze Problem.py",
+              "size": 2766,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "permutations",
+          "type": "dir",
+          "path": "Recursion & Backtracking/permutations",
+          "children": [
+            {
+              "name": "46. Permutations.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/permutations/46. Permutations.py",
+              "size": 3145,
+              "ext": "py"
+            },
+            {
+              "name": "526. Beautiful Arrangement.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/permutations/526. Beautiful Arrangement.py",
+              "size": 1335,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "recursion",
+          "type": "dir",
+          "path": "Recursion & Backtracking/recursion",
+          "children": [
+            {
+              "name": "140. Word Break II.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/recursion/140. Word Break II.py",
+              "size": 2517,
+              "ext": "py"
+            },
+            {
+              "name": "22. Generate Parentheses.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/recursion/22. Generate Parentheses.py",
+              "size": 2071,
+              "ext": "py"
+            },
+            {
+              "name": "399. Evaluate Division.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/recursion/399. Evaluate Division.py",
+              "size": 2918,
+              "ext": "py"
+            },
+            {
+              "name": "473. Matchsticks to Square.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/recursion/473. Matchsticks to Square.py",
+              "size": 2014,
+              "ext": "py"
+            },
+            {
+              "name": "51. N-Queens.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/recursion/51. N-Queens.py",
+              "size": 1839,
+              "ext": "py"
+            },
+            {
+              "name": "52. N-Queens II.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/recursion/52. N-Queens II.py",
+              "size": 2383,
+              "ext": "py"
+            },
+            {
+              "name": "sort_a_stack.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/recursion/sort_a_stack.py",
+              "size": 1325,
+              "ext": "py"
+            },
+            {
+              "name": "tower_of_hanoi.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/recursion/tower_of_hanoi.py",
+              "size": 1631,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "subset",
+          "type": "dir",
+          "path": "Recursion & Backtracking/subset",
+          "children": [
+            {
+              "name": "1863. Sum of All Subset XOR Totals.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/subset/1863. Sum of All Subset XOR Totals.py",
+              "size": 2307,
+              "ext": "py"
+            },
+            {
+              "name": "698. Partition to K Equal Sum Subsets.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/subset/698. Partition to K Equal Sum Subsets.py",
+              "size": 1642,
+              "ext": "py"
+            },
+            {
+              "name": "subsets.py",
+              "type": "file",
+              "path": "Recursion & Backtracking/subset/subsets.py",
+              "size": 2853,
+              "ext": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Segment Trees",
+      "type": "dir",
+      "path": "Segment Trees",
+      "children": [
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "Segment Trees/README.md",
+          "size": 1665,
+          "ext": "md"
+        },
+        {
+          "name": "feenwick.py",
+          "type": "file",
+          "path": "Segment Trees/feenwick.py",
+          "size": 0,
+          "ext": "py"
+        },
+        {
+          "name": "implementation.py",
+          "type": "file",
+          "path": "Segment Trees/implementation.py",
+          "size": 2328,
+          "ext": "py"
+        }
+      ]
+    },
+    {
+      "name": "Sliding Window",
+      "type": "dir",
+      "path": "Sliding Window",
+      "children": [
+        {
+          "name": "dynamic",
+          "type": "dir",
+          "path": "Sliding Window/dynamic",
+          "children": [
+            {
+              "name": "1297. Maximum Number of Occurrences of a Substring.py",
+              "type": "file",
+              "path": "Sliding Window/dynamic/1297. Maximum Number of Occurrences of a Substring.py",
+              "size": 1671,
+              "ext": "py"
+            },
+            {
+              "name": "1658. Minimum Operations to Reduce X to Zero.py",
+              "type": "file",
+              "path": "Sliding Window/dynamic/1658. Minimum Operations to Reduce X to Zero.py",
+              "size": 1376,
+              "ext": "py"
+            },
+            {
+              "name": "1838. Frequency of the Most Frequent Element.py",
+              "type": "file",
+              "path": "Sliding Window/dynamic/1838. Frequency of the Most Frequent Element.py",
+              "size": 1453,
+              "ext": "py"
+            },
+            {
+              "name": "209. Minimum Size Subarray Sum.py",
+              "type": "file",
+              "path": "Sliding Window/dynamic/209. Minimum Size Subarray Sum.py",
+              "size": 1275,
+              "ext": "py"
+            },
+            {
+              "name": "2537. Count the Number of Good Subarrays.py",
+              "type": "file",
+              "path": "Sliding Window/dynamic/2537. Count the Number of Good Subarrays.py",
+              "size": 1262,
+              "ext": "py"
+            },
+            {
+              "name": "3. Longest Substring Without Repeating Characters.py",
+              "type": "file",
+              "path": "Sliding Window/dynamic/3. Longest Substring Without Repeating Characters.py",
+              "size": 1110,
+              "ext": "py"
+            },
+            {
+              "name": "424. Longest Repeating Character Replacement.py",
+              "type": "file",
+              "path": "Sliding Window/dynamic/424. Longest Repeating Character Replacement.py",
+              "size": 1508,
+              "ext": "py"
+            },
+            {
+              "name": "658. Find K Closest Elements.py",
+              "type": "file",
+              "path": "Sliding Window/dynamic/658. Find K Closest Elements.py",
+              "size": 1057,
+              "ext": "py"
+            },
+            {
+              "name": "713. Subarray Product Less Than K.py",
+              "type": "file",
+              "path": "Sliding Window/dynamic/713. Subarray Product Less Than K.py",
+              "size": 1068,
+              "ext": "py"
+            },
+            {
+              "name": "76. Minimum Window Substring.py",
+              "type": "file",
+              "path": "Sliding Window/dynamic/76. Minimum Window Substring.py",
+              "size": 1021,
+              "ext": "py"
+            },
+            {
+              "name": "795. Number of Subarrays with Bounded Maximum.py",
+              "type": "file",
+              "path": "Sliding Window/dynamic/795. Number of Subarrays with Bounded Maximum.py",
+              "size": 1097,
+              "ext": "py"
+            },
+            {
+              "name": "978. Longest Turbulent Subarray.py",
+              "type": "file",
+              "path": "Sliding Window/dynamic/978. Longest Turbulent Subarray.py",
+              "size": 1656,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "fixed",
+          "type": "dir",
+          "path": "Sliding Window/fixed",
+          "children": [
+            {
+              "name": "1343. Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold.py",
+              "type": "file",
+              "path": "Sliding Window/fixed/1343. Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold.py",
+              "size": 1101,
+              "ext": "py"
+            },
+            {
+              "name": "1423. Maximum Points You Can Obtain from Cards.py",
+              "type": "file",
+              "path": "Sliding Window/fixed/1423. Maximum Points You Can Obtain from Cards.py",
+              "size": 1819,
+              "ext": "py"
+            },
+            {
+              "name": "1456. Maximum Number of Vowels in a Substring of Given Length.py",
+              "type": "file",
+              "path": "Sliding Window/fixed/1456. Maximum Number of Vowels in a Substring of Given Length.py",
+              "size": 546,
+              "ext": "py"
+            },
+            {
+              "name": "219. Contains Duplicate II.py",
+              "type": "file",
+              "path": "Sliding Window/fixed/219. Contains Duplicate II.py",
+              "size": 1270,
+              "ext": "py"
+            },
+            {
+              "name": "2461. Maximum Sum of Distinct Subarrays With Length K.py",
+              "type": "file",
+              "path": "Sliding Window/fixed/2461. Maximum Sum of Distinct Subarrays With Length K.py",
+              "size": 2418,
+              "ext": "py"
+            },
+            {
+              "name": "567. Permutation in String.py",
+              "type": "file",
+              "path": "Sliding Window/fixed/567. Permutation in String.py",
+              "size": 1184,
+              "ext": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sorting",
+      "type": "dir",
+      "path": "Sorting",
+      "children": [
+        {
+          "name": "1122. Relative Sort Array.py",
+          "type": "file",
+          "path": "Sorting/1122. Relative Sort Array.py",
+          "size": 1178,
+          "ext": "py"
+        },
+        {
+          "name": "1366. Rank Teams by Votes.py",
+          "type": "file",
+          "path": "Sorting/1366. Rank Teams by Votes.py",
+          "size": 2331,
+          "ext": "py"
+        },
+        {
+          "name": "164. Maximum Gap.py",
+          "type": "file",
+          "path": "Sorting/164. Maximum Gap.py",
+          "size": 1907,
+          "ext": "py"
+        },
+        {
+          "name": "179. Largest Number.py",
+          "type": "file",
+          "path": "Sorting/179. Largest Number.py",
+          "size": 760,
+          "ext": "py"
+        },
+        {
+          "name": "229. Majority Element II.py",
+          "type": "file",
+          "path": "Sorting/229. Majority Element II.py",
+          "size": 2026,
+          "ext": "py"
+        },
+        {
+          "name": "791. Custom Sort String.py",
+          "type": "file",
+          "path": "Sorting/791. Custom Sort String.py",
+          "size": 2315,
+          "ext": "py"
+        },
+        {
+          "name": "SORTING_ENHANCED.md",
+          "type": "file",
+          "path": "Sorting/SORTING_ENHANCED.md",
+          "size": 13685,
+          "ext": "md"
+        },
+        {
+          "name": "Sample.md",
+          "type": "file",
+          "path": "Sorting/Sample.md",
+          "size": 5492,
+          "ext": "md"
+        }
+      ]
+    },
+    {
+      "name": "Stack",
+      "type": "dir",
+      "path": "Stack",
+      "children": [
+        {
+          "name": "150. Evaluate Reverse Polish Notation.py",
+          "type": "file",
+          "path": "Stack/150. Evaluate Reverse Polish Notation.py",
+          "size": 2467,
+          "ext": "py"
+        },
+        {
+          "name": "20. Valid Parentheses.py",
+          "type": "file",
+          "path": "Stack/20. Valid Parentheses.py",
+          "size": 1435,
+          "ext": "py"
+        },
+        {
+          "name": "32. Longest Valid Parentheses.py",
+          "type": "file",
+          "path": "Stack/32. Longest Valid Parentheses.py",
+          "size": 1087,
+          "ext": "py"
+        },
+        {
+          "name": "394. Decode String.py",
+          "type": "file",
+          "path": "Stack/394. Decode String.py",
+          "size": 1653,
+          "ext": "py"
+        },
+        {
+          "name": "682. Baseball Game.py",
+          "type": "file",
+          "path": "Stack/682. Baseball Game.py",
+          "size": 3055,
+          "ext": "py"
+        },
+        {
+          "name": "71. Simplify Path.py",
+          "type": "file",
+          "path": "Stack/71. Simplify Path.py",
+          "size": 2950,
+          "ext": "py"
+        },
+        {
+          "name": "735. Asteroid Collision.py",
+          "type": "file",
+          "path": "Stack/735. Asteroid Collision.py",
+          "size": 1961,
+          "ext": "py"
+        },
+        {
+          "name": "853. Car Fleet.py",
+          "type": "file",
+          "path": "Stack/853. Car Fleet.py",
+          "size": 2575,
+          "ext": "py"
+        },
+        {
+          "name": "901. Online Stock Span.py",
+          "type": "file",
+          "path": "Stack/901. Online Stock Span.py",
+          "size": 2908,
+          "ext": "py"
+        },
+        {
+          "name": "Advance Stack",
+          "type": "dir",
+          "path": "Stack/Advance Stack",
+          "children": [
+            {
+              "name": "84. Largest Rectangle in Histogram.py",
+              "type": "file",
+              "path": "Stack/Advance Stack/84. Largest Rectangle in Histogram.py",
+              "size": 1333,
+              "ext": "py"
+            },
+            {
+              "name": "Min Stack.py",
+              "type": "file",
+              "path": "Stack/Advance Stack/Min Stack.py",
+              "size": 2025,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Monotonic_stack",
+          "type": "dir",
+          "path": "Stack/Monotonic_stack",
+          "children": [
+            {
+              "name": "739. Daily Temperatures.py",
+              "type": "file",
+              "path": "Stack/Monotonic_stack/739. Daily Temperatures.py",
+              "size": 2903,
+              "ext": "py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Strings",
+      "type": "dir",
+      "path": "Strings",
+      "children": [
+        {
+          "name": "125. Valid Palindrome.py",
+          "type": "file",
+          "path": "Strings/125. Valid Palindrome.py",
+          "size": 1524,
+          "ext": "py"
+        },
+        {
+          "name": "14. Longest Common Prefix.py",
+          "type": "file",
+          "path": "Strings/14. Longest Common Prefix.py",
+          "size": 3416,
+          "ext": "py"
+        },
+        {
+          "name": "161. One Edit Distance.py",
+          "type": "file",
+          "path": "Strings/161. One Edit Distance.py",
+          "size": 1568,
+          "ext": "py"
+        },
+        {
+          "name": "1768. Merge Strings Alternately.py",
+          "type": "file",
+          "path": "Strings/1768. Merge Strings Alternately.py",
+          "size": 1753,
+          "ext": "py"
+        },
+        {
+          "name": "205. Isomorphic Strings.py",
+          "type": "file",
+          "path": "Strings/205. Isomorphic Strings.py",
+          "size": 2147,
+          "ext": "py"
+        },
+        {
+          "name": "2273. Find Resultant Array After Removing Anagrams.py",
+          "type": "file",
+          "path": "Strings/2273. Find Resultant Array After Removing Anagrams.py",
+          "size": 2293,
+          "ext": "py"
+        },
+        {
+          "name": "271. Encode and Decode Strings.py",
+          "type": "file",
+          "path": "Strings/271. Encode and Decode Strings.py",
+          "size": 2454,
+          "ext": "py"
+        },
+        {
+          "name": "49. Group Anagrams.py",
+          "type": "file",
+          "path": "Strings/49. Group Anagrams.py",
+          "size": 1898,
+          "ext": "py"
+        },
+        {
+          "name": "680. Valid Palindrome II.py",
+          "type": "file",
+          "path": "Strings/680. Valid Palindrome II.py",
+          "size": 1628,
+          "ext": "py"
+        },
+        {
+          "name": "953. Verifying an Alien Dictionary.py",
+          "type": "file",
+          "path": "Strings/953. Verifying an Alien Dictionary.py",
+          "size": 2867,
+          "ext": "py"
+        }
+      ]
+    },
+    {
+      "name": "System Design",
+      "type": "dir",
+      "path": "System Design",
+      "children": [
+        {
+          "name": "1244. Design A Leaderboard.py",
+          "type": "file",
+          "path": "System Design/1244. Design A Leaderboard.py",
+          "size": 4293,
+          "ext": "py"
+        },
+        {
+          "name": "146. LRU Cache.py",
+          "type": "file",
+          "path": "System Design/146. LRU Cache.py",
+          "size": 2371,
+          "ext": "py"
+        },
+        {
+          "name": "225. Implement Stack using Queues.py",
+          "type": "file",
+          "path": "System Design/225. Implement Stack using Queues.py",
+          "size": 2159,
+          "ext": "py"
+        },
+        {
+          "name": "232. Implement Queue using Stacks.py",
+          "type": "file",
+          "path": "System Design/232. Implement Queue using Stacks.py",
+          "size": 2765,
+          "ext": "py"
+        },
+        {
+          "name": "3508. Implement Router.py",
+          "type": "file",
+          "path": "System Design/3508. Implement Router.py",
+          "size": 4505,
+          "ext": "py"
+        },
+        {
+          "name": "355. Design Twitter.py",
+          "type": "file",
+          "path": "System Design/355. Design Twitter.py",
+          "size": 2115,
+          "ext": "py"
+        },
+        {
+          "name": "460. LFU Cache.py",
+          "type": "file",
+          "path": "System Design/460. LFU Cache.py",
+          "size": 5286,
+          "ext": "py"
+        },
+        {
+          "name": "622. Design Circular Queue.py",
+          "type": "file",
+          "path": "System Design/622. Design Circular Queue.py",
+          "size": 5912,
+          "ext": "py"
+        },
+        {
+          "name": "705. Design HashSet.py",
+          "type": "file",
+          "path": "System Design/705. Design HashSet.py",
+          "size": 2408,
+          "ext": "py"
+        },
+        {
+          "name": "706. Design HashMap.py",
+          "type": "file",
+          "path": "System Design/706. Design HashMap.py",
+          "size": 3057,
+          "ext": "py"
+        },
+        {
+          "name": "981. Time Based Key-Value Store.py",
+          "type": "file",
+          "path": "System Design/981. Time Based Key-Value Store.py",
+          "size": 3402,
+          "ext": "py"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "System Design/README.md",
+          "size": 4346,
+          "ext": "md"
+        }
+      ]
+    },
+    {
+      "name": "TEMPLATE.md",
+      "type": "file",
+      "path": "TEMPLATE.md",
+      "size": 6519,
+      "ext": "md"
+    },
+    {
+      "name": "Tries",
+      "type": "dir",
+      "path": "Tries",
+      "children": [
+        {
+          "name": "208. Implement Trie (Prefix Tree).py",
+          "type": "file",
+          "path": "Tries/208. Implement Trie (Prefix Tree).py",
+          "size": 3281,
+          "ext": "py"
+        },
+        {
+          "name": "211. Design Add and Search Words Data Structure.py",
+          "type": "file",
+          "path": "Tries/211. Design Add and Search Words Data Structure.py",
+          "size": 2810,
+          "ext": "py"
+        },
+        {
+          "name": "212. Word Search II.py",
+          "type": "file",
+          "path": "Tries/212. Word Search II.py",
+          "size": 4094,
+          "ext": "py"
+        }
+      ]
+    },
+    {
+      "name": "image-1.png",
+      "type": "file",
+      "path": "image-1.png",
+      "size": 557134,
+      "ext": "png"
+    },
+    {
+      "name": "image.png",
+      "type": "file",
+      "path": "image.png",
+      "size": 176965,
+      "ext": "png"
+    },
+    {
+      "name": "in",
+      "type": "file",
+      "path": "in",
+      "size": 14,
+      "ext": ""
+    },
+    {
+      "name": "main.py",
+      "type": "file",
+      "path": "main.py",
+      "size": 0,
+      "ext": "py"
+    },
+    {
+      "name": "out",
+      "type": "file",
+      "path": "out",
+      "size": 3,
+      "ext": ""
+    },
+    {
+      "name": "run.sh",
+      "type": "file",
+      "path": "run.sh",
+      "size": 303,
+      "ext": "sh"
+    },
+    {
+      "name": "subarry.py",
+      "type": "file",
+      "path": "subarry.py",
+      "size": 1714,
+      "ext": "py"
+    }
+  ]
+}
