@@ -265,15 +265,26 @@ pre {
   background: #fdf9f2;
   border: 1px solid rgba(31, 27, 22, 0.12);
   font-family: "Spline Sans Mono", monospace;
-  font-size: 14px;
-  line-height: 1.85;
+  font-size: 13px;
+  line-height: 1.6;
   letter-spacing: 0.1px;
   tab-size: 2;
   overflow-x: auto;
+  color: #2d241d;
 }
 
 code {
-  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: "Spline Sans Mono", monospace;
+}
+
+#codeContainer {
+  margin: 0;
+  padding: 24px;
+  border-radius: 16px;
+  background: #fdf9f2;
+  border: 1px solid rgba(31, 27, 22, 0.12);
 }
 
 .code-lines {
@@ -315,9 +326,11 @@ code {
   border: 1px solid rgba(31, 27, 22, 0.12);
   border-radius: 16px;
   padding: 28px;
-  line-height: 1.85;
+  line-height: 1.8;
   font-size: 15px;
   color: var(--text);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .markdown h1,

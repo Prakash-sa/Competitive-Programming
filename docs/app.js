@@ -8,6 +8,14 @@ const state = {
   useLocalContent: false,
 };
 
+// Configure marked for better markdown rendering
+if (window.marked) {
+  window.marked.setOptions({
+    breaks: true,
+    gfm: true,
+  });
+}
+
 const treeRoot = document.getElementById("treeRoot");
 const codeBlock = document.getElementById("codeBlock");
 const codeContainer = document.getElementById("codeContainer");
@@ -170,7 +178,8 @@ async function loadFile(path, meta = {}) {
     const text = await response.text();
     if (languageClass === "markdown" && window.marked) {
       const html = window.marked.parse(text);
-      markdownContent.innerHTML = html;
+      const sanitized = window.DOMPurify ? window.DOMPurify.sanitize(html) : html;
+      markdownContent.innerHTML = sanitized;
       markdownContent.classList.remove("hidden");
       imageContent.classList.add("hidden");
       codeContainer.classList.add("hidden");
