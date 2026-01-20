@@ -40,12 +40,12 @@ function encodePath(path) {
 }
 
 function fileUrlForPath(path) {
-  if (state.useLocalContent) {
-    // For local content, don't encode - the files are already in the correct structure
-    return `content/${path}`;
-  }
-  // For GitHub raw content, encode the path properly
   const encoded = encodePath(path);
+  if (state.useLocalContent) {
+    // For local content, use encoded path since GitHub Pages needs URL encoding
+    return `content/${encoded}`;
+  }
+  // For GitHub raw content, use encoded path
   return `https://raw.githubusercontent.com/${state.repoOwner}/${state.repoName}/${state.branch}/${encoded}`;
 }
 
@@ -113,16 +113,7 @@ async function loadFile(path, meta = {}) {
   codeBlock.className = languageClass ? `language-${languageClass}` : "";
 
   try {
-    let url = fileUrlForPath(path);
-    let response = await fetch(url);
-    
-    // If local content fails, fall back to GitHub raw content
-    if (!response.ok && state.useLocalContent) {
-      const encoded = encodePath(path);
-      url = `https://raw.githubusercontent.com/${state.repoOwner}/${state.repoName}/${state.branch}/${encoded}`;
-      response = await fetch(url);
-    }
-    
+    const response = await fetch(fileUrlForPath(path));
     if (!response.ok) {
       throw new Error(`Failed to fetch ${path}`);
     }
