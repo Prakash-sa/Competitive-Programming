@@ -263,6 +263,9 @@ input {
 
 pre {
   margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
 }
 
 code {
@@ -270,6 +273,14 @@ code {
   font-family: "Spline Sans Mono", monospace;
   display: block;
   width: 100%;
+}
+
+code pre {
+  margin: 0;
+  padding: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 #codeContainer {

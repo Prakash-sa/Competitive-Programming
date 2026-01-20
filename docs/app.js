@@ -144,6 +144,11 @@ function renderCode(text, languageClass) {
   codeBlock.innerHTML = `<span class="code-lines">${wrapped}</span>`;
 }
 
+function renderRawFile(text) {
+  codeBlock.textContent = text;
+  codeBlock.innerHTML = `<pre>${escapeHtml(text)}</pre>`;
+}
+
 function setActiveItem(element) {
   if (state.activeItem) {
     state.activeItem.classList.remove("active");
@@ -202,11 +207,11 @@ async function loadFile(path, meta = {}) {
       imageContent.classList.add("hidden");
       codeContainer.classList.add("hidden");
     } else if (languageClass === "python") {
-      // For Python files, display as plain text without rendering
+      // For Python files, display as raw plain text
       markdownContent.classList.add("hidden");
       imageContent.classList.add("hidden");
       codeContainer.classList.remove("hidden");
-      codeBlock.textContent = text;
+      renderRawFile(text);
     } else if (languageClass === "json") {
       let formatted = text;
       try {
