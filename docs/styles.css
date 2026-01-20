@@ -256,6 +256,9 @@ input {
   margin-top: 18px;
   overflow: auto;
   flex: 1;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 pre {
@@ -271,12 +274,17 @@ pre {
   tab-size: 2;
   overflow-x: auto;
   color: #2d241d;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 code {
   white-space: pre-wrap;
   word-wrap: break-word;
+  overflow-wrap: break-word;
   font-family: "Spline Sans Mono", monospace;
+  display: block;
+  width: 100%;
 }
 
 #codeContainer {
@@ -289,19 +297,30 @@ code {
 
 .code-lines {
   display: block;
+  width: 100%;
 }
 
 .code-line {
   display: grid;
   grid-template-columns: 44px 1fr;
   gap: 14px;
-  align-items: start;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 1.6em;
 }
 
 .line-number {
   text-align: right;
   color: rgba(31, 27, 22, 0.45);
   user-select: none;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.line-content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .image-viewer {
