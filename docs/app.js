@@ -118,64 +118,7 @@ function escapeHtml(text) {
   return text.replace(/[&<>]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[char]));
 }
 
-function renderPythonWithCommentBlocks(text) {
-  const lines = text.split("\n");
-  const delimiters = ["'''", '"""'];
-  let inBlock = false;
-  let blockDelim = "";
-
-  const wrapped = lines
-    .map((line, index) => {
-      let output = "";
-      let cursor = 0;
-
-      while (cursor < line.length) {
-        if (inBlock) {
-          const endIndex = line.indexOf(blockDelim, cursor);
-          if (endIndex === -1) {
-            output += `<span class="hljs-comment">${escapeHtml(line.slice(cursor))}</span>`;
-            cursor = line.length;
-          } else {
-            output += `<span class="hljs-comment">${escapeHtml(line.slice(cursor, endIndex + 3))}</span>`;
-            cursor = endIndex + 3;
-            inBlock = false;
-            blockDelim = "";
-          }
-        } else {
-          const nextSingle = line.indexOf(delimiters[0], cursor);
-          const nextDouble = line.indexOf(delimiters[1], cursor);
-          const candidates = [nextSingle, nextDouble].filter((value) => value !== -1);
-          if (!candidates.length) {
-            output += escapeHtml(line.slice(cursor));
-            cursor = line.length;
-          } else {
-            const nextIndex = Math.min(...candidates);
-            const delim = nextIndex === nextSingle ? delimiters[0] : delimiters[1];
-            output += escapeHtml(line.slice(cursor, nextIndex));
-            inBlock = true;
-            blockDelim = delim;
-            cursor = nextIndex;
-          }
-        }
-      }
-
-      if (!output) {
-        output = "&nbsp;";
-      }
-      const lineNumber = index + 1;
-      return `<span class="code-line"><span class="line-number">${lineNumber}</span><span class="line-content">${output}</span></span>`;
-    })
-    .join("\n");
-
-  codeBlock.innerHTML = `<span class="code-lines">${wrapped}</span>`;
-}
-
 function renderCode(text, languageClass) {
-  if (languageClass === "python") {
-    renderPythonWithCommentBlocks(text);
-    return;
-  }
-
   let highlighted;
   try {
     if (window.hljs && languageClass) {
