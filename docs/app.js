@@ -40,10 +40,12 @@ function encodePath(path) {
 }
 
 function fileUrlForPath(path) {
-  const encoded = encodePath(path);
   if (state.useLocalContent) {
-    return `content/${encoded}`;
+    // For local content, don't encode - the files are already in the correct structure
+    return `content/${path}`;
   }
+  // For GitHub raw content, encode the path properly
+  const encoded = encodePath(path);
   return `https://raw.githubusercontent.com/${state.repoOwner}/${state.repoName}/${state.branch}/${encoded}`;
 }
 
