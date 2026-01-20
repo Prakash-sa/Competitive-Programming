@@ -10,6 +10,9 @@ const state = {
 
 const treeRoot = document.getElementById("treeRoot");
 const codeBlock = document.getElementById("codeBlock");
+const codeContainer = document.getElementById("codeContainer");
+const markdownContent = document.getElementById("markdownContent");
+const imageContent = document.getElementById("imageContent");
 const contentTitle = document.getElementById("contentTitle");
 const contentFooter = document.getElementById("contentFooter");
 const copyLink = document.getElementById("copyLink");
@@ -79,6 +82,30 @@ function languageForPath(path) {
   return map[ext] || "";
 }
 
+function isImageFile(path) {
+  const ext = fileExtension(path);
+  return ["png", "jpg", "jpeg", "gif", "svg", "webp"].includes(ext);
+}
+
+function renderCode(text, languageClass) {
+  const highlighted = window.hljs
+    ? (languageClass
+        ? window.hljs.highlight(text, { language: languageClass }).value
+        : window.hljs.highlightAuto(text).value)
+    : text.replace(/[&<>]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[char]));
+
+  const lines = highlighted.split("\n");
+  const wrapped = lines
+    .map((line, index) => {
+      const lineNumber = index + 1;
+      const content = line.length ? line : "&nbsp;";
+      return `<span class="code-line"><span class="line-number">${lineNumber}</span><span class="line-content">${content}</span></span>`;
+    })
+    .join("\n");
+
+  codeBlock.innerHTML = `<span class="code-lines">${wrapped}</span>`;
+}
+
 function setActiveItem(element) {
   if (state.activeItem) {
     state.activeItem.classList.remove("active");
@@ -117,12 +144,44 @@ async function loadFile(path, meta = {}) {
     if (!response.ok) {
       throw new Error(`Failed to fetch ${path}`);
     }
+    if (isImageFile(path)) {
+      const blob = await response.blob();
+      const imageUrl = URL.createObjectURL(blob);
+      imageContent.innerHTML = `<img src="${imageUrl}" alt="${path}" />`;
+      imageContent.classList.remove("hidden");
+      markdownContent.classList.add("hidden");
+      codeContainer.classList.add("hidden");
+      return;
+    }
+
     const text = await response.text();
-    codeBlock.textContent = text;
-    if (window.hljs) {
-      window.hljs.highlightElement(codeBlock);
+    if (languageClass === "markdown" && window.marked) {
+      const html = window.marked.parse(text);
+      markdownContent.innerHTML = html;
+      markdownContent.classList.remove("hidden");
+      imageContent.classList.add("hidden");
+      codeContainer.classList.add("hidden");
+    } else if (languageClass === "json") {
+      let formatted = text;
+      try {
+        formatted = JSON.stringify(JSON.parse(text), null, 2);
+      } catch (error) {
+        formatted = text;
+      }
+      markdownContent.classList.add("hidden");
+      imageContent.classList.add("hidden");
+      codeContainer.classList.remove("hidden");
+      renderCode(formatted, languageClass);
+    } else {
+      markdownContent.classList.add("hidden");
+      imageContent.classList.add("hidden");
+      codeContainer.classList.remove("hidden");
+      renderCode(text, languageClass);
     }
   } catch (error) {
+    markdownContent.classList.add("hidden");
+    imageContent.classList.add("hidden");
+    codeContainer.classList.remove("hidden");
     codeBlock.textContent = `Unable to load ${path}. ${error.message}`;
   }
 }

@@ -260,13 +260,124 @@ input {
 
 pre {
   margin: 0;
-  padding: 20px;
+  padding: 24px;
   border-radius: 16px;
-  background: #fbf8f3;
-  border: 1px solid rgba(31, 27, 22, 0.08);
+  background: #fdf9f2;
+  border: 1px solid rgba(31, 27, 22, 0.12);
   font-family: "Spline Sans Mono", monospace;
-  font-size: 13px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.85;
+  letter-spacing: 0.1px;
+  tab-size: 2;
+  overflow-x: auto;
+}
+
+code {
+  white-space: pre;
+}
+
+.code-lines {
+  display: block;
+}
+
+.code-line {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.line-number {
+  text-align: right;
+  color: rgba(31, 27, 22, 0.45);
+  user-select: none;
+}
+
+.image-viewer {
+  background: #fdf9f2;
+  border: 1px solid rgba(31, 27, 22, 0.12);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-viewer img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(31, 27, 22, 0.18);
+}
+
+.markdown {
+  background: #fdf9f2;
+  border: 1px solid rgba(31, 27, 22, 0.12);
+  border-radius: 16px;
+  padding: 28px;
+  line-height: 1.85;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.markdown h1 {
+  font-size: 26px;
+}
+
+.markdown h2 {
+  font-size: 22px;
+}
+
+.markdown h3 {
+  font-size: 18px;
+}
+
+.markdown p {
+  margin: 12px 0;
+  color: #2d241d;
+}
+
+.markdown ul,
+.markdown ol {
+  padding-left: 22px;
+  margin: 12px 0;
+}
+
+.markdown li {
+  margin: 6px 0;
+}
+
+.markdown code {
+  font-family: "Spline Sans Mono", monospace;
+  background: rgba(31, 27, 22, 0.08);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+.markdown pre {
+  margin: 16px 0;
+  padding: 18px;
+  background: #f7f2ea;
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.markdown a {
+  color: var(--accent-dark);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(143, 61, 30, 0.3);
+}
+
+.markdown a:hover {
+  border-bottom-color: rgba(143, 61, 30, 0.8);
 }
 
 .content-footer {
