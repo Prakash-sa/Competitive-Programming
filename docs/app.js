@@ -88,11 +88,24 @@ function isImageFile(path) {
 }
 
 function renderCode(text, languageClass) {
-  const highlighted = window.hljs
-    ? (languageClass
-        ? window.hljs.highlight(text, { language: languageClass }).value
-        : window.hljs.highlightAuto(text).value)
-    : text.replace(/[&<>]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[char]));
+  let highlighted;
+  try {
+    if (window.hljs && languageClass) {
+      highlighted = window.hljs.highlight(text, { language: languageClass }).value;
+    } else if (window.hljs) {
+      highlighted = window.hljs.highlightAuto(text).value;
+    } else {
+      highlighted = text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+    }
+  } catch (error) {
+    highlighted = text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
 
   const lines = highlighted.split("\n");
   const wrapped = lines
