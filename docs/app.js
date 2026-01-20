@@ -113,7 +113,16 @@ async function loadFile(path, meta = {}) {
   codeBlock.className = languageClass ? `language-${languageClass}` : "";
 
   try {
-    const response = await fetch(fileUrlForPath(path));
+    let url = fileUrlForPath(path);
+    let response = await fetch(url);
+    
+    // If local content fails, fall back to GitHub raw content
+    if (!response.ok && state.useLocalContent) {
+      const encoded = encodePath(path);
+      url = `https://raw.githubusercontent.com/${state.repoOwner}/${state.repoName}/${state.branch}/${encoded}`;
+      response = await fetch(url);
+    }
+    
     if (!response.ok) {
       throw new Error(`Failed to fetch ${path}`);
     }
