@@ -1,5 +1,6 @@
 {
   "repoOwner": "prakash-sa",
   "repoName": "Competitive-Programming",
-  "branch": "master"
+  "branch": "master",
+  "useLocalContent": true
 }

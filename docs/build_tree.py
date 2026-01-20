@@ -1,8 +1,10 @@
 import json
 import os
+import shutil
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 OUTPUT = os.path.join(ROOT, "docs", "tree.json")
+CONTENT_ROOT = os.path.join(ROOT, "docs", "content")
 EXCLUDE_DIRS = {".git", "docs", "__pycache__"}
 
 
@@ -46,10 +48,33 @@ def build_tree(current_path):
 
 
 def main():
+    if os.path.exists(CONTENT_ROOT):
+        shutil.rmtree(CONTENT_ROOT)
+    os.makedirs(CONTENT_ROOT, exist_ok=True)
+
     tree = build_tree(ROOT)
     with open(OUTPUT, "w", encoding="utf-8") as handle:
         json.dump(tree, handle, indent=2)
+
+    for current_root, dirs, files in os.walk(ROOT):
+        dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS and not d.startswith(".")]
+        rel_root = os.path.relpath(current_root, ROOT)
+        target_root = os.path.join(CONTENT_ROOT, rel_root)
+        os.makedirs(target_root, exist_ok=True)
+
+        for filename in files:
+            if filename.startswith("."):
+                continue
+            src_path = os.path.join(current_root, filename)
+            rel_path = os.path.relpath(src_path, ROOT)
+            if rel_path.startswith("docs/"):
+                continue
+            dest_path = os.path.join(CONTENT_ROOT, rel_path)
+            os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+            shutil.copy2(src_path, dest_path)
+
     print(f"Wrote {OUTPUT}")
+    print(f"Mirrored content into {CONTENT_ROOT}")
 
 
 if __name__ == "__main__":

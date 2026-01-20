@@ -5,6 +5,7 @@ const state = {
   branch: "main",
   currentPath: "README.md",
   activeItem: null,
+  useLocalContent: false,
 };
 
 const treeRoot = document.getElementById("treeRoot");
@@ -38,8 +39,11 @@ function encodePath(path) {
     .join("/");
 }
 
-function rawUrlForPath(path) {
+function fileUrlForPath(path) {
   const encoded = encodePath(path);
+  if (state.useLocalContent) {
+    return `content/${encoded}`;
+  }
   return `https://raw.githubusercontent.com/${state.repoOwner}/${state.repoName}/${state.branch}/${encoded}`;
 }
 
@@ -107,7 +111,7 @@ async function loadFile(path, meta = {}) {
   codeBlock.className = languageClass ? `language-${languageClass}` : "";
 
   try {
-    const response = await fetch(rawUrlForPath(path));
+    const response = await fetch(fileUrlForPath(path));
     if (!response.ok) {
       throw new Error(`Failed to fetch ${path}`);
     }
@@ -275,6 +279,7 @@ async function init() {
   state.repoOwner = config.repoOwner || detected?.owner || "your-github-username";
   state.repoName = config.repoName || detected?.repo || "your-repo-name";
   state.branch = config.branch || "main";
+  state.useLocalContent = Boolean(config.useLocalContent);
 
   repoLink.href = `https://github.com/${state.repoOwner}/${state.repoName}`;
 
@@ -301,7 +306,7 @@ async function init() {
 
   copyLink.addEventListener("click", async () => {
     try {
-      await navigator.clipboard.writeText(rawUrlForPath(state.currentPath));
+      await navigator.clipboard.writeText(fileUrlForPath(state.currentPath));
       copyLink.textContent = "Copied";
       setTimeout(() => {
         copyLink.textContent = "Copy raw link";
