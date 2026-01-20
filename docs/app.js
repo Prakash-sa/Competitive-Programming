@@ -43,6 +43,25 @@ function detectRepoFromLocation() {
   return null;
 }
 
+function pathFromLocation() {
+  const params = new URLSearchParams(window.location.search);
+  const queryPath = params.get("path");
+  if (queryPath) {
+    return decodeURIComponent(queryPath);
+  }
+  if (window.location.hash.length > 1) {
+    return decodeURIComponent(window.location.hash.slice(1));
+  }
+  return null;
+}
+
+function updateLocationWithPath(path) {
+  const params = new URLSearchParams(window.location.search);
+  params.set("path", encodeURIComponent(path));
+  const newUrl = `${window.location.pathname}?${params.toString()}`;
+  window.history.replaceState({}, "", newUrl);
+}
+
 function encodePath(path) {
   return path
     .split("/")
@@ -156,6 +175,7 @@ async function loadFile(path, meta = {}) {
   state.currentPath = path;
   updateContentHeader(path);
   updateFooter(meta);
+  updateLocationWithPath(path);
 
   const languageClass = languageForPath(path);
   codeBlock.className = languageClass ? `language-${languageClass}` : "";
@@ -358,6 +378,7 @@ async function loadConfig() {
 async function init() {
   const config = await loadConfig();
   const detected = detectRepoFromLocation();
+  const initialPath = pathFromLocation();
 
   state.repoOwner = config.repoOwner || detected?.owner || "your-github-username";
   state.repoName = config.repoName || detected?.repo || "your-repo-name";
@@ -402,6 +423,9 @@ async function init() {
     }
   });
 
+  if (initialPath) {
+    state.currentPath = initialPath;
+  }
   loadFile(state.currentPath, { type: "file" });
 }
 
