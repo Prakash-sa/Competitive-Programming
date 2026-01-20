@@ -201,6 +201,12 @@ async function loadFile(path, meta = {}) {
       markdownContent.classList.remove("hidden");
       imageContent.classList.add("hidden");
       codeContainer.classList.add("hidden");
+    } else if (languageClass === "python") {
+      // For Python files, display as plain text without rendering
+      markdownContent.classList.add("hidden");
+      imageContent.classList.add("hidden");
+      codeContainer.classList.remove("hidden");
+      codeBlock.textContent = text;
     } else if (languageClass === "json") {
       let formatted = text;
       try {
