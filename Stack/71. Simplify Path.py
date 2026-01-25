@@ -66,7 +66,6 @@ class Solution:
         return "/"+"/".join(stack)
 
 
-
 # Complexity Analysis
 
 # Time Complexity: O(N) if there are N characters in the original path. First, we spend O(N) trying to split the input path into components and then we process each component one by one which is again an O(N) operation. We can get rid of the splitting part and just string together the characters and form directory names etc. However, that would be too complicated and not worth depicting in the implementation. The main idea of this algorithm is to use a stack. How you decide to process the input string is a personal choice.

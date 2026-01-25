@@ -55,7 +55,6 @@ class Solution:
                 stack.append(t)
         return int(stack[0])
 
-
 # Complexity Analysis
 # Let n be the length of the list.
 # Time Complexity : O(n).

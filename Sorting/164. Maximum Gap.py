@@ -82,8 +82,3 @@ class Solution:
             prev_max=bucket_max[i]
 
         return max_gap
-
-
-
-
-
