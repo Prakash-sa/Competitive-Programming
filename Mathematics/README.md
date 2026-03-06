@@ -117,6 +117,16 @@ a = 3,\ m = 7 \\
 \gcd(3, 7) = 1 \implies \text{inverse exists}
 $$
 
+### About Coprime
+
+Two integers $a$ and $b$ are said to be **coprime** (or relatively prime) if their greatest common divisor (GCD) is 1:
+
+$$
+\gcd(a, b) = 1
+$$
+
+This means $a$ and $b$ share no common positive integer factors except 1. Coprimality is crucial in modular arithmetic because a modular inverse of $a$ modulo $m$ exists if and only if $a$ and $m$ are coprime. For example, 8 and 15 are coprime ($\gcd(8, 15) = 1$), but 8 and 12 are not ($\gcd(8, 12) = 4$).
+
 ---
 
 ## 6. Composite Expressions in Modular Arithmetic
