@@ -70,31 +70,27 @@ To divide $a$ by $b$ modulo $m$, find the modular inverse of $b$ (i.e., $b^{-1}$
 
 ### Methods to Find Modular Inverse
 
-#### a) Extended Euclidean Algorithm (C++ Example)
+#### a) Extended Euclidean Algorithm (Python Example)
 
-```cpp
-int mod_inv(int a, int m) {
-	int m0 = m, t, q;
-	int x0 = 0, x1 = 1;
-	if (m == 1) return 0;
-	while (a > 1) {
-		q = a / m;
-		t = m;
-		m = a % m, a = t;
-		t = x0;
-		x0 = x1 - q * x0;
-		x1 = t;
-	}
-	if (x1 < 0) x1 += m0;
-	return x1;
-}
+```python
+def mod_inv(a, m):
+    m0, x0, x1 = m, 0, 1
+    if m == 1:
+        return 0
+    while a > 1:
+        q = a // m
+        a, m = m, a % m
+        x0, x1 = x1 - q * x0, x0
+    if x1 < 0:
+        x1 += m0
+    return x1
 
-int mod_div(int a, int b, int m) {
-	a %= m;
-	int inv = mod_inv(b, m);
-	if (inv == -1) return -1; // Modular inverse doesn't exist
-	return (a * inv) % m;
-}
+def mod_div(a, b, m):
+    a %= m
+    inv = mod_inv(b, m)
+    if inv == -1:
+        return -1  # Modular inverse doesn't exist
+    return (a * inv) % m
 ```
 
 #### b) Fermat's Little Theorem (when $m$ is prime)
