@@ -169,6 +169,10 @@ def tsp_held_karp(dist):
 
 ### 4. Profile/Broken Profile DP
 
+**Grid Direction Heuristic:**
+- If movement is effectively one-way along dependencies, such as only right/down or only left/up, it is usually a DP problem.
+- If movement is allowed in both directions across those dependencies, such as both right/down and left/up, prefer BFS/graph traversal.
+
 ```python
 def tile_grid_broken_profile(width, height):
     """
