@@ -2,6 +2,19 @@
 
 This directory stores advanced range query data structures in Python.
 
+## Sqrt decomposition (`SQRT_DECOMPOSITION.md`)
+- Splits an array into blocks of size about `sqrt(n)`.
+- Precomputes one summary per block (sum/min/max/frequency, depending on the problem).
+- Best fit when:
+  - You need something simpler than a segment tree.
+  - Constraints are moderate (`n, q` around `10^5`).
+  - Queries are online and updates are not too heavy.
+- Typical complexity:
+  - Build: `O(n)`
+  - Query: `O(sqrt(n))`
+  - Point update: `O(1)` or `O(sqrt(n))`, depending on block metadata
+- Closely related: Mo's algorithm uses the same block intuition for offline queries.
+
 ## Fenwick tree (`feenwick.py`)
 - Supports point updates and prefix sums in `O(log n)` using least-significant-bit jumps.
 - Ideal for:
@@ -26,3 +39,12 @@ This directory stores advanced range query data structures in Python.
 ## When to use which
 - Fenwick tree: easier to code, handles prefix queries and range updates with small tweaks.
 - Segment tree: more flexible (min/max, gcd, lazy propagation, two-dimensional variants).
+- Sqrt decomposition: simpler than a segment tree, strong fallback for online range queries when `O(sqrt(n))` is fast enough.
+- Mo's algorithm: use for offline range queries, especially distinct-count and frequency-style problems.
+
+## Contest decision guide
+- Static range sum, no updates: prefix sum.
+- Prefix/range sum with point updates: Fenwick tree.
+- Complex online range queries or heavy updates: segment tree.
+- Medium constraints and faster implementation pressure: sqrt decomposition.
+- Offline frequency/distinct queries: Mo's algorithm.

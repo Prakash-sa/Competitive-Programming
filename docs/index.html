@@ -1,70 +1,149 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Competitive Programming Library</title>
+    <title>CP Interview Prep — Competitive Programming Library</title>
+    <meta name="description" content="Curated competitive programming solutions organized by topic for interview preparation" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css"
+      id="hljs-theme"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=4" />
   </head>
   <body>
-    <div class="background"></div>
-    <header class="topbar">
-      <div class="brand">
-        <span class="brand-mark">CP</span>
-        <div>
-          <div class="brand-title">Competitive Programming Library</div>
-          <div class="brand-subtitle">Curated solutions with a living index</div>
+    <!-- Search Modal -->
+    <div class="search-modal-overlay" id="searchModal">
+      <div class="search-modal">
+        <div class="search-modal-input-wrap">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input id="searchModalInput" type="text" placeholder="Search topics, problems, files..." autocomplete="off" />
+          <kbd class="search-kbd">ESC</kbd>
         </div>
+        <div class="search-results" id="searchResults"></div>
       </div>
-      <div class="topbar-actions">
-        <button class="ghost" id="sidebarToggle" type="button">Toggle Index</button>
-        <a class="cta" id="repoLink" href="#" target="_blank" rel="noreferrer">View on GitHub</a>
-      </div>
-    </header>
+    </div>
 
-    <div class="app">
-      <aside class="sidebar" id="sidebar">
-        <div class="sidebar-header">
+    <!-- Main Layout -->
+    <nav class="navbar" id="navbar">
+      <div class="navbar-inner">
+        <div class="navbar-brand">
+          <div class="brand-logo">CP</div>
           <div>
-            <div class="sidebar-title">Navigator</div>
-            <div class="sidebar-subtitle">Folders stay collapsed until you expand them.</div>
+            <div class="brand-name">Interview Prep</div>
+            <div class="brand-tagline">Competitive Programming Library</div>
           </div>
-          <button class="ghost" id="collapseAll" type="button">Collapse all</button>
         </div>
-        <div class="search">
-          <input id="searchInput" type="search" placeholder="Search folders or files" />
+        <div class="navbar-actions">
+          <button class="nav-btn search-trigger" id="searchTrigger" title="Search (Ctrl+K)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <span>Search</span>
+            <kbd>Ctrl K</kbd>
+          </button>
+          <button class="nav-btn icon-btn" id="themeToggle" title="Toggle dark mode">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <div class="progress-badge" id="progressBadge" title="Revision progress">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span id="progressText">0%</span>
+          </div>
+          <a class="nav-btn cta-btn" id="repoLink" href="#" target="_blank" rel="noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
         </div>
-        <div class="tree" id="treeRoot"></div>
+        <button class="nav-btn icon-btn mobile-menu-btn" id="mobileMenuBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="layout" id="layout">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+          <div class="sidebar-section-label">TOPICS</div>
+          <button class="collapse-btn" id="collapseAll" title="Collapse all">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+          </button>
+        </div>
+        <div class="sidebar-tree" id="treeRoot"></div>
       </aside>
 
-      <main class="content">
-        <div class="content-header">
-          <div class="content-title" id="contentTitle">README.md</div>
-          <div class="content-actions">
-            <button class="ghost" id="copyLink" type="button">Copy raw link</button>
-            <a class="ghost" id="openOnGitHub" href="#" target="_blank" rel="noreferrer">Open on GitHub</a>
+      <!-- Content Area -->
+      <main class="main" id="main">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb" id="breadcrumb"></div>
+
+        <!-- Content Header -->
+        <div class="content-header" id="contentHeader">
+          <div class="content-header-left">
+            <h1 class="content-title" id="contentTitle">README.md</h1>
+            <div class="content-meta" id="contentMeta"></div>
+          </div>
+          <div class="content-header-right">
+            <button class="header-btn" id="markReviewed" title="Mark as reviewed">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Mark Reviewed</span>
+            </button>
+            <a class="header-btn" id="openOnGitHub" href="#" target="_blank" rel="noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              GitHub
+            </a>
           </div>
         </div>
-        <div class="content-body">
-          <div id="markdownContent" class="markdown hidden"></div>
-          <div id="imageContent" class="image-viewer hidden"></div>
-          <pre id="codeContainer"><code id="codeBlock" class="language-markdown"></code></pre>
+
+        <!-- Content Body -->
+        <div class="content-body" id="contentBody">
+          <!-- Welcome screen (shown by default) -->
+          <div class="welcome" id="welcomeScreen">
+            <div class="welcome-hero">
+              <h2>Welcome to your Interview Prep Library</h2>
+              <p>Browse topics from the sidebar, or search with <kbd>Ctrl</kbd> + <kbd>K</kbd></p>
+            </div>
+            <div class="topic-grid" id="topicGrid"></div>
+            <div class="stats-bar" id="statsBar"></div>
+          </div>
+
+          <!-- File content views -->
+          <div class="file-view hidden" id="fileView">
+            <div id="markdownContent" class="markdown-view hidden"></div>
+            <div id="imageContent" class="image-view hidden"></div>
+            <div id="codeView" class="code-view hidden">
+              <div class="code-toolbar">
+                <span class="code-lang" id="codeLang"></span>
+                <button class="code-copy-btn" id="codeCopyBtn" title="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div id="codeContainer"><div id="codeBlock"></div></div>
+            </div>
+          </div>
         </div>
-        <div class="content-footer" id="contentFooter"></div>
       </main>
     </div>
 
+    <!-- Keyboard shortcuts help -->
+    <div class="shortcuts-toast hidden" id="shortcutsToast">
+      <div class="shortcuts-grid">
+        <div><kbd>Ctrl K</kbd> Search</div>
+        <div><kbd>Ctrl B</kbd> Toggle sidebar</div>
+        <div><kbd>Ctrl D</kbd> Dark mode</div>
+        <div><kbd>?</kbd> This help</div>
+      </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
     <script src="app.js"></script>
