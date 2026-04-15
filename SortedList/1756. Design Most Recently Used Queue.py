@@ -33,6 +33,8 @@ At most 2000 calls will be made to fetch.
 
 Follow up: Finding an O(n) algorithm per fetch is a bit easy. Can you find an algorithm with a better complexity for each fetch call?
 '''
+from sortedcontainers import SortedList
+
 class MRUQueue:
     def __init__(self, n: int):
         self.queue=SortedList((position,value) for position,value in enumerate(range(1,n+1)))
