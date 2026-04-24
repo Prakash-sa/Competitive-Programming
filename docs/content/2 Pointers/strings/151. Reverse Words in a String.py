@@ -46,28 +46,40 @@ class Solution:
             ans.append(s.pop())
         return " ".join(ans)
 
+
+# since strings in python are immutable so have to convert that into the list
 class Solution:
-    def reverseWords(self, s: str) -> str:
-        left,right=0,len(s)-1
 
-        while left<=right and s[left]==" ":
+    def reverse(self,arr,left,right):
+        while left<right:
+            arr[left],arr[right]=arr[right],arr[left]
             left+=1
-
-        while left<=right and s[right]==" ":
             right-=1
 
-        d,word=deque(),[]
+    def reverseWords(self, s: str) -> str:
+        arr=list(s)
+        n=len(arr)
 
-        while left<=right:
-            if s[left]==" " and word:
-                d.appendleft("".join(word))
-                word=[]
-            elif s[left]!=" ":
-                word.append(s[left])
-            left+=1
-        d.appendleft("".join(word))
+        self.reverse(arr,0,n-1)
 
-        return " ".join(d)
+        write=0
+        read=0
+
+        while read<n:
+            if arr[read]!=' ':
+                if write!=0:
+                    arr[write]=' '
+                    write+=1
+                start=write
+                while read<n and arr[read]!=' ':
+                    arr[write]=arr[read]
+                    write+=1
+                    read+=1
+
+                self.reverse(arr,start,write-1)
+            else:
+                read+=1
+        return ''.join(arr[:write])
 
 
 # Complexity Analysis

@@ -41,8 +41,6 @@ words[i] consists of lowercase English letters.
 
 class Solution:
 
-
-
     def removeAnagrams(self, words: List[str]) -> List[str]:
         ans=[]
         ans.append(words[0])

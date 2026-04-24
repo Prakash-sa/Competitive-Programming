@@ -88,3 +88,54 @@ class Solution:
 
 # Space complexity: O(1)
 # We don't count the answer as part of the space complexity. Thus, all we use are a few integer variables.
+
+
+# Manacher's Algorithm
+
+class Solution:
+    def longestPalindrome(self,s: str) -> str:
+        # 1. Insert separators to handle even-length cases uniformly
+        t = "#" + "#".join(s) + "#"
+        n = len(t)
+        
+        # array to store palindrome radii
+        p = [0] * n
+        
+        # current right boundary and center of the longest known palindrome
+        center = right = 0
+        
+        for i in range(n):
+            mirror = 2*center - i   # mirrored index relative to current center
+            
+            # 2. Use previously known palindrome if inside boundary
+            if i < right:
+                p[i] = min(right - i, p[mirror])
+            
+            # 3. Try to expand around i
+            while (i + p[i] + 1 < n and i - p[i] - 1 >= 0 and 
+                t[i + p[i] + 1] == t[i - p[i] - 1]):
+                p[i] += 1
+            
+            # 4. Update center + right boundary if extended
+            if i + p[i] > right:
+                center = i
+                right = i + p[i]
+        
+        # 5. Find longest radius
+        max_len = max(p)
+        max_center = p.index(max_len)
+        
+        # convert center back to original indices (remove '#')
+        start = (max_center - max_len) // 2
+        return s[start: start + max_len]
+
+
+# Complexity Analysis
+# Given n as the length of s,
+
+# Time complexity: O(n)
+# From Wikipedia (the implementation they describe is slightly different from the above code, but it's the same algorithm):
+# The algorithm runs in linear time. This can be seen by noting that Center strictly increases after each outer loop and the sum Center + Radius is non-decreasing. Moreover, the number of operations in the first inner loop is linear in the increase of the sum Center + Radius while the number of operations in the second inner loop is linear in the increase of Center. Since Center ≤ 2n+1 and Radius ≤ n, the total number of operations in the first and second inner loops is O(n) and the total number of operations in the outer loop, other than those in the inner loops, is also O(n). The overall running time is therefore O(n).
+
+# Space complexity: O(n)
+# We use sPrime and palindromeRadii, both of length O(n).

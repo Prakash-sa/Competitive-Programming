@@ -238,3 +238,17 @@ Typical choices:
 ## Recommended study order
 
 Prefix Sum -> Fenwick Tree -> Sqrt Decomposition -> Segment Tree -> Mo's Algorithm
+
+
+## Sqrt decomposition (`SQRT_DECOMPOSITION.md`)
+- Splits an array into blocks of size about `sqrt(n)`.
+- Precomputes one summary per block (sum/min/max/frequency, depending on the problem).
+- Best fit when:
+  - You need something simpler than a segment tree.
+  - Constraints are moderate (`n, q` around `10^5`).
+  - Queries are online and updates are not too heavy.
+- Typical complexity:
+  - Build: `O(n)`
+  - Query: `O(sqrt(n))`
+  - Point update: `O(1)` or `O(sqrt(n))`, depending on block metadata
+- Closely related: Mo's algorithm uses the same block intuition for offline queries.

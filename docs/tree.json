@@ -143,7 +143,7 @@
               "name": "151. Reverse Words in a String.py",
               "type": "file",
               "path": "2 Pointers/strings/151. Reverse Words in a String.py",
-              "size": 1995,
+              "size": 2313,
               "ext": "py"
             },
             {
@@ -157,7 +157,7 @@
               "name": "5. Longest Palindromic Substring.py",
               "type": "file",
               "path": "2 Pointers/strings/5. Longest Palindromic Substring.py",
-              "size": 3239,
+              "size": 5450,
               "ext": "py"
             },
             {
@@ -261,6 +261,12 @@
           "ext": "py"
         },
         {
+          "name": "2D varioation",
+          "type": "dir",
+          "path": "Binary Search/2D varioation",
+          "children": []
+        },
+        {
           "name": "315. Count of Smaller Numbers After Self.py",
           "type": "file",
           "path": "Binary Search/315. Count of Smaller Numbers After Self.py",
@@ -357,6 +363,40 @@
           "path": "Binary Search/875. Koko Eating Bananas.py",
           "size": 1741,
           "ext": "py"
+        },
+        {
+          "name": "Atomic Items",
+          "type": "dir",
+          "path": "Binary Search/Atomic Items",
+          "children": []
+        },
+        {
+          "name": "Binary Search.md",
+          "type": "file",
+          "path": "Binary Search/Binary Search.md",
+          "size": 48,
+          "ext": "md"
+        },
+        {
+          "name": "Sweep Coverage",
+          "type": "dir",
+          "path": "Binary Search/Sweep Coverage",
+          "children": [
+            {
+              "name": "2064. Minimized Maximum of Products Distributed to Any Store.py",
+              "type": "file",
+              "path": "Binary Search/Sweep Coverage/2064. Minimized Maximum of Products Distributed to Any Store.py",
+              "size": 1993,
+              "ext": "py"
+            },
+            {
+              "name": "Painter's Partition.py",
+              "type": "file",
+              "path": "Binary Search/Sweep Coverage/Painter's Partition.py",
+              "size": 0,
+              "ext": "py"
+            }
+          ]
         },
         {
           "name": "Upper Bound & Lower Bound",
@@ -816,7 +856,7 @@
           "name": "DP_ENHANCED.md",
           "type": "file",
           "path": "Dynamic Programming/DP_ENHANCED.md",
-          "size": 10733,
+          "size": 11026,
           "ext": "md"
         },
         {
@@ -940,6 +980,13 @@
               "type": "file",
               "path": "Dynamic Programming/Kadane/152. Maximum Product Subarray.py",
               "size": 1432,
+              "ext": "py"
+            },
+            {
+              "name": "1594. Maximum Non Negative Product in a Matrix.py",
+              "type": "file",
+              "path": "Dynamic Programming/Kadane/1594. Maximum Non Negative Product in a Matrix.py",
+              "size": 2415,
               "ext": "py"
             },
             {
@@ -1274,6 +1321,27 @@
       "ext": "md"
     },
     {
+      "name": "Fenwick Tree",
+      "type": "dir",
+      "path": "Fenwick Tree",
+      "children": [
+        {
+          "name": "1756. Design Most Recently Used Queue.py",
+          "type": "file",
+          "path": "Fenwick Tree/1756. Design Most Recently Used Queue.py",
+          "size": 3437,
+          "ext": "py"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "Fenwick Tree/README.md",
+          "size": 598,
+          "ext": "md"
+        }
+      ]
+    },
+    {
       "name": "Graph",
       "type": "dir",
       "path": "Graph",
@@ -1302,6 +1370,20 @@
               "type": "file",
               "path": "Graph/Bellman Ford/787. Cheapest Flights Within K Stops.py",
               "size": 3335,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Bridges",
+          "type": "dir",
+          "path": "Graph/Bridges",
+          "children": [
+            {
+              "name": "Greek Traveller.py",
+              "type": "file",
+              "path": "Graph/Bridges/Greek Traveller.py",
+              "size": 2724,
               "ext": "py"
             }
           ]
@@ -2192,13 +2274,6 @@
           "ext": "py"
         },
         {
-          "name": "50. Pow(x, n).py",
-          "type": "file",
-          "path": "Mathematics/50. Pow(x, n).py",
-          "size": 981,
-          "ext": "py"
-        },
-        {
           "name": "54. Spiral Matrix.py",
           "type": "file",
           "path": "Mathematics/54. Spiral Matrix.py",
@@ -2232,6 +2307,53 @@
           "path": "Mathematics/867. Transpose Matrix.py",
           "size": 1009,
           "ext": "py"
+        },
+        {
+          "name": "Combinatorics",
+          "type": "dir",
+          "path": "Mathematics/Combinatorics",
+          "children": []
+        },
+        {
+          "name": "Modular Arithmetic",
+          "type": "dir",
+          "path": "Mathematics/Modular Arithmetic",
+          "children": [
+            {
+              "name": "50. Pow(x, n).py",
+              "type": "file",
+              "path": "Mathematics/Modular Arithmetic/50. Pow(x, n).py",
+              "size": 981,
+              "ext": "py"
+            },
+            {
+              "name": "Exponentiation AZ101.py",
+              "type": "file",
+              "path": "Mathematics/Modular Arithmetic/Exponentiation AZ101.py",
+              "size": 1188,
+              "ext": "py"
+            },
+            {
+              "name": "Solve the Equation.py",
+              "type": "file",
+              "path": "Mathematics/Modular Arithmetic/Solve the Equation.py",
+              "size": 2001,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "Number Theory",
+          "type": "dir",
+          "path": "Mathematics/Number Theory",
+          "children": []
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "Mathematics/README.md",
+          "size": 4085,
+          "ext": "md"
         }
       ]
     },
@@ -2278,6 +2400,20 @@
       ]
     },
     {
+      "name": "Neetcode 150.md",
+      "type": "file",
+      "path": "Neetcode 150.md",
+      "size": 12406,
+      "ext": "md"
+    },
+    {
+      "name": "Neetcode 250.md",
+      "type": "file",
+      "path": "Neetcode 250.md",
+      "size": 8837,
+      "ext": "md"
+    },
+    {
       "name": "Operating Systems",
       "type": "dir",
       "path": "Operating Systems",
@@ -2309,17 +2445,52 @@
               "ext": "py"
             },
             {
-              "name": "Dining Philosophers.py",
+              "name": "1116. Print Zero Even Odd.py",
               "type": "file",
-              "path": "Operating Systems/Concurrency/Dining Philosophers.py",
-              "size": 0,
+              "path": "Operating Systems/Concurrency/1116. Print Zero Even Odd.py",
+              "size": 3462,
+              "ext": "py"
+            },
+            {
+              "name": "1117. Building H2O.py",
+              "type": "file",
+              "path": "Operating Systems/Concurrency/1117. Building H2O.py",
+              "size": 3983,
+              "ext": "py"
+            },
+            {
+              "name": "1188. Design Bounded Blocking Queue.py",
+              "type": "file",
+              "path": "Operating Systems/Concurrency/1188. Design Bounded Blocking Queue.py",
+              "size": 7434,
+              "ext": "py"
+            },
+            {
+              "name": "1195. Fizz Buzz Multithreaded.py",
+              "type": "file",
+              "path": "Operating Systems/Concurrency/1195. Fizz Buzz Multithreaded.py",
+              "size": 8722,
+              "ext": "py"
+            },
+            {
+              "name": "1226. The Dining Philosophers.py",
+              "type": "file",
+              "path": "Operating Systems/Concurrency/1226. The Dining Philosophers.py",
+              "size": 4516,
+              "ext": "py"
+            },
+            {
+              "name": "1242. Web Crawler Multithreaded.py",
+              "type": "file",
+              "path": "Operating Systems/Concurrency/1242. Web Crawler Multithreaded.py",
+              "size": 6604,
               "ext": "py"
             },
             {
               "name": "README.md",
               "type": "file",
               "path": "Operating Systems/Concurrency/README.md",
-              "size": 2225,
+              "size": 14407,
               "ext": "md"
             }
           ]
@@ -2481,75 +2652,117 @@
       ]
     },
     {
-      "name": "Prefix Sum",
+      "name": "Prefix Sum & Partial Sum",
       "type": "dir",
-      "path": "Prefix Sum",
+      "path": "Prefix Sum & Partial Sum",
       "children": [
         {
           "name": "Line Sweep",
           "type": "dir",
-          "path": "Prefix Sum/Line Sweep",
+          "path": "Prefix Sum & Partial Sum/Line Sweep",
           "children": []
         },
         {
           "name": "Prefix Sum",
           "type": "dir",
-          "path": "Prefix Sum/Prefix Sum",
+          "path": "Prefix Sum & Partial Sum/Prefix Sum",
           "children": [
             {
               "name": "1352. Product of the Last K Numbers.py",
               "type": "file",
-              "path": "Prefix Sum/Prefix Sum/1352. Product of the Last K Numbers.py",
+              "path": "Prefix Sum & Partial Sum/Prefix Sum/1352. Product of the Last K Numbers.py",
               "size": 2387,
+              "ext": "py"
+            },
+            {
+              "name": "1622. Fancy Sequence.py",
+              "type": "file",
+              "path": "Prefix Sum & Partial Sum/Prefix Sum/1622. Fancy Sequence.py",
+              "size": 1629,
               "ext": "py"
             },
             {
               "name": "238. Product of Array Except Self.py",
               "type": "file",
-              "path": "Prefix Sum/Prefix Sum/238. Product of Array Except Self.py",
+              "path": "Prefix Sum & Partial Sum/Prefix Sum/238. Product of Array Except Self.py",
               "size": 1505,
               "ext": "py"
             },
             {
               "name": "303. Range Sum Query - Immutable.py",
               "type": "file",
-              "path": "Prefix Sum/Prefix Sum/303. Range Sum Query - Immutable.py",
+              "path": "Prefix Sum & Partial Sum/Prefix Sum/303. Range Sum Query - Immutable.py",
               "size": 1456,
               "ext": "py"
             },
             {
               "name": "304. Range Sum Query 2D - Immutable.py",
               "type": "file",
-              "path": "Prefix Sum/Prefix Sum/304. Range Sum Query 2D - Immutable.py",
+              "path": "Prefix Sum & Partial Sum/Prefix Sum/304. Range Sum Query 2D - Immutable.py",
               "size": 2476,
               "ext": "py"
             },
             {
               "name": "3346. Maximum Frequency of an Element After Performing Operations I.py",
               "type": "file",
-              "path": "Prefix Sum/Prefix Sum/3346. Maximum Frequency of an Element After Performing Operations I.py",
+              "path": "Prefix Sum & Partial Sum/Prefix Sum/3346. Maximum Frequency of an Element After Performing Operations I.py",
               "size": 1642,
               "ext": "py"
             },
             {
               "name": "3381. Maximum Subarray Sum With Length Divisible by K.py",
               "type": "file",
-              "path": "Prefix Sum/Prefix Sum/3381. Maximum Subarray Sum With Length Divisible by K.py",
+              "path": "Prefix Sum & Partial Sum/Prefix Sum/3381. Maximum Subarray Sum With Length Divisible by K.py",
               "size": 1322,
               "ext": "py"
             },
             {
               "name": "560. Subarray Sum Equals K.py",
               "type": "file",
-              "path": "Prefix Sum/Prefix Sum/560. Subarray Sum Equals K.py",
+              "path": "Prefix Sum & Partial Sum/Prefix Sum/560. Subarray Sum Equals K.py",
               "size": 969,
               "ext": "py"
             },
             {
               "name": "974. Subarray Sums Divisible by K.py",
               "type": "file",
-              "path": "Prefix Sum/Prefix Sum/974. Subarray Sums Divisible by K.py",
+              "path": "Prefix Sum & Partial Sum/Prefix Sum/974. Subarray Sums Divisible by K.py",
               "size": 1085,
+              "ext": "py"
+            },
+            {
+              "name": "AP Addition.py",
+              "type": "file",
+              "path": "Prefix Sum & Partial Sum/Prefix Sum/AP Addition.py",
+              "size": 1291,
+              "ext": "py"
+            },
+            {
+              "name": "GP Addition.py",
+              "type": "file",
+              "path": "Prefix Sum & Partial Sum/Prefix Sum/GP Addition.py",
+              "size": 1712,
+              "ext": "py"
+            },
+            {
+              "name": "LR Power Sum Query.py",
+              "type": "file",
+              "path": "Prefix Sum & Partial Sum/Prefix Sum/LR Power Sum Query.py",
+              "size": 1817,
+              "ext": "py"
+            },
+            {
+              "name": "Make Palindromes.py",
+              "type": "file",
+              "path": "Prefix Sum & Partial Sum/Prefix Sum/Make Palindromes.py",
+              "size": 1770,
+              "ext": "py"
+            },
+            {
+              "name": "Multiply Sum Query.py",
+              "type": "file",
+              "path": "Prefix Sum & Partial Sum/Prefix Sum/Multiply Sum Query.py",
+              "size": 1800,
               "ext": "py"
             }
           ]
@@ -2581,7 +2794,7 @@
       "name": "README.md",
       "type": "file",
       "path": "README.md",
-      "size": 23177,
+      "size": 23254,
       "ext": "md"
     },
     {
@@ -2786,18 +2999,18 @@
       "path": "Segment Trees",
       "children": [
         {
+          "name": "3721. Longest Balanced Subarray II.py",
+          "type": "file",
+          "path": "Segment Trees/3721. Longest Balanced Subarray II.py",
+          "size": 5045,
+          "ext": "py"
+        },
+        {
           "name": "README.md",
           "type": "file",
           "path": "Segment Trees/README.md",
-          "size": 1665,
+          "size": 1577,
           "ext": "md"
-        },
-        {
-          "name": "feenwick.py",
-          "type": "file",
-          "path": "Segment Trees/feenwick.py",
-          "size": 0,
-          "ext": "py"
         },
         {
           "name": "implementation.py",
@@ -2956,6 +3169,20 @@
       ]
     },
     {
+      "name": "SortedList",
+      "type": "dir",
+      "path": "SortedList",
+      "children": [
+        {
+          "name": "1756. Design Most Recently Used Queue.py",
+          "type": "file",
+          "path": "SortedList/1756. Design Most Recently Used Queue.py",
+          "size": 2320,
+          "ext": "py"
+        }
+      ]
+    },
+    {
       "name": "Sorting",
       "type": "dir",
       "path": "Sorting",
@@ -2965,6 +3192,13 @@
           "type": "file",
           "path": "Sorting/1122. Relative Sort Array.py",
           "size": 1178,
+          "ext": "py"
+        },
+        {
+          "name": "1200. Minimum Absolute Difference.py",
+          "type": "file",
+          "path": "Sorting/1200. Minimum Absolute Difference.py",
+          "size": 2584,
           "ext": "py"
         },
         {
@@ -2978,7 +3212,7 @@
           "name": "164. Maximum Gap.py",
           "type": "file",
           "path": "Sorting/164. Maximum Gap.py",
-          "size": 1907,
+          "size": 1902,
           "ext": "py"
         },
         {
@@ -3019,6 +3253,27 @@
       ]
     },
     {
+      "name": "Squart Root Decomposition",
+      "type": "dir",
+      "path": "Squart Root Decomposition",
+      "children": [
+        {
+          "name": "3655. XOR After Range Multiplication Queries II.py",
+          "type": "file",
+          "path": "Squart Root Decomposition/3655. XOR After Range Multiplication Queries II.py",
+          "size": 2663,
+          "ext": "py"
+        },
+        {
+          "name": "SQRT_DECOMPOSITION.md",
+          "type": "file",
+          "path": "Squart Root Decomposition/SQRT_DECOMPOSITION.md",
+          "size": 5998,
+          "ext": "md"
+        }
+      ]
+    },
+    {
       "name": "Stack",
       "type": "dir",
       "path": "Stack",
@@ -3027,7 +3282,7 @@
           "name": "150. Evaluate Reverse Polish Notation.py",
           "type": "file",
           "path": "Stack/150. Evaluate Reverse Polish Notation.py",
-          "size": 2467,
+          "size": 2466,
           "ext": "py"
         },
         {
@@ -3062,7 +3317,7 @@
           "name": "71. Simplify Path.py",
           "type": "file",
           "path": "Stack/71. Simplify Path.py",
-          "size": 2950,
+          "size": 2949,
           "ext": "py"
         },
         {
@@ -3139,7 +3394,7 @@
           "name": "14. Longest Common Prefix.py",
           "type": "file",
           "path": "Strings/14. Longest Common Prefix.py",
-          "size": 3416,
+          "size": 3409,
           "ext": "py"
         },
         {
@@ -3167,7 +3422,7 @@
           "name": "2273. Find Resultant Array After Removing Anagrams.py",
           "type": "file",
           "path": "Strings/2273. Find Resultant Array After Removing Anagrams.py",
-          "size": 2293,
+          "size": 2291,
           "ext": "py"
         },
         {
@@ -3181,7 +3436,7 @@
           "name": "49. Group Anagrams.py",
           "type": "file",
           "path": "Strings/49. Group Anagrams.py",
-          "size": 1898,
+          "size": 1897,
           "ext": "py"
         },
         {
@@ -3196,6 +3451,27 @@
           "type": "file",
           "path": "Strings/953. Verifying an Alien Dictionary.py",
           "size": 2867,
+          "ext": "py"
+        },
+        {
+          "name": "KMP.py",
+          "type": "file",
+          "path": "Strings/KMP.py",
+          "size": 0,
+          "ext": "py"
+        },
+        {
+          "name": "Manachers.py",
+          "type": "file",
+          "path": "Strings/Manachers.py",
+          "size": 0,
+          "ext": "py"
+        },
+        {
+          "name": "Z Algorithms.py",
+          "type": "file",
+          "path": "Strings/Z Algorithms.py",
+          "size": 0,
           "ext": "py"
         }
       ]
@@ -3245,6 +3521,13 @@
           "type": "file",
           "path": "System Design/355. Design Twitter.py",
           "size": 2115,
+          "ext": "py"
+        },
+        {
+          "name": "362. Design Hit Counter.py",
+          "type": "file",
+          "path": "System Design/362. Design Hit Counter.py",
+          "size": 4215,
           "ext": "py"
         },
         {
@@ -3304,25 +3587,38 @@
       "path": "Tries",
       "children": [
         {
-          "name": "208. Implement Trie (Prefix Tree).py",
-          "type": "file",
-          "path": "Tries/208. Implement Trie (Prefix Tree).py",
-          "size": 3281,
-          "ext": "py"
+          "name": "Bit",
+          "type": "dir",
+          "path": "Tries/Bit",
+          "children": []
         },
         {
-          "name": "211. Design Add and Search Words Data Structure.py",
-          "type": "file",
-          "path": "Tries/211. Design Add and Search Words Data Structure.py",
-          "size": 2810,
-          "ext": "py"
-        },
-        {
-          "name": "212. Word Search II.py",
-          "type": "file",
-          "path": "Tries/212. Word Search II.py",
-          "size": 4094,
-          "ext": "py"
+          "name": "Strings",
+          "type": "dir",
+          "path": "Tries/Strings",
+          "children": [
+            {
+              "name": "208. Implement Trie (Prefix Tree).py",
+              "type": "file",
+              "path": "Tries/Strings/208. Implement Trie (Prefix Tree).py",
+              "size": 3281,
+              "ext": "py"
+            },
+            {
+              "name": "211. Design Add and Search Words Data Structure.py",
+              "type": "file",
+              "path": "Tries/Strings/211. Design Add and Search Words Data Structure.py",
+              "size": 2810,
+              "ext": "py"
+            },
+            {
+              "name": "212. Word Search II.py",
+              "type": "file",
+              "path": "Tries/Strings/212. Word Search II.py",
+              "size": 4094,
+              "ext": "py"
+            }
+          ]
         }
       ]
     },

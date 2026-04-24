@@ -239,6 +239,66 @@ function escapeHtml(text) {
   );
 }
 
+function normalizeRepoPath(basePath, href) {
+  if (!href) return null;
+  if (
+    href.startsWith("http://") ||
+    href.startsWith("https://") ||
+    href.startsWith("mailto:") ||
+    href.startsWith("#")
+  ) {
+    return null;
+  }
+
+  let raw = href;
+  try {
+    raw = decodeURIComponent(href);
+  } catch {
+    raw = href;
+  }
+
+  // Strip optional leading slash or current-dir prefix used in markdown links.
+  raw = raw.replace(/^\.?\//, "");
+
+  const baseParts = basePath ? basePath.split("/").slice(0, -1) : [];
+  const parts = raw.split("/").filter(Boolean);
+  const resolved = raw.startsWith("/") ? [] : [...baseParts];
+
+  for (const part of parts) {
+    if (part === ".") continue;
+    if (part === "..") {
+      resolved.pop();
+      continue;
+    }
+    resolved.push(part);
+  }
+
+  return resolved.join("/");
+}
+
+function wireMarkdownLinks(container, currentPath) {
+  container.querySelectorAll("a[href]").forEach((link) => {
+    const href = link.getAttribute("href");
+    const targetPath = normalizeRepoPath(currentPath, href);
+    if (!targetPath) {
+      if (/^https?:\/\//.test(href || "")) {
+        link.target = "_blank";
+        link.rel = "noreferrer";
+      }
+      return;
+    }
+
+    const exists = state.allFiles.some((file) => file.path === targetPath);
+    if (!exists) return;
+
+    link.setAttribute("href", `?path=${encodeURIComponent(targetPath)}`);
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      loadFile(targetPath);
+    });
+  });
+}
+
 function pathFromUrl() {
   const params = new URLSearchParams(window.location.search);
   return params.get("path") ? decodeURIComponent(params.get("path")) : null;
@@ -717,6 +777,7 @@ async function loadFile(path) {
       const html = window.marked.parse(text);
       const clean = window.DOMPurify ? window.DOMPurify.sanitize(html) : html;
       markdownContent.innerHTML = clean;
+      wireMarkdownLinks(markdownContent, path);
       markdownContent.classList.remove("hidden");
       // Re-highlight code blocks inside markdown
       markdownContent.querySelectorAll("pre code").forEach((block) => {

@@ -143,6 +143,8 @@ Useful utility snippets:
 - Set kth bit: `num |= (1 << k)`.
 - Unset kth bit: `num &= ~(1 << k)`.
 - Toggle kth bit: `num ^= (1 << k)`.
+- Binary string to int: `int(s, 2)`.
+- Int to binary string: `bin(num)[2:]`.
 - Power of two check: `(num & (num - 1)) == 0` or `(num & -num) == num`.
 - Swap without temp: `a ^= b; b ^= a; a ^= b`.
 - Compare floating values with tolerance: `abs(x - y) <= 1e-7`.
