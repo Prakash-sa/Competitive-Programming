@@ -1,0 +1,1 @@
+1. Minimize the Maximum or Maximize the minimum.
