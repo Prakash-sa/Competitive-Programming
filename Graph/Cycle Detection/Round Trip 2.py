@@ -86,5 +86,13 @@ def main():
 if __name__ == "__main__":
     main()
 
-# Time: O(n + m) per test case
-# Space: O(n + m) per test case.
+'''
+Time: O(n + m) per test case
+Space: O(n + m) per test case.
+
+Time Complexity per test case: 
+O(n+m) because each vertex and edge is processed at most once.
+
+Space Complexity per test case: 
+O(n+m) for the adjacency list and O(n) for the color array.
+'''
