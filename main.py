@@ -1,66 +1,64 @@
-# Write your code here
-
 import sys
-from collections import defaultdict
+from sys import stdin, stdout
 
-input = sys.stdin.readline
-print = sys.stdout.write
-sys.setrecursionlimit(1 << 25)
+sys.setrecursionlimit(10**7)
 
-MOD = 10**9 + 7
-INF = 10**18
+cycle_start = -1
+cycle_end = -1
 
+def dfs(v, par, color, adj):
+    global cycle_start, cycle_end
 
-def read():
-    return sys.stdin.buffer.read()
+    color[v] = 1
 
+    for u in adj[v]:
+        if color[u] == 0:
 
-def ints():
-    return map(int, input().split())
+            if dfs(u, v, color, adj):
+                return True
 
+        elif color[u] == 1:
+            cycle_start = u
+            cycle_end = v
+            return True
 
-def list_ints():
-    return list(map(int, input().split()))
-
-
-def write_line(value=""):
-    sys.stdout.write(str(value) + "\n")
-
-
-def write_lines(values):
-    sys.stdout.write("\n".join(map(str, values)))
-    if values:
-        sys.stdout.write("\n")
+    color[v] = 2
+    return False
 
 
-direction = [(1, 0), (0, 1), (-1, 0), (0, -1)]
+def main():
+    global cycle_start, cycle_end
 
+    data = stdin.read().split()
+    idx = 0
 
-def dfs(x, y, grid, n, m,vis):
-    if vis[x][y]:
-        return
-    vis[x][y] = True
-    for dx, dy in direction:
-        nx, ny = x + dx, y + dy
-        if 0 <= nx < n and 0 <= ny < m and grid[nx][ny] == ".":
-            dfs(nx, ny, grid, n, m,vis)
+    n = int(data[idx])
+    idx += 1
 
+    m = int(data[idx])
+    idx += 1
 
-def solve():
-    [n, m] = list_ints()
-    grid = []
-    for _ in range(n):
-        grid.append(input().strip())
+    adj = [[] for _ in range(n + 1)]
 
-    vis = [[False] * m for _ in range(n)]
-    component = 0
-    for i in range(n):
-        for j in range(m):
-            if not vis[i][j] and grid[i][j] == ".":
-                dfs(i, j, grid, n, m,vis)
-                component += 1
-    write_line(component)
+    for _ in range(m):
+        u = int(data[idx])
+        v = int(data[idx + 1])
+        idx += 2
+
+        adj[u].append(v)
+
+    color = [0] * (n + 1)
+
+    for v in range(1, n + 1):
+        if color[v] == 0:
+            if dfs(v, -1, color, adj):
+                break
+
+    if cycle_start == -1:
+        stdout.write("NO\n")
+    else:
+        stdout.write("YES\n")
 
 
 if __name__ == "__main__":
-    solve()
+    main()
