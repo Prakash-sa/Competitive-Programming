@@ -42,4 +42,44 @@ class Solution:
 
 # Naive approach, O(|s| * |t|)
 
+class Solution:
+    def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+        MOD_1=1000000007
+        MOD_2=2147483647
 
+        def hash_subtree_at_node(node,need_to_add):
+            if node is None:
+                return (3,7)
+            
+            left=hash_subtree_at_node(node.left,need_to_add)
+            right=hash_subtree_at_node(node.right,need_to_add)
+
+            left_1=(left[0]<<5)%MOD_1
+            right_1=(right[0]<<1)%MOD_1
+
+            left_2=(left[1]<<7)%MOD_2
+            right_2=(right[1]<<1)%MOD_2
+
+            hashpair=((left_1+right_1+node.val)%MOD_1,(left_2+right_2+node.val)%MOD_2)
+
+            if need_to_add:
+                memo.add(hashpair)
+            return hashpair
+        
+        memo=set()
+
+        hash_subtree_at_node(root,True)
+
+        s=hash_subtree_at_node(subRoot,False)
+        return s in memo
+
+'''   
+Complexity Analysis
+Time complexity: O(M+N).
+We are traversing the tree rooted at root in O(N) time. We are also traversing the tree rooted at subRoot in O(M) time. For each node, we are doing constant time operations. After traversing, for lookup we are either doing O(1) operations, or O(N) operations. Hence, the overall time complexity is O(N+M).
+
+Space complexity: O(M+N).
+We are using memo to store the hash pair of each node in the tree rooted at root. Hence, for this, we need O(N) space.
+Moreover, since we are using recursion, the space required for the recursion stack will be O(N) for hashSubtreeAtNode(root, true) and O(M) for hashSubtreeAtNode(subRoot, false).
+Hence, overall space complexity is O(M+N).
+'''
