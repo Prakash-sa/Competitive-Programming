@@ -1069,7 +1069,7 @@ window.addEventListener("popstate", () => {
 // ─── Config ───
 async function loadConfig() {
   try {
-    const resp = await fetch("config.json");
+    const resp = await fetch(`config.json?v=${Date.now()}`, { cache: "no-store" });
     if (!resp.ok) return {};
     return await resp.json();
   } catch {
@@ -1113,7 +1113,7 @@ async function init() {
 
   // Load tree
   try {
-    const resp = await fetch("tree.json");
+    const resp = await fetch(`tree.json?v=${Date.now()}`, { cache: "no-store" });
     if (!resp.ok) throw new Error("tree.json not found");
     state.tree = await resp.json();
   } catch {
