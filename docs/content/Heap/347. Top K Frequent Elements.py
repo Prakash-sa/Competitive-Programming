@@ -40,20 +40,31 @@ class Solution:
 
 
 from collections import Counter
+from typing import List
 
-def topKFrequent(nums, k):
-    freq = Counter(nums)
-    buckets = [[] for _ in range(len(nums) + 1)]
 
-    for num, count in freq.items():
-        buckets[count].append(num)
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        freq = Counter(nums)
 
-    result = []
-    for i in range(len(buckets) - 1, -1, -1):
-        for num in buckets[i]:
-            result.append(num)
-            if len(result) == k:
-                return result
+        # buckets[i] contains all numbers that appear exactly i times
+        buckets = [[] for _ in range(len(nums) + 1)]
+
+        for num, count in freq.items():
+            buckets[count].append(num)
+
+        result = []
+
+        # Traverse from highest frequency to lowest frequency
+        for count in range(len(nums), 0, -1):
+            for num in buckets[count]:
+                result.append(num)
+
+                if len(result) == k:
+                    return result
+
+        return result
+
 
 # Bucket Sort
 # O(n)

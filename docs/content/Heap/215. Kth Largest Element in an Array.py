@@ -31,7 +31,39 @@ class Solution:
                 if len(h)>k:
                     heappop(h)
         return h[0]
-    
+
 # Comeplexity:
 # Time: O(NlogK)
 # Space: O(K)
+
+
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        min_value = min(nums)
+        max_value = max(nums)
+        count = [0] * (max_value - min_value + 1)
+
+        for num in nums:
+            count[num - min_value] += 1
+
+        remain = k
+        for num in range(len(count) - 1, -1, -1):
+            remain -= count[num]
+            if remain <= 0:
+                return num + min_value
+
+        return -1
+
+'''
+Complexity Analysis
+Given n as the length of nums and m as maxValue - minValue,
+
+Time complexity: O(n+m)
+We first find maxValue and minValue, which costs O(n).
+Next, we initialize count, which costs O(m).
+Next, we populate count, which costs O(n).
+Finally, we iterate over the indices of count, which costs up to O(m).
+
+Space complexity: O(m)
+We create an array count with size O(m).
+'''

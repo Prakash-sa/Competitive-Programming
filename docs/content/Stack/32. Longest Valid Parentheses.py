@@ -40,3 +40,32 @@ class Solution:
 # Complexity Analysis
 # Time complexity: O(n). Single traversal of string to fill dp array is done.
 # Space complexity: O(n). dp array of size n is used.
+
+
+class Solution:
+    def longestValidParentheses(self, s: str) -> int:
+        left, right, maxlength = 0, 0, 0
+        for i in range(len(s)):
+            if s[i] == "(":
+                left += 1
+            else:
+                right += 1
+            if left == right:
+                maxlength = max(maxlength, 2 * right)
+            elif right > left:
+                left = right = 0
+        left = right = 0
+        for i in range(len(s) - 1, -1, -1):
+            if s[i] == "(":
+                left += 1
+            else:
+                right += 1
+            if left == right:
+                maxlength = max(maxlength, 2 * left)
+            elif left > right:
+                left = right = 0
+        return maxlength
+
+# Complexity Analysis
+# Time complexity: O(n). Two traversals of the string.
+# Space complexity: O(1). Only two extra variables left and right are needed.

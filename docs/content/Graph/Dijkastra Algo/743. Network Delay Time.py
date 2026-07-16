@@ -31,7 +31,7 @@ class Solution:
 
         adj=[[] for _ in range(n+1)]
 
-        for u,v, w in times:
+        for u,v,w in times:
             adj[u].append((v,w))
         
         h=[(0,k)]
@@ -57,9 +57,13 @@ class Solution:
 # Here N is the number of nodes and E is the number of total edges in the given network.
 # Time complexity: O(N+ElogN)
 # Dijkstra's Algorithm takes O(ElogN). Finding the minimum time required in signalReceivedAt takes O(N).
-# The maximum number of vertices that could be added to the priority queue is E. Thus, push and pop operations on the priority queue take O(logE) time. The value of E can be at most N⋅(N−1). Therefore, O(logE) is equivalent to O(logN 2 ) which in turn equivalent to O(2⋅logN). Hence, the time complexity for priority queue operations equals O(logN).
-# Although the number of vertices in the priority queue could be equal to E, we will only visit each vertex only once. If we encounter a vertex for the second time, then currNodeTime will be greater than signalReceivedAt[currNode], and we can continue to the next vertex in the priority queue. Hence, in total E edges will be traversed and for each edge, there could be one priority queue insertion operation.
+# The maximum number of vertices that could be added to the priority queue is E. Thus, push and pop operations on the priority queue take O(logE) time. 
+# The value of E can be at most N⋅(N−1). Therefore, O(logE) is equivalent to O(logN^2 ) which in turn equivalent to O(2⋅logN). 
+# Hence, the time complexity for priority queue operations equals O(logN).
+# Although the number of vertices in the priority queue could be equal to E, we will only visit each vertex only once.
+# If we encounter a vertex for the second time, then currNodeTime will be greater than signalReceivedAt[currNode], and we can continue to the next vertex in the priority queue.
+# Hence, in total E edges will be traversed and for each edge, there could be one priority queue insertion operation.
 # Hence, the time complexity is equal to O(N+ElogN).
 
 # Space complexity: O(N+E)
-# Building the adjacency list will take O(E) space. Dijkstra's algorithm takes O(E) space for priority queue because each vertex could be added to the priority queue N−1 time which makes it N∗(N−1) and O(N 2) is equivalent to O(E). signalReceivedAt takes O(N) space.
+# Building the adjacency list will take O(E) space. Dijkstra's algorithm takes O(E) space for priority queue because each vertex could be added to the priority queue N−1 time which makes it N*(N−1) and O(N^2) is equivalent to O(E). signalReceivedAt takes O(N) space.

@@ -50,3 +50,45 @@ class Solution:
 # In Java though, it's O(N) to create the PriorityQueue.
 # We could reduce the space complexity to O(1) by implementing our own iterative heapfiy, if needed.
 
+
+class Solution:
+    def lastStoneWeight(self, stones: List[int]) -> int:
+        max_weight = max(stones)
+        buckets = [0] * (max_weight + 1)
+
+        for weight in stones:
+            buckets[weight] += 1
+
+        biggest_weight = 0
+        current_weight = max_weight
+
+        while current_weight > 0:
+            if buckets[current_weight] == 0:
+                current_weight -= 1
+            elif biggest_weight == 0:
+                buckets[current_weight] %= 2
+                if buckets[current_weight] == 1:
+                    biggest_weight = current_weight
+                current_weight -= 1
+            else:
+                buckets[current_weight] -= 1
+                if biggest_weight - current_weight <= current_weight:
+                    buckets[biggest_weight - current_weight] += 1
+                    biggest_weight = 0
+                else:
+                    biggest_weight -= current_weight
+        return biggest_weight
+
+'''
+Time complexity : O(N+W).
+Putting the N stones of the input array into the bucket array is O(N), because inserting each stone is an O(1) operation.
+In the worst case, the main loop iterates through all of the W indexes of the bucket array. Processing each bucket is an O(1) operation. This, therefore, is O(W).
+Seeing as we don't know which is larger out of N and W, we get a total of O(N+W).
+Technically, this algorithm is pseudo-polynomial, as its time complexity is dependent on the numeric value of the input. 
+Pseudo-polynomial algorithms are useful when there is no "true" polynomial alternative, but in situations such as this one where we have an O(NlogN) alternative (Approach 3), they are only useful for very specific inputs.
+With the small values of W that your code is tested against for this question here on LeetCode, this approach turns out to be faster than Approach 3. 
+But that does not make it the better approach.
+
+Space complexity : O(W).
+We allocated a new array of size W.
+'''

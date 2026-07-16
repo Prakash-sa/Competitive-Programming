@@ -261,9 +261,9 @@
           "ext": "py"
         },
         {
-          "name": "2D varioation",
+          "name": "2D variation",
           "type": "dir",
-          "path": "Binary Search/2D varioation",
+          "path": "Binary Search/2D variation",
           "children": []
         },
         {
@@ -476,6 +476,13 @@
           "ext": "py"
         },
         {
+          "name": "99. Recover Binary Search Tree.py",
+          "type": "file",
+          "path": "Binary Search Tree/99. Recover Binary Search Tree.py",
+          "size": 2209,
+          "ext": "py"
+        },
+        {
           "name": "README.md",
           "type": "file",
           "path": "Binary Search Tree/README.md",
@@ -647,7 +654,7 @@
           "name": "572. Subtree of Another Tree.py",
           "type": "file",
           "path": "Binary Tree/572. Subtree of Another Tree.py",
-          "size": 1541,
+          "size": 3150,
           "ext": "py"
         },
         {
@@ -677,6 +684,34 @@
           "path": "Binary Tree/94. Binary Tree Inorder Traversal.py",
           "size": 2226,
           "ext": "py"
+        },
+        {
+          "name": "Binary Lifting",
+          "type": "dir",
+          "path": "Binary Tree/Binary Lifting",
+          "children": [
+            {
+              "name": "1483. Kth Ancestor of a Tree Node.py",
+              "type": "file",
+              "path": "Binary Tree/Binary Lifting/1483. Kth Ancestor of a Tree Node.py",
+              "size": 2538,
+              "ext": "py"
+            },
+            {
+              "name": "3559. Number of Ways to Assign Edge Weights II.py",
+              "type": "file",
+              "path": "Binary Tree/Binary Lifting/3559. Number of Ways to Assign Edge Weights II.py",
+              "size": 4515,
+              "ext": "py"
+            },
+            {
+              "name": "Binary Lifting.md",
+              "type": "file",
+              "path": "Binary Tree/Binary Lifting/Binary Lifting.md",
+              "size": 115,
+              "ext": "md"
+            }
+          ]
         },
         {
           "name": "Sample.md",
@@ -860,10 +895,25 @@
           "ext": "md"
         },
         {
-          "name": "Digit",
+          "name": "Digit DP",
           "type": "dir",
-          "path": "Dynamic Programming/Digit",
-          "children": []
+          "path": "Dynamic Programming/Digit DP",
+          "children": [
+            {
+              "name": "788. Rotated Digits.py",
+              "type": "file",
+              "path": "Dynamic Programming/Digit DP/788. Rotated Digits.py",
+              "size": 1697,
+              "ext": "py"
+            },
+            {
+              "name": "Digit DP.md",
+              "type": "file",
+              "path": "Dynamic Programming/Digit DP/Digit DP.md",
+              "size": 6174,
+              "ext": "md"
+            }
+          ]
         },
         {
           "name": "Game Theory",
@@ -1347,6 +1397,27 @@
       "path": "Graph",
       "children": [
         {
+          "name": "0-1 BFS",
+          "type": "dir",
+          "path": "Graph/0-1 BFS",
+          "children": [
+            {
+              "name": "Edge Reverse.py",
+              "type": "file",
+              "path": "Graph/0-1 BFS/Edge Reverse.py",
+              "size": 2265,
+              "ext": "py"
+            },
+            {
+              "name": "One Piece.py",
+              "type": "file",
+              "path": "Graph/0-1 BFS/One Piece.py",
+              "size": 2779,
+              "ext": "py"
+            }
+          ]
+        },
+        {
           "name": "Additional",
           "type": "dir",
           "path": "Graph/Additional",
@@ -1356,6 +1427,34 @@
               "type": "file",
               "path": "Graph/Additional/1192. Critical Connections in a Network.py",
               "size": 2378,
+              "ext": "py"
+            }
+          ]
+        },
+        {
+          "name": "BFS",
+          "type": "dir",
+          "path": "Graph/BFS",
+          "children": [
+            {
+              "name": "127. Word Ladder.py",
+              "type": "file",
+              "path": "Graph/BFS/127. Word Ladder.py",
+              "size": 3179,
+              "ext": "py"
+            },
+            {
+              "name": "Bidirectional BFS.py",
+              "type": "file",
+              "path": "Graph/BFS/Bidirectional BFS.py",
+              "size": 0,
+              "ext": "py"
+            },
+            {
+              "name": "Connected Component Size.py",
+              "type": "file",
+              "path": "Graph/BFS/Connected Component Size.py",
+              "size": 4171,
               "ext": "py"
             }
           ]
@@ -1375,15 +1474,36 @@
           ]
         },
         {
-          "name": "Bridges",
+          "name": "Connected Components",
           "type": "dir",
-          "path": "Graph/Bridges",
+          "path": "Graph/Connected Components",
           "children": [
             {
-              "name": "Greek Traveller.py",
+              "name": "Color_Tree.py",
               "type": "file",
-              "path": "Graph/Bridges/Greek Traveller.py",
-              "size": 2724,
+              "path": "Graph/Connected Components/Color_Tree.py",
+              "size": 1476,
+              "ext": "py"
+            },
+            {
+              "name": "Graph Queries.py",
+              "type": "file",
+              "path": "Graph/Connected Components/Graph Queries.py",
+              "size": 4794,
+              "ext": "py"
+            },
+            {
+              "name": "Number of Rooms.py",
+              "type": "file",
+              "path": "Graph/Connected Components/Number of Rooms.py",
+              "size": 2721,
+              "ext": "py"
+            },
+            {
+              "name": "One Edge.py",
+              "type": "file",
+              "path": "Graph/Connected Components/One Edge.py",
+              "size": 3696,
               "ext": "py"
             }
           ]
@@ -1392,165 +1512,201 @@
           "name": "Cycle Detection",
           "type": "dir",
           "path": "Graph/Cycle Detection",
-          "children": []
+          "children": [
+            {
+              "name": "1059. All Paths from Source Lead to Destination.py",
+              "type": "file",
+              "path": "Graph/Cycle Detection/1059. All Paths from Source Lead to Destination.py",
+              "size": 3051,
+              "ext": "py"
+            },
+            {
+              "name": "Creating Teams.py",
+              "type": "file",
+              "path": "Graph/Cycle Detection/Creating Teams.py",
+              "size": 2269,
+              "ext": "py"
+            },
+            {
+              "name": "Cycle Detection.md",
+              "type": "file",
+              "path": "Graph/Cycle Detection/Cycle Detection.md",
+              "size": 8304,
+              "ext": "md"
+            },
+            {
+              "name": "Cycle Detection.py",
+              "type": "file",
+              "path": "Graph/Cycle Detection/Cycle Detection.py",
+              "size": 0,
+              "ext": "py"
+            },
+            {
+              "name": "Round Trip 2.py",
+              "type": "file",
+              "path": "Graph/Cycle Detection/Round Trip 2.py",
+              "size": 2425,
+              "ext": "py"
+            },
+            {
+              "name": "Round Trip.py",
+              "type": "file",
+              "path": "Graph/Cycle Detection/Round Trip.py",
+              "size": 2372,
+              "ext": "py"
+            }
+          ]
         },
         {
-          "name": "DFS & BFS",
+          "name": "DFS",
           "type": "dir",
-          "path": "Graph/DFS & BFS",
+          "path": "Graph/DFS",
           "children": [
             {
               "name": "104. Maximum Depth of Binary Tree.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/104. Maximum Depth of Binary Tree.py",
+              "path": "Graph/DFS/104. Maximum Depth of Binary Tree.py",
               "size": 1880,
               "ext": "py"
             },
             {
               "name": "112. Path Sum.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/112. Path Sum.py",
+              "path": "Graph/DFS/112. Path Sum.py",
               "size": 1736,
               "ext": "py"
             },
             {
               "name": "113. Path Sum II.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/113. Path Sum II.py",
+              "path": "Graph/DFS/113. Path Sum II.py",
               "size": 1846,
-              "ext": "py"
-            },
-            {
-              "name": "127. Word Ladder.py",
-              "type": "file",
-              "path": "Graph/DFS & BFS/127. Word Ladder.py",
-              "size": 3179,
               "ext": "py"
             },
             {
               "name": "130. Surrounded Regions.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/130. Surrounded Regions.py",
+              "path": "Graph/DFS/130. Surrounded Regions.py",
               "size": 2258,
               "ext": "py"
             },
             {
               "name": "133. Clone Graph.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/133. Clone Graph.py",
+              "path": "Graph/DFS/133. Clone Graph.py",
               "size": 3562,
               "ext": "py"
             },
             {
               "name": "1466. Reorder Routes to Make All Paths Lead to the City Zero.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/1466. Reorder Routes to Make All Paths Lead to the City Zero.py",
+              "path": "Graph/DFS/1466. Reorder Routes to Make All Paths Lead to the City Zero.py",
               "size": 2056,
               "ext": "py"
             },
             {
               "name": "1625. Lexicographically Smallest String After Applying Operations.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/1625. Lexicographically Smallest String After Applying Operations.py",
+              "path": "Graph/DFS/1625. Lexicographically Smallest String After Applying Operations.py",
               "size": 2713,
               "ext": "py"
             },
             {
               "name": "1765. Map of Highest Peak.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/1765. Map of Highest Peak.py",
+              "path": "Graph/DFS/1765. Map of Highest Peak.py",
               "size": 2401,
               "ext": "py"
             },
             {
               "name": "178 \u00b7 Graph Valid Tree.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/178 \u00b7 Graph Valid Tree.py",
+              "path": "Graph/DFS/178 \u00b7 Graph Valid Tree.py",
               "size": 2693,
               "ext": "py"
             },
             {
               "name": "200. Number of Islands.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/200. Number of Islands.py",
+              "path": "Graph/DFS/200. Number of Islands.py",
               "size": 1736,
               "ext": "py"
             },
             {
               "name": "286. Walls and Gates.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/286. Walls and Gates.py",
+              "path": "Graph/DFS/286. Walls and Gates.py",
               "size": 2190,
               "ext": "py"
             },
             {
               "name": "2998. Minimum Number of Operations to Make X and Y Equal.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/2998. Minimum Number of Operations to Make X and Y Equal.py",
+              "path": "Graph/DFS/2998. Minimum Number of Operations to Make X and Y Equal.py",
               "size": 2561,
               "ext": "py"
             },
             {
               "name": "332. Reconstruct Itinerary.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/332. Reconstruct Itinerary.py",
-              "size": 1790,
+              "path": "Graph/DFS/332. Reconstruct Itinerary.py",
+              "size": 2264,
               "ext": "py"
             },
             {
               "name": "417. Pacific Atlantic Water Flow.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/417. Pacific Atlantic Water Flow.py",
+              "path": "Graph/DFS/417. Pacific Atlantic Water Flow.py",
               "size": 3380,
               "ext": "py"
             },
             {
               "name": "542. 01 Matrix.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/542. 01 Matrix.py",
+              "path": "Graph/DFS/542. 01 Matrix.py",
               "size": 1988,
               "ext": "py"
             },
             {
               "name": "543. Diameter of Binary Tree.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/543. Diameter of Binary Tree.py",
+              "path": "Graph/DFS/543. Diameter of Binary Tree.py",
               "size": 1761,
               "ext": "py"
             },
             {
               "name": "547. Number of Provinces.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/547. Number of Provinces.py",
+              "path": "Graph/DFS/547. Number of Provinces.py",
               "size": 1586,
               "ext": "py"
             },
             {
               "name": "752. Open the Lock.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/752. Open the Lock.py",
+              "path": "Graph/DFS/752. Open the Lock.py",
               "size": 2648,
               "ext": "py"
             },
             {
               "name": "778. Swim in Rising Water.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/778. Swim in Rising Water.py",
+              "path": "Graph/DFS/778. Swim in Rising Water.py",
               "size": 2386,
               "ext": "py"
             },
             {
               "name": "841. Keys and Rooms.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/841. Keys and Rooms.py",
+              "path": "Graph/DFS/841. Keys and Rooms.py",
               "size": 1584,
               "ext": "py"
             },
             {
-              "name": "994. Rotting Oranges.py",
+              "name": "Building Roads.py",
               "type": "file",
-              "path": "Graph/DFS & BFS/994. Rotting Oranges.py",
-              "size": 3955,
+              "path": "Graph/DFS/Building Roads.py",
+              "size": 1939,
               "ext": "py"
             }
           ]
@@ -1585,7 +1741,7 @@
               "name": "743. Network Delay Time.py",
               "type": "file",
               "path": "Graph/Dijkastra Algo/743. Network Delay Time.py",
-              "size": 2950,
+              "size": 2957,
               "ext": "py"
             },
             {
@@ -1674,6 +1830,13 @@
           "ext": "md"
         },
         {
+          "name": "Material.md",
+          "type": "file",
+          "path": "Graph/Material.md",
+          "size": 2066,
+          "ext": "md"
+        },
+        {
           "name": "Minimum Spanning Tree",
           "type": "dir",
           "path": "Graph/Minimum Spanning Tree",
@@ -1691,6 +1854,20 @@
               "path": "Graph/Minimum Spanning Tree/1584. Min Cost to Connect All Points.py",
               "size": 2537,
               "ext": "py"
+            },
+            {
+              "name": "Kruskal.md",
+              "type": "file",
+              "path": "Graph/Minimum Spanning Tree/Kruskal.md",
+              "size": 2794,
+              "ext": "md"
+            },
+            {
+              "name": "Prims.md",
+              "type": "file",
+              "path": "Graph/Minimum Spanning Tree/Prims.md",
+              "size": 3431,
+              "ext": "md"
             }
           ]
         },
@@ -1698,7 +1875,36 @@
           "name": "Multi Source BFS",
           "type": "dir",
           "path": "Graph/Multi Source BFS",
-          "children": []
+          "children": [
+            {
+              "name": "994. Rotting Oranges.py",
+              "type": "file",
+              "path": "Graph/Multi Source BFS/994. Rotting Oranges.py",
+              "size": 3955,
+              "ext": "py"
+            },
+            {
+              "name": "Area and Perimeter of Connected Components.py",
+              "type": "file",
+              "path": "Graph/Multi Source BFS/Area and Perimeter of Connected Components.py",
+              "size": 2933,
+              "ext": "py"
+            },
+            {
+              "name": "Infected People.py",
+              "type": "file",
+              "path": "Graph/Multi Source BFS/Infected People.py",
+              "size": 2202,
+              "ext": "py"
+            },
+            {
+              "name": "Save Yourself.py",
+              "type": "file",
+              "path": "Graph/Multi Source BFS/Save Yourself.py",
+              "size": 3082,
+              "ext": "py"
+            }
+          ]
         },
         {
           "name": "README.md",
@@ -1751,7 +1957,7 @@
               "name": "269. Alien Dictionary.py",
               "type": "file",
               "path": "Graph/Topological Sort/269. Alien Dictionary.py",
-              "size": 2568,
+              "size": 2567,
               "ext": "py"
             },
             {
@@ -1767,6 +1973,20 @@
               "path": "Graph/Topological Sort/997. Find the Town Judge.py",
               "size": 2919,
               "ext": "py"
+            },
+            {
+              "name": "BFS.md",
+              "type": "file",
+              "path": "Graph/Topological Sort/BFS.md",
+              "size": 3515,
+              "ext": "md"
+            },
+            {
+              "name": "DFS.md",
+              "type": "file",
+              "path": "Graph/Topological Sort/DFS.md",
+              "size": 3093,
+              "ext": "md"
             },
             {
               "name": "khan's algo.py",
@@ -1927,7 +2147,7 @@
           "name": "1046. Last Stone Weight.py",
           "type": "file",
           "path": "Heap/1046. Last Stone Weight.py",
-          "size": 2469,
+          "size": 4429,
           "ext": "py"
         },
         {
@@ -1948,7 +2168,7 @@
           "name": "215. Kth Largest Element in an Array.py",
           "type": "file",
           "path": "Heap/215. Kth Largest Element in an Array.py",
-          "size": 872,
+          "size": 1707,
           "ext": "py"
         },
         {
@@ -1969,7 +2189,7 @@
           "name": "347. Top K Frequent Elements.py",
           "type": "file",
           "path": "Heap/347. Top K Frequent Elements.py",
-          "size": 1722,
+          "size": 2001,
           "ext": "py"
         },
         {
@@ -2141,10 +2361,17 @@
           "ext": "py"
         },
         {
+          "name": "2130. Maximum Twin Sum of a Linked List.py",
+          "type": "file",
+          "path": "LinkedList/2130. Maximum Twin Sum of a Linked List.py",
+          "size": 2432,
+          "ext": "py"
+        },
+        {
           "name": "23. Merge k Sorted Lists.py",
           "type": "file",
           "path": "LinkedList/23. Merge k Sorted Lists.py",
-          "size": 1569,
+          "size": 2893,
           "ext": "py"
         },
         {
@@ -2396,6 +2623,20 @@
           "path": "Matrix/73. Set Matrix Zeroes.py",
           "size": 1356,
           "ext": "py"
+        },
+        {
+          "name": "Advance",
+          "type": "dir",
+          "path": "Matrix/Advance",
+          "children": [
+            {
+              "name": "3548. Equal Sum Grid Partition II.py",
+              "type": "file",
+              "path": "Matrix/Advance/3548. Equal Sum Grid Partition II.py",
+              "size": 3415,
+              "ext": "py"
+            }
+          ]
         }
       ]
     },
@@ -2999,6 +3240,20 @@
       "path": "Segment Trees",
       "children": [
         {
+          "name": "1584. Min Cost to Connect All Points.py",
+          "type": "file",
+          "path": "Segment Trees/1584. Min Cost to Connect All Points.py",
+          "size": 3814,
+          "ext": "py"
+        },
+        {
+          "name": "3691. Maximum Total Subarray Value II.py",
+          "type": "file",
+          "path": "Segment Trees/3691. Maximum Total Subarray Value II.py",
+          "size": 5794,
+          "ext": "py"
+        },
+        {
           "name": "3721. Longest Balanced Subarray II.py",
           "type": "file",
           "path": "Segment Trees/3721. Longest Balanced Subarray II.py",
@@ -3296,7 +3551,7 @@
           "name": "32. Longest Valid Parentheses.py",
           "type": "file",
           "path": "Stack/32. Longest Valid Parentheses.py",
-          "size": 1087,
+          "size": 1975,
           "ext": "py"
         },
         {
@@ -3492,7 +3747,7 @@
           "name": "146. LRU Cache.py",
           "type": "file",
           "path": "System Design/146. LRU Cache.py",
-          "size": 2371,
+          "size": 4353,
           "ext": "py"
         },
         {
@@ -3520,7 +3775,7 @@
           "name": "355. Design Twitter.py",
           "type": "file",
           "path": "System Design/355. Design Twitter.py",
-          "size": 2115,
+          "size": 3614,
           "ext": "py"
         },
         {
@@ -3582,6 +3837,13 @@
       "ext": "md"
     },
     {
+      "name": "Technical Overview.md",
+      "type": "file",
+      "path": "Technical Overview.md",
+      "size": 29693,
+      "ext": "md"
+    },
+    {
       "name": "Tries",
       "type": "dir",
       "path": "Tries",
@@ -3623,6 +3885,13 @@
       ]
     },
     {
+      "name": "fastIO.py",
+      "type": "file",
+      "path": "fastIO.py",
+      "size": 542,
+      "ext": "py"
+    },
+    {
       "name": "image-1.png",
       "type": "file",
       "path": "image-1.png",
@@ -3637,25 +3906,25 @@
       "ext": "png"
     },
     {
-      "name": "in",
+      "name": "in.txt",
       "type": "file",
-      "path": "in",
-      "size": 14,
-      "ext": ""
+      "path": "in.txt",
+      "size": 35,
+      "ext": "txt"
     },
     {
       "name": "main.py",
       "type": "file",
       "path": "main.py",
-      "size": 0,
+      "size": 882,
       "ext": "py"
     },
     {
-      "name": "out",
+      "name": "out.txt",
       "type": "file",
-      "path": "out",
-      "size": 3,
-      "ext": ""
+      "path": "out.txt",
+      "size": 2,
+      "ext": "txt"
     },
     {
       "name": "run.sh",

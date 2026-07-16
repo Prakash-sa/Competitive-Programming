@@ -40,6 +40,21 @@ class Solution:
         self.helper("JFK",graph)
         return self.ans[::-1]
 
-# Aspect	Complexity
-# Time	O(E*log E)
-# Space	O(E)
+
+'''
+Attempting to build the itinerary directly in forward order:
+
+Wrong Approach:
+
+def dfs(current):
+    result.append(current)  # Add before visiting destinations
+    while graph[current]:
+        next_airport = graph[current].pop()
+        dfs(next_airport)
+Why it fails: This produces an incomplete path. The algorithm relies on post-order traversal to ensure all edges are used. Adding airports before exploring their destinations breaks the Eulerian path construction.
+
+Aspect	Complexity
+Time	O(E*log E)
+Space	O(E)
+
+'''
