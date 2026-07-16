@@ -276,9 +276,61 @@ function normalizeRepoPath(basePath, href) {
   return resolved.join("/");
 }
 
+function slugifyHeading(text) {
+  return text
+    .trim()
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-");
+}
+
+function addHeadingIds(container) {
+  const used = new Map();
+  container.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((heading) => {
+    if (heading.id) return;
+
+    const base = slugifyHeading(heading.textContent || "");
+    if (!base) return;
+
+    const count = used.get(base) || 0;
+    used.set(base, count + 1);
+    heading.id = count === 0 ? base : `${base}-${count}`;
+  });
+}
+
+function scrollToHash(hash) {
+  if (!hash || hash === "#") return false;
+
+  let id = hash.slice(1);
+  try {
+    id = decodeURIComponent(id);
+  } catch {
+    // Use the raw hash when it is not valid percent-encoded text.
+  }
+
+  const target = document.getElementById(id);
+  if (!target) return false;
+
+  target.scrollIntoView({ block: "start", behavior: "smooth" });
+  return true;
+}
+
 function wireMarkdownLinks(container, currentPath) {
   container.querySelectorAll("a[href]").forEach((link) => {
     const href = link.getAttribute("href");
+
+    if (href?.startsWith("#")) {
+      link.addEventListener("click", (event) => {
+        if (!scrollToHash(href)) return;
+
+        event.preventDefault();
+        const params = new URLSearchParams(window.location.search);
+        params.set("path", encodeURIComponent(currentPath));
+        window.history.pushState({}, "", `${window.location.pathname}?${params}${href}`);
+      });
+      return;
+    }
+
     const targetPath = normalizeRepoPath(currentPath, href);
     if (!targetPath) {
       if (/^https?:\/\//.test(href || "")) {
@@ -304,10 +356,10 @@ function pathFromUrl() {
   return params.get("path") ? decodeURIComponent(params.get("path")) : null;
 }
 
-function updateUrl(path) {
+function updateUrl(path, hash = "") {
   const params = new URLSearchParams(window.location.search);
   params.set("path", encodeURIComponent(path));
-  window.history.pushState({}, "", `${window.location.pathname}?${params}`);
+  window.history.pushState({}, "", `${window.location.pathname}?${params}${hash}`);
 }
 
 // ─── Flatten tree ───
@@ -732,9 +784,9 @@ function renderCode(text, lang) {
 }
 
 // ─── Load file ───
-async function loadFile(path) {
+async function loadFile(path, hash = "") {
   state.currentPath = path;
-  updateUrl(path);
+  updateUrl(path, hash);
   setActive(path);
   renderBreadcrumb(path);
 
@@ -777,8 +829,10 @@ async function loadFile(path) {
       const html = window.marked.parse(text);
       const clean = window.DOMPurify ? window.DOMPurify.sanitize(html) : html;
       markdownContent.innerHTML = clean;
+      addHeadingIds(markdownContent);
       wireMarkdownLinks(markdownContent, path);
       markdownContent.classList.remove("hidden");
+      scrollToHash(hash);
       // Re-highlight code blocks inside markdown
       markdownContent.querySelectorAll("pre code").forEach((block) => {
         if (window.hljs) window.hljs.highlightElement(block);
@@ -1063,7 +1117,7 @@ function createOverlay() {
 // ─── Browser history ───
 window.addEventListener("popstate", () => {
   const path = pathFromUrl();
-  if (path) loadFile(path);
+  if (path) loadFile(path, window.location.hash);
 });
 
 // ─── Config ───
@@ -1155,7 +1209,7 @@ async function init() {
   // Check URL for initial path
   const initialPath = pathFromUrl();
   if (initialPath) {
-    loadFile(initialPath);
+    loadFile(initialPath, window.location.hash);
   } else {
     renderWelcome();
   }

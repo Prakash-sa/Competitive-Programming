@@ -779,6 +779,14 @@ body {
 .markdown-view h2 { font-size: 22px; font-weight: 700; margin: 28px 0 12px; }
 .markdown-view h3 { font-size: 18px; font-weight: 600; margin: 24px 0 10px; }
 .markdown-view h4 { font-size: 16px; font-weight: 600; margin: 20px 0 8px; }
+.markdown-view h1,
+.markdown-view h2,
+.markdown-view h3,
+.markdown-view h4,
+.markdown-view h5,
+.markdown-view h6 {
+  scroll-margin-top: calc(var(--navbar-height) + 72px);
+}
 
 .markdown-view p { margin: 12px 0; color: var(--text-secondary); }
 .markdown-view strong { color: var(--text-primary); }
