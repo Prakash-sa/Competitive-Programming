@@ -1,0 +1,39 @@
+name: Incorrect solution or bug
+description: Report an incorrect answer, runtime error, docs issue, or tooling problem.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is wrong?
+      placeholder: The solution in Graph/BFS/example.py fails for...
+    validations:
+      required: true
+  - type: input
+    id: file
+    attributes:
+      label: Affected file
+      placeholder: Graph/BFS/127. Word Ladder.py
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal failing case
+      description: Include input, expected output, and actual output when possible.
+      placeholder: |
+        Input:
+        Expected:
+        Actual:
+    validations:
+      required: false
+  - type: textarea
+    id: fix
+    attributes:
+      label: Suggested fix
+      description: Optional. Share an approach if you already know one.
+    validations:
+      required: false

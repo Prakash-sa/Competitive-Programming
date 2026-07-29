@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Contribution guide
+    url: https://github.com/Prakash-sa/Competitive-Programming/blob/master/CONTRIBUTING.md
+    about: Read this before opening a contribution-focused issue.

@@ -1,0 +1,33 @@
+name: Contribution proposal
+description: Propose a new solution, topic note, or repository improvement before opening a PR.
+title: "[Proposal]: "
+labels:
+  - enhancement
+body:
+  - type: dropdown
+    id: contribution_type
+    attributes:
+      label: Contribution type
+      options:
+        - New solution
+        - Solution improvement
+        - Topic notes
+        - Documentation
+        - GitHub Pages or tooling
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What do you want to add or change?
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: Target folder or file
+      placeholder: Dynamic Programming/Grid/
+    validations:
+      required: false

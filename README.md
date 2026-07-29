@@ -8,6 +8,12 @@ This repo includes a static site under `docs/` with a collapsible folder navigat
 - In GitHub Pages settings, choose `GitHub Actions` as the source.
 - If the tree changes, regenerate `docs/tree.json` (and `docs/content/`) with `python3 docs/build_tree.py`.
 
+## Contributing
+
+Contributions are welcome. Before opening an issue or pull request, read [CONTRIBUTING.md](CONTRIBUTING.md) for solution naming, folder placement, docs generation, and review expectations.
+
+This project uses the [MIT License](LICENSE) and follows the [Code of Conduct](CODE_OF_CONDUCT.md).
+
 ## Time Complexity
 
 - `n < 20`: consider exhaustive strategies such as `2^n` brute force or `n!` backtracking. Keep pruning aggressively.
