@@ -351,6 +351,28 @@ function wireMarkdownLinks(container, currentPath) {
   });
 }
 
+function resolveMarkdownImages(container, currentPath) {
+  container.querySelectorAll("img[src]").forEach((image) => {
+    const src = image.getAttribute("src");
+    if (
+      !src ||
+      src.startsWith("http://") ||
+      src.startsWith("https://") ||
+      src.startsWith("data:") ||
+      src.startsWith("blob:")
+    ) {
+      return;
+    }
+
+    const targetPath = normalizeRepoPath(currentPath, src);
+    if (!targetPath) return;
+
+    image.src = fileUrl(targetPath);
+    image.loading = "lazy";
+    image.decoding = "async";
+  });
+}
+
 function pathFromUrl() {
   const params = new URLSearchParams(window.location.search);
   return params.get("path") ? decodeURIComponent(params.get("path")) : null;
@@ -785,6 +807,9 @@ function renderCode(text, lang) {
 
 // ─── Load file ───
 async function loadFile(path, hash = "") {
+  if (window.AlgorithmVisualizations) {
+    window.AlgorithmVisualizations.destroy();
+  }
   state.currentPath = path;
   updateUrl(path, hash);
   setActive(path);
@@ -831,6 +856,10 @@ async function loadFile(path, hash = "") {
       markdownContent.innerHTML = clean;
       addHeadingIds(markdownContent);
       wireMarkdownLinks(markdownContent, path);
+      resolveMarkdownImages(markdownContent, path);
+      if (window.AlgorithmVisualizations) {
+        window.AlgorithmVisualizations.enhance(markdownContent);
+      }
       markdownContent.classList.remove("hidden");
       scrollToHash(hash);
       // Re-highlight code blocks inside markdown
