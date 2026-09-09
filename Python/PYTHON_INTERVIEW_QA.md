@@ -22,6 +22,14 @@ A mutable object's value can change after creation. Lists, dictionaries, and set
 
 Names in Python refer to objects. An operation may mutate the existing object or bind a name to a new object:
 
+```text
+Mutable list (same object)       Immutable string (new object)
+
+values ──┐                      word  ──> "cats"
+         ├──> [1, 2, 3]         other ──> "cat"
+alias  ──┘
+```
+
 ```python
 values = [1, 2]
 alias = values
@@ -50,6 +58,15 @@ Do not rely on interning of small integers or strings when deciding whether to u
 ### 4. How are arguments passed in Python?
 
 Python uses object references passed by assignment. A function receives new local names bound to the same objects supplied by the caller. It can mutate a mutable argument, but rebinding a parameter does not rebind the caller's name.
+
+```text
+caller values ──┐
+                ├──> [1, 2] <── append() mutates this object
+local values  ──┘
+
+caller count ──> 0       local count += 1 ──> 1
+      └──────────────── remains bound to 0
+```
 
 ```python
 def update(values, count):
@@ -90,11 +107,27 @@ Python resolves names in this order:
 3. Global module scope
 4. Built-in scope
 
+```text
+Local ──not found──> Enclosing ──not found──> Global
+                                                 │
+                                            not found
+                                                 ▼
+Built-ins ──not found──> NameError
+```
+
 Use `nonlocal` to rebind a name in the nearest enclosing function scope and `global` to rebind a module-level name.
 
 ### 8. What is the difference between shallow and deep copying?
 
 A shallow copy creates a new outer container but shares nested objects. A deep copy recursively copies nested objects.
+
+```text
+original ──> outer list ──> nested lists
+                 ▲               ▲
+shallow  ──> new outer           └── shared
+
+deep     ──> new outer ──> new nested lists
+```
 
 ```python
 import copy
@@ -118,6 +151,11 @@ Objects that compare equal must have equal hashes.
 
 A dictionary is a hash table that provides average-case `O(1)` lookup, insertion, and deletion. Keys must be hashable. Hash collisions are resolved internally, and pathological collision patterns can degrade performance.
 
+```text
+key ──> hash(key) ──> table bucket ──> equality check ──> value
+                              └──── collision: probe candidates
+```
+
 Modern Python dictionaries preserve insertion order. This ordering guarantee does not mean that keys are sorted.
 
 ## Iteration and Functional Features
@@ -125,6 +163,14 @@ Modern Python dictionaries preserve insertion order. This ordering guarantee doe
 ### 11. What is the difference between an iterable and an iterator?
 
 An iterable can produce an iterator, usually through `iter()`. An iterator produces one item at a time through `next()` and raises `StopIteration` when exhausted.
+
+```text
+[1, 2, 3] ──iter()──> iterator
+                         ├──next()──> 1
+                         ├──next()──> 2
+                         ├──next()──> 3
+                         └──next()──> StopIteration
+```
 
 ```python
 numbers = [1, 2, 3]       # Iterable
@@ -158,6 +204,12 @@ Use a list when values need to be reused or indexed. Use a generator for one-pas
 ### 14. What is a decorator?
 
 A decorator is a callable that takes a function or class and returns a replacement. It is often used for logging, authorization, caching, retries, or registration.
+
+```text
+original add ──> traced(add) ──> wrapper stored as "add"
+                                         │
+add(2, 3) ──> log ──> original add(2, 3) ──> 5
+```
 
 ```python
 from functools import wraps
@@ -229,6 +281,16 @@ class Temperature:
 
 MRO is the order in which Python searches classes for an attribute or method, especially with multiple inheritance. Python uses C3 linearization. Inspect it with `ClassName.mro()`.
 
+```text
+      Base
+      /  \
+   Left  Right
+      \  /
+      Child
+
+MRO: Child ──> Left ──> Right ──> Base ──> object
+```
+
 Zero-argument `super()` follows the MRO; it does not simply mean “call my parent.” Cooperative multiple inheritance works best when participating methods consistently call `super()` and use compatible signatures.
 
 ### 19. What are dunder methods?
@@ -279,6 +341,13 @@ The `else` block runs when no exception occurs. The `finally` block runs during 
 
 A context manager controls setup and cleanup around a block, even if the block raises an exception. Files and locks are common examples.
 
+```text
+__enter__() ──> with block ──┬──> normal return ──┐
+                             └──> exception ──────┤
+                                                  ▼
+                                             __exit__()
+```
+
 ```python
 from contextlib import contextmanager
 
@@ -308,11 +377,26 @@ The GIL is an implementation detail, not a substitute for synchronization: multi
 | Processes | CPU-bound parallel work | Startup, serialization, and memory overhead |
 | `asyncio` | Many concurrent, cooperative I/O operations | Requires async-compatible libraries and non-blocking code |
 
+```text
+workload
+   ├── CPU-bound ───────────────────────> processes
+   └── I/O-bound
+          ├── blocking libraries ───────> threads
+          └── many async operations ────> asyncio
+```
+
 Measure real workloads before choosing. A thread or process pool is often simpler than rewriting a small program around asynchronous I/O.
 
 ### 27. What do `async` and `await` do?
 
 Calling an `async def` function creates a coroutine object. `await` suspends the current coroutine until an awaitable completes, allowing the event loop to run other work.
+
+```text
+Event-loop timeline ─────────────────────────────────> time
+Task A: [run]──await I/O──────────────[resume]──done
+Task B:       [run]──await I/O──[resume]────────done
+Task C:             [run]──done
+```
 
 ```python
 import asyncio
@@ -327,6 +411,15 @@ async def fetch_all():
 ### 28. How is memory managed in CPython?
 
 CPython primarily uses reference counting, supplemented by a cyclic garbage collector for unreachable reference cycles. `del name` removes a binding; it does not guarantee immediate destruction if other references remain.
+
+```text
+Normal: name ──> object ──> refcount reaches 0 ──> reclaim
+
+Cycle:  A ──> B             no outside references
+        ▲     │                      │
+        └─────┘                      ▼
+                           cyclic garbage collector
+```
 
 Implementation-specific memory behavior should not be used as part of program correctness. Manage external resources explicitly with context managers.
 
@@ -445,6 +538,13 @@ Only retry transient failures. Use bounded attempts, add jitter, respect operati
 ### 39. How do you build an LRU cache?
 
 For production code, `functools.lru_cache` is appropriate for caching function results. In an interview implementation, combine a dictionary with a doubly linked list so lookup, insertion, promotion, and eviction are all `O(1)`.
+
+```text
+dictionary: key ──> node
+                         ┌──────────────────────────┐
+linked list:          MRU ⇄ node ⇄ node ⇄ node ⇄ LRU
+                         └─ promote hit    evict ───┘
+```
 
 ```python
 from functools import lru_cache
