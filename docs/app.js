@@ -21,6 +21,7 @@ const TOPIC_ICONS = {
   "Operating Systems": "🖥️",
   "Prefix Sum & Partial Sum": "➕",
   "Prefix Sum": "➕",
+  Python: "🐍",
   Queue: "📥",
   "Recursion & Backtracking": "🔄",
   "Segment Trees": "🌿",
